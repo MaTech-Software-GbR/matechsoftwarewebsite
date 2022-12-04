@@ -1,4 +1,5 @@
 import React from 'react';
+
 import Typewriter from 'typewriter-effect';
 
 const Home: React.FC = () => {
@@ -42,7 +43,6 @@ const Home: React.FC = () => {
             </div>
           </div>
         </div>
-
         <ul className="home-social">
           <li>
             <a href="#">

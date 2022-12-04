@@ -92,6 +92,12 @@
      padding: 0;
  }
  
+ p {
+    line-height: 1.875;
+    font-family: "librebaskerville-regular", serif;
+    font-size: 1.6rem;
+    color: #5f5f5f;
+ }
  
  /* ------------------------------------------------------------------- 
   * ## links - (_document-setup.scss) 
@@ -1730,13 +1736,10 @@
      background-color: transparent;
      position: relative;
      display: table;
-     background-image: url("../images/office.jpg");
+     background-image: url("./images/office.jpg");
+     background-size: cover;
  }
 
- .s-home img {
-    max-width: 100%;
-    max-height: 100%;
- }
  
  .s-home .shadow-overlay {
      position: absolute;
@@ -2619,7 +2622,7 @@
  
  .s-testimonials {
      background-color: #0D0A0B;
-     background-image: url("../images/testimonial-bg.jpg");
+     background-image: url("./images/testimonial-bg.jpg");
      background-repeat: no-repeat;
      background-position: center, center;
      padding-top: 9.6rem;
@@ -2963,7 +2966,7 @@
  }
  
  .stats__col--highlight {
-     background: #111111 url("../images/count-bg.jpg");
+     background: #111111 url("./images/count-bg.jpg");
      background-size: 175px 175px;
      position: relative;
  }
@@ -3044,7 +3047,7 @@
  
  .s-contact {
      background-color: #151515;
-     background-image: url("../images/office5.jpg");
+     background-image: url("./images/office5.jpg");
      background-repeat: no-repeat;
      background-position: center, center;
      padding-top: 13.2rem;

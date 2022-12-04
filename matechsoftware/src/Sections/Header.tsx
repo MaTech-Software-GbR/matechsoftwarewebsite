@@ -1,17 +1,7 @@
 import React from 'react';
 import logo from '../images/logo.png';
-var Scroll = require('react-scroll');
-var scroller = Scroll.animateScroll;
 
 const Header: React.FC = () => {
-  var scrollToBlog = function () {
-    scroller.scrollTo('#blog', {
-      duration: 1500,
-      delay: 100,
-      smooth: true,
-    });
-  };
-
   return (
     <div>
       <header className="s-header">
@@ -33,7 +23,7 @@ const Header: React.FC = () => {
               </a>
             </li>
             <li>
-              <a onClick={scrollToBlog} href="#works" title="works">
+              <a href="#works" title="works">
                 Referenzen
               </a>
             </li>

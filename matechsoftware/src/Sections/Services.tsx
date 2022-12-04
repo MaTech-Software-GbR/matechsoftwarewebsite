@@ -1,4 +1,6 @@
 import React from 'react';
+import '../App.css';
+import '../Base.css';
 
 const Services: React.FC = () => {
   return (
@@ -49,40 +51,58 @@ const Services: React.FC = () => {
             </h3>
             <div className="flex flex-wrap justify-center">
               <div className="leistungen">
-                <img src="../images/technologies/html-icon.png" alt="" />
+                <img src={require('../images/technologies/html-icon.png')} />
               </div>
               <div className="leistungen">
-                <img src="images/technologies/bootstrap-4-icon.png" />
+                <img
+                  src={require('../images/technologies/bootstrap-4-icon.png')}
+                />
               </div>
               <div className="leistungen">
-                <img src="images/technologies/c-sharp-programming-language-icon.png" />
+                <img
+                  src={require('../images/technologies/c-sharp-programming-language-icon.png')}
+                />
               </div>
               <div className="leistungen">
-                <img src="images/technologies/typescript-programming-language-icon.png" />
+                <img
+                  src={require('../images/technologies/typescript-programming-language-icon.png')}
+                />
               </div>
               <div className="leistungen">
-                <img src="images/technologies/microsoft-dot-net-icon.png" />
+                <img
+                  src={require('../images/technologies/microsoft-dot-net-icon.png')}
+                />
               </div>
               <div className="leistungen">
-                <img src="images/technologies/python-programming-language-icon.png" />
+                <img
+                  src={require('../images/technologies/python-programming-language-icon.png')}
+                />
               </div>
               <div className="leistungen">
-                <img src="images/technologies/java-programming-language-icon.png" />
+                <img
+                  src={require('../images/technologies/java-programming-language-icon.png')}
+                />
               </div>
               <div className="leistungen">
-                <img src="images/technologies/javascript-programming-language-icon.png" />
+                <img
+                  src={require('../images/technologies/javascript-programming-language-icon.png')}
+                />
               </div>
               <div className="leistungen">
-                <img src="images/technologies/css-icon.png" />
+                <img src={require('../images/technologies/css-icon.png')} />
               </div>
               <div className="leistungen">
-                <img src="images/technologies/wordpress-icon.png" />
+                <img
+                  src={require('../images/technologies/wordpress-icon.png')}
+                />
               </div>
               <div className="leistungen">
-                <img src="images/technologies/mysql-icon.png" />
+                <img src={require('../images/technologies/mysql-icon.png')} />
               </div>
               <div className="leistungen">
-                <img src="images/technologies/sql-server-icon.png" />
+                <img
+                  src={require('../images/technologies/sql-server-icon.png')}
+                />
               </div>
             </div>
           </div>

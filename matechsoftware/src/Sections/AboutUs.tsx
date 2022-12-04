@@ -54,12 +54,12 @@ const AboutUs: React.FC = () => {
             </div>
           </div>
           <div className="col-six tab-full right illustration">
-            <img src="images/undraw_Businessman_re_mlee.png" />
+            <img src={require('../images/undraw_Businessman_re_mlee.png')} />
           </div>
         </div>
         <div className="row">
           <div className="col-six tab-full left illustration">
-            <img src="images/undraw_Businessman_re_mlee.png" />
+            <img src={require('../images/undraw_Businessman_re_mlee.png')} />
           </div>
           <div className="col-six tab-full right">
             <div className="timeline">

@@ -8,7 +8,7 @@ const Footer: React.FC = () => {
           <div className="col-full">
             <div className="footer-logo">
               <a className="footer-site-logo" href="#0">
-                <img src="images/logo.png" alt="Homepage" />
+                <img src={require('../images/logo.png')} />
               </a>
             </div>
 
