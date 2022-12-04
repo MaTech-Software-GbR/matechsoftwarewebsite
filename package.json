@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "react-scroll": "^1.8.8",
     "typewriter-effect": "^2.19.0"
   }
 }
