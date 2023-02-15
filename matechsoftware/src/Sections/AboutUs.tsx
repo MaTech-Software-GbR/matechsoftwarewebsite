@@ -54,12 +54,12 @@ const AboutUs: React.FC = () => {
             </div>
           </div>
           <div className="col-six tab-full right illustration">
-            <img src={require('../images/undraw_Businessman_re_mlee.png')} />
+            <img src={require('../images/imagemaxi.png')} />
           </div>
         </div>
         <div className="row">
           <div className="col-six tab-full left illustration">
-            <img src={require('../images/undraw_Businessman_re_mlee.png')} />
+            <img src={require('../images/imagemanuel.png')} />
           </div>
           <div className="col-six tab-full right">
             <div className="timeline">
@@ -94,6 +94,21 @@ const AboutUs: React.FC = () => {
                   </li>
                 </ul>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className="s-cta">
+        <div className="row narrow cta">
+          <div className="col-full cta__content">
+            <h2 className="h01">Du willst eine Beratung von uns?</h2>
+
+            <p className="lead">Wir freuen uns über Deine Kontaktanfrage.</p>
+
+            <div className="cta__action">
+              <a className="btn btn--primary btn--large" href="#contact">
+                Jetzt kontaktieren
+              </a>
             </div>
           </div>
         </div>

@@ -1,10 +1,23 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { Background, Parallax } from 'react-parallax';
 import logo from '../images/logo.png';
 
 const Header: React.FC = () => {
   return (
     <div>
-      <header className="s-header">
+      <Parallax
+        blur={{ min: -15, max: 15 }}
+        bgImage={require('../images/office1.jpg')}
+        bgImageAlt="the dog"
+        strength={-200}
+      >
+        <Background className="custom-bg">
+          <img src="../images/office1.jpg" alt="fill murray" />
+        </Background>
+        test
+        <div style={{ height: '100vh' }}></div>
+      </Parallax>
+      <header className={window.scrollY > 790 ? 's-header test' : 's-header'}>
         <div className="header-logo">
           <a className="site-logo" href="index.html">
             <img src={logo} alt="Homepage" />
@@ -13,12 +26,12 @@ const Header: React.FC = () => {
         <nav className="header-nav-wrap">
           <ul className="header-nav">
             <li className="current">
-              <a className="smoothscroll" href="#home" title="home">
+              <a href="#home" title="home">
                 Start
               </a>
             </li>
             <li>
-              <a className="smoothscroll" href="#about" title="about">
+              <a href="#about" title="about">
                 Leistungen
               </a>
             </li>
@@ -28,12 +41,12 @@ const Header: React.FC = () => {
               </a>
             </li>
             <li>
-              <a className="smoothscroll" href="#blog" title="blog">
+              <a href="#blog" title="blog">
                 Über uns
               </a>
             </li>
             <li>
-              <a className="smoothscroll" href="#contact" title="contact">
+              <a href="#contact" title="contact">
                 Kontakt
               </a>
             </li>

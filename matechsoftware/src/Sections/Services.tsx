@@ -1,6 +1,6 @@
 import React from 'react';
-import '../App.css';
-import '../Base.css';
+import '../SCSS/App.scss';
+import '../SCSS/Base.scss';
 
 const Services: React.FC = () => {
   return (
@@ -38,7 +38,7 @@ const Services: React.FC = () => {
               kontaktieren Sie uns und wir finden zusammen eine Lösung.
             </p>
 
-            <a href="#contact" className="btn full-width smoothscroll test">
+            <a href="#contact" className="btn full-width test">
               Beauftrage uns jetzt
             </a>
           </div>

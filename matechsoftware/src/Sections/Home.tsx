@@ -1,4 +1,5 @@
 import React from 'react';
+import { Parallax } from 'react-parallax';
 
 import Typewriter from 'typewriter-effect';
 
@@ -11,7 +12,7 @@ const Home: React.FC = () => {
 
         <div className="home-content">
           <div className="row home-content__main">
-            <h3>Willkommen</h3>
+            <h3>Willkommen bei MaTech Software GbR</h3>
 
             <h1>
               Wir sind Manuel und Maxi. <br />
@@ -19,7 +20,7 @@ const Home: React.FC = () => {
                 Wir sind
                 <Typewriter
                   options={{
-                    strings: ['Softwareentwickler', 'Webdesigner'],
+                    strings: ['Softwareentwickler', 'Berater', 'Problemlöser'],
                     autoStart: true,
                     loop: true,
                   }}
@@ -28,17 +29,17 @@ const Home: React.FC = () => {
             </h1>
 
             <div className="home-content__buttons">
-              <a href="#works" className="smoothscroll btn btn--stroke">
+              <a href="#works" className="btn btn--stroke">
                 Letztes Projekt
               </a>
-              <a href="#about" className="smoothscroll btn btn--stroke">
+              <a href="#about" className="btn btn--stroke">
                 Mehr über uns
               </a>
             </div>
 
             <div className="home-content__scroll">
-              <a href="#about" className="scroll-link smoothscroll">
-                <span>Das bieten wir</span>
+              <a href="#about" className="scroll-link">
+                <span>Unsere Leistungen</span>
               </a>
             </div>
           </div>

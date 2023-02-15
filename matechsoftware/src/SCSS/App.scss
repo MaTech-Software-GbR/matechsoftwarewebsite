@@ -1,65 +1,10 @@
-/* =================================================================== 
- *
- *  Hola v1.0 Main Stylesheet
- *  10-02-2017
- *  ------------------------------------------------------------------
- *
- *  TOC:
- *  # webfonts and iconfonts
- *  # base style overrides
- *      ## links
- *  # typography & general theme styles
- *      ## lists
- *      ## responsive video container
- *      ## floated image
- *      ## tables
- *      ## spacing
- *      ## pace.js styles - minimal
- *  # forms
- *      ## style placeholder text
- *      ## Change Autocomplete styles in Chrome
- *  # buttons
- *  # additional components
- *      ## alert box
- *      ## additional typo styles
- *      ## skillbars
- *  # common and reusable theme styles 
- *      ## section intro
- *      ## blog-list
- *  # header styles
- *      ## header logo
- *      ## mobile menu toggle
- *      ## navigation
- *  # home
- *      ## home content
- *      ## home social
- *      ## home animations
- *  # about
- *      ## timeline
- *  # works
- *      ## bricks/masonry
- *  # testimonials
- *  # blog
- *  # cta
- *  # stats
- *  # contact
- *  # footer
- *      ## go to top
- *  # blog styles
- *      ## blog page header
- *      ## blog content
- *      ## comments
- *
- * =================================================================== */
-
-
 /* ===================================================================
  * # webfonts and iconfonts - (_document-setup.scss)
  *
  * ------------------------------------------------------------------- */
 
- @import url("iconic/css/iconmonstr-iconic-font.min.css");
- @import url("Fonts.css");
+ @import url("../iconic/css/iconmonstr-iconic-font.min.css");
+ @import url("Fonts.scss");
  
  
  
@@ -205,7 +150,7 @@
      font-family: "montserrat-regular", sans-serif;
      font-size: 2rem;
      line-height: 1.8;
-     margin-bottom: 3.6rem;
+     margin-bottom: 3.6rem !important;
      color: #0D0A0B;
  }
  
@@ -502,7 +447,7 @@
  form, 
  .video-container, 
  .ss-custom-select {
-     margin-bottom: 3rem;
+     margin-bottom: 3rem !important;
  }
  
  
@@ -1533,7 +1478,7 @@
      padding: 0;
      outline: 0;
      border: none;
-     width: 80px;
+     width: 200px;
      -webkit-transition: all 0.3s ease-in-out;
      transition: all 0.3s ease-in-out;
  }
@@ -1731,13 +1676,14 @@
  
  .s-home {
      width: 100%;
-     height: 100%;
+     height: 100vh;
      min-height: 786px;
      background-color: transparent;
      position: relative;
      display: table;
-     background-image: url("./images/office.jpg");
-     background-size: cover;
+     background-image: url("../images/office1.jpg");
+  background-size: cover;
+
  }
 
  
@@ -1751,7 +1697,7 @@
      background: -moz-linear-gradient(top, transparent 0%, rgba(0, 0, 0, 0.8) 100%);
      background: -webkit-linear-gradient(top, transparent 0%, rgba(0, 0, 0, 0.8) 100%);
      background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.8) 100%);
-     filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#cc000000', GradientType=0);
+     //filter: progid: DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#cc000000', GradientType=0);
  }
  
  .s-home .overlay {
@@ -2416,7 +2362,7 @@
      background: -moz-linear-gradient(top, transparent 0%, rgba(0, 0, 0, 0.8) 100%);
      background: -webkit-linear-gradient(top, transparent 0%, rgba(0, 0, 0, 0.8) 100%);
      background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.8) 100%);
-     filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#cc000000', GradientType=0);
+     //filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#cc000000', GradientType=0);
  }
  
  .item-folio__thumb a {
@@ -2620,16 +2566,16 @@
   *
   * ------------------------------------------------------------------- */
  
- .s-testimonials {
-     background-color: #0D0A0B;
-     background-image: url("./images/testimonial-bg.jpg");
-     background-repeat: no-repeat;
-     background-position: center, center;
-     padding-top: 9.6rem;
-     padding-bottom: 10.2rem;
-     color: rgba(255, 255, 255, 0.5);
-     position: relative;
- }
+//  .s-testimonials {
+//      background-color: #0D0A0B;
+//      background-image: url("../images/testimonial-bg.jpg");
+//      background-repeat: no-repeat;
+//      background-position: center, center;
+//      padding-top: 9.6rem;
+//      padding-bottom: 10.2rem;
+//      color: rgba(255, 255, 255, 0.5);
+//      position: relative;
+//  }
  
  .s-testimonials .overlay {
      position: absolute;
@@ -2965,11 +2911,11 @@
      position: relative;
  }
  
- .stats__col--highlight {
-     background: #111111 url("./images/count-bg.jpg");
-     background-size: 175px 175px;
-     position: relative;
- }
+//  .stats__col--highlight {
+//      background: #111111 url("../images/count-bg.jpg");
+//      background-size: 175px 175px;
+//      position: relative;
+//  }
  
  .stats__col--highlight::before {
      display: block;
@@ -3047,7 +2993,7 @@
  
  .s-contact {
      background-color: #151515;
-     background-image: url("./images/office5.jpg");
+     background-image: url("../images/office2.jpg");
      background-repeat: no-repeat;
      background-position: center, center;
      padding-top: 13.2rem;
@@ -3336,7 +3282,7 @@
  
  .footer-site-logo {
      display: block;
-     width: 130px;
+     width: 250px;
  }
  
  .footer-social {
@@ -3553,7 +3499,7 @@
      /* Chrome10-25,Safari5.1-6 */
      background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.65) 100%);
      /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-     filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#a6000000', GradientType=0);
+     //filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#a6000000', GradientType=0);
      /* IE6-9 */
  }
  
@@ -4190,7 +4136,13 @@
  .illustration img{
      width: 360px;
  }
- 
+
+ .test {
+    position: fixed;
+    background-color: #12232E;
+   
+}
+  
  
  @media only screen and (max-width: 800px) {
      .technologies .leistungen {

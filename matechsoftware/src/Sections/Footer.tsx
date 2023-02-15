@@ -8,7 +8,7 @@ const Footer: React.FC = () => {
           <div className="col-full">
             <div className="footer-logo">
               <a className="footer-site-logo" href="#0">
-                <img src={require('../images/logo.png')} />
+                <img alt="" src={require('../images/logo.png')} />
               </a>
             </div>
 
@@ -32,7 +32,7 @@ const Footer: React.FC = () => {
         <div className="row footer-bottom">
           <div className="col-twelve">
             <div className="copyright">
-              <span>© Copyright MaTech Software 2022</span>
+              <span>© Copyright MaTech Software 2023</span>
             </div>
             <div className="copyright">
               <span>
@@ -44,7 +44,7 @@ const Footer: React.FC = () => {
             </div>
 
             <div className="go-top">
-              <a className="smoothscroll" title="Back to Top" href="#top">
+              <a title="Back to Top" href="#top">
                 <i className="im im-arrow-up" aria-hidden="true"></i>
               </a>
             </div>

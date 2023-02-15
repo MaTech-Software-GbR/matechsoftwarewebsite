@@ -7,10 +7,11 @@ const Work: React.FC = () => {
         <div className="row narrow section-intro has-bottom-sep">
           <div className="col-full">
             <h3>Referenzen</h3>
-            <h1>Sieh Dir unsere letzten Projekte an.</h1>
+            <h1>Unsere Projekte.</h1>
 
             <p className="lead">
-              Unsere bisherigen Projekte sind Websiten, umsetzt mit einem CMS.{' '}
+              Sehen Sie sich einige unserer abgeschlossenen Projekte an und
+              machen Sie sich ein Bild von unserer Arbeit.
             </p>
           </div>
         </div>
@@ -25,7 +26,10 @@ const Work: React.FC = () => {
                     title="Thai Haus Feldkirchen"
                     data-size="1050x700"
                   >
-                    <img src="images/portfolio/reha-logo.jpg" />
+                    <img
+                      alt=""
+                      src={require('../images/references/reha-logo.jpg')}
+                    />
                     <span className="shadow-overlay"></span>
                   </a>
                 </div>
@@ -45,7 +49,7 @@ const Work: React.FC = () => {
                     title="Reha Zentrum Riedbichl"
                     data-size="1050x700"
                   >
-                    <img src="images/portfolio/reha-logo.jpg" />
+                    <img src={require('../images/references/thaihaus.png')} />
                     <span className="shadow-overlay"></span>
                   </a>
                 </div>
@@ -65,7 +69,9 @@ const Work: React.FC = () => {
                     title="Gut Riedbichl"
                     data-size="1050x700"
                   >
-                    <img src="images/portfolio/reha-logo.jpg" />
+                    <img
+                      src={require('../images/references/GasthausSchmid.png')}
+                    />
                     <span className="shadow-overlay"></span>
                   </a>
                 </div>
@@ -85,7 +91,9 @@ const Work: React.FC = () => {
                     title="Gasthaus Schmid"
                     data-size="1050x700"
                   >
-                    <img src="images/portfolio/reha-logo.jpg" />
+                    <img
+                      src={require('../images/references/matechlaptop.jpg')}
+                    />
                     <span className="shadow-overlay"></span>
                   </a>
                 </div>
@@ -93,25 +101,6 @@ const Work: React.FC = () => {
                 <div className="item-folio__text">
                   <h3 className="item-folio__title">Gasthaus Schmid</h3>
                   <p className="item-folio__cat">Branding</p>
-                </div>
-              </div>
-            </div>
-            <div className="masonry__brick">
-              <div className="item-folio">
-                <div className="item-folio__thumb">
-                  <a
-                    href="https://www.rehazentrum-riedbichl.de"
-                    title="Lighthouse"
-                    data-size="1050x700"
-                  >
-                    <img src="images/portfolio/reha-logo.jpg" />
-                    <span className="shadow-overlay"></span>
-                  </a>
-                </div>
-
-                <div className="item-folio__text">
-                  <h3 className="item-folio__title">Ihr Projekt</h3>
-                  <p className="item-folio__cat"></p>
                 </div>
               </div>
             </div>
