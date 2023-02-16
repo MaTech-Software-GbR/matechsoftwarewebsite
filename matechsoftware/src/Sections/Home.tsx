@@ -20,7 +20,7 @@ const Home: React.FC = () => {
                 Wir sind
                 <Typewriter
                   options={{
-                    strings: ['Softwareentwickler', 'Berater', 'Problemlöser'],
+                    strings: ['Programmierer', 'Berater', 'Problemlöser'],
                     autoStart: true,
                     loop: true,
                   }}
@@ -46,13 +46,13 @@ const Home: React.FC = () => {
         </div>
         <ul className="home-social">
           <li>
-            <a href="#">
+            <a href="https://www.linkedin.com/company/matech-software">
               <i className="im im-linkedin" aria-hidden="true"></i>
               <span>Linkedin</span>
             </a>
           </li>
           <li>
-            <a href="#">
+            <a href="mailto:kontakt@matech-software.de">
               <i className="im im-mail" aria-hidden="true"></i>
               <span>Email</span>
             </a>

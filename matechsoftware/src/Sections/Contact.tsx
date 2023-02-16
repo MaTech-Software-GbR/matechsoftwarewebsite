@@ -9,11 +9,11 @@ const Contact: React.FC = () => {
         <div className="row narrow section-intro">
           <div className="col-full">
             <h3>Kontakt</h3>
-            <h1>Melde Dich bei uns.</h1>
+            <h1>Melden Sie sich bei uns.</h1>
 
             <p className="lead">
-              Egal ob für eine kurze Beratung oder ein aufwendiger
-              Projektauftrag, melde Dich bei uns.
+              Ob für eine kurze Beratung oder einen aufwendigen Projektauftrag,
+              kontaktieren Sie uns gerne.
             </p>
           </div>
         </div>
@@ -98,8 +98,9 @@ const Contact: React.FC = () => {
 
             <h4 className="h06">Adresse</h4>
             <p>
-              Enzianweg xy
+              MaTech Software GbR
               <br />
+              Enzianweg 8<br />
               83052 Bruckmühl
             </p>
           </div>

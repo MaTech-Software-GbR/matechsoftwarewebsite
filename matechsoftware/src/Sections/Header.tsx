@@ -1,23 +1,12 @@
-import React, { useEffect } from 'react';
-import { Background, Parallax } from 'react-parallax';
+import React from 'react';
 import logo from '../images/logo.png';
 
 const Header: React.FC = () => {
   return (
     <div>
-      <Parallax
-        blur={{ min: -15, max: 15 }}
-        bgImage={require('../images/office1.jpg')}
-        bgImageAlt="the dog"
-        strength={-200}
+      <header
+        className={window.scrollY > 790 ? 's-header sticky-navbar' : 's-header'}
       >
-        <Background className="custom-bg">
-          <img src="../images/office1.jpg" alt="fill murray" />
-        </Background>
-        test
-        <div style={{ height: '100vh' }}></div>
-      </Parallax>
-      <header className={window.scrollY > 790 ? 's-header test' : 's-header'}>
         <div className="header-logo">
           <a className="site-logo" href="index.html">
             <img src={logo} alt="Homepage" />

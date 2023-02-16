@@ -22,12 +22,12 @@ const Work: React.FC = () => {
               <div className="item-folio">
                 <div className="item-folio__thumb">
                   <a
-                    href="https://www.thai-haus-feldkirchen.de"
-                    title="Thai Haus Feldkirchen"
+                    href="https://www.rehazentrum-riedbichl.de"
+                    title="Reha-Zentrum Riedbichl"
                     data-size="1050x700"
                   >
                     <img
-                      alt=""
+                      alt="rehazentrumriedbichllogo"
                       src={require('../images/references/reha-logo.jpg')}
                     />
                     <span className="shadow-overlay"></span>
@@ -35,8 +35,10 @@ const Work: React.FC = () => {
                 </div>
 
                 <div className="item-folio__text">
-                  <h3 className="item-folio__title">Thai Haus Feldkirchen</h3>
-                  <p className="item-folio__cat">Konzept, Design, Hosting</p>
+                  <h3 className="item-folio__title">Reha-Zentrum Riedbichl</h3>
+                  <p className="item-folio__cat">
+                    Website mit Konzept, Design, Hosting, Logo
+                  </p>
                 </div>
               </div>
             </div>
@@ -45,40 +47,23 @@ const Work: React.FC = () => {
               <div className="item-folio">
                 <div className="item-folio__thumb">
                   <a
-                    href="https://www.rehazentrum-riedbichl.de"
-                    title="Reha Zentrum Riedbichl"
-                    data-size="1050x700"
-                  >
-                    <img src={require('../images/references/thaihaus.png')} />
-                    <span className="shadow-overlay"></span>
-                  </a>
-                </div>
-
-                <div className="item-folio__text">
-                  <h3 className="item-folio__title">Reha Zentrum Riedbichl</h3>
-                  <p className="item-folio__cat">Konzept, Design, Hosting</p>
-                </div>
-              </div>
-            </div>
-
-            <div className="masonry__brick">
-              <div className="item-folio">
-                <div className="item-folio__thumb">
-                  <a
-                    href="https://www.rehazentrum-riedbichl.de"
-                    title="Gut Riedbichl"
+                    href="https://www.thai-haus-feldkirchen.de"
+                    title="Thai Haus Restaurant"
                     data-size="1050x700"
                   >
                     <img
-                      src={require('../images/references/GasthausSchmid.png')}
+                      alt="thaihausrestaurantlogo"
+                      src={require('../images/references/thaihaus.png')}
                     />
                     <span className="shadow-overlay"></span>
                   </a>
                 </div>
 
                 <div className="item-folio__text">
-                  <h3 className="item-folio__title">Gut Riedbichl</h3>
-                  <p className="item-folio__cat">Branding</p>
+                  <h3 className="item-folio__title">Thai Haus Restaurant</h3>
+                  <p className="item-folio__cat">
+                    Website mit Konzept, Design, Hosting, Logo
+                  </p>
                 </div>
               </div>
             </div>
@@ -88,11 +73,12 @@ const Work: React.FC = () => {
                 <div className="item-folio__thumb">
                   <a
                     href="https://www.gasthaus-schmid.de"
-                    title="Gasthaus Schmid"
+                    title="Gut Riedbichl"
                     data-size="1050x700"
                   >
                     <img
-                      src={require('../images/references/matechlaptop.jpg')}
+                      alt="gasthausschmidwebsite"
+                      src={require('../images/references/GasthausSchmid.png')}
                     />
                     <span className="shadow-overlay"></span>
                   </a>
@@ -100,6 +86,50 @@ const Work: React.FC = () => {
 
                 <div className="item-folio__text">
                   <h3 className="item-folio__title">Gasthaus Schmid</h3>
+                  <p className="item-folio__cat">
+                    Website mit Konzept, Design, Hosting
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="masonry__brick">
+              <div className="item-folio">
+                <div className="item-folio__thumb">
+                  <a
+                    href="https://www.matech-software.de"
+                    title="MaTech Website"
+                    data-size="1050x700"
+                  >
+                    <img
+                      alt="matechlaptoplogo"
+                      src={require('../images/references/matechwebsite.png')}
+                    />
+                    <span className="shadow-overlay"></span>
+                  </a>
+                </div>
+
+                <div className="item-folio__text">
+                  <h3 className="item-folio__title">MaTech Software Website</h3>
+                  <p className="item-folio__cat">Konzept, Design, Hosting</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="masonry__brick">
+              <div className="item-folio">
+                <div className="item-folio__thumb">
+                  <a href="#contact" title="Ihr Projekt" data-size="1050x700">
+                    <img
+                      alt="matechlaptoplogo"
+                      src={require('../images/references/matechlaptop.jpg')}
+                    />
+                    <span className="shadow-overlay"></span>
+                  </a>
+                </div>
+
+                <div className="item-folio__text">
+                  <h3 className="item-folio__title">Ihr Projekt</h3>
                   <p className="item-folio__cat">Branding</p>
                 </div>
               </div>

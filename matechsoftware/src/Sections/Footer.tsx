@@ -1,4 +1,5 @@
 import React from 'react';
+import Impressum from '../pages/Impressum';
 
 const Footer: React.FC = () => {
   return (
@@ -14,13 +15,13 @@ const Footer: React.FC = () => {
 
             <ul className="footer-social">
               <li>
-                <a href="#0">
+                <a href="https://www.linkedin.com/company/matech-software">
                   <i className="im im-linkedin" aria-hidden="true"></i>
                   <span>Linkedin</span>
                 </a>
               </li>
               <li>
-                <a href="#0">
+                <a href="mailto:kontakt@matech-software.de">
                   <i className="im im-mail" aria-hidden="true"></i>
                   <span>Email</span>
                 </a>
@@ -32,7 +33,7 @@ const Footer: React.FC = () => {
         <div className="row footer-bottom">
           <div className="col-twelve">
             <div className="copyright">
-              <span>© Copyright MaTech Software 2023</span>
+              <span>© Copyright MaTech Software GbR 2023</span>
             </div>
             <div className="copyright">
               <span>
@@ -43,7 +44,16 @@ const Footer: React.FC = () => {
               </span>
             </div>
 
-            <div className="go-top">
+            <div
+              className="go-top"
+              style={{
+                display: window.scrollY > 790 ? 'block' : 'none',
+                animation:
+                  window.scrollY > 790
+                    ? 'fade-in 800ms linear'
+                    : 'fade-out 800ms linear',
+              }}
+            >
               <a title="Back to Top" href="#top">
                 <i className="im im-arrow-up" aria-hidden="true"></i>
               </a>
