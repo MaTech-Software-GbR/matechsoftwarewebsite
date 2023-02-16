@@ -1,6 +1,4 @@
 import React from 'react';
-import '../SCSS/App.scss';
-import '../SCSS/Base.scss';
 
 const Services: React.FC = () => {
   return (

@@ -1,5 +1,4 @@
 import React from 'react';
-import { Parallax } from 'react-parallax';
 
 import Typewriter from 'typewriter-effect';
 

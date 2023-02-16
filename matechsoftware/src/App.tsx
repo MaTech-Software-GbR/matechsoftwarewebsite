@@ -1,7 +1,5 @@
-import React, { useEffect, useState } from 'react';
+import React, { createRef, useEffect, useState } from 'react';
 import Homepage from './pages/Homepage';
-import './SCSS/App.scss';
-import './SCSS/Base.scss';
 
 const App: React.FC = () => {
   const [, setOffset] = useState(0);

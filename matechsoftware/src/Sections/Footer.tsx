@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Impressum from '../pages/Impressum';
 
 const Footer: React.FC = () => {
@@ -37,10 +38,10 @@ const Footer: React.FC = () => {
             </div>
             <div className="copyright">
               <span>
-                <a href="./impressum.html">Impressum</a>
+                <Link to="/impressum">Impressum</Link>
               </span>
               <span>
-                <a href="./datenschutz.html">Datenschutz</a>
+                <Link to="/datenschutz">Datenschutz</Link>
               </span>
             </div>
 

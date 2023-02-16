@@ -8,7 +8,7 @@ const Header: React.FC = () => {
         className={window.scrollY > 790 ? 's-header sticky-navbar' : 's-header'}
       >
         <div className="header-logo">
-          <a className="site-logo" href="index.html">
+          <a className="site-logo" href="/">
             <img src={logo} alt="Homepage" />
           </a>
         </div>

@@ -1,48 +1,37 @@
-/* ===================================================================
- * # webfonts and iconfonts - (_document-setup.scss)
- *
- * ------------------------------------------------------------------- */
+@import url("../iconic/css/iconmonstr-iconic-font.min.css");
+@import url("Fonts.scss");
+ 
+ 
+html {
+    font-size: 10px;
+}
+ 
+@media only screen and (max-width: 400px) {
+    html {
+        font-size: 9.375px;
+    }
+}
 
- @import url("../iconic/css/iconmonstr-iconic-font.min.css");
- @import url("Fonts.scss");
- 
- 
- 
- /* ===================================================================
-  * # base style overrides - (_document-setup.scss)
-  *
-  * ------------------------------------------------------------------- */
- 
- html {
-     font-size: 10px;
- }
- 
- @media only screen and (max-width: 400px) {
-     html {
-         font-size: 9.375px;
-     }
- }
- 
- html, body {
-     height: 100%;
- }
- 
- body {
-     background: #12232E;
-     font-family: "librebaskerville-regular", serif;
-     font-size: 1.6rem;
-     line-height: 1.875;
-     color: #5f5f5f;
-     margin: 0;
-     padding: 0;
- }
- 
- p {
-    line-height: 1.875;
+html, body {
+    height: 100%;
+}
+
+body {
+    background: #12232E;
     font-family: "librebaskerville-regular", serif;
     font-size: 1.6rem;
+    line-height: 1.875;
     color: #5f5f5f;
- }
+    margin: 0;
+    padding: 0;
+}
+
+p {
+line-height: 1.875;
+font-family: "librebaskerville-regular", serif;
+font-size: 1.6rem;
+color: #5f5f5f;
+}
  
  /* ------------------------------------------------------------------- 
   * ## links - (_document-setup.scss) 
