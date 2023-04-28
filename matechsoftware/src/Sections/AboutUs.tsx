@@ -1,7 +1,6 @@
-import React, { useRef } from 'react';
+import React from 'react';
 
 const AboutUs: React.FC = () => {
-  const lineRef = useRef(null);
   return (
     <div>
       <section id="blog" className="s-blog target-section">
@@ -61,10 +60,7 @@ const AboutUs: React.FC = () => {
               </div>
             </div>
           </div>
-          <div className="timeline__desc">
-            <p>...</p>
-            <div className="timeline__line" ref={lineRef}></div>
-          </div>
+
           <div className="col-six tab-full right illustration">
             <img
               alt="developericon1"
