@@ -51,8 +51,8 @@ const Footer: React.FC = () => {
                 display: window.scrollY > 790 ? 'block' : 'none',
                 animation:
                   window.scrollY > 790
-                    ? 'fade-in 800ms linear'
-                    : 'fade-out 800ms linear',
+                    ? 'fadeIn 800ms linear'
+                    : 'fadeOut 800ms linear',
               }}
             >
               <a title="Back to Top" href="#top">

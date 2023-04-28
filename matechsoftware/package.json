@@ -6,10 +6,12 @@
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "@types/aos": "^3.0.4",
     "@types/jest": "^27.5.2",
     "@types/node": "^16.18.4",
     "@types/react": "^18.0.26",
     "@types/react-dom": "^18.0.9",
+    "aos": "^2.3.4",
     "eslint": "^8.34.0",
     "jquery": "^3.6.1",
     "normalize.css": "^8.0.1",
@@ -28,7 +30,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "postbuild": "purgecss --css build/static/css/*.css --content build/index.html build/static/js/*.js --output build/static/css"
   },
   "eslintConfig": {
     "extends": [
@@ -49,6 +52,7 @@
     ]
   },
   "devDependencies": {
+    "@fullhuman/postcss-purgecss": "^5.0.0",
     "@types/jquery": "^3.5.14",
     "@types/react-scroll": "^1.8.5",
     "sass": "^1.56.1"

@@ -15,11 +15,18 @@ const Home: React.FC = () => {
 
             <h1>
               Wir sind Manuel und Maxi. <br />
-              <div className="typewriter">
-                Wir sind
+              <div className="inline-block">Wir sind&nbsp;</div>
+              <div className="inline-block">
                 <Typewriter
                   options={{
-                    strings: ['Programmierer', 'Berater', 'Problemlöser'],
+                    strings: [
+                      'Programmierer.',
+                      'Lösungsfinder.',
+                      'Berater.',
+                      'Problemlöser.',
+                      'Chaosbewältiger.',
+                      'Troubleshooter.',
+                    ],
                     autoStart: true,
                     loop: true,
                   }}

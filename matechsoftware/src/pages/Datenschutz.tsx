@@ -6,17 +6,10 @@ const Datenschutz: React.FC = () => {
   return (
     <div>
       <Header />
-      <div className="overlay"></div>
-      <div className="shadow-overlay"></div>
-      <section
-        id="home"
-        className="s-home page-hero target-section"
-        data-parallax="scroll"
-        data-image-src="images/matech3D.jpg"
-        data-natural-width="3000"
-        data-natural-height="2000"
-        data-position-y="center"
-      >
+
+      <section id="home" className="s-home page-hero target-section">
+        <div className="overlay"></div>
+        <div className="shadow-overlay"></div>
         <div className="home-content">
           <div className="row home-content__main">
             <a href="#datenschutz" className="scroll-link smoothscroll">

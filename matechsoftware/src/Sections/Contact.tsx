@@ -9,11 +9,14 @@ const Contact: React.FC = () => {
         <div className="row narrow section-intro">
           <div className="col-full">
             <h3>Kontakt</h3>
-            <h1>Melden Sie sich bei uns.</h1>
+            <h1>Wir sind für Sie da!</h1>
 
             <p className="lead">
-              Ob für eine kurze Beratung oder einen aufwendigen Projektauftrag,
-              kontaktieren Sie uns gerne.
+              Ob Sie eine kurze Beratung oder einen aufwendigen Projektauftrag
+              benötigen, zögern Sie nicht uns zu kontaktieren. Wir stehen Ihnen
+              mit unserem Fachwissen und unserer Expertise zur Verfügung. Melden
+              Sie sich bei uns und lassen Sie uns gemeinsam Ihre Ziele
+              erreichen.
             </p>
           </div>
         </div>

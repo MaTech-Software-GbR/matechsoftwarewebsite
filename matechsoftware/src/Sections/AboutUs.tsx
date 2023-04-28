@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useRef } from 'react';
 
 const AboutUs: React.FC = () => {
+  const lineRef = useRef(null);
   return (
     <div>
       <section id="blog" className="s-blog target-section">
@@ -29,26 +30,17 @@ const AboutUs: React.FC = () => {
                 </div>
                 <div className="timeline__desc">
                   <p>
-                    Durch meine Ausbildung zum Fachinformatiker für
-                    Systemintegration konnte ich bereits praktische Erfahrung in
-                    den Bereichen Datenbanken, Programmieren, Kundensupport und
-                    Netzwerktechnik sammeln. Anschließend begann ich ein duales
-                    Informatik Studium, das ich mit dem Bachelor of Science
-                    abschließen konnte. Die Bachelorarbeit umfasste das
-                    Themengebiet Interprozesskommunikation mit der Technologie
-                    gRPC. Vor, während und nach dem Studium konnte ich bereits
-                    mehr als drei Jahre Berufserfahrung sammeln.
-                    <br />
-                    <br />
-                    Seitdem bin ich hauptberuflich als Softwareentwickler im
-                    Backendbereich in München tätig.
-                    <br />
-                    <br />
-                    Ich brenne dafür, Probleme zu lösen, egal welcher Art. Mein
-                    Fokus liegt darauf, stets aktuelle Technologien und Konzepte
-                    zu verwenden, um "State of the Art" zu bleiben. Für mehr
-                    Informationen über mich können Sie gerne mein
-                    LinkedIn-Profil besuchen und sich mit mir vernetzen.
+                    Ich bin ein ausgebildeter Fachinformatiker mit Erfahrung in
+                    Datenbanken, Programmierung, Kundensupport und
+                    Netzwerktechnik. Ich habe auch ein duales Informatik-Studium
+                    abgeschlossen und meinen Bachelor of Science erworben. Mit
+                    mehr als drei Jahren Berufserfahrung als Softwareentwickler
+                    verfüge ich über die Fähigkeit, komplexe Probleme zu lösen.
+                    Ich strebe danach, auf dem neuesten Stand der Technik und
+                    aktueller Konzepte zu bleiben, um meine Arbeit auf höchstem
+                    Niveau auszuführen. Besuchen Sie gerne mein LinkedIn-Profil,
+                    um mehr über meine Fähigkeiten und Erfahrungen zu erfahren
+                    und sich zu vernetzen.
                   </p>
                 </div>
 
@@ -62,12 +54,16 @@ const AboutUs: React.FC = () => {
                   <li>
                     <a href="mailto:kontakt@matech-software.de">
                       <i className="im im-mail" aria-hidden="true"></i>
-                      <span>E-Mail</span>
+                      <span>Email</span>
                     </a>
                   </li>
                 </ul>
               </div>
             </div>
+          </div>
+          <div className="timeline__desc">
+            <p>...</p>
+            <div className="timeline__line" ref={lineRef}></div>
           </div>
           <div className="col-six tab-full right illustration">
             <img
@@ -76,7 +72,7 @@ const AboutUs: React.FC = () => {
             />
           </div>
         </div>
-        <div className="row">
+        <div className="row about-content about-content--timeline">
           <div className="col-six tab-full left illustration">
             <img
               alt="developericon2"

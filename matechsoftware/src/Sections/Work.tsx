@@ -10,8 +10,11 @@ const Work: React.FC = () => {
             <h1>Unsere Projekte.</h1>
 
             <p className="lead">
-              Sehen Sie sich einige unserer abgeschlossenen Projekte an und
-              machen Sie sich ein Bild von unserer Arbeit.
+              Lassen Sie uns gemeinsam Ihre Vision verwirklichen. Gewinnen Sie
+              Einblicke in unsere erfolgreichen Projekte und überzeugen Sie sich
+              selbst von unserer Arbeit. Wir setzen Ihre Ideen um und begleiten
+              Sie von der Planung bis zur Umsetzung, um Ihre Vision zu
+              verwirklichen.
             </p>
           </div>
         </div>
