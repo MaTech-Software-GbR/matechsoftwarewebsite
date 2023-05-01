@@ -1,4 +1,3 @@
-import React, { useEffect, useState } from 'react';
 import Footer from '../Sections/Footer';
 import Header from '../Sections/Header';
 
@@ -23,13 +22,14 @@ const Datenschutz: React.FC = () => {
             <a
               href="https://www.linkedin.com/company/matech-software"
               target="_blank"
+              rel="noopener noreferrer"
             >
               <i className="im im-linkedin" aria-hidden="true"></i>
               <span>LinkedIn</span>
             </a>
           </li>
           <li>
-            <a href="#">
+            <a href="mailto:kontact@matech-software.de">
               <i className="im im-mail" aria-hidden="true"></i>
               <span>E-Mail</span>
             </a>

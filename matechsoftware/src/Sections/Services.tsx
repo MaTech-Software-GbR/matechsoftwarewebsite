@@ -9,7 +9,7 @@ const Services: React.FC = () => {
 
   return (
     <div>
-      <section id="about" className="s-about target-section">
+      <section id="services" className="s-about target-section">
         <div className="row narrow section-intro has-bottom-sep">
           <div className="col-full">
             <h3>Leistungen</h3>
@@ -20,14 +20,14 @@ const Services: React.FC = () => {
               Bedürfnisse zugeschnitten ist. Wir verstehen, dass jedes Projekt
               einzigartig ist und wir sind voller Begeisterung, Ihnen zu zeigen,
               wie wir Ihnen helfen können.
-              <br></br>
+              {/* todo          <br></br>
               <br></br>
               Unser Ziel ist es, nicht nur Ihre Erwartungen zu erfüllen, sondern
               sie zu übertreffen. Deshalb bieten wir Ihnen eine unverbindliche
               Erstberatung an, bei der wir uns Zeit nehmen, um Ihre
               Anforderungen genau zu verstehen. Wir sind stolz darauf, uns auf
               unsere Erfahrung, Fachkompetenz und unser Engagement zu verlassen,
-              um die beste Lösung für Sie zu finden.
+              um die beste Lösung für Sie zu finden. */}
             </p>
           </div>
         </div>

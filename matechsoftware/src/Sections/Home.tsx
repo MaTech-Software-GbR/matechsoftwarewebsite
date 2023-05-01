@@ -44,7 +44,7 @@ const Home: React.FC = () => {
             </div>
 
             <div className="home-content__scroll">
-              <a href="#about" className="scroll-link">
+              <a href="#services" className="scroll-link">
                 <span>Unsere Leistungen</span>
               </a>
             </div>

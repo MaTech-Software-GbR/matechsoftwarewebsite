@@ -1,8 +1,10 @@
 import React from 'react';
+import logo from '../images/logo.png';
 import { Link } from 'react-router-dom';
-import Impressum from '../pages/Impressum';
 
 const Footer: React.FC = () => {
+  const isScrolled = window.scrollY > 790;
+
   return (
     <div>
       <footer>
@@ -10,13 +12,17 @@ const Footer: React.FC = () => {
           <div className="col-full">
             <div className="footer-logo">
               <a className="footer-site-logo" href="#0">
-                <img alt="" src={require('../images/logo.png')} />
+                <img alt="" src={logo} />
               </a>
             </div>
 
             <ul className="footer-social">
               <li>
-                <a href="https://www.linkedin.com/company/matech-software">
+                <a
+                  href="https://www.linkedin.com/company/matech-software"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <i className="im im-linkedin" aria-hidden="true"></i>
                   <span>Linkedin</span>
                 </a>
@@ -48,11 +54,10 @@ const Footer: React.FC = () => {
             <div
               className="go-top"
               style={{
-                display: window.scrollY > 790 ? 'block' : 'none',
-                animation:
-                  window.scrollY > 790
-                    ? 'fadeIn 800ms linear'
-                    : 'fadeOut 800ms linear',
+                display: isScrolled ? 'block' : 'none',
+                animation: isScrolled
+                  ? 'fadeIn 800ms linear'
+                  : 'fadeOut 800ms linear',
               }}
             >
               <a title="Back to Top" href="#top">

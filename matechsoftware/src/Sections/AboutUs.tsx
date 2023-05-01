@@ -3,17 +3,17 @@ import React from 'react';
 const AboutUs: React.FC = () => {
   return (
     <div>
-      <section id="blog" className="s-blog target-section">
+      <section id="about" className="s-blog target-section">
         <div className="row narrow section-intro has-bottom-sep">
           <div className="col-full">
             <h3>Über uns</h3>
             <h1>Das macht uns aus.</h1>
             <p className="lead">
-              Unsere GbR wurde anfänglich gegründet, um einem Unternehmen
-              während der Corona-Pandemie dabei zu helfen, online aktuelle
-              Informationen zu teilen. Seitdem haben wir uns darauf fokussiert,
-              unsere im Studium erlernten Fähigkeiten in der Praxis anzuwenden,
-              um passgenaue Lösungen für unsere Kunden zu entwickeln.
+              Unsere GbR wurde anfänglich gegründet, um Unternehmen während der
+              Corona-Pandemie dabei zu helfen, online aktuelle Informationen zu
+              teilen. Seitdem haben wir uns darauf fokussiert auch weiterhin
+              passgenaue Lösungen für unsere Kunden zu entwickeln. Dabei streben
+              wir stets höchste Passgenauigkeit und Qualität an.
             </p>
           </div>
         </div>
@@ -60,7 +60,6 @@ const AboutUs: React.FC = () => {
               </div>
             </div>
           </div>
-
           <div className="col-six tab-full right illustration">
             <img
               alt="developericon1"

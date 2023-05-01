@@ -1,6 +1,17 @@
 import React from 'react';
+import { useForm } from 'react-hook-form';
 
 const Contact: React.FC = () => {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+
+  const onSubmit = (data: any) => {
+    console.log(data);
+  };
+
   return (
     <div>
       <section id="contact" className="s-contact target-section">
@@ -23,15 +34,24 @@ const Contact: React.FC = () => {
 
         <div className="row contact__main">
           <div className="col-eight tab-full contact__form">
-            <form name="contactForm" id="contactForm" method="post" action="">
+            <form
+              onSubmit={handleSubmit(onSubmit)}
+              name="contactForm"
+              id="contactForm"
+              method="post"
+              action=""
+            >
               <fieldset>
                 <div className="form-field">
                   <input
+                    {...register('contactName', {
+                      required: true,
+                      minLength: 2,
+                    })}
                     name="contactName"
                     type="text"
                     id="contactName"
                     placeholder="Name"
-                    value=""
                     minLength={2}
                     required={true}
                     aria-required="true"
@@ -40,37 +60,36 @@ const Contact: React.FC = () => {
                 </div>
                 <div className="form-field">
                   <input
+                    {...register('contactEmail', { required: true })}
                     name="contactEmail"
                     type="email"
                     id="contactEmail"
                     placeholder="Email"
-                    value=""
                     required={true}
                     aria-required="true"
                     className="full-width"
                   />
+                  {errors.contactEmail && <span>This field is required</span>}
                 </div>
                 <div className="form-field">
                   <input
-                    name="contactSubject"
+                    {...register('contactSubject')}
                     type="text"
                     id="contactSubject"
                     placeholder="Betreff"
-                    value=""
                     className="full-width"
                   />
                 </div>
                 <div className="form-field">
                   <textarea
-                    name="contactMessage"
+                    {...register('contactMessage', { required: true })}
                     id="contactMessage"
                     placeholder="Nachricht"
                     rows={10}
                     cols={50}
-                    required={true}
-                    aria-required="true"
                     className="full-width"
                   ></textarea>
+                  {errors.contactMessage && <span>This field is required</span>}
                 </div>
                 <div className="form-field">
                   <button className="full-width btn--primary">Absenden</button>

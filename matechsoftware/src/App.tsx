@@ -1,18 +1,21 @@
-import React, { createRef, useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 import Homepage from './pages/Homepage';
 
-const App: React.FC = () => {
+interface AppProps {}
+
+const App: React.FC<AppProps> = () => {
   const [, setOffset] = useState(0);
+  const onScroll = useCallback(() => setOffset(window.scrollY), []);
+
+  const scrollRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const onScroll = () => setOffset(window.scrollY);
-    window.removeEventListener('scroll', onScroll);
     window.addEventListener('scroll', onScroll, { passive: true });
     return () => window.removeEventListener('scroll', onScroll);
-  }, []);
+  }, [onScroll]);
 
   return (
-    <div className="App">
+    <div className="App" ref={scrollRef}>
       <Homepage />
     </div>
   );
