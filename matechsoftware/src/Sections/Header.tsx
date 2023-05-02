@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import logo from '../images/logo.png';
-import $ from 'jquery';
 
 const Header: React.FC = () => {
   const yStickyValue = 790;

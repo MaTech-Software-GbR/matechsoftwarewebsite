@@ -1,14 +1,21 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 
+interface ContactFormData {
+  contactName: string;
+  contactEmail: string;
+  contactSubject?: string;
+  contactMessage: string;
+}
+
 const Contact: React.FC = () => {
   const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm();
+  } = useForm<ContactFormData>();
 
-  const onSubmit = (data: any) => {
+  const onSubmit = (data: ContactFormData) => {
     const message = {
       message: `sender: ${data.contactEmail} message: ${data.contactMessage}`,
     };

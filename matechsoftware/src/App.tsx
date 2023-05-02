@@ -1,9 +1,7 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import Homepage from './pages/Homepage';
 
-interface AppProps {}
-
-const App: React.FC<AppProps> = () => {
+const App: React.FC = () => {
   const [, setOffset] = useState(0);
   const onScroll = useCallback(() => setOffset(window.scrollY), []);
 
