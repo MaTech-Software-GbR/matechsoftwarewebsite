@@ -1,10 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import logo from '../images/logo.png';
 
 const Header: React.FC = () => {
   const yStickyValue = 790;
   const [activeSection, setActiveSection] = useState<string>('home');
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false);
+  const navRef = useRef<HTMLDivElement>(null);
+  const windowRef = useRef<Window>(window);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -13,29 +15,33 @@ const Header: React.FC = () => {
         const sectionTop = section.offsetTop - 50;
         const sectionHeight = section.offsetHeight;
         const sectionBottom = sectionTop + sectionHeight;
-        const scrollPosition = window.scrollY;
+        const scrollPosition = windowRef.current.scrollY;
         if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
           setActiveSection(section.id);
         }
       });
     };
 
-    window.addEventListener('scroll', handleScroll);
+    windowRef.current.addEventListener('scroll', handleScroll);
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      windowRef.current.removeEventListener('scroll', handleScroll);
     };
   }, []);
 
   const toggleMobileMenu = (event: React.MouseEvent<HTMLAnchorElement>) => {
     event.preventDefault();
     setIsMobileMenuOpen(!isMobileMenuOpen);
-    const nav = document.querySelector('.header-nav-wrap') as HTMLElement;
-    nav.style.display = nav.style.display === 'block' ? 'none' : 'block';
+    if (navRef.current) {
+      navRef.current.style.display =
+        navRef.current.style.display === 'block' ? 'none' : 'block';
+    }
   };
 
   const handleNavClick = () => {
-    const nav = document.querySelector('.header-nav-wrap') as HTMLElement;
-    nav.style.display = nav.style.display === 'block' ? 'none' : 'block';
+    if (navRef.current) {
+      navRef.current.style.display =
+        navRef.current.style.display === 'block' ? 'none' : 'block';
+    }
     if (isMobileMenuOpen) {
       setIsMobileMenuOpen(false);
     }
@@ -45,7 +51,9 @@ const Header: React.FC = () => {
     <div>
       <header
         className={
-          window.scrollY > yStickyValue ? 's-header sticky-navbar' : 's-header'
+          windowRef.current.scrollY > yStickyValue
+            ? 's-header sticky-navbar'
+            : 's-header'
         }
       >
         <div className="header-logo">
@@ -53,7 +61,7 @@ const Header: React.FC = () => {
             <img src={logo} alt="Homepage" />
           </a>
         </div>
-        <nav className="header-nav-wrap">
+        <nav className="header-nav-wrap" ref={navRef}>
           <ul className="header-nav">
             <li className={activeSection === 'home' ? 'current' : ''}>
               <a href="#home" title="home" onClick={handleNavClick}>
