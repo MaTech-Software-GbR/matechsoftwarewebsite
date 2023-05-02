@@ -1,5 +1,6 @@
 import Footer from '../Sections/Footer';
 import Header from '../Sections/Header';
+import React from 'react';
 
 const Datenschutz: React.FC = () => {
   return (
@@ -29,7 +30,11 @@ const Datenschutz: React.FC = () => {
             </a>
           </li>
           <li>
-            <a href="mailto:kontact@matech-software.de">
+            <a
+              href="mailto:kontact@matech-software.de"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <i className="im im-mail" aria-hidden="true"></i>
               <span>E-Mail</span>
             </a>

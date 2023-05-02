@@ -45,13 +45,21 @@ const AboutUs: React.FC = () => {
 
                 <ul className="footer-social ueber-uns">
                   <li>
-                    <a href="https://www.linkedin.com/in/maximilian-gobbel/">
+                    <a
+                      href="https://www.linkedin.com/in/maximilian-gobbel/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
                       <i className="im im-linkedin" aria-hidden="true"></i>
                       <span>Linkedin</span>
                     </a>
                   </li>
                   <li>
-                    <a href="mailto:kontakt@matech-software.de">
+                    <a
+                      href="mailto:kontakt@matech-software.de"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
                       <i className="im im-mail" aria-hidden="true"></i>
                       <span>Email</span>
                     </a>
@@ -102,13 +110,21 @@ const AboutUs: React.FC = () => {
 
                 <ul className="footer-social ueber-uns">
                   <li>
-                    <a href="https://www.linkedin.com/in/m-kuehnle/">
+                    <a
+                      href="https://www.linkedin.com/in/m-kuehnle/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
                       <i className="im im-linkedin" aria-hidden="true"></i>
                       <span>Linkedin</span>
                     </a>
                   </li>
                   <li>
-                    <a href="mailto:kontakt@matech-software.de">
+                    <a
+                      href="mailto:kontakt@matech-software.de"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
                       <i className="im im-mail" aria-hidden="true"></i>
                       <span>Email</span>
                     </a>

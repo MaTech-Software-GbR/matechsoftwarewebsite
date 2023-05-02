@@ -1,9 +1,25 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import logo from '../images/logo.png';
 import { Link } from 'react-router-dom';
 
 const Footer: React.FC = () => {
-  const isScrolled = window.scrollY > 790;
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 790) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   return (
     <div>
@@ -28,7 +44,11 @@ const Footer: React.FC = () => {
                 </a>
               </li>
               <li>
-                <a href="mailto:kontakt@matech-software.de">
+                <a
+                  href="mailto:kontakt@matech-software.de"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <i className="im im-mail" aria-hidden="true"></i>
                   <span>Email</span>
                 </a>

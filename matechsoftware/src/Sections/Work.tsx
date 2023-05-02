@@ -28,6 +28,8 @@ const Work: React.FC = () => {
                     href="https://www.rehazentrum-riedbichl.de"
                     title="Reha-Zentrum Riedbichl"
                     data-size="1050x700"
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
                     <img
                       alt="rehazentrumriedbichllogo"
@@ -53,6 +55,8 @@ const Work: React.FC = () => {
                     href="https://www.thai-haus-feldkirchen.de"
                     title="Thai Haus Restaurant"
                     data-size="1050x700"
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
                     <img
                       alt="thaihausrestaurantlogo"
@@ -78,6 +82,8 @@ const Work: React.FC = () => {
                     href="https://www.gasthaus-schmid.de"
                     title="Gut Riedbichl"
                     data-size="1050x700"
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
                     <img
                       alt="gasthausschmidwebsite"
@@ -103,6 +109,8 @@ const Work: React.FC = () => {
                     href="https://www.matech-software.de"
                     title="MaTech Website"
                     data-size="1050x700"
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
                     <img
                       alt="matechlaptoplogo"

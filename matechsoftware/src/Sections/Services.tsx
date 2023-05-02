@@ -1,6 +1,18 @@
 import React, { useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import htmlicon from '../images/technologies/html-icon.png';
+import bootstrapicon from '../images/technologies/bootstrap-4-icon.png';
+import csharpicon from '../images/technologies/c-sharp-programming-language-icon.png';
+import cssicon from '../images/technologies/css-icon.png';
+import javaicon from '../images/technologies/java-programming-language-icon.png';
+import javascripticon from '../images/technologies/javascript-programming-language-icon.png';
+import dotneticon from '../images/technologies/microsoft-dot-net-icon.png';
+import pythonicon from '../images/technologies/python-programming-language-icon.png';
+import sqlservericon from '../images/technologies/sql-server-icon.png';
+import typescripticon from '../images/technologies/typescript-programming-language-icon.png';
+import mysqlicon from '../images/technologies/mysql-icon.png';
+import wordpressicon from '../images/technologies/wordpress-icon.png';
 
 const Services: React.FC = () => {
   useEffect(() => {
@@ -20,14 +32,6 @@ const Services: React.FC = () => {
               Bedürfnisse zugeschnitten ist. Wir verstehen, dass jedes Projekt
               einzigartig ist und wir sind voller Begeisterung, Ihnen zu zeigen,
               wie wir Ihnen helfen können.
-              {/* todo          <br></br>
-              <br></br>
-              Unser Ziel ist es, nicht nur Ihre Erwartungen zu erfüllen, sondern
-              sie zu übertreffen. Deshalb bieten wir Ihnen eine unverbindliche
-              Erstberatung an, bei der wir uns Zeit nehmen, um Ihre
-              Anforderungen genau zu verstehen. Wir sind stolz darauf, uns auf
-              unsere Erfahrung, Fachkompetenz und unser Engagement zu verlassen,
-              um die beste Lösung für Sie zu finden. */}
             </p>
           </div>
         </div>
@@ -80,7 +84,7 @@ const Services: React.FC = () => {
                   data-aos="fade-up"
                   data-aos-delay="100"
                   alt="html5logo"
-                  src={require('../images/technologies/html-icon.png')}
+                  src={htmlicon}
                 />
               </div>
               <div className="leistungen">
@@ -88,7 +92,7 @@ const Services: React.FC = () => {
                   data-aos="fade-up"
                   data-aos-delay="100"
                   alt="bootstrap4Logo"
-                  src={require('../images/technologies/bootstrap-4-icon.png')}
+                  src={bootstrapicon}
                 />
               </div>
               <div className="leistungen">
@@ -96,7 +100,7 @@ const Services: React.FC = () => {
                   data-aos="fade-up"
                   data-aos-delay="200"
                   alt="csharpLogo"
-                  src={require('../images/technologies/c-sharp-programming-language-icon.png')}
+                  src={csharpicon}
                 />
               </div>
               <div className="leistungen">
@@ -104,7 +108,7 @@ const Services: React.FC = () => {
                   data-aos="fade-up"
                   data-aos-delay="300"
                   alt="typescriptlogo"
-                  src={require('../images/technologies/typescript-programming-language-icon.png')}
+                  src={typescripticon}
                 />
               </div>
               <div className="leistungen">
@@ -112,7 +116,7 @@ const Services: React.FC = () => {
                   data-aos="fade-up"
                   data-aos-delay="400"
                   alt="dotnetlogo"
-                  src={require('../images/technologies/microsoft-dot-net-icon.png')}
+                  src={dotneticon}
                 />
               </div>
               <div className="leistungen">
@@ -120,7 +124,7 @@ const Services: React.FC = () => {
                   data-aos="fade-up"
                   data-aos-delay="500"
                   alt="pythonlogo"
-                  src={require('../images/technologies/python-programming-language-icon.png')}
+                  src={pythonicon}
                 />
               </div>
               <div className="leistungen">
@@ -128,7 +132,7 @@ const Services: React.FC = () => {
                   data-aos="fade-up"
                   data-aos-delay="600"
                   alt="javalogo"
-                  src={require('../images/technologies/java-programming-language-icon.png')}
+                  src={javaicon}
                 />
               </div>
               <div className="leistungen">
@@ -136,7 +140,7 @@ const Services: React.FC = () => {
                   data-aos="fade-up"
                   data-aos-delay="700"
                   alt="javascriptlogo"
-                  src={require('../images/technologies/javascript-programming-language-icon.png')}
+                  src={javascripticon}
                 />
               </div>
               <div className="leistungen">
@@ -144,7 +148,7 @@ const Services: React.FC = () => {
                   data-aos="fade-up"
                   data-aos-delay="800"
                   alt="csslogo"
-                  src={require('../images/technologies/css-icon.png')}
+                  src={cssicon}
                 />
               </div>
               <div className="leistungen">
@@ -152,7 +156,7 @@ const Services: React.FC = () => {
                   data-aos="fade-up"
                   data-aos-delay="900"
                   alt="wordpresslogo"
-                  src={require('../images/technologies/wordpress-icon.png')}
+                  src={wordpressicon}
                 />
               </div>
               <div className="leistungen">
@@ -160,7 +164,7 @@ const Services: React.FC = () => {
                   data-aos="fade-up"
                   data-aos-delay="1000"
                   alt="mysqllogo"
-                  src={require('../images/technologies/mysql-icon.png')}
+                  src={mysqlicon}
                 />
               </div>
               <div className="leistungen">
@@ -168,33 +172,12 @@ const Services: React.FC = () => {
                   data-aos="fade-up"
                   data-aos-delay="1100"
                   alt="sqlserverlogo"
-                  src={require('../images/technologies/sql-server-icon.png')}
+                  src={sqlservericon}
                 />
               </div>
             </div>
           </div>
         </div>
-        {/*  <div
-          className="row "
-          style={{ display: 'flex', justifyContent: 'center' }}
-        >
-          <div className="col-seven ">
-            <p>
-              Und falls Ihr Anliegen hier noch nicht aufgeführt ist,
-              kontaktieren Sie uns trotzdem gerne für eine unverbindliche
-              Erstberatung. Wir finden garantiert eine Lösung, die perfekt zu
-              Ihren Anforderungen passt.
-            </p>
-
-            <a
-              href="#contact"
-              className="btn "
-              style={{ display: 'flex', justifyContent: 'center' }}
-            >
-              Jetzt Kontakt aufnehmen
-            </a>
-          </div>
-        </div> */}
       </section>
     </div>
   );

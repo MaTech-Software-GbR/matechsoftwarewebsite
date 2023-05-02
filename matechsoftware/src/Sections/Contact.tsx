@@ -1,12 +1,6 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
-
-interface ContactFormData {
-  contactName: string;
-  contactEmail: string;
-  contactSubject?: string;
-  contactMessage: string;
-}
+import { ContactFormData } from '../models/contactform.interface';
 
 const Contact: React.FC = () => {
   const {

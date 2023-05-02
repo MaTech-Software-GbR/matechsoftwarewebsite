@@ -64,27 +64,27 @@ const Header: React.FC = () => {
         <nav className="header-nav-wrap" ref={navRef}>
           <ul className="header-nav">
             <li className={activeSection === 'home' ? 'current' : ''}>
-              <a href="#home" title="home" onClick={handleNavClick}>
+              <a href="/#home" title="home" onClick={handleNavClick}>
                 Start
               </a>
             </li>
             <li className={activeSection === 'services' ? 'current' : ''}>
-              <a href="#services" title="services" onClick={handleNavClick}>
+              <a href="/#services" title="services" onClick={handleNavClick}>
                 Leistungen
               </a>
             </li>
             <li className={activeSection === 'works' ? 'current' : ''}>
-              <a href="#works" title="works" onClick={handleNavClick}>
+              <a href="/#works" title="works" onClick={handleNavClick}>
                 Referenzen
               </a>
             </li>
             <li className={activeSection === 'about' ? 'current' : ''}>
-              <a href="#about" title="about" onClick={handleNavClick}>
+              <a href="/#about" title="about" onClick={handleNavClick}>
                 Über uns
               </a>
             </li>
             <li className={activeSection === 'contact' ? 'current' : ''}>
-              <a href="#contact" title="contact" onClick={handleNavClick}>
+              <a href="/#contact" title="contact" onClick={handleNavClick}>
                 Kontakt
               </a>
             </li>

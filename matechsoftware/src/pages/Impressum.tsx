@@ -30,7 +30,11 @@ const Impressum: React.FC = () => {
             </a>
           </li>
           <li>
-            <a href="mailto:kontakt@matech-software.de">
+            <a
+              href="mailto:kontakt@matech-software.de"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <i className="im im-mail" aria-hidden="true"></i>
               <span>E-Mail</span>
             </a>
