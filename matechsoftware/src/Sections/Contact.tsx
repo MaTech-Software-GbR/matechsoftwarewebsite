@@ -9,7 +9,23 @@ const Contact: React.FC = () => {
   } = useForm();
 
   const onSubmit = (data: any) => {
-    console.log(data);
+    const message = {
+      message: `sender: ${data.contactEmail} message: ${data.contactMessage}`,
+    };
+    console.log(JSON.stringify(message));
+    fetch('http://127.0.0.1:5000/api/send-email', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(message),
+    })
+      .then((response) => {
+        console.log(response);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
   };
 
   return (
