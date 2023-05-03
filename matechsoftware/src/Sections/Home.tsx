@@ -37,16 +37,16 @@ const Home: React.FC = () => {
             </h1>
 
             <div className="home-content__buttons">
-              <a href="#works" className="btn btn--stroke">
+              <a href="/#works" className="btn btn--stroke">
                 Letztes Projekt
               </a>
-              <a href="#about" className="btn btn--stroke">
+              <a href="/#about" className="btn btn--stroke">
                 Mehr über uns
               </a>
             </div>
 
             <div className="home-content__scroll">
-              <a href="#services" className="scroll-link">
+              <a href="/#services" className="scroll-link">
                 <span>Unsere Leistungen</span>
               </a>
             </div>

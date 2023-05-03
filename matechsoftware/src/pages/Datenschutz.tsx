@@ -5,7 +5,7 @@ import React from 'react';
 const Datenschutz: React.FC = () => {
   return (
     <div>
-      <Header />
+      <Header shouldBeSticky={false} />
 
       <section id="home" className="s-home page-hero target-section">
         <div className="overlay"></div>
@@ -514,7 +514,7 @@ const Datenschutz: React.FC = () => {
           </p>
         </div>
       </section>
-      <Footer />
+      <Footer shouldBeSticky={false} />
     </div>
   );
 };

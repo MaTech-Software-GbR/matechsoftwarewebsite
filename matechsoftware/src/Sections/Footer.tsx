@@ -1,34 +1,22 @@
 import React, { useEffect, useState } from 'react';
 import logo from '../images/logo.png';
 import { Link } from 'react-router-dom';
+import { StickyProps } from '../models/sticky.interface';
 
-const Footer: React.FC = () => {
-  const [isScrolled, setIsScrolled] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 790) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
-
+const Footer: React.FC<StickyProps> = ({ shouldBeSticky }) => {
   return (
     <div>
       <footer>
         <div className="row">
           <div className="col-full">
             <div className="footer-logo">
-              <a className="footer-site-logo" href="#0">
-                <img alt="" src={logo} />
+              <a
+                className="footer-site-logo"
+                href="#0"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img alt="MaTech Software Logo" src={logo} />
               </a>
             </div>
 
@@ -61,8 +49,7 @@ const Footer: React.FC = () => {
           <div className="col-twelve">
             <div className="copyright">
               <span>© Copyright MaTech Software GbR 2023</span>
-            </div>
-            <div className="copyright">
+
               <span>
                 <Link to="/impressum">Impressum</Link>
               </span>
@@ -74,13 +61,13 @@ const Footer: React.FC = () => {
             <div
               className="go-top"
               style={{
-                display: isScrolled ? 'block' : 'none',
-                animation: isScrolled
+                display: shouldBeSticky ? 'block' : 'none',
+                animation: shouldBeSticky
                   ? 'fadeIn 800ms linear'
                   : 'fadeOut 800ms linear',
               }}
             >
-              <a title="Back to Top" href="#top">
+              <a title="Back to Top" href="/#top">
                 <i className="im im-arrow-up" aria-hidden="true"></i>
               </a>
             </div>

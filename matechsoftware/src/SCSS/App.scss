@@ -1836,7 +1836,6 @@ footer a:focus {
 }
 
 .footer-bottom {
-    margin-top: 7.2rem;
     text-align: center;
 }
 
@@ -1844,6 +1843,13 @@ footer a:focus {
     display: inline-block;
 }
 
+.footer-bottom .copyright a {
+    color: rgba(255, 255, 255, 0.2);
+}
+
+.footer-bottom .copyright a:hover {
+    color: #4da8da;
+}
 .footer-bottom .copyright span::after {
     content: "|";
     display: inline-block;

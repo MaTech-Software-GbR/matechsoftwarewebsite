@@ -1,8 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react';
 import logo from '../images/logo.png';
+import { StickyProps } from '../models/sticky.interface';
 
-const Header: React.FC = () => {
-  const yStickyValue = 790;
+const Header: React.FC<StickyProps> = ({ shouldBeSticky }) => {
   const [activeSection, setActiveSection] = useState<string>('home');
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false);
   const navRef = useRef<HTMLDivElement>(null);
@@ -49,13 +49,7 @@ const Header: React.FC = () => {
 
   return (
     <div>
-      <header
-        className={
-          windowRef.current.scrollY > yStickyValue
-            ? 's-header sticky-navbar'
-            : 's-header'
-        }
-      >
+      <header className={`s-header ${shouldBeSticky ? 'sticky-navbar' : ''}`}>
         <div className="header-logo">
           <a className="site-logo" href="/" onClick={handleNavClick}>
             <img src={logo} alt="Homepage" />

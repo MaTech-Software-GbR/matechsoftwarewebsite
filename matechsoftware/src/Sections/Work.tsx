@@ -130,7 +130,7 @@ const Work: React.FC = () => {
             <div className="masonry__brick">
               <div className="item-folio">
                 <div className="item-folio__thumb">
-                  <a href="#contact" title="Ihr Projekt" data-size="1050x700">
+                  <a href="/#contact" title="Ihr Projekt" data-size="1050x700">
                     <img
                       alt="matechlaptoplogo"
                       src={require('../images/references/matechlaptop.jpg')}

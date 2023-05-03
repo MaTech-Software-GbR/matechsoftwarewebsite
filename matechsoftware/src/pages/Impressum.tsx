@@ -5,14 +5,14 @@ import Footer from '../Sections/Footer';
 const Impressum: React.FC = () => {
   return (
     <div>
-      <Header />
+      <Header shouldBeSticky={false} />
       <section id="home" className="s-home page-hero target-section">
         <div className="overlay"></div>
         <div className="shadow-overlay"></div>
 
         <div className="home-content">
           <div className="row home-content__main">
-            <a href="#impressum" className="scroll-link smoothscroll">
+            <a href="/#impressum" className="scroll-link smoothscroll">
               <h1>Impressum</h1>
             </a>
           </div>
@@ -159,7 +159,7 @@ const Impressum: React.FC = () => {
           </span>
         </div>
       </section>
-      <Footer />
+      <Footer shouldBeSticky={false} />
     </div>
   );
 };
