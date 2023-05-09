@@ -1629,9 +1629,15 @@ html.no-csstransitions .home-content__main {
     color: white;
 }
 
-.message-warning,
+.message-warning {
+    background: #0d0a0b;
+    font-size: 1.5rem;
+    line-height: 2;
+    padding: 3rem;
+    margin-bottom: 3.6rem;
+    width: 100%;
+}
 .message-success {
-    display: none;
     background: #0d0a0b;
     font-size: 1.5rem;
     line-height: 2;

@@ -1,32 +1,66 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { ContactFormData } from '../models/contactform.interface';
 
 const Contact: React.FC = () => {
+  const [backendIsAvailable, setBackendIsAvailable] = useState<boolean>(false);
+  const [showSuccessfulSent, setshowSuccessfulSent] = useState<boolean>(false);
+  const [showNotSuccessfulSent, setshowNotSuccessfulSent] =
+    useState<boolean>(false);
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm<ContactFormData>();
 
+  const checkBackendAvailability = async () => {
+    try {
+      const response = await fetch('http://127.0.0.1:5000/healthcheck', {
+        method: 'GET',
+      });
+      if (response.ok) {
+        setBackendIsAvailable(true);
+      } else {
+        setBackendIsAvailable(false);
+      }
+    } catch (error) {
+      setBackendIsAvailable(false);
+    }
+  };
+
+  const sendMail = async (apiKey: string, message: { message: string }) => {
+    try {
+      const response = await fetch('http://127.0.0.1:5000/api/send-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'x-api-key': apiKey,
+        },
+        body: JSON.stringify(message),
+      });
+
+      if (response.ok) {
+        setshowSuccessfulSent(true);
+      } else {
+        setshowNotSuccessfulSent(false);
+      }
+    } catch (error) {
+      setshowNotSuccessfulSent(false);
+    }
+  };
+
   const onSubmit = (data: ContactFormData) => {
+    checkBackendAvailability();
+    const apiKey = process.env.REACT_APP_API_KEY;
+    if (!backendIsAvailable || apiKey === undefined) {
+      setshowNotSuccessfulSent(true);
+      return;
+    }
     const message = {
       message: `sender: ${data.contactEmail} message: ${data.contactMessage}`,
     };
-    console.log(JSON.stringify(message));
-    fetch('http://127.0.0.1:5000/api/send-email', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(message),
-    })
-      .then((response) => {
-        console.log(response);
-      })
-      .catch((error) => {
-        console.error(error);
-      });
+
+    sendMail(apiKey, message);
   };
 
   return (
@@ -81,7 +115,7 @@ const Contact: React.FC = () => {
                     name="contactEmail"
                     type="email"
                     id="contactEmail"
-                    placeholder="Email"
+                    placeholder="Ihre Email"
                     required={true}
                     aria-required="true"
                     className="full-width"
@@ -104,6 +138,7 @@ const Contact: React.FC = () => {
                     placeholder="Nachricht"
                     rows={10}
                     cols={50}
+                    maxLength={500}
                     className="full-width"
                   ></textarea>
                   {errors.contactMessage && <span>This field is required</span>}
@@ -121,15 +156,21 @@ const Contact: React.FC = () => {
                 </div>
               </fieldset>
             </form>
-
-            <div className="message-warning">
-              Something went wrong. Please try again.
-            </div>
-
-            <div className="message-success">
-              Your message was sent, thank you!
-              <br />
-            </div>
+            {showSuccessfulSent ? (
+              <div className="message-success">
+                Ihre Nachricht wurde versendet. Vielen Dank!
+              </div>
+            ) : (
+              <div></div>
+            )}
+            {showNotSuccessfulSent ? (
+              <div className="message-warning">
+                Das hat leider nicht funktioniert. Versuchen Sie es noch einmal
+                oder wenden Sie sich telefonisch an uns!
+              </div>
+            ) : (
+              <div></div>
+            )}
           </div>
           <div className="col-four tab-full contact__infos">
             <h4 className="h06">Email</h4>
