@@ -1,6 +1,6 @@
 import React from 'react';
-import Header from '../Sections/Header';
-import Footer from '../Sections/Footer';
+import Header from '../sections/Header';
+import Footer from '../sections/Footer';
 
 const Impressum: React.FC = () => {
   return (

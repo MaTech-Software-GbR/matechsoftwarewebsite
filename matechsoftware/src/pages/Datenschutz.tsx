@@ -1,5 +1,5 @@
-import Footer from '../Sections/Footer';
-import Header from '../Sections/Header';
+import Footer from '../sections/Footer';
+import Header from '../sections/Header';
 import React from 'react';
 
 const Datenschutz: React.FC = () => {

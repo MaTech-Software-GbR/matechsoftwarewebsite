@@ -9,6 +9,7 @@ const Header: React.FC<StickyProps> = ({ shouldBeSticky }) => {
   const windowRef = useRef<Window>(window);
 
   useEffect(() => {
+    const windowVariable = windowRef.current;
     const handleScroll = () => {
       const sections = document.querySelectorAll('section');
       sections.forEach((section) => {
@@ -22,9 +23,9 @@ const Header: React.FC<StickyProps> = ({ shouldBeSticky }) => {
       });
     };
 
-    windowRef.current.addEventListener('scroll', handleScroll);
+    windowVariable.addEventListener('scroll', handleScroll);
     return () => {
-      windowRef.current.removeEventListener('scroll', handleScroll);
+      windowVariable.removeEventListener('scroll', handleScroll);
     };
   }, []);
 

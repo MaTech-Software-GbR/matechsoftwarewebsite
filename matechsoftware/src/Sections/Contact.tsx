@@ -15,9 +15,12 @@ const Contact: React.FC = () => {
 
   const checkBackendAvailability = async () => {
     try {
-      const response = await fetch('http://127.0.0.1:5000/healthcheck', {
-        method: 'GET',
-      });
+      const response = await fetch(
+        `${process.env.REACT_APP_API_URL}/healthcheck`,
+        {
+          method: 'GET',
+        }
+      );
       if (response.ok) {
         setBackendIsAvailable(true);
       } else {
@@ -30,14 +33,17 @@ const Contact: React.FC = () => {
 
   const sendMail = async (apiKey: string, message: { message: string }) => {
     try {
-      const response = await fetch('http://127.0.0.1:5000/api/send-email', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'x-api-key': apiKey,
-        },
-        body: JSON.stringify(message),
-      });
+      const response = await fetch(
+        `${process.env.REACT_APP_API_URL}/api/send-email`,
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'x-api-key': apiKey,
+          },
+          body: JSON.stringify(message),
+        }
+      );
 
       if (response.ok) {
         setshowSuccessfulSent(true);
@@ -156,6 +162,7 @@ const Contact: React.FC = () => {
                 </div>
               </fieldset>
             </form>
+            {/* After submittion, check status, if its successful, print a green sign if not a red. */}
             {showSuccessfulSent ? (
               <div className="message-success">
                 Ihre Nachricht wurde versendet. Vielen Dank!

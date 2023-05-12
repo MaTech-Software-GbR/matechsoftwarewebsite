@@ -1,17 +1,18 @@
 import React, { useEffect, useRef, useState } from 'react';
-import AboutUs from '../Sections/AboutUs';
-import Contact from '../Sections/Contact';
-import Footer from '../Sections/Footer';
-import Header from '../Sections/Header';
-import Home from '../Sections/Home';
-import Services from '../Sections/Services';
-import Work from '../Sections/Work';
+import AboutUs from '../sections/AboutUs';
+import Contact from '../sections/Contact';
+import Footer from '../sections/Footer';
+import Header from '../sections/Header';
+import Home from '../sections/Home';
+import Services from '../sections/Services';
+import Work from '../sections/Work';
 
 const Homepage: React.FC = () => {
   const [shouldBeSticky, setShouldBeSticky] = useState<boolean>(false);
   const windowRef = useRef<Window>(window);
 
   useEffect(() => {
+    const windowVariable = windowRef.current;
     const handleScroll = () => {
       const homeComponent = document.getElementById('services') as HTMLElement;
       const homeComponentTop = homeComponent.getBoundingClientRect().top;
@@ -20,9 +21,9 @@ const Homepage: React.FC = () => {
         : setShouldBeSticky(false);
     };
 
-    windowRef.current.addEventListener('scroll', handleScroll);
+    windowVariable.addEventListener('scroll', handleScroll);
     return () => {
-      windowRef.current.removeEventListener('scroll', handleScroll);
+      windowVariable.removeEventListener('scroll', handleScroll);
     };
   }, []);
 

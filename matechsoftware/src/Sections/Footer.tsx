@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import logo from '../images/logo.png';
 import { Link } from 'react-router-dom';
 import { StickyProps } from '../models/sticky.interface';

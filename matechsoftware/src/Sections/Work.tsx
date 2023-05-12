@@ -106,7 +106,7 @@ const Work: React.FC = () => {
               <div className="item-folio">
                 <div className="item-folio__thumb">
                   <a
-                    href="https://www.matech-software.de"
+                    href="https://github.com/matechsoftware/reactwebsite"
                     title="MaTech Website"
                     data-size="1050x700"
                     target="_blank"

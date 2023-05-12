@@ -6,8 +6,8 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Impressum from './pages/Impressum';
 import Datenschutz from './pages/Datenschutz';
 import ErrorPage from './error-page';
-import './SCSS/Base.scss';
-import './SCSS/App.scss';
+import './styles/Base.scss';
+import './styles/App.scss';
 
 const router = createBrowserRouter([
   {
