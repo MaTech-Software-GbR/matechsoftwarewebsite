@@ -1090,7 +1090,7 @@ html.no-csstransitions .home-content__main {
         min-height: 654px;
     }
     .home-content h3 {
-        font-size: 1.5rem;
+        font-size: 1.2rem;
     }
     .home-content h1 {
         font-size: 3.8rem;
@@ -1107,7 +1107,7 @@ html.no-csstransitions .home-content__main {
         vertical-align: middle;
     }
     .home-content h1 {
-        font-size: 2rem;
+        font-size: 3.5rem;
     }
     .home-content__main {
         width: auto;
@@ -1115,8 +1115,10 @@ html.no-csstransitions .home-content__main {
         margin-right: 25px;
     }
     .home-content__buttons .btn {
-        width: 100%;
+        width: 70%;
+        font-size: 1rem;
     }
+
     .home-social {
         display: none;
     }
@@ -1513,6 +1515,7 @@ html.no-csstransitions .home-content__main {
 .s-contact {
     background-color: #151515;
     background-image: url("../images/office2.jpg");
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: center, center;
     padding-top: 13.2rem;
@@ -1932,7 +1935,7 @@ footer a:focus {
 
 @media only screen and (max-width: 400px) {
     .footer-site-logo {
-        width: 100px;
+        width: 200px;
     }
     .footer-social li {
         margin-right: 1.2rem;
@@ -2038,7 +2041,7 @@ footer a:focus {
 
 @media only screen and (max-width: 400px) {
     .technologies .leistungen {
-        width: 60px;
+        width: 70px;
     }
 }
 

@@ -1,9 +1,8 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { ContactFormData } from '../models/contactform.interface';
 
 const Contact: React.FC = () => {
-  const [backendIsAvailable, setBackendIsAvailable] = useState<boolean>(false);
   const [showSuccessfulSent, setshowSuccessfulSent] = useState<boolean>(false);
   const [showNotSuccessfulSent, setshowNotSuccessfulSent] =
     useState<boolean>(false);
@@ -13,40 +12,36 @@ const Contact: React.FC = () => {
     formState: { errors },
   } = useForm<ContactFormData>();
 
-  const checkBackendAvailability = async () => {
+  const [csrfToken, setCsrfToken] = useState('');
+
+  useEffect(() => {
+    fetchCsrfToken();
+  }, []);
+
+  const fetchCsrfToken = async () => {
     try {
-      const response = await fetch(
-        `${process.env.REACT_APP_API_URL}/healthcheck`,
-        {
-          method: 'GET',
-        }
-      );
-      if (response.ok) {
-        setBackendIsAvailable(true);
-      } else {
-        setBackendIsAvailable(false);
-      }
+      const response = await fetch('/api/getCsrfToken.php');
+      const token = await response.text();
+      setCsrfToken(token);
     } catch (error) {
-      setBackendIsAvailable(false);
+      console.error('Error fetching CSRF token:', error);
     }
   };
 
-  const sendMail = async (apiKey: string, message: { message: string }) => {
+  const sendMail = async (formData: FormData) => {
     try {
-      const response = await fetch(
-        `${process.env.REACT_APP_API_URL}/api/send-email`,
-        {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            'x-api-key': apiKey,
-          },
-          body: JSON.stringify(message),
-        }
-      );
+      const response = await fetch('/api/sendEmail.php', {
+        method: 'POST',
+        body: formData,
+      });
 
       if (response.ok) {
-        setshowSuccessfulSent(true);
+        const data = await response.text();
+        if (data === 'OK') {
+          setshowSuccessfulSent(true);
+        } else {
+          setshowNotSuccessfulSent(false);
+        }
       } else {
         setshowNotSuccessfulSent(false);
       }
@@ -56,17 +51,13 @@ const Contact: React.FC = () => {
   };
 
   const onSubmit = (data: ContactFormData) => {
-    checkBackendAvailability();
-    const apiKey = process.env.REACT_APP_API_KEY;
-    if (!backendIsAvailable || apiKey === undefined) {
-      setshowNotSuccessfulSent(true);
-      return;
-    }
-    const message = {
-      message: `sender: ${data.contactEmail} message: ${data.contactMessage}`,
-    };
-
-    sendMail(apiKey, message);
+    const formData = new FormData();
+    formData.append('contactName', data.contactName);
+    formData.append('contactEmail', data.contactEmail);
+    formData.append('contactSubject', data.contactSubject);
+    formData.append('contactMessage', data.contactMessage);
+    formData.append('csrf_token', csrfToken);
+    sendMail(formData);
   };
 
   return (
@@ -100,6 +91,11 @@ const Contact: React.FC = () => {
             >
               <fieldset>
                 <div className="form-field">
+                  <input
+                    type="hidden"
+                    name="csrf_token"
+                    value={csrfToken}
+                  ></input>
                   <input
                     {...register('contactName', {
                       required: true,

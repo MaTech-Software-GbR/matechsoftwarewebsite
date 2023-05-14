@@ -1,6 +1,7 @@
 export interface ContactFormData {
     contactName: string;
     contactEmail: string;
-    contactSubject?: string;
+    contactSubject: string;
     contactMessage: string;
+    csrfToken: string;
   }
