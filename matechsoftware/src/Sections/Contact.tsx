@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useForm } from 'react-hook-form';
+import { SubmitHandler, useForm } from 'react-hook-form';
 import { ContactFormData } from '../models/contactform.interface';
 
 const Contact: React.FC = () => {
@@ -9,7 +9,7 @@ const Contact: React.FC = () => {
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    formState: { isSubmitting, errors },
   } = useForm<ContactFormData>();
 
   const [csrfToken, setCsrfToken] = useState('');
@@ -40,17 +40,23 @@ const Contact: React.FC = () => {
         if (data === 'OK') {
           setshowSuccessfulSent(true);
         } else {
-          setshowNotSuccessfulSent(false);
+          setshowNotSuccessfulSent(true);
         }
       } else {
-        setshowNotSuccessfulSent(false);
+        setshowNotSuccessfulSent(true);
       }
     } catch (error) {
-      setshowNotSuccessfulSent(false);
+      setshowNotSuccessfulSent(true);
     }
+
+    // Clear the error message after 3 seconds
+    setTimeout(() => {
+      setshowSuccessfulSent(false);
+      setshowNotSuccessfulSent(false);
+    }, 3000);
   };
 
-  const onSubmit = (data: ContactFormData) => {
+  const onSubmit: SubmitHandler<ContactFormData> = (data: ContactFormData) => {
     const formData = new FormData();
     formData.append('contactName', data.contactName);
     formData.append('contactEmail', data.contactEmail);
@@ -92,25 +98,25 @@ const Contact: React.FC = () => {
               <fieldset>
                 <div className="form-field">
                   <input
-                    type="hidden"
-                    name="csrf_token"
-                    value={csrfToken}
-                  ></input>
-                  <input
                     {...register('contactName', {
                       required: true,
                       minLength: 2,
+                      maxLength: 100,
                     })}
                     name="contactName"
                     type="text"
                     id="contactName"
                     placeholder="Name"
-                    minLength={2}
-                    required={true}
                     aria-required="true"
                     className="full-width"
                   />
                 </div>
+                {errors.contactName?.type === 'required' && (
+                  <p role="alert">
+                    Ihr Name ist ein Pflichtfeld und muss mindestens 2 Zeichen
+                    haben.
+                  </p>
+                )}
                 <div className="form-field">
                   <input
                     {...register('contactEmail', { required: true })}
@@ -118,11 +124,15 @@ const Contact: React.FC = () => {
                     type="email"
                     id="contactEmail"
                     placeholder="Ihre Email"
-                    required={true}
                     aria-required="true"
                     className="full-width"
                   />
-                  {errors.contactEmail && <span>This field is required</span>}
+                  {errors.contactEmail?.type === 'required' && (
+                    <p role="alert">
+                      Ihre Email ist ein Pflichtfeld und muss einem E-Mail
+                      Format entsprechen.
+                    </p>
+                  )}
                 </div>
                 <div className="form-field">
                   <input
@@ -135,18 +145,31 @@ const Contact: React.FC = () => {
                 </div>
                 <div className="form-field">
                   <textarea
-                    {...register('contactMessage', { required: true })}
+                    {...register('contactMessage', {
+                      required: true,
+                      maxLength: 500,
+                      minLength: 15,
+                    })}
                     id="contactMessage"
                     placeholder="Nachricht"
                     rows={10}
                     cols={50}
-                    maxLength={500}
                     className="full-width"
                   ></textarea>
-                  {errors.contactMessage && <span>This field is required</span>}
+                  {errors.contactMessage && (
+                    <span>
+                      Ihre Nachricht ist ein Pflichtfeld und muss zwischen 15
+                      und 500 Zeichen haben.
+                    </span>
+                  )}
                 </div>
                 <div className="form-field">
-                  <button className="full-width btn--primary">Absenden</button>
+                  <button
+                    className="full-width btn--primary"
+                    disabled={isSubmitting}
+                  >
+                    Absenden
+                  </button>
                   <div className="submit-loader">
                     <div className="text-loader">Sending...</div>
                     <div className="s-loader">

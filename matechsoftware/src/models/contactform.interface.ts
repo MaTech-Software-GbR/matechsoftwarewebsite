@@ -3,5 +3,4 @@ export interface ContactFormData {
     contactEmail: string;
     contactSubject: string;
     contactMessage: string;
-    csrfToken: string;
   }
