@@ -1,6 +1,4 @@
-import React, { useEffect } from 'react';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
+import React from 'react';
 import htmlicon from '../images/technologies/html-icon.png';
 import bootstrapicon from '../images/technologies/bootstrap-4-icon.png';
 import csharpicon from '../images/technologies/c-sharp-programming-language-icon.png';
@@ -15,10 +13,6 @@ import mysqlicon from '../images/technologies/mysql-icon.png';
 import wordpressicon from '../images/technologies/wordpress-icon.png';
 
 const Services: React.FC = () => {
-  useEffect(() => {
-    AOS.init({ duration: 600, easing: 'ease-in-out', delay: 100 });
-  }, []);
-
   return (
     <div>
       <section id="services" className="s-about target-section">

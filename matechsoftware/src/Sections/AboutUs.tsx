@@ -72,6 +72,8 @@ const AboutUs: React.FC = () => {
           </div>
           <div className="col-six tab-full right illustration">
             <img
+              data-aos="fade-left"
+              data-aos-delay="200"
               alt="Symbol für Entwickler: Eine Person, die auf einem Hocker sitzt und an einem Computer arbeitet"
               src={developerimage1}
             />
@@ -80,6 +82,8 @@ const AboutUs: React.FC = () => {
         <div className="row about-content about-content--timeline">
           <div className="col-six tab-full left illustration">
             <img
+              data-aos="fade-right"
+              data-aos-delay="200"
               alt="Symbol für Entwickler: Eine Person, die vor einem Fenster am Schreibtisch an einem Computer arbeitet"
               src={developerimage2}
             />
