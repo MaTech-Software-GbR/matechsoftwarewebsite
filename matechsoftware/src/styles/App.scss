@@ -1308,12 +1308,8 @@ html.no-csstransitions .home-content__main {
     overflow: hidden;
 }
 
-.item-folio__text {
-    display: none;
-}
-
-.item-folio__text a:hover {
-    display: block;
+.item-folio__thumb a:hover .item-folio__text {
+    opacity: 1;
 }
 
 .item-folio__thumb img {
@@ -1382,6 +1378,8 @@ html.no-csstransitions .home-content__main {
     bottom: 3rem;
     padding: 0 3rem;
     z-index: 2;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
 }
 
 .item-folio__title {

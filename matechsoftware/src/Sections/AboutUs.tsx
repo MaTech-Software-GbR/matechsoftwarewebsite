@@ -1,4 +1,6 @@
 import React from 'react';
+import developerimage1 from '../images/imagemaxi.png';
+import developerimage2 from '../images/imagemanuel.png';
 
 const AboutUs: React.FC = () => {
   return (
@@ -71,7 +73,7 @@ const AboutUs: React.FC = () => {
           <div className="col-six tab-full right illustration">
             <img
               alt="Symbol für Entwickler: Eine Person, die auf einem Hocker sitzt und an einem Computer arbeitet"
-              src={require('../images/imagemaxi.png')}
+              src={developerimage1}
             />
           </div>
         </div>
@@ -79,7 +81,7 @@ const AboutUs: React.FC = () => {
           <div className="col-six tab-full left illustration">
             <img
               alt="Symbol für Entwickler: Eine Person, die vor einem Fenster am Schreibtisch an einem Computer arbeitet"
-              src={require('../images/imagemanuel.png')}
+              src={developerimage2}
             />
           </div>
           <div className="col-six tab-full right">
