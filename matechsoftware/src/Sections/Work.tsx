@@ -32,9 +32,9 @@ const Work: React.FC = () => {
                     rel="noopener noreferrer"
                   >
                     <img
-                      alt="rehazentrumriedbichllogo"
+                      alt="Rehazentrum Riedbichl Logo"
                       src={require('../images/references/reha-logo.jpg')}
-                    />
+                    ></img>
                     <span className="shadow-overlay"></span>
                   </a>
                 </div>
@@ -59,7 +59,7 @@ const Work: React.FC = () => {
                     rel="noopener noreferrer"
                   >
                     <img
-                      alt="thaihausrestaurantlogo"
+                      alt="Thaihaus Restaurant Logo"
                       src={require('../images/references/thaihaus.png')}
                     />
                     <span className="shadow-overlay"></span>
@@ -86,7 +86,7 @@ const Work: React.FC = () => {
                     rel="noopener noreferrer"
                   >
                     <img
-                      alt="gasthausschmidwebsite"
+                      alt="Gasthaus Schmid Logo"
                       src={require('../images/references/GasthausSchmid.png')}
                     />
                     <span className="shadow-overlay"></span>
@@ -113,7 +113,7 @@ const Work: React.FC = () => {
                     rel="noopener noreferrer"
                   >
                     <img
-                      alt="matechlaptoplogo"
+                      alt="MaTech Software Website"
                       src={require('../images/references/matechwebsite.png')}
                     />
                     <span className="shadow-overlay"></span>
@@ -132,7 +132,7 @@ const Work: React.FC = () => {
                 <div className="item-folio__thumb">
                   <a href="/#contact" title="Ihr Projekt" data-size="1050x700">
                     <img
-                      alt="matechlaptoplogo"
+                      alt="Matech Software Laptop mit Smartphone Logo"
                       src={require('../images/references/matechlaptop.jpg')}
                     />
                     <span className="shadow-overlay"></span>

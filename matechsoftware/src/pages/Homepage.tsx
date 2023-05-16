@@ -6,6 +6,7 @@ import Header from '../sections/Header';
 import Home from '../sections/Home';
 import Services from '../sections/Services';
 import Work from '../sections/Work';
+import BackToTopButton from '../components/BackToTopButton';
 
 const Homepage: React.FC = () => {
   const [shouldBeSticky, setShouldBeSticky] = useState<boolean>(false);
@@ -35,7 +36,14 @@ const Homepage: React.FC = () => {
       <Work />
       <AboutUs />
       <Contact />
-      <Footer shouldBeSticky={shouldBeSticky} />
+      <Footer />
+
+      {
+        //Here we're rendering the BackToTopButton component.
+      }
+      <div className={`go-top ${shouldBeSticky ? 'fadeIn' : 'fadeOut'}`}>
+        <BackToTopButton isVisible={shouldBeSticky} />
+      </div>
     </div>
   );
 };

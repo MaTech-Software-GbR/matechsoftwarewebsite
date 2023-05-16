@@ -53,7 +53,7 @@ const Header: React.FC<StickyProps> = ({ shouldBeSticky }) => {
       <header className={`s-header ${shouldBeSticky ? 'sticky-navbar' : ''}`}>
         <div className="header-logo">
           <a className="site-logo" href="/" onClick={handleNavClick}>
-            <img src={logo} alt="Homepage" />
+            <img src={logo} alt="MaTech Software GbR Logo" />
           </a>
         </div>
         <nav className="header-nav-wrap" ref={navRef}>
@@ -90,7 +90,7 @@ const Header: React.FC<StickyProps> = ({ shouldBeSticky }) => {
           className={`header-menu-toggle ${
             isMobileMenuOpen ? 'is-clicked' : ''
           }`}
-          href="#0"
+          href="/"
           onClick={toggleMobileMenu}
         >
           <span>Menu</span>

@@ -38,10 +38,10 @@ const Services: React.FC = () => {
 
         <div className="row about-content">
           <div className="col-six tab-full left">
-            <h3>Unsere Leistungen im Überblick:</h3>
+            <h2>Unsere Leistungen im Überblick:</h2>
             <div className=" services">
               <div className="service">
-                <h4>Unternehmenswebsite</h4>
+                <h3>Unternehmenswebsite</h3>
                 <p>
                   Erstellung einer modernen und ansprechenden Website mit
                   Content Management System (z.B. WordPress) oder individueller
@@ -51,7 +51,7 @@ const Services: React.FC = () => {
               </div>
 
               <div className="service">
-                <h4>Webhosting</h4>
+                <h3>Webhosting</h3>
                 <p>
                   Wir übernehmen die sichere und zuverlässige Bereitstellung
                   Ihrer Website auf unseren Servern. Backups und regelmäßige
@@ -61,7 +61,7 @@ const Services: React.FC = () => {
               </div>
 
               <div className="service">
-                <h4>Suchmaschinenoptimierung (SEO)</h4>
+                <h3>Suchmaschinenoptimierung (SEO)</h3>
                 <p>
                   Wir sorgen dafür, dass Ihre Website in den Suchergebnissen von
                   Google und anderen Suchmaschinen besser gefunden wird. Damit
@@ -73,17 +73,19 @@ const Services: React.FC = () => {
           </div>
 
           <div className="col-six tab-full right technologies">
-            <h3>
-              Unser breit gefächertes Fachwissen.
+            <h2>
+              Wissen.
               <br />
-              Gekoppelt mit mehrjähriger Erfahrung.
-            </h3>
+              Erfahrung.
+              <br />
+              Perfekt vereint.
+            </h2>
             <div className="flex flex-wrap justify-center">
               <div className="leistungen">
                 <img
                   data-aos="fade-up"
                   data-aos-delay="100"
-                  alt="html5logo"
+                  alt="HTML 5 Logo"
                   src={htmlicon}
                 />
               </div>
@@ -91,7 +93,7 @@ const Services: React.FC = () => {
                 <img
                   data-aos="fade-up"
                   data-aos-delay="100"
-                  alt="bootstrap4Logo"
+                  alt="Bootstrap 4 Logo"
                   src={bootstrapicon}
                 />
               </div>
@@ -99,7 +101,7 @@ const Services: React.FC = () => {
                 <img
                   data-aos="fade-up"
                   data-aos-delay="200"
-                  alt="csharpLogo"
+                  alt="C# Logo"
                   src={csharpicon}
                 />
               </div>
@@ -107,7 +109,7 @@ const Services: React.FC = () => {
                 <img
                   data-aos="fade-up"
                   data-aos-delay="300"
-                  alt="typescriptlogo"
+                  alt="Typescript Logo"
                   src={typescripticon}
                 />
               </div>
@@ -115,7 +117,7 @@ const Services: React.FC = () => {
                 <img
                   data-aos="fade-up"
                   data-aos-delay="400"
-                  alt="dotnetlogo"
+                  alt=".NET Logo"
                   src={dotneticon}
                 />
               </div>
@@ -123,7 +125,7 @@ const Services: React.FC = () => {
                 <img
                   data-aos="fade-up"
                   data-aos-delay="500"
-                  alt="pythonlogo"
+                  alt="Python Logo"
                   src={pythonicon}
                 />
               </div>
@@ -139,7 +141,7 @@ const Services: React.FC = () => {
                 <img
                   data-aos="fade-up"
                   data-aos-delay="700"
-                  alt="javascriptlogo"
+                  alt="JavaScript Logo"
                   src={javascripticon}
                 />
               </div>
@@ -155,7 +157,7 @@ const Services: React.FC = () => {
                 <img
                   data-aos="fade-up"
                   data-aos-delay="900"
-                  alt="wordpresslogo"
+                  alt="Wordpress Logo"
                   src={wordpressicon}
                 />
               </div>
@@ -163,7 +165,7 @@ const Services: React.FC = () => {
                 <img
                   data-aos="fade-up"
                   data-aos-delay="1000"
-                  alt="mysqllogo"
+                  alt="MySQL Logo"
                   src={mysqlicon}
                 />
               </div>
@@ -171,7 +173,7 @@ const Services: React.FC = () => {
                 <img
                   data-aos="fade-up"
                   data-aos-delay="1100"
-                  alt="sqlserverlogo"
+                  alt="SQL Server Logo"
                   src={sqlservericon}
                 />
               </div>

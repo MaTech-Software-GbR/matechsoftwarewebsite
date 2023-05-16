@@ -1,10 +1,12 @@
 import React from 'react';
 import Header from '../sections/Header';
 import Footer from '../sections/Footer';
+import ScrollToTop from '../components/ScrollToTop';
 
 const Impressum: React.FC = () => {
   return (
     <div>
+      <ScrollToTop />
       <Header shouldBeSticky={false} />
       <section id="home" className="s-home page-hero target-section">
         <div className="overlay"></div>
@@ -159,7 +161,7 @@ const Impressum: React.FC = () => {
           </span>
         </div>
       </section>
-      <Footer shouldBeSticky={false} />
+      <Footer />
     </div>
   );
 };

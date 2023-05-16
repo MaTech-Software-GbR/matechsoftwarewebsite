@@ -1880,8 +1880,10 @@ footer a:focus {
     display: block;
 }
 
-.go-top a,
-.go-top a:visited {
+.go-top button,
+.go-top button:visited {
+    padding: 0;
+    margin: 0;
     text-decoration: none;
     border: 0 none;
     display: block;
@@ -1897,15 +1899,23 @@ footer a:focus {
     transition: all 0.3s ease-in-out;
 }
 
-.go-top a i,
-.go-top a:visited i {
+.go-top button i,
+.go-top button:visited i {
     font-size: 12px;
     line-height: inherit;
 }
 
-.go-top a:hover,
-.go-top a:focus {
+.go-top button:hover,
+.go-top button:focus {
     color: $matechlightblue1;
+}
+
+.go-top.fadeIn {
+    animation: fadeIn 800ms linear;
+}
+
+.go-top.fadeOut {
+    animation: fadeOut 800ms linear;
 }
 
 /* responsive:
@@ -1959,7 +1969,7 @@ footer a:focus {
     list-style: none;
 }
 
-.technologies h3 {
+.technologies h2 {
     text-align: center;
 }
 

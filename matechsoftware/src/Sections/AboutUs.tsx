@@ -24,7 +24,7 @@ const AboutUs: React.FC = () => {
               <div className="timeline__block">
                 <div className="timeline__bullet"></div>
                 <div className="timeline__header">
-                  <h3>Maximilian Gobbel</h3>
+                  <h2>Maximilian Gobbel</h2>
                   <h5>Fachgebiet: Technik</h5>
                 </div>
                 <div className="timeline__desc">
@@ -70,7 +70,7 @@ const AboutUs: React.FC = () => {
           </div>
           <div className="col-six tab-full right illustration">
             <img
-              alt="developericon1"
+              alt="Symbol für Entwickler: Eine Person, die auf einem Hocker sitzt und an einem Computer arbeitet"
               src={require('../images/imagemaxi.png')}
             />
           </div>
@@ -78,7 +78,7 @@ const AboutUs: React.FC = () => {
         <div className="row about-content about-content--timeline">
           <div className="col-six tab-full left illustration">
             <img
-              alt="developericon2"
+              alt="Symbol für Entwickler: Eine Person, die vor einem Fenster am Schreibtisch an einem Computer arbeitet"
               src={require('../images/imagemanuel.png')}
             />
           </div>
@@ -87,7 +87,7 @@ const AboutUs: React.FC = () => {
               <div className="timeline__block">
                 <div className="timeline__bullet"></div>
                 <div className="timeline__header">
-                  <h3>Manuel Kühnle</h3>
+                  <h2>Manuel Kühnle</h2>
                   <h5>Fachgebiet: Wirtschaft und Technik</h5>
                 </div>
                 <div className="timeline__desc">

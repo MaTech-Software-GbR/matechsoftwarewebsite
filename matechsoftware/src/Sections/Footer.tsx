@@ -1,9 +1,8 @@
 import React from 'react';
 import logo from '../images/logo.png';
 import { Link } from 'react-router-dom';
-import { StickyProps } from '../models/sticky.interface';
 
-const Footer: React.FC<StickyProps> = ({ shouldBeSticky }) => {
+const Footer: React.FC = () => {
   return (
     <div>
       <footer>
@@ -12,11 +11,11 @@ const Footer: React.FC<StickyProps> = ({ shouldBeSticky }) => {
             <div className="footer-logo">
               <a
                 className="footer-site-logo"
-                href="#0"
+                href="/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <img alt="MaTech Software Logo" src={logo} />
+                <img alt="MaTech Software Logo Footer" src={logo} />
               </a>
             </div>
 
@@ -56,20 +55,6 @@ const Footer: React.FC<StickyProps> = ({ shouldBeSticky }) => {
               <span>
                 <Link to="/datenschutz">Datenschutz</Link>
               </span>
-            </div>
-
-            <div
-              className="go-top"
-              style={{
-                display: shouldBeSticky ? 'block' : 'none',
-                animation: shouldBeSticky
-                  ? 'fadeIn 800ms linear'
-                  : 'fadeOut 800ms linear',
-              }}
-            >
-              <a title="Back to Top" href="/#top">
-                <i className="im im-arrow-up" aria-hidden="true"></i>
-              </a>
             </div>
           </div>
         </div>

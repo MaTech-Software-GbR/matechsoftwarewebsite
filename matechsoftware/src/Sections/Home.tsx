@@ -26,7 +26,6 @@ const Home: React.FC = () => {
                         'Berater.',
                         'Problemlöser.',
                         'Chaosbewältiger.',
-                        'Troubleshooter.',
                       ],
                       autoStart: true,
                       loop: true,
