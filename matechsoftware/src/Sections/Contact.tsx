@@ -48,22 +48,25 @@ const Contact: React.FC = () => {
     } catch (error) {
       setshowNotSuccessfulSent(true);
     }
-
-    // Clear the error message after 3 seconds
-    setTimeout(() => {
-      setshowSuccessfulSent(false);
-      setshowNotSuccessfulSent(false);
-    }, 3000);
   };
 
-  const onSubmit: SubmitHandler<ContactFormData> = (data: ContactFormData) => {
+  const onSubmit: SubmitHandler<ContactFormData> = async (
+    data: ContactFormData
+  ) => {
     const formData = new FormData();
     formData.append('contactName', data.contactName);
     formData.append('contactEmail', data.contactEmail);
     formData.append('contactSubject', data.contactSubject);
     formData.append('contactMessage', data.contactMessage);
     formData.append('csrf_token', csrfToken);
-    sendMail(formData);
+
+    await sendMail(formData);
+
+    // Clear the error message after 3 seconds
+    setTimeout(() => {
+      setshowSuccessfulSent(false);
+      setshowNotSuccessfulSent(false);
+    }, 3000);
   };
 
   return (
@@ -191,8 +194,8 @@ const Contact: React.FC = () => {
             )}
             {showNotSuccessfulSent ? (
               <div className="message-warning">
-                Das hat leider nicht funktioniert. Versuchen Sie es noch einmal
-                oder wenden Sie sich telefonisch an uns!
+                Das hat leider nicht funktioniert. Versuchen Sie es bitte noch
+                einmal.
               </div>
             ) : (
               <div></div>
