@@ -3,16 +3,19 @@ import logo from '../images/logo.png';
 import { Link } from 'react-router-dom';
 
 const Footer: React.FC = () => {
-  const isScrolled = window.scrollY > 790;
-
   return (
     <div>
       <footer>
         <div className="row">
           <div className="col-full">
             <div className="footer-logo">
-              <a className="footer-site-logo" href="#0">
-                <img alt="" src={logo} />
+              <a
+                className="footer-site-logo"
+                href="/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img alt="MaTech Software Logo Footer" src={logo} />
               </a>
             </div>
 
@@ -28,7 +31,11 @@ const Footer: React.FC = () => {
                 </a>
               </li>
               <li>
-                <a href="mailto:kontakt@matech-software.de">
+                <a
+                  href="mailto:kontakt@matech-software.de"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <i className="im im-mail" aria-hidden="true"></i>
                   <span>Email</span>
                 </a>
@@ -41,28 +48,13 @@ const Footer: React.FC = () => {
           <div className="col-twelve">
             <div className="copyright">
               <span>© Copyright MaTech Software GbR 2023</span>
-            </div>
-            <div className="copyright">
+
               <span>
                 <Link to="/impressum">Impressum</Link>
               </span>
               <span>
                 <Link to="/datenschutz">Datenschutz</Link>
               </span>
-            </div>
-
-            <div
-              className="go-top"
-              style={{
-                display: isScrolled ? 'block' : 'none',
-                animation: isScrolled
-                  ? 'fadeIn 800ms linear'
-                  : 'fadeOut 800ms linear',
-              }}
-            >
-              <a title="Back to Top" href="#top">
-                <i className="im im-arrow-up" aria-hidden="true"></i>
-              </a>
             </div>
           </div>
         </div>

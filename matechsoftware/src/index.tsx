@@ -1,13 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Impressum from './pages/Impressum';
 import Datenschutz from './pages/Datenschutz';
 import ErrorPage from './error-page';
-import './SCSS/Base.scss';
-import './SCSS/App.scss';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import './styles/Base.scss';
+import './styles/App.scss';
+import App from './App';
+
+AOS.init();
 
 const router = createBrowserRouter([
   {

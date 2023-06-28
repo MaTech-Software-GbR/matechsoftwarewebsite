@@ -1,4 +1,6 @@
 import React from 'react';
+import developerimage1 from '../images/imagemaxi.png';
+import developerimage2 from '../images/imagemanuel.png';
 
 const AboutUs: React.FC = () => {
   return (
@@ -24,7 +26,7 @@ const AboutUs: React.FC = () => {
               <div className="timeline__block">
                 <div className="timeline__bullet"></div>
                 <div className="timeline__header">
-                  <h3>Maximilian Gobbel</h3>
+                  <h2>Maximilian Gobbel</h2>
                   <h5>Fachgebiet: Technik</h5>
                 </div>
                 <div className="timeline__desc">
@@ -45,13 +47,21 @@ const AboutUs: React.FC = () => {
 
                 <ul className="footer-social ueber-uns">
                   <li>
-                    <a href="https://www.linkedin.com/in/maximilian-gobbel/">
+                    <a
+                      href="https://www.linkedin.com/in/maximilian-gobbel/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
                       <i className="im im-linkedin" aria-hidden="true"></i>
                       <span>Linkedin</span>
                     </a>
                   </li>
                   <li>
-                    <a href="mailto:kontakt@matech-software.de">
+                    <a
+                      href="mailto:kontakt@matech-software.de"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
                       <i className="im im-mail" aria-hidden="true"></i>
                       <span>Email</span>
                     </a>
@@ -62,16 +72,20 @@ const AboutUs: React.FC = () => {
           </div>
           <div className="col-six tab-full right illustration">
             <img
-              alt="developericon1"
-              src={require('../images/imagemaxi.png')}
+              data-aos="fade-left"
+              data-aos-delay="200"
+              alt="Symbol für Entwickler: Eine Person, die auf einem Hocker sitzt und an einem Computer arbeitet"
+              src={developerimage1}
             />
           </div>
         </div>
         <div className="row about-content about-content--timeline">
           <div className="col-six tab-full left illustration">
             <img
-              alt="developericon2"
-              src={require('../images/imagemanuel.png')}
+              data-aos="fade-right"
+              data-aos-delay="200"
+              alt="Symbol für Entwickler: Eine Person, die vor einem Fenster am Schreibtisch an einem Computer arbeitet"
+              src={developerimage2}
             />
           </div>
           <div className="col-six tab-full right">
@@ -79,7 +93,7 @@ const AboutUs: React.FC = () => {
               <div className="timeline__block">
                 <div className="timeline__bullet"></div>
                 <div className="timeline__header">
-                  <h3>Manuel Kühnle</h3>
+                  <h2>Manuel Kühnle</h2>
                   <h5>Fachgebiet: Wirtschaft und Technik</h5>
                 </div>
                 <div className="timeline__desc">
@@ -102,13 +116,21 @@ const AboutUs: React.FC = () => {
 
                 <ul className="footer-social ueber-uns">
                   <li>
-                    <a href="https://www.linkedin.com/in/m-kuehnle/">
+                    <a
+                      href="https://www.linkedin.com/in/m-kuehnle/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
                       <i className="im im-linkedin" aria-hidden="true"></i>
                       <span>Linkedin</span>
                     </a>
                   </li>
                   <li>
-                    <a href="mailto:kontakt@matech-software.de">
+                    <a
+                      href="mailto:kontakt@matech-software.de"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
                       <i className="im im-mail" aria-hidden="true"></i>
                       <span>Email</span>
                     </a>

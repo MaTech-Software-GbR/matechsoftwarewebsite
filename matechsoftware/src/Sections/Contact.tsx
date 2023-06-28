@@ -1,31 +1,72 @@
-import React from 'react';
-import { useForm } from 'react-hook-form';
+import React, { useEffect, useState } from 'react';
+import { SubmitHandler, useForm } from 'react-hook-form';
+import { ContactFormData } from '../models/contactform.interface';
 
 const Contact: React.FC = () => {
+  const [showSuccessfulSent, setshowSuccessfulSent] = useState<boolean>(false);
+  const [showNotSuccessfulSent, setshowNotSuccessfulSent] =
+    useState<boolean>(false);
   const {
     register,
     handleSubmit,
-    formState: { errors },
-  } = useForm();
+    formState: { isSubmitting, errors },
+  } = useForm<ContactFormData>();
 
-  const onSubmit = (data: any) => {
-    const message = {
-      message: `sender: ${data.contactEmail} message: ${data.contactMessage}`,
-    };
-    console.log(JSON.stringify(message));
-    fetch('http://127.0.0.1:5000/api/send-email', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(message),
-    })
-      .then((response) => {
-        console.log(response);
-      })
-      .catch((error) => {
-        console.error(error);
+  const [csrfToken, setCsrfToken] = useState('');
+
+  useEffect(() => {
+    fetchCsrfToken();
+  }, []);
+
+  const fetchCsrfToken = async () => {
+    try {
+      const response = await fetch('/api/getCsrfToken.php');
+      const token = await response.text();
+      setCsrfToken(token);
+    } catch (error) {
+      console.error('Error fetching CSRF token:', error);
+    }
+  };
+
+  const sendMail = async (formData: FormData) => {
+    try {
+      const response = await fetch('/api/sendEmail.php', {
+        method: 'POST',
+        body: formData,
       });
+
+      if (response.ok) {
+        const data = await response.text();
+        if (data === 'OK') {
+          setshowSuccessfulSent(true);
+        } else {
+          setshowNotSuccessfulSent(true);
+        }
+      } else {
+        setshowNotSuccessfulSent(true);
+      }
+    } catch (error) {
+      setshowNotSuccessfulSent(true);
+    }
+  };
+
+  const onSubmit: SubmitHandler<ContactFormData> = async (
+    data: ContactFormData
+  ) => {
+    const formData = new FormData();
+    formData.append('contactName', data.contactName);
+    formData.append('contactEmail', data.contactEmail);
+    formData.append('contactSubject', data.contactSubject);
+    formData.append('contactMessage', data.contactMessage);
+    formData.append('csrf_token', csrfToken);
+
+    await sendMail(formData);
+
+    // Clear the error message after 3 seconds
+    setTimeout(() => {
+      setshowSuccessfulSent(false);
+      setshowNotSuccessfulSent(false);
+    }, 3000);
   };
 
   return (
@@ -63,29 +104,38 @@ const Contact: React.FC = () => {
                     {...register('contactName', {
                       required: true,
                       minLength: 2,
+                      maxLength: 100,
                     })}
                     name="contactName"
                     type="text"
                     id="contactName"
                     placeholder="Name"
-                    minLength={2}
-                    required={true}
                     aria-required="true"
                     className="full-width"
                   />
                 </div>
+                {errors.contactName?.type === 'required' && (
+                  <p role="alert">
+                    Ihr Name ist ein Pflichtfeld und muss mindestens 2 Zeichen
+                    haben.
+                  </p>
+                )}
                 <div className="form-field">
                   <input
                     {...register('contactEmail', { required: true })}
                     name="contactEmail"
                     type="email"
                     id="contactEmail"
-                    placeholder="Email"
-                    required={true}
+                    placeholder="Ihre Email"
                     aria-required="true"
                     className="full-width"
                   />
-                  {errors.contactEmail && <span>This field is required</span>}
+                  {errors.contactEmail?.type === 'required' && (
+                    <p role="alert">
+                      Ihre Email ist ein Pflichtfeld und muss einem E-Mail
+                      Format entsprechen.
+                    </p>
+                  )}
                 </div>
                 <div className="form-field">
                   <input
@@ -98,17 +148,31 @@ const Contact: React.FC = () => {
                 </div>
                 <div className="form-field">
                   <textarea
-                    {...register('contactMessage', { required: true })}
+                    {...register('contactMessage', {
+                      required: true,
+                      maxLength: 500,
+                      minLength: 15,
+                    })}
                     id="contactMessage"
                     placeholder="Nachricht"
                     rows={10}
                     cols={50}
                     className="full-width"
                   ></textarea>
-                  {errors.contactMessage && <span>This field is required</span>}
+                  {errors.contactMessage && (
+                    <span>
+                      Ihre Nachricht ist ein Pflichtfeld und muss zwischen 15
+                      und 500 Zeichen haben.
+                    </span>
+                  )}
                 </div>
                 <div className="form-field">
-                  <button className="full-width btn--primary">Absenden</button>
+                  <button
+                    className="full-width btn--primary"
+                    disabled={isSubmitting}
+                  >
+                    Absenden
+                  </button>
                   <div className="submit-loader">
                     <div className="text-loader">Sending...</div>
                     <div className="s-loader">
@@ -120,15 +184,22 @@ const Contact: React.FC = () => {
                 </div>
               </fieldset>
             </form>
-
-            <div className="message-warning">
-              Something went wrong. Please try again.
-            </div>
-
-            <div className="message-success">
-              Your message was sent, thank you!
-              <br />
-            </div>
+            {/* After submittion, check status, if its successful, print a green sign if not a red. */}
+            {showSuccessfulSent ? (
+              <div className="message-success">
+                Ihre Nachricht wurde versendet. Vielen Dank!
+              </div>
+            ) : (
+              <div></div>
+            )}
+            {showNotSuccessfulSent ? (
+              <div className="message-warning">
+                Das hat leider nicht funktioniert. Versuchen Sie es bitte noch
+                einmal.
+              </div>
+            ) : (
+              <div></div>
+            )}
           </div>
           <div className="col-four tab-full contact__infos">
             <h4 className="h06">Email</h4>

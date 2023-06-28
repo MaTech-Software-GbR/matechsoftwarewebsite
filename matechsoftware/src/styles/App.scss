@@ -1090,7 +1090,7 @@ html.no-csstransitions .home-content__main {
         min-height: 654px;
     }
     .home-content h3 {
-        font-size: 1.5rem;
+        font-size: 1.2rem;
     }
     .home-content h1 {
         font-size: 3.8rem;
@@ -1107,7 +1107,7 @@ html.no-csstransitions .home-content__main {
         vertical-align: middle;
     }
     .home-content h1 {
-        font-size: 2rem;
+        font-size: 3.5rem;
     }
     .home-content__main {
         width: auto;
@@ -1115,8 +1115,10 @@ html.no-csstransitions .home-content__main {
         margin-right: 25px;
     }
     .home-content__buttons .btn {
-        width: 100%;
+        width: 70%;
+        font-size: 1rem;
     }
+
     .home-social {
         display: none;
     }
@@ -1306,12 +1308,8 @@ html.no-csstransitions .home-content__main {
     overflow: hidden;
 }
 
-.item-folio__text {
-    display: none;
-}
-
-.item-folio__text a:hover {
-    display: block;
+.item-folio__thumb a:hover .item-folio__text {
+    opacity: 1;
 }
 
 .item-folio__thumb img {
@@ -1380,6 +1378,8 @@ html.no-csstransitions .home-content__main {
     bottom: 3rem;
     padding: 0 3rem;
     z-index: 2;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
 }
 
 .item-folio__title {
@@ -1513,6 +1513,7 @@ html.no-csstransitions .home-content__main {
 .s-contact {
     background-color: #151515;
     background-image: url("../images/office2.jpg");
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: center, center;
     padding-top: 13.2rem;
@@ -1629,9 +1630,15 @@ html.no-csstransitions .home-content__main {
     color: white;
 }
 
-.message-warning,
+.message-warning {
+    background: #0d0a0b;
+    font-size: 1.5rem;
+    line-height: 2;
+    padding: 3rem;
+    margin-bottom: 3.6rem;
+    width: 100%;
+}
 .message-success {
-    display: none;
     background: #0d0a0b;
     font-size: 1.5rem;
     line-height: 2;
@@ -1836,7 +1843,6 @@ footer a:focus {
 }
 
 .footer-bottom {
-    margin-top: 7.2rem;
     text-align: center;
 }
 
@@ -1844,6 +1850,13 @@ footer a:focus {
     display: inline-block;
 }
 
+.footer-bottom .copyright a {
+    color: rgba(255, 255, 255, 0.2);
+}
+
+.footer-bottom .copyright a:hover {
+    color: #4da8da;
+}
 .footer-bottom .copyright span::after {
     content: "|";
     display: inline-block;
@@ -1865,8 +1878,10 @@ footer a:focus {
     display: block;
 }
 
-.go-top a,
-.go-top a:visited {
+.go-top button,
+.go-top button:visited {
+    padding: 0;
+    margin: 0;
     text-decoration: none;
     border: 0 none;
     display: block;
@@ -1882,15 +1897,23 @@ footer a:focus {
     transition: all 0.3s ease-in-out;
 }
 
-.go-top a i,
-.go-top a:visited i {
+.go-top button i,
+.go-top button:visited i {
     font-size: 12px;
     line-height: inherit;
 }
 
-.go-top a:hover,
-.go-top a:focus {
+.go-top button:hover,
+.go-top button:focus {
     color: $matechlightblue1;
+}
+
+.go-top.fadeIn {
+    animation: fadeIn 800ms linear;
+}
+
+.go-top.fadeOut {
+    animation: fadeOut 800ms linear;
 }
 
 /* responsive:
@@ -1920,7 +1943,7 @@ footer a:focus {
 
 @media only screen and (max-width: 400px) {
     .footer-site-logo {
-        width: 100px;
+        width: 200px;
     }
     .footer-social li {
         margin-right: 1.2rem;
@@ -1944,7 +1967,7 @@ footer a:focus {
     list-style: none;
 }
 
-.technologies h3 {
+.technologies h2 {
     text-align: center;
 }
 
@@ -2026,7 +2049,7 @@ footer a:focus {
 
 @media only screen and (max-width: 400px) {
     .technologies .leistungen {
-        width: 60px;
+        width: 70px;
     }
 }
 

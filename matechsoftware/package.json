@@ -12,18 +12,11 @@
     "@types/react": "^18.0.26",
     "@types/react-dom": "^18.0.9",
     "aos": "^2.3.4",
-    "eslint": "^8.34.0",
-    "jquery": "^3.6.4",
-    "normalize.css": "^8.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.43.9",
-    "react-parallax": "^3.5.1",
-    "react-router": "^6.8.1",
     "react-router-dom": "^6.8.1",
     "react-scripts": "5.0.1",
-    "react-scroll": "^1.8.9",
-    "typescript": "^4.9.3",
     "typewriter-effect": "^2.19.0",
     "web-vitals": "^2.1.4"
   },
@@ -32,13 +25,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "postbuild": "purgecss --css build/static/css/*.css --content build/index.html build/static/js/*.js --output build/static/css"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+    "postbuild": "purgecss --css build/static/css/*.css --content build/index.html build/static/js/*.js --output build/static/css",
+    "lint": "eslint 'src/**/*.{js,jsx,ts,tsx}'"
   },
   "browserslist": {
     "production": [
@@ -54,8 +42,17 @@
   },
   "devDependencies": {
     "@fullhuman/postcss-purgecss": "^5.0.0",
-    "@types/jquery": "^3.5.14",
     "@types/react-scroll": "^1.8.5",
-    "sass": "^1.56.1"
+    "@typescript-eslint/eslint-plugin": "^5.59.2",
+    "@typescript-eslint/parser": "^5.59.2",
+    "eslint": "^8.39.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-n": "^15.7.0",
+    "eslint-plugin-promise": "^6.1.1",
+    "eslint-plugin-react": "^7.32.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "jest": "^27.5.1",
+    "sass": "^1.56.1",
+    "typescript": "^5.0.4"
   }
 }

@@ -1,18 +1,20 @@
 import React from 'react';
-import Header from '../Sections/Header';
-import Footer from '../Sections/Footer';
+import Header from '../sections/Header';
+import Footer from '../sections/Footer';
+import ScrollToTop from '../components/ScrollToTop';
 
 const Impressum: React.FC = () => {
   return (
     <div>
-      <Header />
+      <ScrollToTop />
+      <Header shouldBeSticky={false} />
       <section id="home" className="s-home page-hero target-section">
         <div className="overlay"></div>
         <div className="shadow-overlay"></div>
 
         <div className="home-content">
           <div className="row home-content__main">
-            <a href="#impressum" className="scroll-link smoothscroll">
+            <a href="/#impressum" className="scroll-link smoothscroll">
               <h1>Impressum</h1>
             </a>
           </div>
@@ -30,7 +32,11 @@ const Impressum: React.FC = () => {
             </a>
           </li>
           <li>
-            <a href="mailto:kontakt@matech-software.de">
+            <a
+              href="mailto:kontakt@matech-software.de"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <i className="im im-mail" aria-hidden="true"></i>
               <span>E-Mail</span>
             </a>

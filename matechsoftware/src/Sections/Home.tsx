@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Typewriter from 'typewriter-effect';
+const Typewriter = React.lazy(() => import('typewriter-effect'));
 
 const Home: React.FC = () => {
   return (
@@ -17,34 +17,35 @@ const Home: React.FC = () => {
               Wir sind Manuel und Maxi. <br />
               <div className="inline-block">Wir sind&nbsp;</div>
               <div className="inline-block">
-                <Typewriter
-                  options={{
-                    strings: [
-                      'Programmierer.',
-                      'Lösungsfinder.',
-                      'Berater.',
-                      'Problemlöser.',
-                      'Chaosbewältiger.',
-                      'Troubleshooter.',
-                    ],
-                    autoStart: true,
-                    loop: true,
-                  }}
-                />
+                <React.Suspense fallback={<div>Programmierer</div>}>
+                  <Typewriter
+                    options={{
+                      strings: [
+                        'Programmierer.',
+                        'Lösungsfinder.',
+                        'Berater.',
+                        'Problemlöser.',
+                        'Chaosbewältiger.',
+                      ],
+                      autoStart: true,
+                      loop: true,
+                    }}
+                  />
+                </React.Suspense>
               </div>
             </h1>
 
             <div className="home-content__buttons">
-              <a href="#works" className="btn btn--stroke">
+              <a href="/#works" className="btn btn--stroke">
                 Letztes Projekt
               </a>
-              <a href="#about" className="btn btn--stroke">
+              <a href="/#about" className="btn btn--stroke">
                 Mehr über uns
               </a>
             </div>
 
             <div className="home-content__scroll">
-              <a href="#services" className="scroll-link">
+              <a href="/#services" className="scroll-link">
                 <span>Unsere Leistungen</span>
               </a>
             </div>
@@ -52,13 +53,21 @@ const Home: React.FC = () => {
         </div>
         <ul className="home-social">
           <li>
-            <a href="https://www.linkedin.com/company/matech-software">
+            <a
+              href="https://www.linkedin.com/company/matech-software"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <i className="im im-linkedin" aria-hidden="true"></i>
               <span>Linkedin</span>
             </a>
           </li>
           <li>
-            <a href="mailto:kontakt@matech-software.de">
+            <a
+              href="mailto:kontakt@matech-software.de"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <i className="im im-mail" aria-hidden="true"></i>
               <span>Email</span>
             </a>
