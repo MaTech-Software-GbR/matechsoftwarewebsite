@@ -1,6 +1,6 @@
 import React from 'react';
-import developerimage1 from '../images/Maxi001.jpg';
-import developerimage2 from '../images/Manu001.jpg';
+import developerimage1 from '../images/Maxi001.webp';
+import developerimage2 from '../images/Manu001.webp';
 
 const AboutUs: React.FC = () => {
   return (

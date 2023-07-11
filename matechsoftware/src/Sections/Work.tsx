@@ -99,7 +99,7 @@ const Work: React.FC = () => {
               </div>
             </div>
 
-            <div className="masonry__brick">
+            {/* <div className="masonry__brick">
               <div className="item-folio">
                 <div className="item-folio__thumb">
                   <a
@@ -125,7 +125,7 @@ const Work: React.FC = () => {
                   </a>
                 </div>
               </div>
-            </div>
+            </div> */}
 
             <div className="masonry__brick">
               <div className="item-folio">
