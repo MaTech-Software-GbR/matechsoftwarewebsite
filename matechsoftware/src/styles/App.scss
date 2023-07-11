@@ -680,7 +680,7 @@ input::-moz-focus-inner {
     background-color: transparent;
     position: relative;
     display: table;
-    background-image: url("../images/office1.jpg");
+    background-image: url("../images/MaxiManu007.jpg");
     background-size: cover;
 }
 
@@ -1512,7 +1512,7 @@ html.no-csstransitions .home-content__main {
 
 .s-contact {
     background-color: #151515;
-    background-image: url("../images/office2.jpg");
+    background-image: url("../images/MaxiManu010.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center, center;
@@ -1996,20 +1996,23 @@ footer a:focus {
 
 .illustration {
     height: 100%;
+    display: flex;
+    justify-content: center;
 }
 
 .illustration img {
     width: 100%;
     vertical-align: middle;
+    border-radius: 2%;
+    width: 70%;
+    margin-top: 6rem;
 }
 
 @media only screen and (max-width: 400px) {
     .illustration {
-        display: none;
     }
 
     .illustration img {
-        display: none;
     }
 }
 

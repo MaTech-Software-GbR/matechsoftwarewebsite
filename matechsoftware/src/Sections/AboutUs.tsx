@@ -1,6 +1,6 @@
 import React from 'react';
-import developerimage1 from '../images/imagemaxi.png';
-import developerimage2 from '../images/imagemanuel.png';
+import developerimage1 from '../images/Maxi001.jpg';
+import developerimage2 from '../images/Manu001.jpg';
 
 const AboutUs: React.FC = () => {
   return (
@@ -21,7 +21,15 @@ const AboutUs: React.FC = () => {
         </div>
 
         <div className="row about-content about-content--timeline">
-          <div className="col-six tab-full left">
+          <div className="col-six tab-full illustration">
+            <img
+              data-aos="fade-right"
+              data-aos-delay="200"
+              alt="Symbol für Entwickler: Eine Person, die auf einem Hocker sitzt und an einem Computer arbeitet"
+              src={developerimage1}
+            />
+          </div>
+          <div className="col-six tab-full">
             <div className="timeline">
               <div className="timeline__block">
                 <div className="timeline__bullet"></div>
@@ -70,17 +78,9 @@ const AboutUs: React.FC = () => {
               </div>
             </div>
           </div>
-          <div className="col-six tab-full right illustration">
-            <img
-              data-aos="fade-left"
-              data-aos-delay="200"
-              alt="Symbol für Entwickler: Eine Person, die auf einem Hocker sitzt und an einem Computer arbeitet"
-              src={developerimage1}
-            />
-          </div>
         </div>
         <div className="row about-content about-content--timeline">
-          <div className="col-six tab-full left illustration">
+          <div className="col-six tab-full illustration">
             <img
               data-aos="fade-right"
               data-aos-delay="200"
@@ -88,7 +88,7 @@ const AboutUs: React.FC = () => {
               src={developerimage2}
             />
           </div>
-          <div className="col-six tab-full right">
+          <div className="col-six tab-full">
             <div className="timeline">
               <div className="timeline__block">
                 <div className="timeline__bullet"></div>
