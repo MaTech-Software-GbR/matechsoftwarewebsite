@@ -1,9 +1,10 @@
 import React from 'react';
-import gasthausschmidimage from '../images/references/GasthausSchmid.png';
-import rehalogo from '../images/references/reha-logo.jpg';
-import thaihauslogo from '../images/references/thaihaus.png';
-import matechsoftwarescreenshot from '../images/references/matechwebsite.png';
-import matechlaptoplogo from '../images/references/matechlaptop.jpg';
+import gasthausschmidimage from '../images/references/GasthausSchmid.webp';
+import rehalogo from '../images/references/reha-logo.webp';
+import thaihauslogo from '../images/references/thaihaus.webp';
+import matechlaptoplogo from '../images/references/matechlaptop.webp';
+import gutriedbichllogo from '../images/references/Logo_Gut_Riedbichl_quadrat.webp';
+import jbmlogo from '../images/references/jbm-logo.webp';
 
 const Work: React.FC = () => {
   return (
@@ -30,21 +31,17 @@ const Work: React.FC = () => {
               <div className="item-folio">
                 <div className="item-folio__thumb">
                   <a
-                    href="https://www.rehazentrum-riedbichl.de"
-                    title="Reha-Zentrum Riedbichl"
-                    data-size="1050x700"
+                    href="https://www.jbm-visuals.de"
+                    title="JBM Visuals"
+                    data-size="1450x700"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <img alt="Rehazentrum Riedbichl Logo" src={rehalogo} />
+                    <img alt="JBM Visuals Logo" src={jbmlogo} />
                     <span className="shadow-overlay"></span>
                     <div className="item-folio__text">
-                      <h3 className="item-folio__title">
-                        Reha-Zentrum Riedbichl
-                      </h3>
-                      <p className="item-folio__cat">
-                        Konzept, Design, Hosting, Logo
-                      </p>
+                      <h3 className="item-folio__title">JBM Visuals</h3>
+                      <p className="item-folio__cat">Konzept, Hosting</p>
                     </div>
                   </a>
                 </div>
@@ -80,6 +77,31 @@ const Work: React.FC = () => {
               <div className="item-folio">
                 <div className="item-folio__thumb">
                   <a
+                    href="https://www.rehazentrum-riedbichl.de"
+                    title="Reha-Zentrum Riedbichl"
+                    data-size="1050x700"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <img alt="Rehazentrum Riedbichl Logo" src={rehalogo} />
+                    <span className="shadow-overlay"></span>
+                    <div className="item-folio__text">
+                      <h3 className="item-folio__title">
+                        Reha-Zentrum Riedbichl
+                      </h3>
+                      <p className="item-folio__cat">
+                        Konzept, Design, Hosting, Logo
+                      </p>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div className="masonry__brick">
+              <div className="item-folio">
+                <div className="item-folio__thumb">
+                  <a
                     href="https://www.gasthaus-schmid.de"
                     title="Gut Riedbichl"
                     data-size="1050x700"
@@ -90,6 +112,29 @@ const Work: React.FC = () => {
                     <span className="shadow-overlay"></span>
                     <div className="item-folio__text">
                       <h3 className="item-folio__title">Gasthaus Schmid</h3>
+                      <p className="item-folio__cat">
+                        Konzept, Design, Hosting
+                      </p>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div className="masonry__brick">
+              <div className="item-folio">
+                <div className="item-folio__thumb">
+                  <a
+                    href="https://www.gut-riedbichl.de"
+                    title="Gut Riedbichl"
+                    data-size="1450x700"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <img alt="Gut Riedbichl Logo" src={gutriedbichllogo} />
+                    <span className="shadow-overlay"></span>
+                    <div className="item-folio__text">
+                      <h3 className="item-folio__title">Gut Riedbichl</h3>
                       <p className="item-folio__cat">
                         Konzept, Design, Hosting
                       </p>
