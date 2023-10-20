@@ -176,7 +176,6 @@ const Datenschutz: React.FC = () => {
             <br />
             Manuel K&uuml;hnle
           </p>
-
           <p>E-Mail: kontakt@matech-software.de</p>
           <p>
             Verantwortliche Stelle ist die nat&uuml;rliche oder juristische
@@ -184,7 +183,6 @@ const Datenschutz: React.FC = () => {
             und Mittel der Verarbeitung von personenbezogenen Daten (z.&nbsp;B.
             Namen, E-Mail-Adressen o. &Auml;.) entscheidet.
           </p>
-
           <h3>Speicherdauer</h3>
           <p>
             Soweit innerhalb dieser Datenschutzerkl&auml;rung keine speziellere
@@ -227,23 +225,47 @@ const Datenschutz: React.FC = () => {
             Datenschutzerkl&auml;rung informiert.
           </p>
           <h3>
-            Hinweis zur Datenweitergabe in die USA und sonstige Drittstaaten
+            Hinweis zur Datenweitergabe in datenschutzrechtlich nicht sichere
+            Drittstaaten sowie die Weitergabe an US-Unternehmen, die nicht
+            DPF-zertifiziert sind
           </h3>
           <p>
-            Wir verwenden unter anderem Tools von Unternehmen mit Sitz in den
-            USA oder sonstigen datenschutzrechtlich nicht sicheren Drittstaaten.
-            Wenn diese Tools aktiv sind, k&ouml;nnen Ihre personenbezogene Daten
-            in diese Drittstaaten &uuml;bertragen und dort verarbeitet werden.
-            Wir weisen darauf hin, dass in diesen L&auml;ndern kein mit der EU
+            Wir verwenden unter anderem Tools von Unternehmen mit Sitz in
+            datenschutzrechtlich nicht sicheren Drittstaaten sowie US-Tools,
+            deren Anbieter nicht nach dem EU-US-Data Privacy Framework (DPF)
+            zertifiziert sind. Wenn diese Tools aktiv sind, k&ouml;nnen Ihre
+            personenbezogene Daten in diese Staaten &uuml;bertragen und dort
+            verarbeitet werden. Wir weisen darauf hin, dass in
+            datenschutzrechtlich unsicheren Drittstaaten kein mit der EU
             vergleichbares Datenschutzniveau garantiert werden kann.
-            Beispielsweise sind US-Unternehmen dazu verpflichtet,
-            personenbezogene Daten an Sicherheitsbeh&ouml;rden herauszugeben,
-            ohne dass Sie als Betroffener hiergegen gerichtlich vorgehen
-            k&ouml;nnten. Es kann daher nicht ausgeschlossen werden, dass
-            US-Beh&ouml;rden (z.&nbsp;B. Geheimdienste) Ihre auf US-Servern
-            befindlichen Daten zu &Uuml;berwachungszwecken verarbeiten,
-            auswerten und dauerhaft speichern. Wir haben auf diese
-            Verarbeitungst&auml;tigkeiten keinen Einfluss.
+          </p>
+          <p>
+            Wir weisen darauf hin, dass die USA als sicherer Drittstaat
+            grunds&auml;tzlich ein mit der EU vergleichbares Datenschutzniveau
+            aufweisen. Eine Daten&uuml;bertragung in die USA ist danach
+            zul&auml;ssig, wenn der Empf&auml;nger eine Zertifizierung unter dem
+            &bdquo;EU-US Data Privacy Framework&ldquo; (DPF) besitzt oder
+            &uuml;ber geeignete zus&auml;tzliche Garantien verf&uuml;gt.
+            Informationen zu &Uuml;bermittlungen an Drittstaaten
+            einschlie&szlig;lich der Datenempf&auml;nger finden Sie in dieser
+            Datenschutzerkl&auml;rung.
+          </p>
+          <h3>Empfänger von personenbezogenen Daten</h3>
+          <p>
+            Im Rahmen unserer Gesch&auml;ftst&auml;tigkeit arbeiten wir mit
+            verschiedenen externen Stellen zusammen. Dabei ist teilweise auch
+            eine &Uuml;bermittlung von personenbezogenen Daten an diese externen
+            Stellen erforderlich. Wir geben personenbezogene Daten nur dann an
+            externe Stellen weiter, wenn dies im Rahmen einer
+            Vertragserf&uuml;llung erforderlich ist, wenn wir gesetzlich hierzu
+            verpflichtet sind (z.&nbsp;B. Weitergabe von Daten an
+            Steuerbeh&ouml;rden), wenn wir ein berechtigtes Interesse nach Art.
+            6 Abs. 1 lit. f DSGVO an der Weitergabe haben oder wenn eine
+            sonstige Rechtsgrundlage die Datenweitergabe erlaubt. Beim Einsatz
+            von Auftragsverarbeitern geben wir personenbezogene Daten unserer
+            Kunden nur auf Grundlage eines g&uuml;ltigen Vertrags &uuml;ber
+            Auftragsverarbeitung weiter. Im Falle einer gemeinsamen Verarbeitung
+            wird ein Vertrag &uuml;ber gemeinsame Verarbeitung geschlossen.
           </p>
           <h3>Widerruf Ihrer Einwilligung zur Datenverarbeitung</h3>
           <p>
@@ -305,7 +327,7 @@ const Datenschutz: React.FC = () => {
             &Uuml;bertragung der Daten an einen anderen Verantwortlichen
             verlangen, erfolgt dies nur, soweit es technisch machbar ist.
           </p>
-          <h3>Auskunft, L&ouml;schung und Berichtigung</h3>
+          <h3>Auskunft, Berichtigung und L&ouml;schung</h3>
           <p>
             Sie haben im Rahmen der geltenden gesetzlichen Bestimmungen
             jederzeit das Recht auf unentgeltliche Auskunft &uuml;ber Ihre
@@ -513,6 +535,34 @@ const Datenschutz: React.FC = () => {
             </a>
             .
           </p>
+          <h2>6. Analyse-Tools und Werbung</h2>
+          <h3>Matomo</h3>
+          <p>Diese Website benutzt den Open Source Webanalysedienst Matomo.</p>
+          <p>
+            Mit Hilfe von Matomo sind wir in der Lage Daten &uuml;ber die
+            Nutzung unserer Website durch die Websitebesucher zu erfassen und zu
+            analysieren. Hierdurch k&ouml;nnen wir u.&nbsp;a. herausfinden, wann
+            welche Seitenaufrufe get&auml;tigt wurden und aus welcher Region sie
+            kommen. Au&szlig;erdem erfassen wir verschiedene Logdateien
+            (z.&nbsp;B. IP-Adresse, Referrer, verwendete Browser und
+            Betriebssysteme) und k&ouml;nnen messen, ob unsere Websitebesucher
+            bestimmte Aktionen durchf&uuml;hren (z.&nbsp;B. Klicks, K&auml;ufe
+            u. &Auml;.).
+          </p>
+          <p>
+            Die Nutzung dieses Analyse-Tools erfolgt auf Grundlage von Art. 6
+            Abs. 1 lit. f DSGVO. Der Websitebetreiber hat ein berechtigtes
+            Interesse an der Analyse des Nutzerverhaltens, um sowohl sein
+            Webangebot als auch seine Werbung zu optimieren. Sofern eine
+            entsprechende Einwilligung abgefragt wurde, erfolgt die Verarbeitung
+            ausschlie&szlig;lich auf Grundlage von Art. 6 Abs. 1 lit. a DSGVO
+            und &sect; 25 Abs. 1 TTDSG, soweit die Einwilligung die Speicherung
+            von Cookies oder den Zugriff auf Informationen im Endger&auml;t des
+            Nutzers (z.&nbsp;B. Device-Fingerprinting) im Sinne des TTDSG
+            umfasst. Die Einwilligung ist jederzeit widerrufbar.
+          </p>
+          <h4>Hosting</h4> <p>Wir hosten Matomo bei folgendem Drittanbieter:</p>
+          <p>webgo GmbH AnschriftHeidenkampsweg 81 20097 Hamburg</p>
         </div>
       </section>
       <Footer />
