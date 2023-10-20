@@ -562,7 +562,11 @@ const Datenschutz: React.FC = () => {
             umfasst. Die Einwilligung ist jederzeit widerrufbar.
           </p>
           <h4>Hosting</h4> <p>Wir hosten Matomo bei folgendem Drittanbieter:</p>
-          <p>webgo GmbH AnschriftHeidenkampsweg 81 20097 Hamburg</p>
+          <p>
+            webgo GmbH<br></br>
+            Heidenkampsweg 81<br></br>
+            20097 Hamburg
+          </p>
         </div>
       </section>
       <Footer />
