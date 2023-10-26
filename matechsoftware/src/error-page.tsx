@@ -1,7 +1,7 @@
-import { isRouteErrorResponse, useRouteError } from 'react-router-dom';
 import React from 'react';
+import { isRouteErrorResponse, useRouteError } from 'react-router-dom';
 
-export default function ErrorPage() {
+const ErrorPage: React.FC = () => {
   const error = useRouteError();
   console.error(error);
 
@@ -31,4 +31,6 @@ export default function ErrorPage() {
       <p>Entschuldigen Sie, ein unerwarteter Fehler ist aufgetreten.</p>
     </div>
   );
-}
+};
+
+export default ErrorPage;
