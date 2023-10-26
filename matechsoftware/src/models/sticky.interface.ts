@@ -1,3 +1,3 @@
 export interface StickyProps {
-    shouldBeSticky: boolean;
-  }
+  shouldBeSticky: boolean
+}

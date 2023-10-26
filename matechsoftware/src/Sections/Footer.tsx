@@ -4,12 +4,12 @@ import { Link } from 'react-router-dom';
 
 declare global {
   interface Window {
-    UC_UI: any;
+    UC_UI: any
   }
 }
 
 const Footer: React.FC = () => {
-  const openConsentTool = () => {
+  const openConsentTool = (): void => {
     if (
       typeof window.UC_UI !== 'undefined' &&
       typeof window.UC_UI.showSecondLayer === 'function'

@@ -1,14 +1,14 @@
 import React from 'react';
 
 interface VisibilityProbs {
-  isVisible: boolean;
+  isVisible: boolean
 }
 
 const BackToTopButton: React.FC<VisibilityProbs> = ({ isVisible }) => {
-  const scrollToTop = () => {
+  const scrollToTop = (): void => {
     window.scrollTo({
       top: 0,
-      behavior: 'smooth',
+      behavior: 'smooth'
     });
   };
 

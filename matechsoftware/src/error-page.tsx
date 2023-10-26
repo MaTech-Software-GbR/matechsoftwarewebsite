@@ -5,7 +5,7 @@ const ErrorPage: React.FC = () => {
   const error = useRouteError();
   console.error(error);
 
-  if (isRouteErrorResponse(error))
+  if (isRouteErrorResponse(error)) {
     return (
       <div id="error-page">
         <section id="home" className="s-home page-hero target-section">
@@ -24,6 +24,7 @@ const ErrorPage: React.FC = () => {
         </section>
       </div>
     );
+  }
 
   return (
     <div id="error-page">

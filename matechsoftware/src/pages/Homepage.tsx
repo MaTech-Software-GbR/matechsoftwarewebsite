@@ -14,7 +14,7 @@ const Homepage: React.FC = () => {
 
   useEffect(() => {
     const windowVariable = windowRef.current;
-    const handleScroll = () => {
+    const handleScroll = (): void => {
       const homeComponent = document.getElementById('services') as HTMLElement;
       const homeComponentTop = homeComponent.getBoundingClientRect().top;
       homeComponentTop <= 0
@@ -39,7 +39,7 @@ const Homepage: React.FC = () => {
       <Footer />
 
       {
-        //Here we're rendering the BackToTopButton component.
+        // Here we're rendering the BackToTopButton component.
       }
       <div className={`go-top ${shouldBeSticky ? 'fadeIn' : 'fadeOut'}`}>
         <BackToTopButton isVisible={shouldBeSticky} />
