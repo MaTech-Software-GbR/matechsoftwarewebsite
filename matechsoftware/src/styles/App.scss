@@ -204,11 +204,6 @@ strong {
   * ## Spacing - (_document-setup.scss)  
   * ------------------------------------------------------------------- */
 
-button,
-.btn {
-    margin-bottom: 1.2rem;
-}
-
 input,
 textarea,
 p,
@@ -1637,6 +1632,7 @@ html.no-csstransitions .home-content__main {
     padding: 3rem;
     margin-bottom: 3.6rem;
     width: 100%;
+    color: #ff6163;
 }
 .message-success {
     background: #0d0a0b;
@@ -1645,13 +1641,6 @@ html.no-csstransitions .home-content__main {
     padding: 3rem;
     margin-bottom: 3.6rem;
     width: 100%;
-}
-
-.message-warning {
-    color: #ff6163;
-}
-
-.message-success {
     color: #008c2c;
 }
 
@@ -1891,7 +1880,6 @@ footer a:focus {
     text-align: center;
     background: black;
     color: white;
-    text-align: center;
     text-transform: uppercase;
     -webkit-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
@@ -2001,19 +1989,10 @@ footer a:focus {
 }
 
 .illustration img {
-    width: 100%;
     vertical-align: middle;
     border-radius: 2%;
     width: 70%;
     margin-top: 6rem;
-}
-
-@media only screen and (max-width: 400px) {
-    .illustration {
-    }
-
-    .illustration img {
-    }
 }
 
 .sticky-navbar {
@@ -2068,8 +2047,7 @@ footer a:focus {
 }
 
 fieldset {
-    margin-bottom: 1.5rem;
-    margin: 0 2px;
+    margin: 0 2px 1.5rem;
     padding: 0.35em 0.625em 0.75em;
     border: none;
 }

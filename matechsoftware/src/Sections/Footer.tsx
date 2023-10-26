@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import logo from '../images/logo.png';
 import { Link } from 'react-router-dom';
 
@@ -10,7 +10,6 @@ declare global {
 
 const Footer: React.FC = () => {
   const openConsentTool = () => {
-    //show consent tool here
     if (
       typeof window.UC_UI !== 'undefined' &&
       typeof window.UC_UI.showSecondLayer === 'function'
