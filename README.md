@@ -26,5 +26,5 @@ Diese Website wurde unter anderen unter Verwendung der folgenden Technologien er
 
 Falls Sie Fragen haben, weitere Informationen benötigen oder mit uns in Kontakt treten möchten, können Sie uns wie folgt erreichen:
 
-- **E-Mail**: [kontakt@matech-software-gbr.com](mailto:kontakt@matech-software-gbr.com)
+- **E-Mail**: [kontakt@matech-software.de](mailto:kontakt@matech-software.de)
 - **LinkedIn**: [MaTech Software GbR LinkedIn](https://www.linkedin.com/company/matech-software)
