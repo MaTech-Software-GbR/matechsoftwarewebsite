@@ -24,7 +24,7 @@ const Footer: React.FC = () => {
         <div className="row">
           <div className="col-full">
             <div className="footer-logo">
-              <a
+              <Link
                 className="footer-site-logo"
                 href="/"
                 target="_blank"
@@ -36,29 +36,29 @@ const Footer: React.FC = () => {
                   height={51}
                   src="/images/logo.png"
                 />
-              </a>
+              </Link>
             </div>
 
             <ul className="footer-social">
               <li>
-                <a
+                <Link
                   href="https://www.linkedin.com/company/matech-software"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
                   <i className="im im-linkedin" aria-hidden="true"></i>
                   <span>Linkedin</span>
-                </a>
+                </Link>
               </li>
               <li>
-                <a
+                <Link
                   href="mailto:kontakt@matech-software.de"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
                   <i className="im im-mail" aria-hidden="true"></i>
                   <span>Email</span>
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -78,9 +78,9 @@ const Footer: React.FC = () => {
                 <Link href="/datenschutz">Datenschutz</Link>
               </span>
               <span>
-                <a className="pointer" onClick={openConsentTool}>
+                <Link href="/" className="pointer" onClick={openConsentTool}>
                   Cookie-Einstellungen
-                </a>
+                </Link>
               </span>
             </div>
           </div>

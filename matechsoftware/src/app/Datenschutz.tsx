@@ -1,3 +1,4 @@
+import Link from "next/link"
 import ScrollToTop from "../components/ScrollToTop"
 import Footer from "../sections/Footer"
 import Header from "../sections/Header"
@@ -13,32 +14,32 @@ const Datenschutz: React.FC = () => {
         <div className="shadow-overlay"></div>
         <div className="home-content">
           <div className="row home-content__main">
-            <a href="#datenschutz" className="scroll-link smoothscroll">
+            <Link href="#datenschutz" className="scroll-link smoothscroll">
               <h1>Datenschutz</h1>
-            </a>
+            </Link>
           </div>
         </div>
 
         <ul className="home-social">
           <li>
-            <a
+            <Link
               href="https://www.linkedin.com/company/matech-software"
               target="_blank"
               rel="noopener noreferrer"
             >
               <i className="im im-linkedin" aria-hidden="true"></i>
               <span>LinkedIn</span>
-            </a>
+            </Link>
           </li>
           <li>
-            <a
+            <Link
               href="mailto:kontact@matech-software.de"
               target="_blank"
               rel="noopener noreferrer"
             >
               <i className="im im-mail" aria-hidden="true"></i>
               <span>E-Mail</span>
-            </a>
+            </Link>
           </li>
         </ul>
       </section>
@@ -114,13 +115,13 @@ const Datenschutz: React.FC = () => {
           </p>
           <p>
             Details entnehmen Sie der Datenschutzerkl&auml;rung von webgo:
-            <a
+            <Link
               href="https://www.webgo.de/datenschutz/"
               target="_blank"
               rel="noopener noreferrer"
             >
               https://www.webgo.de/datenschutz/
-            </a>
+            </Link>
             .
           </p>
           <p>
@@ -515,24 +516,24 @@ const Datenschutz: React.FC = () => {
             Die Daten&uuml;bertragung in die USA wird auf die
             Standardvertragsklauseln der EU-Kommission gest&uuml;tzt. Details
             finden Sie hier:
-            <a
+            <Link
               href="https://www.linkedin.com/help/linkedin/answer/62538/datenubertragung-aus-der-eu-dem-ewr-und-der-schweiz?lang=de"
               target="_blank"
               rel="noopener noreferrer"
             >
               https://www.linkedin.com/help/linkedin/answer/62538/datenubertragung-aus-der-eu-dem-ewr-und-der-schweiz?lang=de
-            </a>
+            </Link>
           </p>
           <p>
             Weitere Informationen hierzu finden Sie in der
             Datenschutzerkl&auml;rung von LinkedIn unter:
-            <a
+            <Link
               href="https://www.linkedin.com/legal/privacy-policy"
               target="_blank"
               rel="noopener noreferrer"
             >
               https://www.linkedin.com/legal/privacy-policy
-            </a>
+            </Link>
             .
           </p>
           <h2>6. Analyse-Tools und Werbung</h2>

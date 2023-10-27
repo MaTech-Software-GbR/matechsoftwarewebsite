@@ -1,3 +1,4 @@
+import Link from "next/link"
 import React from "react"
 
 const Typewriter = React.lazy(async () => await import("typewriter-effect"))
@@ -38,41 +39,41 @@ const Home: React.FC = () => {
             </h1>
 
             <div className="home-content__buttons">
-              <a href="/#works" className="btn btn--stroke">
+              <Link href="/#works" className="btn btn--stroke">
                 Letztes Projekt
-              </a>
-              <a href="/#about" className="btn btn--stroke">
+              </Link>
+              <Link href="/#about" className="btn btn--stroke">
                 Mehr über uns
-              </a>
+              </Link>
             </div>
 
             <div className="home-content__scroll">
-              <a href="/#services" className="scroll-link">
+              <Link href="/#services" className="scroll-link">
                 <span>Unsere Leistungen</span>
-              </a>
+              </Link>
             </div>
           </div>
         </div>
         <ul className="home-social">
           <li>
-            <a
+            <Link
               href="https://www.linkedin.com/company/matech-software"
               target="_blank"
               rel="noopener noreferrer"
             >
               <i className="im im-linkedin" aria-hidden="true"></i>
               <span>Linkedin</span>
-            </a>
+            </Link>
           </li>
           <li>
-            <a
+            <Link
               href="mailto:kontakt@matech-software.de"
               target="_blank"
               rel="noopener noreferrer"
             >
               <i className="im im-mail" aria-hidden="true"></i>
               <span>Email</span>
-            </a>
+            </Link>
           </li>
         </ul>
       </section>

@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react"
 import { type StickyProps } from "../models/sticky.interface"
 import Image from "next/image"
+import Link from "next/link"
 
 const Header: React.FC<StickyProps> = ({ shouldBeSticky }) => {
   const [activeSection, setActiveSection] = useState<string>("home")
@@ -58,46 +59,46 @@ const Header: React.FC<StickyProps> = ({ shouldBeSticky }) => {
     <div>
       <header className={`s-header ${shouldBeSticky ? "sticky-navbar" : ""}`}>
         <div className="header-logo">
-          <a className="site-logo" href="/" onClick={handleNavClick}>
+          <Link className="site-logo" href="/" onClick={handleNavClick}>
             <Image
               src="/images/logo.png"
               width={200}
               height={41}
               alt="MaTech Software GbR Logo"
             />
-          </a>
+          </Link>
         </div>
         <nav className="header-nav-wrap" ref={navRef}>
           <ul className="header-nav">
             <li className={activeSection === "home" ? "current" : ""}>
-              <a href="/#home" title="home" onClick={handleNavClick}>
+              <Link href="/#home" title="home" onClick={handleNavClick}>
                 Start
-              </a>
+              </Link>
             </li>
             <li className={activeSection === "services" ? "current" : ""}>
-              <a href="/#services" title="services" onClick={handleNavClick}>
+              <Link href="/#services" title="services" onClick={handleNavClick}>
                 Leistungen
-              </a>
+              </Link>
             </li>
             <li className={activeSection === "works" ? "current" : ""}>
-              <a href="/#works" title="works" onClick={handleNavClick}>
+              <Link href="/#works" title="works" onClick={handleNavClick}>
                 Referenzen
-              </a>
+              </Link>
             </li>
             <li className={activeSection === "about" ? "current" : ""}>
-              <a href="/#about" title="about" onClick={handleNavClick}>
+              <Link href="/#about" title="about" onClick={handleNavClick}>
                 Über uns
-              </a>
+              </Link>
             </li>
             <li className={activeSection === "contact" ? "current" : ""}>
-              <a href="/#contact" title="contact" onClick={handleNavClick}>
+              <Link href="/#contact" title="contact" onClick={handleNavClick}>
                 Kontakt
-              </a>
+              </Link>
             </li>
           </ul>
         </nav>
 
-        <a
+        <Link
           className={`header-menu-toggle ${
             isMobileMenuOpen ? "is-clicked" : ""
           }`}
@@ -105,7 +106,7 @@ const Header: React.FC<StickyProps> = ({ shouldBeSticky }) => {
           onClick={toggleMobileMenu}
         >
           <span>Menu</span>
-        </a>
+        </Link>
       </header>
     </div>
   )

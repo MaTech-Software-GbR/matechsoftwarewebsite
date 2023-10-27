@@ -1,5 +1,6 @@
 import React from "react"
 import Image from "next/image"
+import Link from "next/link"
 
 const Work: React.FC = () => {
   return (
@@ -25,7 +26,7 @@ const Work: React.FC = () => {
             <div className="masonry__brick">
               <div className="item-folio">
                 <div className="item-folio__thumb">
-                  <a
+                  <Link
                     href="https://www.jbm-visuals.de"
                     title="JBM Visuals"
                     data-size="1450x700"
@@ -43,7 +44,7 @@ const Work: React.FC = () => {
                       <h3 className="item-folio__title">JBM Visuals</h3>
                       <p className="item-folio__cat">Konzept, Hosting</p>
                     </div>
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -51,7 +52,7 @@ const Work: React.FC = () => {
             <div className="masonry__brick">
               <div className="item-folio">
                 <div className="item-folio__thumb">
-                  <a
+                  <Link
                     href="https://www.thai-haus-feldkirchen.de"
                     title="Thai Haus Restaurant"
                     data-size="1050x700"
@@ -73,7 +74,7 @@ const Work: React.FC = () => {
                         Konzept, Design, Hosting, Logo
                       </p>
                     </div>
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -81,7 +82,7 @@ const Work: React.FC = () => {
             <div className="masonry__brick">
               <div className="item-folio">
                 <div className="item-folio__thumb">
-                  <a
+                  <Link
                     href="https://www.rehazentrum-riedbichl.de"
                     title="Reha-Zentrum Riedbichl"
                     data-size="1050x700"
@@ -103,7 +104,7 @@ const Work: React.FC = () => {
                         Konzept, Design, Hosting, Logo
                       </p>
                     </div>
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -111,7 +112,7 @@ const Work: React.FC = () => {
             <div className="masonry__brick">
               <div className="item-folio">
                 <div className="item-folio__thumb">
-                  <a
+                  <Link
                     href="https://www.gasthaus-schmid.de"
                     title="Gut Riedbichl"
                     data-size="1050x700"
@@ -131,7 +132,7 @@ const Work: React.FC = () => {
                         Konzept, Design, Hosting
                       </p>
                     </div>
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -139,7 +140,7 @@ const Work: React.FC = () => {
             <div className="masonry__brick">
               <div className="item-folio">
                 <div className="item-folio__thumb">
-                  <a
+                  <Link
                     href="https://www.gut-riedbichl.de"
                     title="Gut Riedbichl"
                     data-size="1450x700"
@@ -159,7 +160,7 @@ const Work: React.FC = () => {
                         Konzept, Design, Hosting
                       </p>
                     </div>
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -167,7 +168,7 @@ const Work: React.FC = () => {
             {/* <div className="masonry__brick">
               <div className="item-folio">
                 <div className="item-folio__thumb">
-                  <a
+                  <Link
                     href="https://github.com/matechsoftware/reactwebsite"
                     title="MaTech Website"
                     data-size="1050x700"
@@ -187,7 +188,7 @@ const Work: React.FC = () => {
                         Konzept, Design, Hosting, Logo
                       </p>
                     </div>
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div> */}
@@ -195,7 +196,11 @@ const Work: React.FC = () => {
             <div className="masonry__brick">
               <div className="item-folio">
                 <div className="item-folio__thumb">
-                  <a href="/#contact" title="Ihr Projekt" data-size="1050x700">
+                  <Link
+                    href="/#contact"
+                    title="Ihr Projekt"
+                    data-size="1050x700"
+                  >
                     <Image
                       alt="Matech Software Laptop mit Smartphone Logo"
                       src="/images/references/matechlaptop.webp"
@@ -207,7 +212,7 @@ const Work: React.FC = () => {
                       <h3 className="item-folio__title">Ihr Projekt</h3>
                       <p className="item-folio__cat">...</p>
                     </div>
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>

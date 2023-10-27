@@ -16,7 +16,7 @@
     "typewriter-effect": "^2.21.0"
   },
   "scripts": {
-    "build": "prettier --check . && stylelint --allow-empty-input \"**/*.{css,scss}\" && next build",
+    "build": "next build",
     "dev": "next dev",
     "start": "next start",
     "format": "prettier --check --ignore-path .gitignore . && stylelint --allow-empty-input \"**/*.{css,scss}\"",
@@ -38,6 +38,7 @@
     "@typescript-eslint/eslint-plugin": "^6.9.0",
     "@typescript-eslint/parser": "^6.9.0",
     "eslint": "^8.52.0",
+    "eslint-config-next": "^14.0.0",
     "eslint-config-prettier": "^9.0.0",
     "eslint-config-standard-with-typescript": "^39.1.1",
     "eslint-plugin-import": "^2.29.0",

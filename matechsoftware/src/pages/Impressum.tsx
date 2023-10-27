@@ -2,6 +2,7 @@ import React from "react"
 import Header from "../sections/Header"
 import Footer from "../sections/Footer"
 import ScrollToTop from "../components/ScrollToTop"
+import Link from "next/link"
 
 const Impressum: React.FC = () => {
   return (
@@ -14,32 +15,32 @@ const Impressum: React.FC = () => {
 
         <div className="home-content">
           <div className="row home-content__main">
-            <a href="/#impressum" className="scroll-link smoothscroll">
+            <Link href="/#impressum" className="scroll-link smoothscroll">
               <h1>Impressum</h1>
-            </a>
+            </Link>
           </div>
         </div>
 
         <ul className="home-social">
           <li>
-            <a
+            <Link
               href="https://www.linkedin.com/company/matech-software"
               target="_blank"
               rel="noopener noreferrer"
             >
               <i className="im im-linkedin" aria-hidden="true"></i>
               <span>LinkedIn</span>
-            </a>
+            </Link>
           </li>
           <li>
-            <a
+            <Link
               href="mailto:kontakt@matech-software.de"
               target="_blank"
               rel="noopener noreferrer"
             >
               <i className="im im-mail" aria-hidden="true"></i>
               <span>E-Mail</span>
-            </a>
+            </Link>
           </li>
         </ul>
       </section>
@@ -70,13 +71,13 @@ const Impressum: React.FC = () => {
           <p>
             Die Europ&auml;ische Kommission stellt eine Plattform zur
             Online-Streitbeilegung (OS) bereit:{" "}
-            <a
+            <Link
               href="https://ec.europa.eu/consumers/odr/"
               target="_blank"
               rel="noopener noreferrer"
             >
               https://ec.europa.eu/consumers/odr/
-            </a>
+            </Link>
             .<br /> Unsere E-Mail-Adresse finden Sie oben im Impressum.
           </p>
 
@@ -135,29 +136,29 @@ const Impressum: React.FC = () => {
           <h3>Credits</h3>
           <span>
             Abgewandeltes Template von{" "}
-            <a href="https://www.styleshout.com/">styleshout</a>
+            <Link href="https://www.styleshout.com/">styleshout</Link>
           </span>
           <br />
           <span>
             Foto 1 durch{" "}
-            <a href="https://pixabay.com/users/tookapic-1386459/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=932926">
+            <Link href="https://pixabay.com/users/tookapic-1386459/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=932926">
               tookapic
-            </a>{" "}
+            </Link>{" "}
             von{" "}
-            <a href="https://pixabay.com//?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=932926">
+            <Link href="https://pixabay.com//?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=932926">
               Pixabay
-            </a>
+            </Link>
           </span>
           <br />
           <span>
             Foto 2 durch{" "}
-            <a href="https://pixabay.com/users/stocksnap-894430/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=926242">
+            <Link href="https://pixabay.com/users/stocksnap-894430/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=926242">
               StockSnap
-            </a>{" "}
+            </Link>{" "}
             von{" "}
-            <a href="https://pixabay.com//?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=926242">
+            <Link href="https://pixabay.com//?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=926242">
               Pixabay
-            </a>
+            </Link>
           </span>
         </div>
       </section>
