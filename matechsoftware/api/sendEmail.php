@@ -2,7 +2,6 @@
 
 $siteOwnersEmail = 'kontakt@matech-software.de';
 
-//if (hash_equals($_SESSION['csrf_token'], $_POST['csrf_token'])) {
 if ($_POST) {
     $name = trim(stripslashes($_POST['contactName']));
     $email = trim(stripslashes($_POST['contactEmail']));

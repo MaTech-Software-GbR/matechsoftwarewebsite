@@ -1,5 +1,9 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react';
-import Homepage from './pages/Homepage';
+import Homepage from './Homepage';
+import '../styles/Base.scss';
+import '../styles/App.scss';
+import '../iconic/css/iconmonstr-iconic-font.min.css';
+import '../styles/Fonts.scss'
 
 declare global {
   interface Window {

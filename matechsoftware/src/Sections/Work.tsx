@@ -1,10 +1,5 @@
 import React from 'react';
-import gasthausschmidimage from '../images/references/GasthausSchmid.webp';
-import rehalogo from '../images/references/reha-logo.webp';
-import thaihauslogo from '../images/references/thaihaus.webp';
-import matechlaptoplogo from '../images/references/matechlaptop.webp';
-import gutriedbichllogo from '../images/references/Logo_Gut_Riedbichl_quadrat.webp';
-import jbmlogo from '../images/references/jbm-logo.webp';
+import Image from 'next/image';
 
 const Work: React.FC = () => {
   return (
@@ -37,7 +32,7 @@ const Work: React.FC = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <img alt="JBM Visuals Logo" src={jbmlogo} />
+                    <Image alt="JBM Visuals Logo" src="/images/references/jbm-logo.webp" width={400} height={400} />
                     <span className="shadow-overlay"></span>
                     <div className="item-folio__text">
                       <h3 className="item-folio__title">JBM Visuals</h3>
@@ -58,7 +53,7 @@ const Work: React.FC = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <img alt="Thaihaus Restaurant Logo" src={thaihauslogo} />
+                    <Image alt="Thaihaus Restaurant Logo" src="/images/references/thaihaus.webp" width={400} height={400} />
                     <span className="shadow-overlay"></span>
                     <div className="item-folio__text">
                       <h3 className="item-folio__title">
@@ -83,7 +78,7 @@ const Work: React.FC = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <img alt="Rehazentrum Riedbichl Logo" src={rehalogo} />
+                    <Image alt="Rehazentrum Riedbichl Logo" src="/images/references/reha-logo.webp" width={400} height={400} />
                     <span className="shadow-overlay"></span>
                     <div className="item-folio__text">
                       <h3 className="item-folio__title">
@@ -108,7 +103,7 @@ const Work: React.FC = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <img alt="Gasthaus Schmid Logo" src={gasthausschmidimage} />
+                    <Image alt="Gasthaus Schmid Logo" src="/images/references/GasthausSchmid.webp" width={400} height={400} />
                     <span className="shadow-overlay"></span>
                     <div className="item-folio__text">
                       <h3 className="item-folio__title">Gasthaus Schmid</h3>
@@ -131,7 +126,7 @@ const Work: React.FC = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <img alt="Gut Riedbichl Logo" src={gutriedbichllogo} />
+                    <Image alt="Gut Riedbichl Logo" src="/images/references/Logo_Gut_Riedbichl_quadrat.webp" width={400} height={400} />
                     <span className="shadow-overlay"></span>
                     <div className="item-folio__text">
                       <h3 className="item-folio__title">Gut Riedbichl</h3>
@@ -154,7 +149,7 @@ const Work: React.FC = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <img
+                    <Image
                       alt="MaTech Software Website"
                       src={matechsoftwarescreenshot}
                     />
@@ -176,9 +171,10 @@ const Work: React.FC = () => {
               <div className="item-folio">
                 <div className="item-folio__thumb">
                   <a href="/#contact" title="Ihr Projekt" data-size="1050x700">
-                    <img
+                    <Image
                       alt="Matech Software Laptop mit Smartphone Logo"
-                      src={matechlaptoplogo}
+                      src="/images/references/matechlaptop.webp"
+                      width={400} height={400}
                     />
                     <span className="shadow-overlay"></span>
                     <div className="item-folio__text">

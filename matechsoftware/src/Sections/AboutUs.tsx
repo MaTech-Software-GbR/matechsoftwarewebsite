@@ -1,6 +1,5 @@
 import React from 'react';
-import developerimage1 from '../images/Maxi001.webp';
-import developerimage2 from '../images/Manu001.webp';
+import Image from 'next/image';
 
 const AboutUs: React.FC = () => {
   return (
@@ -22,11 +21,13 @@ const AboutUs: React.FC = () => {
 
         <div className="row about-content about-content--timeline">
           <div className="col-six tab-full illustration">
-            <img
+            <Image
+            width={392} height={490}
               data-aos="fade-right"
               data-aos-delay="200"
               alt="Symbol für Entwickler: Eine Person, die auf einem Hocker sitzt und an einem Computer arbeitet"
-              src={developerimage1}
+              quality={100}
+              src="/images/Maxi001.webp"
             />
           </div>
           <div className="col-six tab-full">
@@ -81,11 +82,12 @@ const AboutUs: React.FC = () => {
         </div>
         <div className="row about-content about-content--timeline">
           <div className="col-six tab-full illustration">
-            <img
+            <Image
+            width={392} height={490}
               data-aos="fade-right"
               data-aos-delay="200"
               alt="Symbol für Entwickler: Eine Person, die vor einem Fenster am Schreibtisch an einem Computer arbeitet"
-              src={developerimage2}
+              src="/images/Manu001.webp"
             />
           </div>
           <div className="col-six tab-full">

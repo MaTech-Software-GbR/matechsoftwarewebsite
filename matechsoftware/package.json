@@ -9,20 +9,16 @@
     "@types/react": "^18.2.33",
     "@types/react-dom": "^18.2.14",
     "aos": "^2.3.4",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
+    "next": "latest",
+    "react": "latest",
+    "react-dom": "latest",
     "react-hook-form": "^7.47.0",
-    "react-router-dom": "^6.17.0",
-    "react-scripts": "5.0.1",
     "typewriter-effect": "^2.21.0"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "postbuild": "purgecss --css build/static/css/*.css --content build/index.html build/static/js/*.js --output build/static/css",
-    "lint": "eslint 'src/**/*.{js,jsx,ts,tsx}'"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
   },
   "browserslist": {
     "production": [
@@ -47,6 +43,8 @@
     "eslint-plugin-react": "^7.33.2",
     "eslint-plugin-react-hooks": "^4.6.0",
     "jest": "^29.7.0",
+    "prettier": "^3.0.3",
+    "sass": "^1.69.5",
     "typescript": "^5.2.2"
   }
 }

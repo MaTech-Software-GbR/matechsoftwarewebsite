@@ -1,16 +1,5 @@
 import React from 'react';
-import htmlicon from '../images/technologies/html-icon.png';
-import bootstrapicon from '../images/technologies/bootstrap-4-icon.png';
-import csharpicon from '../images/technologies/c-sharp-programming-language-icon.png';
-import cssicon from '../images/technologies/css-icon.png';
-import javaicon from '../images/technologies/java-programming-language-icon.png';
-import javascripticon from '../images/technologies/javascript-programming-language-icon.png';
-import dotneticon from '../images/technologies/microsoft-dot-net-icon.png';
-import pythonicon from '../images/technologies/python-programming-language-icon.png';
-import sqlservericon from '../images/technologies/sql-server-icon.png';
-import typescripticon from '../images/technologies/typescript-programming-language-icon.png';
-import mysqlicon from '../images/technologies/mysql-icon.png';
-import wordpressicon from '../images/technologies/wordpress-icon.png';
+import Image from 'next/image';
 
 const Services: React.FC = () => {
   return (
@@ -76,99 +65,121 @@ const Services: React.FC = () => {
             </h2>
             <div className="flex flex-wrap justify-center">
               <div className="leistungen">
-                <img
+                <Image
+                  width={80}
+                  height={80}
                   data-aos="fade-up"
                   data-aos-delay="100"
                   alt="HTML 5 Logo"
-                  src={htmlicon}
+                  src="/images/technologies/html-icon.png"
                 />
               </div>
               <div className="leistungen">
-                <img
+                <Image
+                width={80} height={80}
                   data-aos="fade-up"
                   data-aos-delay="100"
                   alt="Bootstrap 4 Logo"
-                  src={bootstrapicon}
+                  src="/images/technologies/bootstrap-4-icon.png"
                 />
               </div>
               <div className="leistungen">
-                <img
+                <Image
+                  width={80}
+                  height={80}
                   data-aos="fade-up"
                   data-aos-delay="200"
                   alt="C# Logo"
-                  src={csharpicon}
+                  src="/images/technologies/c-sharp-programming-language-icon.png"
                 />
               </div>
               <div className="leistungen">
-                <img
+                <Image
+                  width={80}
+                  height={80}
                   data-aos="fade-up"
                   data-aos-delay="300"
                   alt="Typescript Logo"
-                  src={typescripticon}
+                  src="/images/technologies/typescript-programming-language-icon.png"
                 />
               </div>
               <div className="leistungen">
-                <img
+                <Image
+                  width={80}
+                  height={80}
                   data-aos="fade-up"
                   data-aos-delay="400"
                   alt=".NET Logo"
-                  src={dotneticon}
+                  src="/images/technologies/microsoft-dot-net-icon.png"
                 />
               </div>
               <div className="leistungen">
-                <img
+                <Image
+                  width={80}
+                  height={80}
                   data-aos="fade-up"
                   data-aos-delay="500"
                   alt="Python Logo"
-                  src={pythonicon}
+                  src="/images/technologies/python-programming-language-icon.png"
                 />
               </div>
               <div className="leistungen">
-                <img
+                <Image
+                  width={80}
+                  height={80}
                   data-aos="fade-up"
                   data-aos-delay="600"
                   alt="javalogo"
-                  src={javaicon}
+                  src="/images/technologies/java-programming-language-icon.png"
                 />
               </div>
               <div className="leistungen">
-                <img
+                <Image
+                  width={80}
+                  height={80}
                   data-aos="fade-up"
                   data-aos-delay="700"
                   alt="JavaScript Logo"
-                  src={javascripticon}
+                  src="/images/technologies/javascript-programming-language-icon.png"
                 />
               </div>
               <div className="leistungen">
-                <img
+                <Image
+                  width={80}
+                  height={80}
                   data-aos="fade-up"
                   data-aos-delay="800"
                   alt="csslogo"
-                  src={cssicon}
+                  src="/images/technologies/css-icon.png"
                 />
               </div>
               <div className="leistungen">
-                <img
+                <Image
+                  width={80}
+                  height={80}
                   data-aos="fade-up"
                   data-aos-delay="900"
                   alt="Wordpress Logo"
-                  src={wordpressicon}
+                  src="/images/technologies/wordpress-icon.png"
                 />
               </div>
               <div className="leistungen">
-                <img
+                <Image
+                  width={80}
+                  height={80}
                   data-aos="fade-up"
                   data-aos-delay="1000"
                   alt="MySQL Logo"
-                  src={mysqlicon}
+                  src="/images/technologies/mysql-icon.png"
                 />
               </div>
               <div className="leistungen">
-                <img
+                <Image
+                width={80} height={80}
                   data-aos="fade-up"
                   data-aos-delay="1100"
                   alt="SQL Server Logo"
-                  src={sqlservericon}
+                  src="/images/technologies/sql-server-icon.png"
                 />
               </div>
             </div>

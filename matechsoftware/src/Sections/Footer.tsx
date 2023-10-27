@@ -1,6 +1,6 @@
+import Image from 'next/image';
+import Link from 'next/link';
 import React from 'react';
-import logo from '../images/logo.png';
-import { Link } from 'react-router-dom';
 
 declare global {
   interface Window {
@@ -30,7 +30,7 @@ const Footer: React.FC = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <img alt="MaTech Software Logo Footer" src={logo} />
+                <Image alt="MaTech Software Logo Footer" width={250} height={51} src="/images/logo.png" />
               </a>
             </div>
 
@@ -62,13 +62,13 @@ const Footer: React.FC = () => {
         <div className="row footer-bottom">
           <div className="col-twelve">
             <div className="copyright">
-              <span>© Copyright MaTech Software GbR 2023</span>
+              <span>© Copyright MaTech Software GbR {new Date().getFullYear()}</span>
 
               <span>
-                <Link to="/impressum">Impressum</Link>
+                <Link href="/impressum">Impressum</Link>
               </span>
               <span>
-                <Link to="/datenschutz">Datenschutz</Link>
+                <Link href="/datenschutz">Datenschutz</Link>
               </span>
               <span>
                 <a className="pointer" onClick={openConsentTool}>

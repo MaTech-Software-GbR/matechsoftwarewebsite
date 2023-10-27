@@ -1,32 +1,36 @@
 import React, { useEffect, useRef, useState } from 'react';
-import logo from '../images/logo.png';
 import { type StickyProps } from '../models/sticky.interface';
+import Image from 'next/image';
 
 const Header: React.FC<StickyProps> = ({ shouldBeSticky }) => {
   const [activeSection, setActiveSection] = useState<string>('home');
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false);
   const navRef = useRef<HTMLDivElement>(null);
-  const windowRef = useRef<Window>(window);
+  const windowRef = useRef<Window | null>(null);
 
   useEffect(() => {
-    const windowVariable = windowRef.current;
-    const handleScroll = (): void => {
-      const sections = document.querySelectorAll('section');
-      sections.forEach((section) => {
-        const sectionTop = section.offsetTop - 50;
-        const sectionHeight = section.offsetHeight;
-        const sectionBottom = sectionTop + sectionHeight;
-        const scrollPosition = windowRef.current.scrollY;
-        if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
-          setActiveSection(section.id);
-        }
-      });
-    };
+    if (typeof window !== 'undefined') {
+      // The code inside this block will only run on the client side
+      windowRef.current = window;
+      const windowVariable = windowRef.current;
+      const handleScroll = (): void => {
+        const sections = document.querySelectorAll('section');
+        sections.forEach((section) => {
+          const sectionTop = section.offsetTop - 50;
+          const sectionHeight = section.offsetHeight;
+          const sectionBottom = sectionTop + sectionHeight;
+          const scrollPosition = windowVariable.scrollY;
+          if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+            setActiveSection(section.id);
+          }
+        });
+      };
 
-    windowVariable.addEventListener('scroll', handleScroll);
-    return () => {
-      windowVariable.removeEventListener('scroll', handleScroll);
-    };
+      windowVariable.addEventListener('scroll', handleScroll);
+      return () => {
+        windowVariable.removeEventListener('scroll', handleScroll);
+      };
+    }
   }, []);
 
   const toggleMobileMenu = (event: React.MouseEvent<HTMLAnchorElement>): void => {
@@ -53,7 +57,7 @@ const Header: React.FC<StickyProps> = ({ shouldBeSticky }) => {
       <header className={`s-header ${shouldBeSticky ? 'sticky-navbar' : ''}`}>
         <div className="header-logo">
           <a className="site-logo" href="/" onClick={handleNavClick}>
-            <img src={logo} alt="MaTech Software GbR Logo" />
+            <Image src="/images/logo.png" width={200} height={41} alt="MaTech Software GbR Logo" />
           </a>
         </div>
         <nav className="header-nav-wrap" ref={navRef}>

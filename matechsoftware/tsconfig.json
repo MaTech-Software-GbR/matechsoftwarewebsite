@@ -18,7 +18,7 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react-jsx",
+    "jsx": "preserve",
     "strictNullChecks": true,
     "noImplicitAny": true,
     "noUnusedLocals": true,
@@ -26,9 +26,19 @@
     "strictBindCallApply": true,
     "rootDir": "./src",
     "noImplicitThis": true,
-    "strictFunctionTypes": true
+    "strictFunctionTypes": true,
+    "incremental": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ]
   },
   "include": [
-    "src"
+    "src",
+    ".next/types/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules"
   ]
 }

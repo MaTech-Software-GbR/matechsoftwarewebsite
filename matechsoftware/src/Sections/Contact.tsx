@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { type SubmitHandler, useForm } from 'react-hook-form';
 import { type ContactFormData } from '../models/contactform.interface';
 
@@ -11,22 +11,6 @@ const Contact: React.FC = () => {
     handleSubmit,
     formState: { isSubmitting, errors }
   } = useForm<ContactFormData>();
-
-  const [csrfToken, setCsrfToken] = useState('');
-
-  useEffect(() => {
-    void fetchCsrfToken();
-  }, []);
-
-  const fetchCsrfToken = async (): Promise<void> => {
-    try {
-      const response = await fetch('/api/getCsrfToken.php');
-      const token = await response.text();
-      setCsrfToken(token);
-    } catch (error) {
-      console.error('Error fetching CSRF token:', error);
-    }
-  };
 
   const sendMail = async (formData: FormData): Promise<void> => {
     try {
@@ -58,7 +42,6 @@ const Contact: React.FC = () => {
     formData.append('contactEmail', data.contactEmail);
     formData.append('contactSubject', data.contactSubject);
     formData.append('contactMessage', data.contactMessage);
-    formData.append('csrf_token', csrfToken);
 
     await sendMail(formData);
 
