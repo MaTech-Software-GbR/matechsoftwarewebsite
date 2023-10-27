@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import { type SubmitHandler, useForm } from "react-hook-form"
-import { type ContactFormData } from "../models/contactform.interface"
+import { type ContactFormData } from "../../models/contactform.interface"
 
 const Contact: React.FC = () => {
   const [showSuccessfulSent, setshowSuccessfulSent] = useState<boolean>(false)
@@ -75,7 +75,6 @@ const Contact: React.FC = () => {
         <div className="row contact__main">
           <div className="col-eight tab-full contact__form">
             <form
-              // eslint-disable-next-line @typescript-eslint/no-misused-promises
               onSubmit={handleSubmit(onSubmit)}
               name="contactForm"
               id="contactForm"

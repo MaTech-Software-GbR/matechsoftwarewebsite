@@ -1,9 +1,16 @@
 import React, { useCallback, useEffect, useRef, useState } from "react"
-import Homepage from "./Homepage"
+import Homepage from "./index"
 import "../styles/Base.scss"
 import "../styles/App.scss"
 import "../iconic/css/iconmonstr-iconic-font.min.css"
 import "../styles/Fonts.scss"
+import Head from "next/head"
+import { useRouter } from "next/router"
+import Impressum from "./impressum"
+import Datenschutz from "./datenschutz"
+import ErrorPage from "../error-page"
+import RootLayout from "../app/components/layout"
+import ScrollToTop from "../app/components/ScrollToTop"
 
 declare global {
   interface Window {
@@ -12,6 +19,7 @@ declare global {
 }
 
 const App: React.FC = () => {
+  const router = useRouter()
   const [, setOffset] = useState(0)
   const onScroll = useCallback(() => {
     setOffset(window.scrollY)
@@ -20,7 +28,6 @@ const App: React.FC = () => {
   const scrollRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
-    // eslint-disable-next-line @typescript-eslint/strict-boolean-expressions
     const _mtm = (window._mtm = window._mtm || [])
     _mtm.push({ "mtm.startTime": new Date().getTime(), event: "mtm.Start" })
     ;(function () {
@@ -40,9 +47,30 @@ const App: React.FC = () => {
     }
   }, [onScroll])
 
+  let currentDisplay
+
+  // Conditionally render components based on the route
+  if (router.pathname === "/") {
+    currentDisplay = <Homepage />
+  } else if (router.pathname === "/impressum") {
+    currentDisplay = <Impressum />
+  } else if (router.pathname === "/datenschutz") {
+    currentDisplay = <Datenschutz />
+  } else {
+    // Handle 404 - Not Found
+    currentDisplay = <ErrorPage />
+  }
+
   return (
     <div className="App" ref={scrollRef}>
-      <Homepage />
+      <Head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>MaTech Software GbR</title>
+      </Head>
+      <RootLayout>
+        <ScrollToTop />
+        {currentDisplay}
+      </RootLayout>
     </div>
   )
 }

@@ -1,14 +1,9 @@
 import React from "react"
-import Header from "../sections/Header"
-import Footer from "../sections/Footer"
-import ScrollToTop from "../components/ScrollToTop"
 import Link from "next/link"
 
 const Impressum: React.FC = () => {
   return (
     <div>
-      <ScrollToTop />
-      <Header shouldBeSticky={false} />
       <section id="home" className="s-home page-hero target-section">
         <div className="overlay"></div>
         <div className="shadow-overlay"></div>
@@ -162,7 +157,6 @@ const Impressum: React.FC = () => {
           </span>
         </div>
       </section>
-      <Footer />
     </div>
   )
 }

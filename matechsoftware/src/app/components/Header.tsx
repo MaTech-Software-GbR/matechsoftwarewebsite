@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react"
-import { type StickyProps } from "../models/sticky.interface"
+import { type StickyProps } from "../../models/sticky.interface"
 import Image from "next/image"
 import Link from "next/link"
 

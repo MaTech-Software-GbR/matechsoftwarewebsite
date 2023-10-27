@@ -8,7 +8,7 @@ const Document: React.FC = () => {
       <Head>
         <meta charSet="utf-8" />
         <Link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
         <meta
           name="description"
           content="MaTech Software GbR - Individuelle Web- und App-Entwicklungsdienste"
@@ -26,8 +26,6 @@ const Document: React.FC = () => {
           name="twitter:description"
           content="MaTech Software - Individuelle Web- und App-Entwicklungsdienste"
         />
-
-        <title>MaTech Software GbR</title>
 
         <link rel="preconnect" href="//app.eu.usercentrics.eu" />
 
@@ -56,12 +54,12 @@ const Document: React.FC = () => {
         <script
           type="application/javascript"
           src="https://sdp.eu.usercentrics.eu/latest/uc-block.bundle.js"
+          async
         ></script>
       </Head>
       <body>
         <Main />
         <NextScript />
-        <div id="root"></div>
       </body>
     </Html>
   )
