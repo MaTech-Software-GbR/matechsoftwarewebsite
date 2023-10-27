@@ -1,6 +1,6 @@
-import Image from 'next/image';
-import Link from 'next/link';
-import React from 'react';
+import Image from "next/image"
+import Link from "next/link"
+import React from "react"
 
 declare global {
   interface Window {
@@ -11,12 +11,12 @@ declare global {
 const Footer: React.FC = () => {
   const openConsentTool = (): void => {
     if (
-      typeof window.UC_UI !== 'undefined' &&
-      typeof window.UC_UI.showSecondLayer === 'function'
+      typeof window.UC_UI !== "undefined" &&
+      typeof window.UC_UI.showSecondLayer === "function"
     ) {
-      window.UC_UI.showSecondLayer();
+      window.UC_UI.showSecondLayer()
     }
-  };
+  }
 
   return (
     <div>
@@ -30,7 +30,12 @@ const Footer: React.FC = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Image alt="MaTech Software Logo Footer" width={250} height={51} src="/images/logo.png" />
+                <Image
+                  alt="MaTech Software Logo Footer"
+                  width={250}
+                  height={51}
+                  src="/images/logo.png"
+                />
               </a>
             </div>
 
@@ -62,7 +67,9 @@ const Footer: React.FC = () => {
         <div className="row footer-bottom">
           <div className="col-twelve">
             <div className="copyright">
-              <span>© Copyright MaTech Software GbR {new Date().getFullYear()}</span>
+              <span>
+                © Copyright MaTech Software GbR {new Date().getFullYear()}
+              </span>
 
               <span>
                 <Link href="/impressum">Impressum</Link>
@@ -80,6 +87,6 @@ const Footer: React.FC = () => {
         </div>
       </footer>
     </div>
-  );
-};
-export default Footer;
+  )
+}
+export default Footer

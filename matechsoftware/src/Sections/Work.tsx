@@ -1,5 +1,5 @@
-import React from 'react';
-import Image from 'next/image';
+import React from "react"
+import Image from "next/image"
 
 const Work: React.FC = () => {
   return (
@@ -32,7 +32,12 @@ const Work: React.FC = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <Image alt="JBM Visuals Logo" src="/images/references/jbm-logo.webp" width={400} height={400} />
+                    <Image
+                      alt="JBM Visuals Logo"
+                      src="/images/references/jbm-logo.webp"
+                      width={400}
+                      height={400}
+                    />
                     <span className="shadow-overlay"></span>
                     <div className="item-folio__text">
                       <h3 className="item-folio__title">JBM Visuals</h3>
@@ -53,7 +58,12 @@ const Work: React.FC = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <Image alt="Thaihaus Restaurant Logo" src="/images/references/thaihaus.webp" width={400} height={400} />
+                    <Image
+                      alt="Thaihaus Restaurant Logo"
+                      src="/images/references/thaihaus.webp"
+                      width={400}
+                      height={400}
+                    />
                     <span className="shadow-overlay"></span>
                     <div className="item-folio__text">
                       <h3 className="item-folio__title">
@@ -78,7 +88,12 @@ const Work: React.FC = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <Image alt="Rehazentrum Riedbichl Logo" src="/images/references/reha-logo.webp" width={400} height={400} />
+                    <Image
+                      alt="Rehazentrum Riedbichl Logo"
+                      src="/images/references/reha-logo.webp"
+                      width={400}
+                      height={400}
+                    />
                     <span className="shadow-overlay"></span>
                     <div className="item-folio__text">
                       <h3 className="item-folio__title">
@@ -103,7 +118,12 @@ const Work: React.FC = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <Image alt="Gasthaus Schmid Logo" src="/images/references/GasthausSchmid.webp" width={400} height={400} />
+                    <Image
+                      alt="Gasthaus Schmid Logo"
+                      src="/images/references/GasthausSchmid.webp"
+                      width={400}
+                      height={400}
+                    />
                     <span className="shadow-overlay"></span>
                     <div className="item-folio__text">
                       <h3 className="item-folio__title">Gasthaus Schmid</h3>
@@ -126,7 +146,12 @@ const Work: React.FC = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <Image alt="Gut Riedbichl Logo" src="/images/references/Logo_Gut_Riedbichl_quadrat.webp" width={400} height={400} />
+                    <Image
+                      alt="Gut Riedbichl Logo"
+                      src="/images/references/Logo_Gut_Riedbichl_quadrat.webp"
+                      width={400}
+                      height={400}
+                    />
                     <span className="shadow-overlay"></span>
                     <div className="item-folio__text">
                       <h3 className="item-folio__title">Gut Riedbichl</h3>
@@ -174,7 +199,8 @@ const Work: React.FC = () => {
                     <Image
                       alt="Matech Software Laptop mit Smartphone Logo"
                       src="/images/references/matechlaptop.webp"
-                      width={400} height={400}
+                      width={400}
+                      height={400}
                     />
                     <span className="shadow-overlay"></span>
                     <div className="item-folio__text">
@@ -189,6 +215,6 @@ const Work: React.FC = () => {
         </div>
       </section>
     </div>
-  );
-};
-export default Work;
+  )
+}
+export default Work

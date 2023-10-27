@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react"
 
 const ErrorPage: React.FC = () => {
   return (
@@ -6,7 +6,7 @@ const ErrorPage: React.FC = () => {
       <h1>Fehler</h1>
       <p>Entschuldigen Sie, ein unerwarteter Fehler ist aufgetreten.</p>
     </div>
-  );
-};
+  )
+}
 
-export default ErrorPage;
+export default ErrorPage

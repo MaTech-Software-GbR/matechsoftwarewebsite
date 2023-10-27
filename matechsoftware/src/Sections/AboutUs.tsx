@@ -1,5 +1,5 @@
-import React from 'react';
-import Image from 'next/image';
+import React from "react"
+import Image from "next/image"
 
 const AboutUs: React.FC = () => {
   return (
@@ -22,7 +22,8 @@ const AboutUs: React.FC = () => {
         <div className="row about-content about-content--timeline">
           <div className="col-six tab-full illustration">
             <Image
-            width={392} height={490}
+              width={392}
+              height={490}
               data-aos="fade-right"
               data-aos-delay="200"
               alt="Symbol für Entwickler: Eine Person, die auf einem Hocker sitzt und an einem Computer arbeitet"
@@ -83,7 +84,8 @@ const AboutUs: React.FC = () => {
         <div className="row about-content about-content--timeline">
           <div className="col-six tab-full illustration">
             <Image
-            width={392} height={490}
+              width={392}
+              height={490}
               data-aos="fade-right"
               data-aos-delay="200"
               alt="Symbol für Entwickler: Eine Person, die vor einem Fenster am Schreibtisch an einem Computer arbeitet"
@@ -162,6 +164,6 @@ const AboutUs: React.FC = () => {
         </div>
       </section>
     </div>
-  );
-};
-export default AboutUs;
+  )
+}
+export default AboutUs

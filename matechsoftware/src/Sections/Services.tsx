@@ -1,5 +1,5 @@
-import React from 'react';
-import Image from 'next/image';
+import React from "react"
+import Image from "next/image"
 
 const Services: React.FC = () => {
   return (
@@ -76,7 +76,8 @@ const Services: React.FC = () => {
               </div>
               <div className="leistungen">
                 <Image
-                width={80} height={80}
+                  width={80}
+                  height={80}
                   data-aos="fade-up"
                   data-aos-delay="100"
                   alt="Bootstrap 4 Logo"
@@ -175,7 +176,8 @@ const Services: React.FC = () => {
               </div>
               <div className="leistungen">
                 <Image
-                width={80} height={80}
+                  width={80}
+                  height={80}
                   data-aos="fade-up"
                   data-aos-delay="1100"
                   alt="SQL Server Logo"
@@ -187,6 +189,6 @@ const Services: React.FC = () => {
         </div>
       </section>
     </div>
-  );
-};
-export default Services;
+  )
+}
+export default Services

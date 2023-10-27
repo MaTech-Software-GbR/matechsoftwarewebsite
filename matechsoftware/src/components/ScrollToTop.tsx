@@ -1,14 +1,22 @@
-import { useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useEffect } from "react"
+import { useRouter } from "next/router"
 
 const ScrollToTop: React.FC = () => {
-  const { pathname } = useLocation();
+  const router = useRouter()
 
   useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [pathname])
+    const handleRouteChange = (): void => {
+      window.scrollTo(0, 0)
+    }
 
-  return null;
+    router.events.on("routeChangeComplete", handleRouteChange)
+
+    return () => {
+      router.events.off("routeChangeComplete", handleRouteChange)
+    }
+  }, [router.events])
+
+  return null
 }
 
-export default ScrollToTop;
+export default ScrollToTop

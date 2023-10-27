@@ -1,5 +1,5 @@
-import { join } from 'path'
+import { join } from "path"
 
 export const sassOptions = {
-  includePaths: [join(__dirname, 'styles')]
+  includePaths: [join(__dirname, "styles")]
 }

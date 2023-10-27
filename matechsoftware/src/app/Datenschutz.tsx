@@ -1,7 +1,7 @@
-import ScrollToTop from '../components/ScrollToTop';
-import Footer from '../sections/Footer';
-import Header from '../sections/Header';
-import React from 'react';
+import ScrollToTop from "../components/ScrollToTop"
+import Footer from "../sections/Footer"
+import Header from "../sections/Header"
+import React from "react"
 
 const Datenschutz: React.FC = () => {
   return (
@@ -571,7 +571,7 @@ const Datenschutz: React.FC = () => {
       </section>
       <Footer />
     </div>
-  );
-};
+  )
+}
 
-export default Datenschutz;
+export default Datenschutz

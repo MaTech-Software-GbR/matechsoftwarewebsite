@@ -1,12 +1,13 @@
-import { Html, Head, Main, NextScript } from 'next/document';
-import React from 'react';
+import { Html, Head, Main, NextScript } from "next/document"
+import Link from "next/link"
+import React from "react"
 
 const Document: React.FC = () => {
   return (
     <Html lang="de">
       <Head>
         <meta charSet="utf-8" />
-        <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+        <Link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta
           name="description"
@@ -58,13 +59,12 @@ const Document: React.FC = () => {
         ></script>
       </Head>
       <body>
-        <Main/>
-        <NextScript/>
+        <Main />
+        <NextScript />
         <div id="root"></div>
       </body>
     </Html>
-
   )
 }
 
-export default Document;
+export default Document
