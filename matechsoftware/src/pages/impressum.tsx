@@ -133,28 +133,6 @@ const Impressum: React.FC = () => {
             Abgewandeltes Template von{" "}
             <Link href="https://www.styleshout.com/">styleshout</Link>
           </span>
-          <br />
-          <span>
-            Foto 1 durch{" "}
-            <Link href="https://pixabay.com/users/tookapic-1386459/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=932926">
-              tookapic
-            </Link>{" "}
-            von{" "}
-            <Link href="https://pixabay.com//?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=932926">
-              Pixabay
-            </Link>
-          </span>
-          <br />
-          <span>
-            Foto 2 durch{" "}
-            <Link href="https://pixabay.com/users/stocksnap-894430/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=926242">
-              StockSnap
-            </Link>{" "}
-            von{" "}
-            <Link href="https://pixabay.com//?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=926242">
-              Pixabay
-            </Link>
-          </span>
         </div>
       </section>
     </div>
