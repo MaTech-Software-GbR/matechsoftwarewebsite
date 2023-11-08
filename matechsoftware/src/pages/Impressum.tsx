@@ -10,7 +10,7 @@ const Impressum: React.FC = () => {
 
         <div className="home-content">
           <div className="row home-content__main">
-            <Link href="/#impressum" className="scroll-link smoothscroll">
+            <Link href="/impressum" className="scroll-link smoothscroll">
               <h1>Impressum</h1>
             </Link>
           </div>
