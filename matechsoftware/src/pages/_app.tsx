@@ -11,6 +11,8 @@ import Datenschutz from "./datenschutz"
 import ErrorPage from "../error-page"
 import RootLayout from "../app/components/layout"
 import ScrollToTop from "../app/components/ScrollToTop"
+import AOS from "aos"
+import "aos/dist/aos.css"
 
 declare global {
   interface Window {
@@ -38,6 +40,10 @@ const App: React.FC = () => {
       g.src = "https://analytics.matech-software.de/js/container_Dwaw5hA9.js"
       s.parentNode?.insertBefore(g, s)
     })()
+  }, [])
+
+  useEffect(() => {
+    AOS.init()
   }, [])
 
   useEffect(() => {
