@@ -1,7 +1,12 @@
+import { ReactNode } from "react"
 import Footer from "./Footer"
 import Header from "./Header"
 
-const RootLayout = ({ children }) => {
+interface RootLayoutProps {
+  children: ReactNode
+}
+
+const RootLayout: React.FC<RootLayoutProps> = ({ children }) => {
   return (
     <div>
       <Header shouldBeSticky={false}></Header>
