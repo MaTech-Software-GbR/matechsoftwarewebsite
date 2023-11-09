@@ -2,27 +2,23 @@ name: Build
 
 on:
   push:
-    branches: ['main', 'dev', 'movetonextjs']
+    branches: ["main", "dev", "movetonextjs"]
   pull_request:
-    branches: ['main']
+    branches: ["main"]
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        node-version: [14.x, 16.x, 18.x]
-
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
-      - name: Use Node.js ${{ matrix.node-version }}
+      - name: Use Node.js 18
         uses: actions/setup-node@v3
         with:
-          node-version: ${{ matrix.node-version }}
-          cache: 'npm'
+          node-version: 18
+          cache: "npm"
 
       - name: Install Dependencies
         run: npm install
