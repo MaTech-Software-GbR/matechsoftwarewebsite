@@ -1,27 +1,29 @@
-name: Build
+name: Build MaTech Software Website
 
 on:
   push:
-    branches: ["main", "dev", "movetonextjs"]
   pull_request:
-    branches: ["main"]
+    branches: "*"
+
+env:
+  NODE_VERSION: 18
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
+      - name: Checkout MaTech Software Code
         uses: actions/checkout@v4
 
-      - name: Use Node.js 18
+      - name: Use Node.js ${{ env.NODE_VERSION }}
         uses: actions/setup-node@v3
         with:
-          node-version: 18
+          node-version: ${{ env.NODE_VERSION }}
           cache: "npm"
 
       - name: Install Dependencies
         run: npm install
 
-      - name: Build Website
+      - name: Build MaTech Software Website
         run: npm run build
