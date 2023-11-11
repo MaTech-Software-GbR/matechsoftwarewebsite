@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { type SubmitHandler, useForm } from 'react-hook-form';
 import { type ContactFormData } from '../models/contactform.interface';
 
@@ -9,30 +9,14 @@ const Contact: React.FC = () => {
   const {
     register,
     handleSubmit,
-    formState: { isSubmitting, errors }
+    formState: { isSubmitting, errors },
   } = useForm<ContactFormData>();
-
-  const [csrfToken, setCsrfToken] = useState('');
-
-  useEffect(() => {
-    void fetchCsrfToken();
-  }, []);
-
-  const fetchCsrfToken = async (): Promise<void> => {
-    try {
-      const response = await fetch('/api/getCsrfToken.php');
-      const token = await response.text();
-      setCsrfToken(token);
-    } catch (error) {
-      console.error('Error fetching CSRF token:', error);
-    }
-  };
 
   const sendMail = async (formData: FormData): Promise<void> => {
     try {
       const response = await fetch('/api/sendEmail.php', {
         method: 'POST',
-        body: formData
+        body: formData,
       });
 
       if (response.ok) {
@@ -58,7 +42,6 @@ const Contact: React.FC = () => {
     formData.append('contactEmail', data.contactEmail);
     formData.append('contactSubject', data.contactSubject);
     formData.append('contactMessage', data.contactMessage);
-    formData.append('csrf_token', csrfToken);
 
     await sendMail(formData);
 
@@ -105,7 +88,7 @@ const Contact: React.FC = () => {
                     {...register('contactName', {
                       required: true,
                       minLength: 2,
-                      maxLength: 100
+                      maxLength: 100,
                     })}
                     name="contactName"
                     type="text"
@@ -152,7 +135,7 @@ const Contact: React.FC = () => {
                     {...register('contactMessage', {
                       required: true,
                       maxLength: 500,
-                      minLength: 15
+                      minLength: 15,
                     })}
                     id="contactMessage"
                     placeholder="Nachricht"
@@ -160,7 +143,7 @@ const Contact: React.FC = () => {
                     cols={50}
                     className="full-width"
                   ></textarea>
-                  {(errors.contactMessage != null) && (
+                  {errors.contactMessage != null && (
                     <span>
                       Ihre Nachricht ist ein Pflichtfeld und muss zwischen 15
                       und 500 Zeichen haben.
@@ -186,25 +169,21 @@ const Contact: React.FC = () => {
               </fieldset>
             </form>
             {/* After submittion, check status, if its successful, print a green sign if not a red. */}
-            {showSuccessfulSent
-              ? (
+            {showSuccessfulSent ? (
               <div className="message-success">
                 Ihre Nachricht wurde versendet. Vielen Dank!
               </div>
-                )
-              : (
+            ) : (
               <div></div>
-                )}
-            {showNotSuccessfulSent
-              ? (
+            )}
+            {showNotSuccessfulSent ? (
               <div className="message-warning">
                 Das hat leider nicht funktioniert. Versuchen Sie es bitte noch
                 einmal.
               </div>
-                )
-              : (
+            ) : (
               <div></div>
-                )}
+            )}
           </div>
           <div className="col-four tab-full contact__infos">
             <h4 className="h06">Email</h4>
