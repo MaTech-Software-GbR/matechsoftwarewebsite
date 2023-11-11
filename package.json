@@ -20,7 +20,6 @@
     "start": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "postbuild": "purgecss --css build/static/css/*.css --content build/index.html build/static/js/*.js --output build/static/css",
     "lint": "eslint 'src/**/*.{js,jsx,ts,tsx}'"
   },
   "browserslist": {
