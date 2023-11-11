@@ -1,11 +1,11 @@
-import { isRouteErrorResponse, useRouteError } from 'react-router-dom';
 import React from 'react';
+import { isRouteErrorResponse, useRouteError } from 'react-router-dom';
 
-export default function ErrorPage() {
+const ErrorPage: React.FC = () => {
   const error = useRouteError();
   console.error(error);
 
-  if (isRouteErrorResponse(error))
+  if (isRouteErrorResponse(error)) {
     return (
       <div id="error-page">
         <section id="home" className="s-home page-hero target-section">
@@ -24,6 +24,7 @@ export default function ErrorPage() {
         </section>
       </div>
     );
+  }
 
   return (
     <div id="error-page">
@@ -31,4 +32,6 @@ export default function ErrorPage() {
       <p>Entschuldigen Sie, ein unerwarteter Fehler ist aufgetreten.</p>
     </div>
   );
-}
+};
+
+export default ErrorPage;

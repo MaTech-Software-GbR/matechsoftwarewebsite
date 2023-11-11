@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Typewriter = React.lazy(() => import('typewriter-effect'));
+const Typewriter = React.lazy(async () => await import('typewriter-effect'));
 
 const Home: React.FC = () => {
   return (
@@ -21,14 +21,16 @@ const Home: React.FC = () => {
                   <Typewriter
                     options={{
                       strings: [
+                        'MaTech Software.',
                         'Programmierer.',
                         'Lösungsfinder.',
-                        'Berater.',
-                        'Problemlöser.',
+                        'Entwickler.',
                         'Chaosbewältiger.',
+                        'Coder.',
+                        'Problemlöser.'
                       ],
                       autoStart: true,
-                      loop: true,
+                      loop: true
                     }}
                   />
                 </React.Suspense>

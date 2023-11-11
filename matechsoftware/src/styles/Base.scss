@@ -34,12 +34,8 @@ abbr[title] {
 
 b,
 strong {
-    font-weight: inherit;
-}
-
-b,
-strong {
-    font-weight: bolder;
+    font-weight: bold;
+    line-height: inherit;
 }
 
 img {
@@ -67,9 +63,7 @@ input {
 
 button {
     text-transform: none;
-}
-
-button {
+    appearance: button;
     -webkit-appearance: button;
 }
 
@@ -144,27 +138,18 @@ i {
     line-height: inherit;
 }
 
-strong,
-b {
-    font-weight: bold;
-    line-height: inherit;
-}
-
 /* Lists */
 
 ul {
     list-style: none;
     list-style-type: none;
+    margin-left: 1.7rem;
 }
 
 li {
     display: block;
     list-style: none;
     list-style-type: none;
-}
-
-ul {
-    margin-left: 1.7rem;
 }
 
 ul li {
@@ -206,14 +191,11 @@ textarea {
 
 [class*="col-"] {
     float: left;
+    padding: 0 20px;
 }
 
 [class*="col-"] + [class*="col-"].end {
     float: right;
-}
-
-[class*="col-"] {
-    padding: 0 20px;
 }
 
 /* column width classes */

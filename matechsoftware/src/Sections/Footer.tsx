@@ -2,7 +2,22 @@ import React from 'react';
 import logo from '../images/logo.png';
 import { Link } from 'react-router-dom';
 
+declare global {
+  interface Window {
+    UC_UI: any
+  }
+}
+
 const Footer: React.FC = () => {
+  const openConsentTool = (): void => {
+    if (
+      typeof window.UC_UI !== 'undefined' &&
+      typeof window.UC_UI.showSecondLayer === 'function'
+    ) {
+      window.UC_UI.showSecondLayer();
+    }
+  };
+
   return (
     <div>
       <footer>
@@ -54,6 +69,11 @@ const Footer: React.FC = () => {
               </span>
               <span>
                 <Link to="/datenschutz">Datenschutz</Link>
+              </span>
+              <span>
+                <a className="pointer" onClick={openConsentTool}>
+                  Cookie-Einstellungen
+                </a>
               </span>
             </div>
           </div>

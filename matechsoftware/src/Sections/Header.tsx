@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import logo from '../images/logo.png';
-import { StickyProps } from '../models/sticky.interface';
+import { type StickyProps } from '../models/sticky.interface';
 
 const Header: React.FC<StickyProps> = ({ shouldBeSticky }) => {
   const [activeSection, setActiveSection] = useState<string>('home');
@@ -10,7 +10,7 @@ const Header: React.FC<StickyProps> = ({ shouldBeSticky }) => {
 
   useEffect(() => {
     const windowVariable = windowRef.current;
-    const handleScroll = () => {
+    const handleScroll = (): void => {
       const sections = document.querySelectorAll('section');
       sections.forEach((section) => {
         const sectionTop = section.offsetTop - 50;
@@ -29,17 +29,17 @@ const Header: React.FC<StickyProps> = ({ shouldBeSticky }) => {
     };
   }, []);
 
-  const toggleMobileMenu = (event: React.MouseEvent<HTMLAnchorElement>) => {
+  const toggleMobileMenu = (event: React.MouseEvent<HTMLAnchorElement>): void => {
     event.preventDefault();
     setIsMobileMenuOpen(!isMobileMenuOpen);
-    if (navRef.current) {
+    if (navRef.current != null) {
       navRef.current.style.display =
         navRef.current.style.display === 'block' ? 'none' : 'block';
     }
   };
 
-  const handleNavClick = () => {
-    if (navRef.current) {
+  const handleNavClick = (): void => {
+    if (navRef.current != null) {
       navRef.current.style.display =
         navRef.current.style.display === 'block' ? 'none' : 'block';
     }
