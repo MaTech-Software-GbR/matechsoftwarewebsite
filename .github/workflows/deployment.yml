@@ -27,14 +27,12 @@ jobs:
       - name: Build MaTech Software Website
         run: npm run build
 
-      - name: copy files to server
-        uses: appleboy/scp-action@master
-
+      - name: Deploy to Server
+        uses: easingthemes/ssh-deploy@main
         with:
-          host: ${{ secrets.HOST }}
-          username: ${{ secrets.USERNAME }}
-          password: ${{ secrets.PASSWORD }}
-          port: ${{ secrets.PORT }}
-          target: ${{ secrets.TARGET }}
-          source: './dist/*'
-          strip_components: 1
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+          SOURCE: './dist/*'
+          REMOTE_HOST: ${{ secrets.HOST }}
+          REMOTE_USER: ${{ secrets.USERNAME }}
+          TARGET: ${{ secrets.TARGET }}
+          PORT: ${{ secrets.PORT }}
