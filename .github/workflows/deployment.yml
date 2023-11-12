@@ -1,0 +1,40 @@
+name: Deploy MaTech Software Website
+
+on:
+  push:
+    branches:
+      - 5-add-deployment
+
+env:
+  NODE_VERSION: 18
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Use Node.js ${{ env.NODE_VERSION }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Build MaTech Software Website
+        run: npm run build
+
+      - name: copy files to server
+        uses: appleboy/scp-action@master
+
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.PASSWORD }}
+          port: ${{ secrets.PORT }}
+          target: ${{ secrets.TARGET }}
+          source: './dist/*'
+          strip_components: 1
