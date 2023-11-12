@@ -1,5 +1,7 @@
 # Matech Software GbR - Website
 
+![Build Status](https://github.com/MaTech-Software-GbR/matechsoftwarewebsite/actions/workflows/build-deploy.yml/badge.svg)
+
 Willkommen im GitHub-Repository der offiziellen Website von Matech Software GbR. Dieses Repository enthält den Quellcode und die Ressourcen für die Website unseres Unternehmens.
 
 - [Über Matech Software GbR](#über-matech-software-gbr)
@@ -18,6 +20,7 @@ Hier finden Sie Informationen über unser Unternehmen, die von uns angebotenen D
 ## Verwendete Technologien
 
 Diese Website wurde unter anderen unter Verwendung der folgenden Technologien erstellt:
+
 - JavaScript/Typescript: Programmiersprache für die Website-Logik.
 - React: Eine leistungsstarke JavaScript-Bibliothek zur Erstellung von Benutzeroberflächen.
 - HTML/CSS: Zur Strukturierung und Gestaltung des Inhalts.
