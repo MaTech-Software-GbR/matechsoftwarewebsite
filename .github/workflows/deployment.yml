@@ -30,7 +30,9 @@ jobs:
       - name: Deploy to Server
         uses: easingthemes/ssh-deploy@main
         with:
-          SCRIPT_BEFORE: ls
+          SCRIPT_BEFORE: |
+            whoami
+            ls -al
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
           SOURCE: './dist/*'
           REMOTE_HOST: ${{ secrets.HOST }}
