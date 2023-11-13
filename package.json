@@ -14,7 +14,8 @@
     "react-hook-form": "^7.47.0",
     "react-router-dom": "^6.17.0",
     "typewriter-effect": "^2.21.0",
-    "vite": "latest"
+    "vite": "^4.5.0",
+    "vite-plugin-static-copy": "^0.17.0"
   },
   "scripts": {
     "start": "vite",
