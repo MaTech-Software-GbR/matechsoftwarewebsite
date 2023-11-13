@@ -48,8 +48,8 @@ jobs:
       - name: Archive production artifacts
         uses: actions/upload-artifact@v3
         with:
-          name: matechsoftwarewebsite-artifact
-          path: artifacts
+          name: dist
+          path: .
 
   deploy:
     needs: build
@@ -60,15 +60,15 @@ jobs:
       - name: Download build artifacts
         uses: actions/download-artifact@v3
         with:
-          name: matechsoftwarewebsite-artifact
-          path: artifacts
+          name: dist
+          path: .
 
       - name: Deploy to Server
         uses: easingthemes/ssh-deploy@v4.1.9
         with:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
           ARGS: '-rltgoDzvO'
-          SOURCE: 'matechsoftwarewebsite-artifact/matechsoftwarewebsite-artifact/*'
+          SOURCE: 'dist/*'
           REMOTE_HOST: ${{ secrets.HOST }}
           REMOTE_USER: ${{ secrets.USERNAME }}
           TARGET: ${{ secrets.TARGET }}
