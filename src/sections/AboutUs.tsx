@@ -98,19 +98,17 @@ const AboutUs: React.FC = () => {
                 </div>
                 <div className="timeline__desc">
                   <p>
-                    Vor kurzem habe ich mein Bachelorstudium im Bereich
-                    Wirtschaft und Informatik an der TU München erfolgreich
-                    abgeschlossen. In dieser Zeit konnte ich insbesondere starke
-                    Programmierkenntnisse erlangen. Die Informatik hat mich von
-                    Anfang an fasziniert und ich freue mich, mein Wissen unter
-                    anderem als Tutor weiterzugeben. Bei MaTech habe ich die
-                    Möglichkeit, mein Know-how in die Praxis umzusetzen und
-                    nützliche Fähigkeiten zu entwickeln. In meiner
-                    Bachelorarbeit habe ich mich tief mit technischen
-                    Erfolgsfaktoren von Non-Fungible Tokens (NFT) befasst und
-                    eine umfangreiche Analyse von 1,4 Mio Transaktionen
-                    durchgeführt. Mein LinkedIn-Post gibt Ihnen bei Interesse
-                    weitere Einblicke in dieses Thema.
+                    Durch meinen Bachelorabschluss im Bereich Wirtschaft und
+                    Informatik an der TU München konnte ich mir insbesondere
+                    starke Programmierkenntnisse aneignen. Die Informatik hat
+                    mich von Anfang an fasziniert und ich freue mich, mein
+                    Wissen unter anderem als Nachhilfelehrer weitergeben zu
+                    können. Informatik-Arbeitserfahrung konnte ich bisher unter
+                    anderem bei einem Münchener Start-up als Data Analyst
+                    sammeln. Bei MaTech schätze ich die Möglichkeit, mein
+                    Know-how in die Praxis umzusetzen, meine Fähigkeiten
+                    auszubauen und mit Kunden aus verschiedenen Bereichen
+                    zusammenzuarbeiten.
                   </p>
                 </div>
 
