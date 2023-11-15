@@ -27,22 +27,6 @@ jobs:
       - name: Run Lint
         run: npm run lint
         continue-on-error: true
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-
-      - name: Use Node.js ${{ env.NODE_VERSION }}
-        uses: actions/setup-node@v3
-        with:
-          node-version: ${{ env.NODE_VERSION }}
-          cache: "npm"
-
-      - name: Install Dependencies
-        run: npm install
-
-      - name: Build MaTech Software Website
-        run: npm run build
   test:
     runs-on: ubuntu-latest
     steps:
@@ -59,6 +43,24 @@ jobs:
 
       - name: Build MaTech Software Website
         run: npm run test
+  build:
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Use Node.js ${{ env.NODE_VERSION }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: "npm"
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Build MaTech Software Website
+        run: npm run build
+
   deploy:
     if: github.ref == 'refs/heads/main'
     needs: build
