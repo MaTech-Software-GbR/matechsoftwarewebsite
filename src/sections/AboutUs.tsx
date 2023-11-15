@@ -1,6 +1,7 @@
-import React from 'react';
-import developerimage1 from '../images/Maxi001.webp';
-import developerimage2 from '../images/Manu001.webp';
+import React from "react"
+import developerimage1 from "../images/Maxi001.webp"
+import developerimage2 from "../images/Manu001.webp"
+import SocialLink from "../components/SocialLink"
 
 const AboutUs: React.FC = () => {
   return (
@@ -54,26 +55,16 @@ const AboutUs: React.FC = () => {
                 </div>
 
                 <ul className="footer-social ueber-uns">
-                  <li>
-                    <a
-                      href="https://www.linkedin.com/in/maximilian-gobbel/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <i className="im im-linkedin" aria-hidden="true"></i>
-                      <span>Linkedin</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="mailto:kontakt@matech-software.de"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <i className="im im-mail" aria-hidden="true"></i>
-                      <span>Email</span>
-                    </a>
-                  </li>
+                  <SocialLink
+                    href="https://www.linkedin.com/in/maximilian-gobbel/"
+                    iconClass="im im-linkedin"
+                    linkText="Linkedin"
+                  />
+                  <SocialLink
+                    href="mailto:kontakt@matech-software.de"
+                    iconClass="im im-mail"
+                    linkText="Email"
+                  />
                 </ul>
               </div>
             </div>
@@ -113,26 +104,16 @@ const AboutUs: React.FC = () => {
                 </div>
 
                 <ul className="footer-social ueber-uns">
-                  <li>
-                    <a
-                      href="https://www.linkedin.com/in/m-kuehnle/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <i className="im im-linkedin" aria-hidden="true"></i>
-                      <span>Linkedin</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="mailto:kontakt@matech-software.de"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <i className="im im-mail" aria-hidden="true"></i>
-                      <span>Email</span>
-                    </a>
-                  </li>
+                  <SocialLink
+                    href="https://www.linkedin.com/in/m-kuehnle/"
+                    iconClass="im im-linkedin"
+                    linkText="Linkedin"
+                  />
+                  <SocialLink
+                    href="mailto:kontakt@matech-software.de"
+                    iconClass="im im-mail"
+                    linkText="Email"
+                  />
                 </ul>
               </div>
             </div>
@@ -158,6 +139,6 @@ const AboutUs: React.FC = () => {
         </div>
       </section>
     </div>
-  );
-};
-export default AboutUs;
+  )
+}
+export default AboutUs
