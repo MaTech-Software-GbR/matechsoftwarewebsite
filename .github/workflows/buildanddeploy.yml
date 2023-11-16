@@ -28,6 +28,7 @@ jobs:
         run: npm run lint
         continue-on-error: true
   test:
+    needs: lint
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
