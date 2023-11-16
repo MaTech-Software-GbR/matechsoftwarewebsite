@@ -1,6 +1,6 @@
 import React from "react"
-import logo from "../images/logo.png"
 import { Link } from "react-router-dom"
+import logo from "../images/logo.png"
 import SocialLink from "../components/SocialLink"
 
 declare global {

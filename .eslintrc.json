@@ -5,7 +5,10 @@
   },
   "extends": [
     "plugin:react/recommended",
+    "eslint:recommended",
     "standard-with-typescript",
+    "plugin:import/typescript",
+    "plugin:jest-extended/all",
     "airbnb",
     "prettier"
   ],
@@ -14,7 +17,7 @@
     "ecmaVersion": "latest",
     "sourceType": "module"
   },
-  "plugins": ["react", "react-hooks", "prettier"],
+  "plugins": ["react", "react-hooks", "prettier", "jest-extended"],
   "rules": {
     "semi": "off",
     "@typescript-eslint/semi": "off",

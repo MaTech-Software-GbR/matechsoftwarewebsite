@@ -25,8 +25,8 @@ const Home: React.FC = () => {
   return (
     <div>
       <section id="home" className="s-home page-hero target-section">
-        <div className="overlay"></div>
-        <div className="shadow-overlay"></div>
+        <div className="overlay" />
+        <div className="shadow-overlay" />
 
         <div className="home-content">
           <div className="row home-content__main">

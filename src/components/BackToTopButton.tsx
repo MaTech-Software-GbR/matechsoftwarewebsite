@@ -16,7 +16,7 @@ const BackToTopButton: React.FC<VisibilityProbs> = ({ isVisible }) => {
     <div className="back-to-top">
       {isVisible && (
         <button title="Back to Top" onClick={scrollToTop}>
-          <i className="im im-arrow-up" aria-hidden="true"></i>
+          <i className="im im-arrow-up" aria-hidden="true" />
         </button>
       )}
     </div>

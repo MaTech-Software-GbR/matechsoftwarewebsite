@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import { type SubmitHandler, useForm } from "react-hook-form"
-import { type ContactFormData } from "../models/contactform.interface"
 import { v4 as uuidv4 } from "uuid"
+import { type ContactFormData } from "../models/contactform.interface"
 
 const Contact: React.FC = () => {
   const [csrfToken, setCsrfToken] = useState("")
@@ -14,6 +14,10 @@ const Contact: React.FC = () => {
     formState: { isSubmitting, errors }
   } = useForm<ContactFormData>()
 
+  /**
+   *
+   * @param formData
+   */
   async function sendMail(formData: FormData): Promise<string> {
     try {
       const response = await fetch("/api/sendEmail.php", {
@@ -24,9 +28,8 @@ const Contact: React.FC = () => {
       if (response.status === 200) {
         const data = await response.text()
         return data === "OK" ? "success" : "error"
-      } else {
-        return "error"
       }
+      return "error"
     } catch (error) {
       return "error"
     }
@@ -62,7 +65,7 @@ const Contact: React.FC = () => {
   return (
     <div>
       <section id="contact" className="s-contact target-section">
-        <div className="overlay"></div>
+        <div className="overlay" />
 
         <div className="row narrow section-intro">
           <div className="col-full">
@@ -149,7 +152,7 @@ const Contact: React.FC = () => {
                     rows={10}
                     cols={50}
                     className="full-width"
-                  ></textarea>
+                  />
                   {errors.contactMessage != null && (
                     <span>
                       Ihre Nachricht ist ein Pflichtfeld und muss zwischen 15
@@ -167,9 +170,9 @@ const Contact: React.FC = () => {
                   <div className="submit-loader">
                     <div className="text-loader">Sending...</div>
                     <div className="s-loader">
-                      <div className="bounce1"></div>
-                      <div className="bounce2"></div>
-                      <div className="bounce3"></div>
+                      <div className="bounce1" />
+                      <div className="bounce2" />
+                      <div className="bounce3" />
                     </div>
                   </div>
                 </div>
@@ -183,7 +186,7 @@ const Contact: React.FC = () => {
                 Ihre Nachricht wurde versendet. Vielen Dank!
               </div>
             ) : (
-              <div></div>
+              <div />
             )}
             {showNotSuccessfulSent ? (
               <div className="message-warning">
@@ -191,7 +194,7 @@ const Contact: React.FC = () => {
                 erneut.
               </div>
             ) : (
-              <div></div>
+              <div />
             )}
           </div>
           <div className="col-four tab-full contact__infos">

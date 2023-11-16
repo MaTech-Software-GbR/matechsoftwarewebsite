@@ -3,7 +3,7 @@ import "@testing-library/jest-dom"
 import BackToTopButton from "./BackToTopButton"
 
 test("renders button when isVisible is true", () => {
-  render(<BackToTopButton isVisible={true} />)
+  render(<BackToTopButton isVisible />)
   const buttonElement = screen.getByTitle("Back to Top")
   expect(buttonElement).toBeInTheDocument()
 })
@@ -18,7 +18,7 @@ test("clicking on the button calls scrollToTop", () => {
   // Mock the scrollTo method
   window.scrollTo = jest.fn()
 
-  render(<BackToTopButton isVisible={true} />)
+  render(<BackToTopButton isVisible />)
   const buttonElement = screen.getByTitle("Back to Top")
 
   // Trigger a click on the button
