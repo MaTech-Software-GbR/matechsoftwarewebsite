@@ -1,10 +1,7 @@
-@import url("../iconic/css/iconmonstr-iconic-font.min.css");
-@import url("Fonts.scss");
-
-$matechlightblue1: #4da8da;
-$matechlightblue2: #007cc7;
-$matechdarkblue1: #12232e;
-$matechdarkblue2: #203647;
+@import "./base/reset";
+@import url("./iconic/css/iconmonstr-iconic-font.min.css");
+@import "./base/colors";
+@import "./base/typography";
 
 html {
     font-size: 62.5%;
@@ -778,6 +775,7 @@ input::-moz-focus-inner {
     position: absolute;
     left: 0.6rem;
     bottom: -13.2rem;
+    transition: transform 0.3s ease-in-out;
 }
 
 .home-content__scroll a {
@@ -797,9 +795,9 @@ input::-moz-focus-inner {
     border-right: 2px solid $matechlightblue2;
     content: "";
     display: block;
-    height: 8px;
-    width: 8px;
-    margin-top: -7px;
+    height: 9px;
+    width: 9px;
+    margin-top: -6px;
     pointer-events: none;
     position: absolute;
     right: 0;
@@ -812,6 +810,22 @@ input::-moz-focus-inner {
     transform: rotate(45deg);
     -webkit-transition: all 0.15s ease-in-out;
     transition: all 0.15s ease-in-out;
+}
+
+.home-content__scroll:hover {
+    animation: upDown 2s infinite;
+}
+
+@keyframes upDown {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
 }
 
 /* home social */

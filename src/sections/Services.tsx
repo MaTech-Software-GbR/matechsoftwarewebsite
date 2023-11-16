@@ -1,16 +1,17 @@
-import React from 'react';
-import htmlicon from '../images/technologies/html-icon.png';
-import bootstrapicon from '../images/technologies/bootstrap-4-icon.png';
-import csharpicon from '../images/technologies/c-sharp-programming-language-icon.png';
-import cssicon from '../images/technologies/css-icon.png';
-import javaicon from '../images/technologies/java-programming-language-icon.png';
-import javascripticon from '../images/technologies/javascript-programming-language-icon.png';
-import dotneticon from '../images/technologies/microsoft-dot-net-icon.png';
-import pythonicon from '../images/technologies/python-programming-language-icon.png';
-import sqlservericon from '../images/technologies/sql-server-icon.png';
-import typescripticon from '../images/technologies/typescript-programming-language-icon.png';
-import mysqlicon from '../images/technologies/mysql-icon.png';
-import wordpressicon from '../images/technologies/wordpress-icon.png';
+import React from "react"
+import htmlicon from "../images/technologies/html-icon.png"
+import bootstrapicon from "../images/technologies/bootstrap-4-icon.png"
+import csharpicon from "../images/technologies/c-sharp-programming-language-icon.png"
+import cssicon from "../images/technologies/css-icon.png"
+import javaicon from "../images/technologies/java-programming-language-icon.png"
+import javascripticon from "../images/technologies/javascript-programming-language-icon.png"
+import dotneticon from "../images/technologies/microsoft-dot-net-icon.png"
+import pythonicon from "../images/technologies/python-programming-language-icon.png"
+import sqlservericon from "../images/technologies/sql-server-icon.png"
+import typescripticon from "../images/technologies/typescript-programming-language-icon.png"
+import mysqlicon from "../images/technologies/mysql-icon.png"
+import wordpressicon from "../images/technologies/wordpress-icon.png"
+import Logo from "../components/Logo"
 
 const Services: React.FC = () => {
   return (
@@ -75,107 +76,23 @@ const Services: React.FC = () => {
               Perfekt vereint.
             </h2>
             <div className="flex flex-wrap justify-center">
-              <div className="leistungen">
-                <img
-                  data-aos="fade-up"
-                  data-aos-delay="100"
-                  alt="HTML 5 Logo"
-                  src={htmlicon}
-                />
-              </div>
-              <div className="leistungen">
-                <img
-                  data-aos="fade-up"
-                  data-aos-delay="100"
-                  alt="Bootstrap 4 Logo"
-                  src={bootstrapicon}
-                />
-              </div>
-              <div className="leistungen">
-                <img
-                  data-aos="fade-up"
-                  data-aos-delay="200"
-                  alt="C# Logo"
-                  src={csharpicon}
-                />
-              </div>
-              <div className="leistungen">
-                <img
-                  data-aos="fade-up"
-                  data-aos-delay="300"
-                  alt="Typescript Logo"
-                  src={typescripticon}
-                />
-              </div>
-              <div className="leistungen">
-                <img
-                  data-aos="fade-up"
-                  data-aos-delay="400"
-                  alt=".NET Logo"
-                  src={dotneticon}
-                />
-              </div>
-              <div className="leistungen">
-                <img
-                  data-aos="fade-up"
-                  data-aos-delay="500"
-                  alt="Python Logo"
-                  src={pythonicon}
-                />
-              </div>
-              <div className="leistungen">
-                <img
-                  data-aos="fade-up"
-                  data-aos-delay="600"
-                  alt="javalogo"
-                  src={javaicon}
-                />
-              </div>
-              <div className="leistungen">
-                <img
-                  data-aos="fade-up"
-                  data-aos-delay="700"
-                  alt="JavaScript Logo"
-                  src={javascripticon}
-                />
-              </div>
-              <div className="leistungen">
-                <img
-                  data-aos="fade-up"
-                  data-aos-delay="800"
-                  alt="csslogo"
-                  src={cssicon}
-                />
-              </div>
-              <div className="leistungen">
-                <img
-                  data-aos="fade-up"
-                  data-aos-delay="900"
-                  alt="Wordpress Logo"
-                  src={wordpressicon}
-                />
-              </div>
-              <div className="leistungen">
-                <img
-                  data-aos="fade-up"
-                  data-aos-delay="1000"
-                  alt="MySQL Logo"
-                  src={mysqlicon}
-                />
-              </div>
-              <div className="leistungen">
-                <img
-                  data-aos="fade-up"
-                  data-aos-delay="1100"
-                  alt="SQL Server Logo"
-                  src={sqlservericon}
-                />
-              </div>
+              <Logo delay="100" alt="HTML 5 Logo" src={htmlicon} />
+              <Logo delay="200" alt="Bootstrap 4 Logo" src={bootstrapicon} />
+              <Logo delay="300" alt="C# Logo" src={csharpicon} />
+              <Logo delay="400" alt="Typescript Logo" src={typescripticon} />
+              <Logo delay="500" alt=".NET Logo" src={dotneticon} />
+              <Logo delay="600" alt="Python Logo" src={pythonicon} />
+              <Logo delay="700" alt="Java Logo" src={javaicon} />
+              <Logo delay="800" alt="JavaScript Logo" src={javascripticon} />
+              <Logo delay="900" alt="CSS Logo" src={cssicon} />
+              <Logo delay="1000" alt="Wordpress Logo" src={wordpressicon} />
+              <Logo delay="1100" alt="MySQL Logo" src={mysqlicon} />
+              <Logo delay="1200" alt="SQL Server Logo" src={sqlservericon} />
             </div>
           </div>
         </div>
       </section>
     </div>
-  );
-};
-export default Services;
+  )
+}
+export default Services

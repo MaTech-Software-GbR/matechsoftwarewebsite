@@ -1,19 +1,33 @@
 ﻿<?php
+session_start();
 
 $siteOwnersEmail = 'kontakt@matech-software.de';
 
+// Generate a CSRF token and store it in the session
+if (!isset($_SESSION['csrf_token'])) {
+    $_SESSION['csrf_token'] = base64_encode(openssl_random_pseudo_bytes(32));
+}
+
 if ($_POST) {
-    $name = trim(stripslashes($_POST['contactName']));
-    $email = trim(stripslashes($_POST['contactEmail']));
-    $subject = trim(stripslashes($_POST['contactSubject']));
-    $contact_message = trim(stripslashes($_POST['contactMessage']));
+    // Check CSRF token
+    if (!isset($_POST['csrf_token']) || $_POST['csrf_token'] !== $_SESSION['csrf_token']) {
+        die('Invalid CSRF token');
+    }
+
+    // Regenerate CSRF token
+    $_SESSION['csrf_token'] = base64_encode(openssl_random_pseudo_bytes(32));
+
+    $name = trim(stripslashes(htmlspecialchars($_POST['contactName'])));
+    $email = trim(stripslashes(htmlspecialchars($_POST['contactEmail'])));
+    $subject = trim(stripslashes(htmlspecialchars($_POST['contactSubject'])));
+    $contact_message = trim(stripslashes(htmlspecialchars($_POST['contactMessage'])));
 
     // Check Name
     if (strlen($name) < 2) {
         $error['name'] = "Bitte geben Sie hier Ihren Namen ein.";
     }
     // Check Email
-    if (!preg_match('/^[a-z0-9&\'\.\-_\+]+@[a-z0-9\-]+\.([a-z0-9\-]+\.)*+[a-z]{2}/is', $email)) {
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         $error['email'] = "Bitte geben Sie eine valide E-Mail Adresse ein.";
     }
     // Check Message

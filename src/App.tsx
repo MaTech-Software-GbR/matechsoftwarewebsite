@@ -1,42 +1,59 @@
-import React, { useCallback, useEffect, useRef, useState } from 'react';
-import Homepage from './pages/Homepage';
+import React, { useCallback, useEffect, useRef, useState } from "react"
+import Homepage from "./pages/Homepage"
+
+interface MtmEvent {
+  "mtm.startTime": number
+  event: string
+}
 
 declare global {
   interface Window {
-    _mtm: any
+    _mtm: MtmEvent[]
   }
 }
 
 const App: React.FC = () => {
-  const [, setOffset] = useState(0);
-  const onScroll = useCallback(() => { setOffset(window.scrollY); }, []);
+  const [, setScrollOffset] = useState(0)
+  const onScroll = useCallback(() => {
+    setScrollOffset(window.scrollY)
+  }, [])
 
-  const scrollRef = useRef<HTMLDivElement>(null);
+  const ANALYTICS_SCRIPT_URL =
+    "https://analytics.matech-software.de/js/container_Dwaw5hA9.js"
 
-  useEffect(() => {
+  const scrollRef = useRef<HTMLDivElement>(null)
+
+  const setupAnalyticsScript = (): void => {
     // eslint-disable-next-line @typescript-eslint/strict-boolean-expressions
-    const _mtm = (window._mtm = window._mtm || []);
-    _mtm.push({ 'mtm.startTime': new Date().getTime(), event: 'mtm.Start' });
-    (function () {
-      const d = document;
-      const g = d.createElement('script');
-      const s = d.getElementsByTagName('script')[0];
-      g.async = true;
-      g.src = 'https://analytics.matech-software.de/js/container_Dwaw5hA9.js';
-      s.parentNode?.insertBefore(g, s);
-    })();
-  }, []);
+    const matomoEvents = (window._mtm = window._mtm || [])
+    matomoEvents.push({
+      "mtm.startTime": new Date().getTime(),
+      event: "mtm.Start"
+    })
+
+    const newScript = document.createElement("script")
+    const firstScript = document.getElementsByTagName("script")[0]
+    newScript.async = true
+    newScript.src = ANALYTICS_SCRIPT_URL
+    firstScript.parentNode?.insertBefore(newScript, firstScript)
+  }
 
   useEffect(() => {
-    window.addEventListener('scroll', onScroll, { passive: true });
-    return () => { window.removeEventListener('scroll', onScroll); };
-  }, [onScroll]);
+    setupAnalyticsScript()
+  }, [])
+
+  useEffect(() => {
+    window.addEventListener("scroll", onScroll, { passive: true })
+    return () => {
+      window.removeEventListener("scroll", onScroll)
+    }
+  }, [onScroll])
 
   return (
     <div className="App" ref={scrollRef}>
       <Homepage />
     </div>
-  );
-};
+  )
+}
 
-export default App;
+export default App
