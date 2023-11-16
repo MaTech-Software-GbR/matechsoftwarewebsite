@@ -44,7 +44,7 @@ const Footer: React.FC = () => {
               <SocialLink
                 href="mailto:kontact@matech-software.de"
                 iconClass="im im-mail"
-                linkText="E-Mail"
+                linkText="Email"
               />
             </ul>
           </div>

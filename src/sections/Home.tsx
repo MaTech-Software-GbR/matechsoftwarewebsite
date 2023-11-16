@@ -49,7 +49,7 @@ const Home: React.FC = () => {
 
             <div className="home-content__scroll">
               <a href="/#services" className="scroll-link">
-                <span>Unsere Leistungen</span>
+                <span className="hover-effect">Unsere Leistungen</span>
               </a>
             </div>
           </div>
@@ -63,7 +63,7 @@ const Home: React.FC = () => {
           <SocialLink
             href="mailto:kontact@matech-software.de"
             iconClass="im im-mail"
-            linkText="E-Mail"
+            linkText="Email"
           />
         </ul>
       </section>
