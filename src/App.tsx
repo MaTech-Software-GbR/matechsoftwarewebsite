@@ -8,7 +8,7 @@ interface MtmEvent {
 
 declare global {
   interface Window {
-    _mtm: MtmEvent[]
+    mtmEvent: MtmEvent[]
   }
 }
 
@@ -25,7 +25,7 @@ const App: React.FC = () => {
 
   const setupAnalyticsScript = (): void => {
     // eslint-disable-next-line @typescript-eslint/strict-boolean-expressions
-    const matomoEvents = (window._mtm = window._mtm || [])
+    const matomoEvents = (window.mtmEvent = window.mtmEvent || [])
     matomoEvents.push({
       "mtm.startTime": new Date().getTime(),
       event: "mtm.Start"
