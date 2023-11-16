@@ -1,7 +1,7 @@
 import React, { useEffect } from "react"
 import SocialLink from "../components/SocialLink"
 
-const Typewriter = React.lazy(async () => await import("typewriter-effect"))
+const Typewriter = React.lazy(async () => import("typewriter-effect"))
 
 const Home: React.FC = () => {
   useEffect(() => {

@@ -9,9 +9,9 @@ import "./styles/App.scss"
 
 AOS.init()
 
-const App = React.lazy(async () => await import("./App"))
-const Impressum = React.lazy(async () => await import("./pages/Impressum"))
-const Datenschutz = React.lazy(async () => await import("./pages/Datenschutz"))
+const App = React.lazy(async () => import("./App"))
+const Impressum = React.lazy(async () => import("./pages/Impressum"))
+const Datenschutz = React.lazy(async () => import("./pages/Datenschutz"))
 
 const router = createBrowserRouter([
   {
