@@ -19,6 +19,8 @@
     "eslint-plugin-simple-import-sort": "^10.0.0",
     "eslint-plugin-sonarjs": "^0.23.0",
     "eslint-plugin-tsdoc": "^0.2.17",
+    "@testing-library/jest-dom": "^6.1.4",
+    "@testing-library/react": "^14.1.0",
     "lodash": "^4.17.21",
     "prettier-plugin-packagejson": "^2.4.6",
     "react": "^18.2.0",
@@ -56,8 +58,6 @@
   "devDependencies": {
     "@babel/preset-env": "^7.23.3",
     "@babel/preset-react": "^7.23.3",
-    "@testing-library/jest-dom": "^6.1.4",
-    "@testing-library/react": "^14.1.0",
     "@types/jest": "^29.5.8",
     "@types/lodash": "^4.14.201",
     "@types/uuid": "^9.0.7",
