@@ -1,84 +1,86 @@
-import React, { useEffect, useRef, useState } from 'react';
-import logo from '../images/logo.png';
-import { type StickyProps } from '../models/sticky.interface';
+import React, { useEffect, useRef, useState } from "react"
+import logo from "../images/logo.png"
+import { type StickyProps } from "../models/sticky.interface"
 
 const Header: React.FC<StickyProps> = ({ shouldBeSticky }) => {
-  const [activeSection, setActiveSection] = useState<string>('home');
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false);
-  const navRef = useRef<HTMLDivElement>(null);
-  const windowRef = useRef<Window>(window);
+  const [activeSection, setActiveSection] = useState<string>("home")
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false)
+  const navRef = useRef<HTMLDivElement>(null)
+  const windowRef = useRef<Window>(window)
 
   useEffect(() => {
-    const windowVariable = windowRef.current;
+    const windowVariable = windowRef.current
     const handleScroll = (): void => {
-      const sections = document.querySelectorAll('section');
+      const sections = document.querySelectorAll("section")
       sections.forEach((section) => {
-        const sectionTop = section.offsetTop - 50;
-        const sectionHeight = section.offsetHeight;
-        const sectionBottom = sectionTop + sectionHeight;
-        const scrollPosition = windowRef.current.scrollY;
+        const sectionTop = section.offsetTop - 50
+        const sectionHeight = section.offsetHeight
+        const sectionBottom = sectionTop + sectionHeight
+        const scrollPosition = windowRef.current.scrollY
         if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
-          setActiveSection(section.id);
+          setActiveSection(section.id)
         }
-      });
-    };
+      })
+    }
 
-    windowVariable.addEventListener('scroll', handleScroll);
+    windowVariable.addEventListener("scroll", handleScroll)
     return () => {
-      windowVariable.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
+      windowVariable.removeEventListener("scroll", handleScroll)
+    }
+  }, [])
 
-  const toggleMobileMenu = (event: React.MouseEvent<HTMLAnchorElement>): void => {
-    event.preventDefault();
-    setIsMobileMenuOpen(!isMobileMenuOpen);
+  const toggleMobileMenu = (
+    event: React.MouseEvent<HTMLAnchorElement>
+  ): void => {
+    event.preventDefault()
+    setIsMobileMenuOpen(!isMobileMenuOpen)
     if (navRef.current != null) {
       navRef.current.style.display =
-        navRef.current.style.display === 'block' ? 'none' : 'block';
+        navRef.current.style.display === "block" ? "none" : "block"
     }
-  };
+  }
 
   const handleNavClick = (): void => {
     if (navRef.current != null) {
       navRef.current.style.display =
-        navRef.current.style.display === 'block' ? 'none' : 'block';
+        navRef.current.style.display === "block" ? "none" : "block"
     }
     if (isMobileMenuOpen) {
-      setIsMobileMenuOpen(false);
+      setIsMobileMenuOpen(false)
     }
-  };
+  }
 
   return (
     <div>
-      <header className={`s-header ${shouldBeSticky ? 'sticky-navbar' : ''}`}>
+      <header className={`s-header ${shouldBeSticky ? "sticky-navbar" : ""}`}>
         <div className="header-logo">
           <a className="site-logo" href="/" onClick={handleNavClick}>
             <img src={logo} alt="MaTech Software GbR Logo" />
           </a>
         </div>
-        <nav className="header-nav-wrap" ref={navRef}>
+        <nav className="header-nav-wrap" role="navigation" ref={navRef}>
           <ul className="header-nav">
-            <li className={activeSection === 'home' ? 'current' : ''}>
+            <li className={activeSection === "home" ? "current" : ""}>
               <a href="/#home" title="home" onClick={handleNavClick}>
                 Start
               </a>
             </li>
-            <li className={activeSection === 'services' ? 'current' : ''}>
+            <li className={activeSection === "services" ? "current" : ""}>
               <a href="/#services" title="services" onClick={handleNavClick}>
                 Leistungen
               </a>
             </li>
-            <li className={activeSection === 'works' ? 'current' : ''}>
+            <li className={activeSection === "works" ? "current" : ""}>
               <a href="/#works" title="works" onClick={handleNavClick}>
                 Referenzen
               </a>
             </li>
-            <li className={activeSection === 'about' ? 'current' : ''}>
+            <li className={activeSection === "about" ? "current" : ""}>
               <a href="/#about" title="about" onClick={handleNavClick}>
                 Über uns
               </a>
             </li>
-            <li className={activeSection === 'contact' ? 'current' : ''}>
+            <li className={activeSection === "contact" ? "current" : ""}>
               <a href="/#contact" title="contact" onClick={handleNavClick}>
                 Kontakt
               </a>
@@ -88,7 +90,7 @@ const Header: React.FC<StickyProps> = ({ shouldBeSticky }) => {
 
         <a
           className={`header-menu-toggle ${
-            isMobileMenuOpen ? 'is-clicked' : ''
+            isMobileMenuOpen ? "is-clicked" : ""
           }`}
           href="/"
           onClick={toggleMobileMenu}
@@ -97,7 +99,7 @@ const Header: React.FC<StickyProps> = ({ shouldBeSticky }) => {
         </a>
       </header>
     </div>
-  );
-};
+  )
+}
 
-export default Header;
+export default Header

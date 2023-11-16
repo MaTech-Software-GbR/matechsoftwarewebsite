@@ -1,6 +1,7 @@
-import React from 'react';
-import logo from '../images/logo.png';
-import { Link } from 'react-router-dom';
+import React from "react"
+import logo from "../images/logo.png"
+import { Link } from "react-router-dom"
+import SocialLink from "../components/SocialLink"
 
 declare global {
   interface Window {
@@ -11,12 +12,12 @@ declare global {
 const Footer: React.FC = () => {
   const openConsentTool = (): void => {
     if (
-      typeof window.UC_UI !== 'undefined' &&
-      typeof window.UC_UI.showSecondLayer === 'function'
+      typeof window.UC_UI !== "undefined" &&
+      typeof window.UC_UI.showSecondLayer === "function"
     ) {
-      window.UC_UI.showSecondLayer();
+      window.UC_UI.showSecondLayer()
     }
-  };
+  }
 
   return (
     <div>
@@ -35,26 +36,16 @@ const Footer: React.FC = () => {
             </div>
 
             <ul className="footer-social">
-              <li>
-                <a
-                  href="https://www.linkedin.com/company/matech-software"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <i className="im im-linkedin" aria-hidden="true"></i>
-                  <span>Linkedin</span>
-                </a>
-              </li>
-              <li>
-                <a
-                  href="mailto:kontakt@matech-software.de"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <i className="im im-mail" aria-hidden="true"></i>
-                  <span>Email</span>
-                </a>
-              </li>
+              <SocialLink
+                href="https://www.linkedin.com/company/matech-software"
+                iconClass="im im-linkedin"
+                linkText="LinkedIn"
+              />
+              <SocialLink
+                href="mailto:kontact@matech-software.de"
+                iconClass="im im-mail"
+                linkText="E-Mail"
+              />
             </ul>
           </div>
         </div>
@@ -80,6 +71,6 @@ const Footer: React.FC = () => {
         </div>
       </footer>
     </div>
-  );
-};
-export default Footer;
+  )
+}
+export default Footer

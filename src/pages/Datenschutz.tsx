@@ -1,7 +1,8 @@
-import ScrollToTop from '../components/ScrollToTop';
-import Footer from '../sections/Footer';
-import Header from '../sections/Header';
-import React from 'react';
+import ScrollToTop from "../components/ScrollToTop"
+import SocialLink from "../components/SocialLink"
+import Footer from "../sections/Footer"
+import Header from "../sections/Header"
+import React from "react"
 
 const Datenschutz: React.FC = () => {
   return (
@@ -20,26 +21,16 @@ const Datenschutz: React.FC = () => {
         </div>
 
         <ul className="home-social">
-          <li>
-            <a
-              href="https://www.linkedin.com/company/matech-software"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <i className="im im-linkedin" aria-hidden="true"></i>
-              <span>LinkedIn</span>
-            </a>
-          </li>
-          <li>
-            <a
-              href="mailto:kontact@matech-software.de"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <i className="im im-mail" aria-hidden="true"></i>
-              <span>E-Mail</span>
-            </a>
-          </li>
+          <SocialLink
+            href="https://www.linkedin.com/company/matech-software"
+            iconClass="im im-linkedin"
+            linkText="LinkedIn"
+          />
+          <SocialLink
+            href="mailto:kontact@matech-software.de"
+            iconClass="im im-mail"
+            linkText="E-Mail"
+          />
         </ul>
       </section>
 
@@ -571,7 +562,7 @@ const Datenschutz: React.FC = () => {
       </section>
       <Footer />
     </div>
-  );
-};
+  )
+}
 
-export default Datenschutz;
+export default Datenschutz

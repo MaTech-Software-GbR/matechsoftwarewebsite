@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react"
 
 interface VisibilityProbs {
   isVisible: boolean
@@ -8,9 +8,9 @@ const BackToTopButton: React.FC<VisibilityProbs> = ({ isVisible }) => {
   const scrollToTop = (): void => {
     window.scrollTo({
       top: 0,
-      behavior: 'smooth'
-    });
-  };
+      behavior: "smooth"
+    })
+  }
 
   return (
     <div className="back-to-top">
@@ -20,7 +20,7 @@ const BackToTopButton: React.FC<VisibilityProbs> = ({ isVisible }) => {
         </button>
       )}
     </div>
-  );
-};
+  )
+}
 
-export default BackToTopButton;
+export default BackToTopButton

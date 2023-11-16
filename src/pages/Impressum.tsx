@@ -1,7 +1,8 @@
-import React from 'react';
-import Header from '../sections/Header';
-import Footer from '../sections/Footer';
-import ScrollToTop from '../components/ScrollToTop';
+import React from "react"
+import Header from "../sections/Header"
+import Footer from "../sections/Footer"
+import ScrollToTop from "../components/ScrollToTop"
+import SocialLink from "../components/SocialLink"
 
 const Impressum: React.FC = () => {
   return (
@@ -21,26 +22,16 @@ const Impressum: React.FC = () => {
         </div>
 
         <ul className="home-social">
-          <li>
-            <a
-              href="https://www.linkedin.com/company/matech-software"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <i className="im im-linkedin" aria-hidden="true"></i>
-              <span>LinkedIn</span>
-            </a>
-          </li>
-          <li>
-            <a
-              href="mailto:kontakt@matech-software.de"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <i className="im im-mail" aria-hidden="true"></i>
-              <span>E-Mail</span>
-            </a>
-          </li>
+          <SocialLink
+            href="https://www.linkedin.com/company/matech-software"
+            iconClass="im im-linkedin"
+            linkText="LinkedIn"
+          />
+          <SocialLink
+            href="mailto:kontact@matech-software.de"
+            iconClass="im im-mail"
+            linkText="E-Mail"
+          />
         </ul>
       </section>
       <section id="impressum" className="s-works target-section">
@@ -69,7 +60,7 @@ const Impressum: React.FC = () => {
           <h2>EU-Streitschlichtung</h2>
           <p>
             Die Europ&auml;ische Kommission stellt eine Plattform zur
-            Online-Streitbeilegung (OS) bereit:{' '}
+            Online-Streitbeilegung (OS) bereit:{" "}
             <a
               href="https://ec.europa.eu/consumers/odr/"
               target="_blank"
@@ -134,27 +125,27 @@ const Impressum: React.FC = () => {
           </p>
           <h3>Credits</h3>
           <span>
-            Abgewandeltes Template von{' '}
+            Abgewandeltes Template von{" "}
             <a href="https://www.styleshout.com/">styleshout</a>
           </span>
           <br />
           <span>
-            Foto 1 durch{' '}
+            Foto 1 durch{" "}
             <a href="https://pixabay.com/users/tookapic-1386459/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=932926">
               tookapic
-            </a>{' '}
-            von{' '}
+            </a>{" "}
+            von{" "}
             <a href="https://pixabay.com//?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=932926">
               Pixabay
             </a>
           </span>
           <br />
           <span>
-            Foto 2 durch{' '}
+            Foto 2 durch{" "}
             <a href="https://pixabay.com/users/stocksnap-894430/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=926242">
               StockSnap
-            </a>{' '}
-            von{' '}
+            </a>{" "}
+            von{" "}
             <a href="https://pixabay.com//?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=926242">
               Pixabay
             </a>
@@ -163,7 +154,7 @@ const Impressum: React.FC = () => {
       </section>
       <Footer />
     </div>
-  );
-};
+  )
+}
 
-export default Impressum;
+export default Impressum

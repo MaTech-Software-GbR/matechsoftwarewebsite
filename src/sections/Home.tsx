@@ -1,6 +1,7 @@
-import React from 'react';
+import React from "react"
+import SocialLink from "../components/SocialLink"
 
-const Typewriter = React.lazy(async () => await import('typewriter-effect'));
+const Typewriter = React.lazy(async () => await import("typewriter-effect"))
 
 const Home: React.FC = () => {
   return (
@@ -21,13 +22,13 @@ const Home: React.FC = () => {
                   <Typewriter
                     options={{
                       strings: [
-                        'MaTech Software.',
-                        'Programmierer.',
-                        'Lösungsfinder.',
-                        'Entwickler.',
-                        'Chaosbewältiger.',
-                        'Coder.',
-                        'Problemlöser.'
+                        "MaTech Software.",
+                        "Programmierer.",
+                        "Lösungsfinder.",
+                        "Entwickler.",
+                        "Chaosbewältiger.",
+                        "Coder.",
+                        "Problemlöser."
                       ],
                       autoStart: true,
                       loop: true
@@ -54,30 +55,20 @@ const Home: React.FC = () => {
           </div>
         </div>
         <ul className="home-social">
-          <li>
-            <a
-              href="https://www.linkedin.com/company/matech-software"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <i className="im im-linkedin" aria-hidden="true"></i>
-              <span>Linkedin</span>
-            </a>
-          </li>
-          <li>
-            <a
-              href="mailto:kontakt@matech-software.de"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <i className="im im-mail" aria-hidden="true"></i>
-              <span>Email</span>
-            </a>
-          </li>
+          <SocialLink
+            href="https://www.linkedin.com/company/matech-software"
+            iconClass="im im-linkedin"
+            linkText="LinkedIn"
+          />
+          <SocialLink
+            href="mailto:kontact@matech-software.de"
+            iconClass="im im-mail"
+            linkText="E-Mail"
+          />
         </ul>
       </section>
     </div>
-  );
-};
+  )
+}
 
-export default Home;
+export default Home
