@@ -673,6 +673,8 @@ input::-moz-focus-inner {
     position: relative;
     display: table;
     background-image: url("../images/MaxiManu007.webp");
+    background-position: center;
+    background-repeat: no-repeat;
     background-size: cover;
 }
 
@@ -1107,7 +1109,11 @@ html.no-csstransitions .home-content__main {
     .home-content__main {
         max-width: none;
         width: 85%;
-        margin-top: 150px;
+        margin-top: 370px;
+    }
+
+    .home-content__scroll {
+        display: none;
     }
 }
 

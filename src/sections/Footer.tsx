@@ -53,7 +53,9 @@ const Footer: React.FC = () => {
         <div className="row footer-bottom">
           <div className="col-twelve">
             <div className="copyright">
-              <span>© Copyright MaTech Software GbR 2023</span>
+              <span>
+                © Copyright MaTech Software GbR {new Date().getFullYear()}
+              </span>
 
               <span>
                 <Link to="/impressum">Impressum</Link>
@@ -62,7 +64,11 @@ const Footer: React.FC = () => {
                 <Link to="/datenschutz">Datenschutz</Link>
               </span>
               <span>
-                <a className="pointer" onClick={openConsentTool}>
+                <a
+                  className="pointer"
+                  onClick={openConsentTool}
+                  rel="noopener noreferrer"
+                >
                   Cookie-Einstellungen
                 </a>
               </span>

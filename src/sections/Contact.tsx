@@ -196,7 +196,13 @@ const Contact: React.FC = () => {
           </div>
           <div className="col-four tab-full contact__infos">
             <h4 className="h06">Email</h4>
-            <p>kontakt@matech-software.de</p>
+            <a
+              href="mailto:kontakt@matech-software.de"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span>kontakt@matech-software.de</span>
+            </a>
             <h4 className="h06">Adresse</h4>
             <p>
               MaTech Software GbR

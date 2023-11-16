@@ -1,9 +1,27 @@
-import React from "react"
+import React, { useEffect } from "react"
 import SocialLink from "../components/SocialLink"
 
 const Typewriter = React.lazy(async () => await import("typewriter-effect"))
 
 const Home: React.FC = () => {
+  useEffect(() => {
+    const handleScroll = (): void => {
+      const parallax = document.querySelector(".s-home") as HTMLElement
+      const scrollPosition = window.scrollY
+      if (parallax !== null) {
+        parallax.style.backgroundPosition = `center calc(50% + ${
+          scrollPosition * 0.5
+        }px)`
+      }
+    }
+
+    window.addEventListener("scroll", handleScroll)
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll)
+    }
+  }, [])
+
   return (
     <div>
       <section id="home" className="s-home page-hero target-section">

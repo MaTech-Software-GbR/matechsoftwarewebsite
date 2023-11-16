@@ -55,7 +55,13 @@ const Impressum: React.FC = () => {
           </p>
 
           <h2>Kontakt</h2>
-          <p>E-Mail: kontakt@matech-software.de</p>
+          <a
+            href="mailto:kontakt@matech-software.de"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span>kontakt@matech-software.de</span>
+          </a>
 
           <h2>EU-Streitschlichtung</h2>
           <p>

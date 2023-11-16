@@ -167,7 +167,13 @@ const Datenschutz: React.FC = () => {
             <br />
             Manuel K&uuml;hnle
           </p>
-          <p>E-Mail: kontakt@matech-software.de</p>
+          <a
+            href="mailto:kontakt@matech-software.de"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span>kontakt@matech-software.de</span>
+          </a>
           <p>
             Verantwortliche Stelle ist die nat&uuml;rliche oder juristische
             Person, die allein oder gemeinsam mit anderen &uuml;ber die Zwecke
