@@ -36,8 +36,8 @@
     "test": "jest",
     "test:coverage": "jest --collect-coverage",
     "preview": "vite preview",
-    "lint": "eslint 'src/**/*.{js,jsx,ts,tsx}'",
-    "lint:fix": "eslint 'src/**/*.{js,jsx,ts,tsx}' --fix",
+    "lint": "eslint 'src/**/*.{ts,tsx}'",
+    "lint:fix": "eslint 'src/**/*.{ts,tsx}' --fix",
     "format": "prettier --check --ignore-path .gitignore .",
     "format:fix": "prettier --write --ignore-path .gitignore .",
     "build": "tsc && vite build"
@@ -69,6 +69,7 @@
     "eslint-config-airbnb-typescript": "^17.1.0",
     "eslint-config-prettier": "^9.0.0",
     "eslint-config-standard-with-typescript": "^39.1.1",
+    "eslint-plugin-github": "^4.10.1",
     "eslint-plugin-import": "^2.29.0",
     "eslint-plugin-jest-extended": "^2.0.0",
     "eslint-plugin-jsx-a11y": "^6.8.0",

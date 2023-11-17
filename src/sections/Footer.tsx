@@ -3,9 +3,13 @@ import { Link } from "react-router-dom"
 import logo from "../images/logo.png"
 import SocialLink from "../components/SocialLink"
 
+interface Ucentrics {
+  showSecondLayer: () => void
+}
+
 declare global {
   interface Window {
-    UC_UI: any
+    UC_UI: Ucentrics
   }
 }
 
