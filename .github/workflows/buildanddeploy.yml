@@ -27,12 +27,6 @@ jobs:
       - name: Build MaTech Software Website
         run: npm run build
 
-      - name: Upload Build Artifact
-        uses: actions/upload-artifact@v3
-        with:
-          name: build-artifact
-          path: ./dist
-
   lint:
     needs: build
     runs-on: ubuntu-latest
@@ -45,13 +39,10 @@ jobs:
           node-version: ${{ env.NODE_VERSION }}
           cache: "npm"
 
-      - name: Download Build Artifact
-        uses: actions/download-artifact@v3
-        with:
-          name: build-artifact
-          path: ./dist
+      - name: Install Dependencies Clean
+        run: npm ci
 
-      - name: Run Lint
+      - name: Lint MaTech Software Website
         run: npm run lint
         continue-on-error: true
   test:
@@ -66,10 +57,10 @@ jobs:
           node-version: ${{ env.NODE_VERSION }}
           cache: "npm"
 
-      - name: Install Dependencies
-        run: npm install
+      - name: Install Dependencies Clean
+        run: npm ci
 
-      - name: Build MaTech Software Website
+      - name: Test MaTech Software Website
         run: npm run test
 
   deploy:
