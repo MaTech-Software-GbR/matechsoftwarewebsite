@@ -1,26 +1,26 @@
 import React, { useEffect, useRef, useState } from "react"
 import logo from "../images/logo.png"
-import { type StickyProps } from "../models/sticky.interface"
+import { type StickyProperties } from "../models/StickyProperties.Interface"
 
-const Header: React.FC<StickyProps> = ({ shouldBeSticky }) => {
+const Header: React.FC<StickyProperties> = ({ shouldBeSticky }) => {
   const [activeSection, setActiveSection] = useState<string>("home")
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false)
-  const navRef = useRef<HTMLDivElement>(null)
-  const windowRef = useRef<Window>(window)
+  const navReference = useRef<HTMLDivElement>(null)
+  const windowReference = useRef<Window>(window)
 
   useEffect(() => {
-    const windowVariable = windowRef.current
+    const windowVariable = windowReference.current
     const handleScroll = (): void => {
       const sections = document.querySelectorAll("section")
-      sections.forEach((section) => {
+      for (const section of sections) {
         const sectionTop = section.offsetTop - 50
         const sectionHeight = section.offsetHeight
         const sectionBottom = sectionTop + sectionHeight
-        const scrollPosition = windowRef.current.scrollY
+        const scrollPosition = windowReference.current.scrollY
         if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
           setActiveSection(section.id)
         }
-      })
+      }
     }
 
     windowVariable.addEventListener("scroll", handleScroll)
@@ -34,16 +34,16 @@ const Header: React.FC<StickyProps> = ({ shouldBeSticky }) => {
   ): void => {
     event.preventDefault()
     setIsMobileMenuOpen(!isMobileMenuOpen)
-    if (navRef.current != null) {
-      navRef.current.style.display =
-        navRef.current.style.display === "block" ? "none" : "block"
+    if (navReference.current != undefined) {
+      navReference.current.style.display =
+        navReference.current.style.display === "block" ? "none" : "block"
     }
   }
 
   const handleNavClick = (): void => {
-    if (navRef.current != null) {
-      navRef.current.style.display =
-        navRef.current.style.display === "block" ? "none" : "block"
+    if (navReference.current != undefined) {
+      navReference.current.style.display =
+        navReference.current.style.display === "block" ? "none" : "block"
     }
     if (isMobileMenuOpen) {
       setIsMobileMenuOpen(false)
@@ -58,7 +58,7 @@ const Header: React.FC<StickyProps> = ({ shouldBeSticky }) => {
             <img src={logo} alt="MaTech Software GbR Logo" />
           </a>
         </div>
-        <nav className="header-nav-wrap" role="navigation" ref={navRef}>
+        <nav className="header-nav-wrap" role="navigation" ref={navReference}>
           <ul className="header-nav">
             <li className={activeSection === "home" ? "current" : ""}>
               <a href="/#home" title="home" onClick={handleNavClick}>

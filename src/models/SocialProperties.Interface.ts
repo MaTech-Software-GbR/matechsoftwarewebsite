@@ -1,4 +1,4 @@
-export interface SocialProps {
+export interface SocialProperties {
   href: string
   iconClass: string
   linkText: string

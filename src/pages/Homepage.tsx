@@ -11,12 +11,12 @@ import BackToTopButton from "../components/BackToTopButton"
 
 const Homepage: React.FC = () => {
   const [shouldBeSticky, setShouldBeSticky] = useState<boolean>(false)
-  const windowRef = useRef<Window>(window)
+  const windowReference = useRef<Window>(window)
 
   useEffect(() => {
-    const windowVariable = windowRef.current
+    const windowVariable = windowReference.current
     const handleScroll = debounce((): void => {
-      const homeComponent = document.getElementById("services") as HTMLElement
+      const homeComponent = document.querySelector("#services") as HTMLElement
       const homeComponentTop = homeComponent.getBoundingClientRect().top
       setShouldBeSticky(homeComponentTop <= 0)
     }, 100)

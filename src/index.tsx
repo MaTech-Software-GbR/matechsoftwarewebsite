@@ -2,7 +2,7 @@ import React, { Suspense } from "react"
 import ReactDOM from "react-dom/client"
 import { createBrowserRouter, RouterProvider } from "react-router-dom"
 import AOS from "aos"
-import ErrorPage from "./error-page"
+import ErrorPage from "./ErrorPage"
 import "aos/dist/aos.css"
 import "./styles/Base.scss"
 import "./styles/App.scss"
@@ -43,7 +43,7 @@ const router = createBrowserRouter([
   }
 ])
 
-const root = ReactDOM.createRoot(document.getElementById("root") as HTMLElement)
+const root = ReactDOM.createRoot(document.querySelector("#root") as HTMLElement)
 root.render(
   <React.StrictMode>
     <RouterProvider router={router} />

@@ -10,7 +10,7 @@ const ScrollToTop: React.FC = () => {
     window.scrollTo(0, 0)
   }, [pathname])
 
-  return null
+  return pathname
 }
 
 export default ScrollToTop

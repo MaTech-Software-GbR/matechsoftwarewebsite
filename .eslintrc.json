@@ -10,12 +10,14 @@
     "plugin:jsdoc/recommended",
     "plugin:sonarjs/recommended",
     "plugin:react/recommended",
+    "plugin:promise/recommended",
     "plugin:react-hooks/recommended",
     "plugin:@typescript-eslint/recommended",
     "prettier",
     "plugin:prettier/recommended",
     "plugin:import/errors",
-    "plugin:import/warnings"
+    "plugin:import/warnings",
+    "plugin:unicorn/all"
   ],
   "parserOptions": {
     "ecmaVersion": "latest",
@@ -34,13 +36,21 @@
     "prettier",
     "import",
     "react",
-    "react-hooks"
+    "react-hooks",
+    "promise",
+    "unicorn"
   ],
   "rules": {
     "semi": "off",
     "@typescript-eslint/semi": "off",
     "react/react-in-jsx-scope": "off",
-    "prettier/prettier": ["error"]
+    "prettier/prettier": ["error"],
+    "unicorn/filename-case": [
+      "error",
+      {
+        "case": "pascalCase"
+      }
+    ]
   },
   "settings": {
     "react": {

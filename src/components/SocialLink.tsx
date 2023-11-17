@@ -1,10 +1,10 @@
-import { SocialProps } from "../models/social.interface"
+import { SocialProperties } from "../models/SocialProperties.Interface"
 
-const SocialLink: React.FC<SocialProps> = ({
+const SocialLink: React.FC<SocialProperties> = ({
   href,
   iconClass,
   linkText
-}: SocialProps) => (
+}: SocialProperties) => (
   <li data-testid="social-1">
     <a href={href} target="_blank" rel="noopener noreferrer">
       <i className={iconClass} aria-hidden="true" />

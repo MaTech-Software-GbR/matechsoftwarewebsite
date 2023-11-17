@@ -1,5 +1,5 @@
 import React from "react"
-import { type ProjectData } from "../models/project.interface"
+import { type ProjectData } from "../models/ProjectData.Interface"
 
 const ProjectBlock: React.FC<ProjectData> = ({
   href,

@@ -1,7 +1,30 @@
 import React, { useState } from "react"
 import { type SubmitHandler, useForm } from "react-hook-form"
 import { v4 as uuidv4 } from "uuid"
-import { type ContactFormData } from "../models/contactform.interface"
+import { type ContactFormData } from "../models/ContactFormData.Interface"
+
+/**
+ * Fetches a new CSRF Token from the backend
+ * Sends an email with the input from the form to the backend
+ * @param {FormData} formData Email, Name, Subject and Message
+ * @returns {Promise<string>} Promise that resolves to "success" or "error"
+ */
+async function sendMail(formData: FormData): Promise<string> {
+  try {
+    const response = await fetch("/api/sendEmail.php", {
+      method: "POST",
+      body: formData
+    })
+
+    if (response.status === 200) {
+      const data = await response.text()
+      return data === "OK" ? "success" : "error"
+    }
+    return "error"
+  } catch {
+    return "error"
+  }
+}
 
 const Contact: React.FC = () => {
   const [csrfToken, setCsrfToken] = useState("")
@@ -13,29 +36,6 @@ const Contact: React.FC = () => {
     handleSubmit,
     formState: { isSubmitting, errors }
   } = useForm<ContactFormData>()
-
-  /**
-   * Fetches a new CSRF Token from the backend
-   * Sends an email with the input from the form to the backend
-   * @param {FormData} formData Email, Name, Subject and Message
-   * @returns {Promise<string>} Promise that resolves to "success" or "error"
-   */
-  async function sendMail(formData: FormData): Promise<string> {
-    try {
-      const response = await fetch("/api/sendEmail.php", {
-        method: "POST",
-        body: formData
-      })
-
-      if (response.status === 200) {
-        const data = await response.text()
-        return data === "OK" ? "success" : "error"
-      }
-      return "error"
-    } catch (error) {
-      return "error"
-    }
-  }
 
   const onSubmit: SubmitHandler<ContactFormData> = async (
     data: ContactFormData
@@ -155,7 +155,7 @@ const Contact: React.FC = () => {
                     cols={50}
                     className="full-width"
                   />
-                  {errors.contactMessage != null && (
+                  {errors.contactMessage != undefined && (
                     <span>
                       Ihre Nachricht ist ein Pflichtfeld und muss zwischen 15
                       und 500 Zeichen haben.

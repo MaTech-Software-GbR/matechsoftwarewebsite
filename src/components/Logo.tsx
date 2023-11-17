@@ -1,5 +1,5 @@
 import React from "react"
-import { type ServicesLogo } from "../models/serviceslogo.interface"
+import { type ServicesLogo } from "../models/ServicesLogoProperties.Interface"
 
 const Logo: React.FC<ServicesLogo> = ({ delay, alt, src }: ServicesLogo) => (
   <div className="leistungen">

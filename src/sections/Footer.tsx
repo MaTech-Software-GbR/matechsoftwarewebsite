@@ -13,16 +13,16 @@ declare global {
   }
 }
 
-const Footer: React.FC = () => {
-  const openConsentTool = (): void => {
-    if (
-      typeof window.UC_UI !== "undefined" &&
-      typeof window.UC_UI.showSecondLayer === "function"
-    ) {
-      window.UC_UI.showSecondLayer()
-    }
+const openConsentTool = (): void => {
+  if (
+    window.UC_UI !== undefined &&
+    typeof window.UC_UI.showSecondLayer === "function"
+  ) {
+    window.UC_UI.showSecondLayer()
   }
+}
 
+const Footer: React.FC = () => {
   return (
     <div>
       <footer>
