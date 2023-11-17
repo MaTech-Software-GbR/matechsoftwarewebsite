@@ -76,11 +76,8 @@ jobs:
           node-version: ${{ env.NODE_VERSION }}
           cache: "npm"
 
-      - name: Download Build Artifact
-        uses: actions/download-artifact@v3
-        with:
-          name: build-artifact
-          path: ./dist
+      - name: Install Dependencies Clean
+        run: npm ci
 
       - name: Build MaTech Software Website
         run: npm run build
