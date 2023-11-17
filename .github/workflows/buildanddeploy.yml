@@ -10,6 +10,30 @@ env:
   NODE_VERSION: 18
 
 jobs:
+  build:
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Use Node.js ${{ env.NODE_VERSION }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: "npm"
+
+      - name: Install Dependencies Clean
+        run: npm ci
+
+      - name: Build MaTech Software Website
+        run: npm run build
+
+      - name: Upload Build Artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: build-artifact
+          path: ./dist
+
   lint:
     runs-on: ubuntu-latest
     steps:
@@ -21,8 +45,11 @@ jobs:
           node-version: ${{ env.NODE_VERSION }}
           cache: "npm"
 
-      - name: Install Dependencies
-        run: npm ci
+      - name: Download Build Artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: build-artifact
+          path: ./dist
 
       - name: Run Lint
         run: npm run lint
@@ -44,23 +71,6 @@ jobs:
 
       - name: Build MaTech Software Website
         run: npm run test
-  build:
-    needs: test
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-
-      - name: Use Node.js ${{ env.NODE_VERSION }}
-        uses: actions/setup-node@v3
-        with:
-          node-version: ${{ env.NODE_VERSION }}
-          cache: "npm"
-
-      - name: Install Dependencies
-        run: npm install
-
-      - name: Build MaTech Software Website
-        run: npm run build
 
   deploy:
     if: github.ref == 'refs/heads/main'
@@ -75,8 +85,11 @@ jobs:
           node-version: ${{ env.NODE_VERSION }}
           cache: "npm"
 
-      - name: Install Dependencies
-        run: npm install
+      - name: Download Build Artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: build-artifact
+          path: ./dist
 
       - name: Build MaTech Software Website
         run: npm run build
