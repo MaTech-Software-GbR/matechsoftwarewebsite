@@ -1,20 +1,21 @@
 import React from "react"
-import Header from "../sections/Header"
-import Footer from "../sections/Footer"
+
 import ScrollToTop from "../components/ScrollToTop"
 import SocialLink from "../components/SocialLink"
+import Footer from "../sections/Footer"
+import Header from "../sections/Header"
 
 const Impressum: React.FC = () => (
   <div>
     <ScrollToTop />
     <Header shouldBeSticky={false} />
-    <section id="home" className="s-home page-hero target-section">
+    <section className="s-home page-hero target-section" id="home">
       <div className="overlay" />
       <div className="shadow-overlay" />
 
       <div className="home-content">
         <div className="row home-content__main">
-          <a href="/#impressum" className="scroll-link smoothscroll">
+          <a className="scroll-link smoothscroll" href="/#impressum">
             <h1>Impressum</h1>
           </a>
         </div>
@@ -33,7 +34,7 @@ const Impressum: React.FC = () => (
         />
       </ul>
     </section>
-    <section id="impressum" className="s-works target-section">
+    <section className="s-works target-section" id="impressum">
       <div className="impressumUndDatenschutz row">
         <h2 className="rechtliches-top">
           Angaben gem&auml;&szlig; &sect; 5 TMG
@@ -56,8 +57,8 @@ const Impressum: React.FC = () => (
         <h2>Kontakt</h2>
         <a
           href="mailto:kontakt@matech-software.de"
-          target="_blank"
           rel="noopener noreferrer"
+          target="_blank"
         >
           <span>kontakt@matech-software.de</span>
         </a>
@@ -68,8 +69,8 @@ const Impressum: React.FC = () => (
           Online-Streitbeilegung (OS) bereit:{" "}
           <a
             href="https://ec.europa.eu/consumers/odr/"
-            target="_blank"
             rel="noopener noreferrer"
+            target="_blank"
           >
             https://ec.europa.eu/consumers/odr/
           </a>

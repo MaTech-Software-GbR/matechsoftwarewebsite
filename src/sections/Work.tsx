@@ -1,15 +1,16 @@
 import React from "react"
+
+import ProjectBlock from "../components/ProjectBlock"
 import gasthausschmidimage from "../images/references/GasthausSchmid.webp"
-import rehalogo from "../images/references/reha-logo.webp"
-import thaihauslogo from "../images/references/thaihaus.webp"
-import matechlaptoplogo from "../images/references/matechlaptop.webp"
 import gutriedbichllogo from "../images/references/Logo_Gut_Riedbichl_quadrat.webp"
 import jbmlogo from "../images/references/jbm-logo.webp"
-import ProjectBlock from "../components/ProjectBlock"
+import matechlaptoplogo from "../images/references/matechlaptop.webp"
+import rehalogo from "../images/references/reha-logo.webp"
+import thaihauslogo from "../images/references/thaihaus.webp"
 
 const Work: React.FC = () => (
   <div>
-    <section id="works" className="s-works target-section">
+    <section className="s-works target-section" id="works">
       <div className="row narrow section-intro has-bottom-sep">
         <div className="col-full">
           <h3>Referenzen</h3>
@@ -28,63 +29,63 @@ const Work: React.FC = () => (
       <div className="row masonry-wrap">
         <div className="masonry">
           <ProjectBlock
-            href="https://www.jbm-visuals.de"
-            title="JBM Visuals"
-            dataSize="1450x700"
-            imgSrc={jbmlogo}
-            imgAlt="JBM Visuals Logo"
-            brickTitle="JBM Visuals"
             brickCategory="Konzept, Hosting"
-          />
-
-          <ProjectBlock
-            href="https://www.thai-haus-feldkirchen.de"
-            title="Thai Haus Restaurant"
-            dataSize="1050x700"
-            imgSrc={thaihauslogo}
-            imgAlt="Thaihaus Restaurant Logo"
-            brickTitle="Thai Haus Restaurant"
-            brickCategory="Konzept, Design, Hosting, Logo"
-          />
-
-          <ProjectBlock
-            href="https://www.rehazentrum-riedbichl.de"
-            title="Reha-Zentrum Riedbichl"
-            dataSize="1050x700"
-            imgSrc={rehalogo}
-            imgAlt="Rehazentrum Riedbichl Logo"
-            brickTitle="Reha-Zentrum Riedbichl"
-            brickCategory="Konzept, Design, Hosting, Logo"
-          />
-
-          <ProjectBlock
-            href="https://www.gasthaus-schmid.de"
-            title="Gut Riedbichl"
-            dataSize="1050x700"
-            imgSrc={gasthausschmidimage}
-            imgAlt="Gasthaus Schmid Logo"
-            brickTitle="Gasthaus Schmid"
-            brickCategory="Konzept, Design, Hosting"
-          />
-
-          <ProjectBlock
-            href="https://www.gut-riedbichl.de"
-            title="Gut Riedbichl"
+            brickTitle="JBM Visuals"
             dataSize="1450x700"
-            imgSrc={gutriedbichllogo}
-            imgAlt="Gut Riedbichl Logo"
-            brickTitle="Gut Riedbichl"
-            brickCategory="Konzept, Design, Hosting"
+            href="https://www.jbm-visuals.de"
+            imgAlt="JBM Visuals Logo"
+            imgSrc={jbmlogo}
+            title="JBM Visuals"
           />
 
           <ProjectBlock
-            href="/#contact"
-            title="Ihr Projekt"
+            brickCategory="Konzept, Design, Hosting, Logo"
+            brickTitle="Thai Haus Restaurant"
             dataSize="1050x700"
-            imgSrc={matechlaptoplogo}
-            imgAlt="Matech Software Laptop mit Smartphone Logo"
-            brickTitle="Ihr Projekt"
+            href="https://www.thai-haus-feldkirchen.de"
+            imgAlt="Thaihaus Restaurant Logo"
+            imgSrc={thaihauslogo}
+            title="Thai Haus Restaurant"
+          />
+
+          <ProjectBlock
+            brickCategory="Konzept, Design, Hosting, Logo"
+            brickTitle="Reha-Zentrum Riedbichl"
+            dataSize="1050x700"
+            href="https://www.rehazentrum-riedbichl.de"
+            imgAlt="Rehazentrum Riedbichl Logo"
+            imgSrc={rehalogo}
+            title="Reha-Zentrum Riedbichl"
+          />
+
+          <ProjectBlock
+            brickCategory="Konzept, Design, Hosting"
+            brickTitle="Gasthaus Schmid"
+            dataSize="1050x700"
+            href="https://www.gasthaus-schmid.de"
+            imgAlt="Gasthaus Schmid Logo"
+            imgSrc={gasthausschmidimage}
+            title="Gut Riedbichl"
+          />
+
+          <ProjectBlock
+            brickCategory="Konzept, Design, Hosting"
+            brickTitle="Gut Riedbichl"
+            dataSize="1450x700"
+            href="https://www.gut-riedbichl.de"
+            imgAlt="Gut Riedbichl Logo"
+            imgSrc={gutriedbichllogo}
+            title="Gut Riedbichl"
+          />
+
+          <ProjectBlock
             brickCategory="..."
+            brickTitle="Ihr Projekt"
+            dataSize="1050x700"
+            href="/#contact"
+            imgAlt="Matech Software Laptop mit Smartphone Logo"
+            imgSrc={matechlaptoplogo}
+            title="Ihr Projekt"
           />
         </div>
       </div>

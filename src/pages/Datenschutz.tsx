@@ -1,4 +1,5 @@
 import React from "react"
+
 import ScrollToTop from "../components/ScrollToTop"
 import SocialLink from "../components/SocialLink"
 import Footer from "../sections/Footer"
@@ -8,12 +9,12 @@ const Datenschutz: React.FC = () => (
   <div>
     <ScrollToTop />
     <Header shouldBeSticky={false} />
-    <section id="home" className="s-home page-hero target-section">
+    <section className="s-home page-hero target-section" id="home">
       <div className="overlay" />
       <div className="shadow-overlay" />
       <div className="home-content">
         <div className="row home-content__main">
-          <a href="#datenschutz" className="scroll-link smoothscroll">
+          <a className="scroll-link smoothscroll" href="#datenschutz">
             <h1>Datenschutz</h1>
           </a>
         </div>
@@ -33,7 +34,7 @@ const Datenschutz: React.FC = () => (
       </ul>
     </section>
 
-    <section id="datenschutz" className="s-works target-section">
+    <section className="s-works target-section" id="datenschutz">
       <div className="row">
         <h2 className="rechtliches-top">1. Datenschutz auf einen Blick</h2>
         <h3>Allgemeine Hinweise</h3>
@@ -103,8 +104,8 @@ const Datenschutz: React.FC = () => (
           Details entnehmen Sie der Datenschutzerkl&auml;rung von webgo:
           <a
             href="https://www.webgo.de/datenschutz/"
-            target="_blank"
             rel="noopener noreferrer"
+            target="_blank"
           >
             https://www.webgo.de/datenschutz/
           </a>
@@ -163,8 +164,8 @@ const Datenschutz: React.FC = () => (
         </p>
         <a
           href="mailto:kontakt@matech-software.de"
-          target="_blank"
           rel="noopener noreferrer"
+          target="_blank"
         >
           <span>kontakt@matech-software.de</span>
         </a>
@@ -499,8 +500,8 @@ const Datenschutz: React.FC = () => (
           finden Sie hier:
           <a
             href="https://www.linkedin.com/help/linkedin/answer/62538/datenubertragung-aus-der-eu-dem-ewr-und-der-schweiz?lang=de"
-            target="_blank"
             rel="noopener noreferrer"
+            target="_blank"
           >
             https://www.linkedin.com/help/linkedin/answer/62538/datenubertragung-aus-der-eu-dem-ewr-und-der-schweiz?lang=de
           </a>
@@ -510,8 +511,8 @@ const Datenschutz: React.FC = () => (
           Datenschutzerkl&auml;rung von LinkedIn unter:
           <a
             href="https://www.linkedin.com/legal/privacy-policy"
-            target="_blank"
             rel="noopener noreferrer"
+            target="_blank"
           >
             https://www.linkedin.com/legal/privacy-policy
           </a>

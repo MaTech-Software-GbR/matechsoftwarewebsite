@@ -1,24 +1,25 @@
 import React from "react"
+
 import { type ProjectData } from "../models/ProjectData.Interface"
 
 const ProjectBlock: React.FC<ProjectData> = ({
-  href,
-  title,
-  dataSize,
-  imgSrc,
-  imgAlt,
+  brickCategory,
   brickTitle,
-  brickCategory
+  dataSize,
+  href,
+  imgAlt,
+  imgSrc,
+  title
 }) => (
   <div className="masonry__brick">
     <div className="item-folio">
       <div className="item-folio__thumb">
         <a
-          href={href}
-          title={title}
           data-size={dataSize}
-          target="_blank"
+          href={href}
           rel="noopener noreferrer"
+          target="_blank"
+          title={title}
         >
           <img alt={imgAlt} src={imgSrc} />
           <span className="shadow-overlay" />

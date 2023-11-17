@@ -1,5 +1,6 @@
-import { render, screen, fireEvent } from "@testing-library/react"
 import "@testing-library/jest-dom"
+import { fireEvent, render, screen } from "@testing-library/react"
+
 import BackToTopButton from "./BackToTopButton"
 
 const buttonTitle = "Back to Top"
@@ -28,7 +29,7 @@ test("clicking on the button calls scrollToTop", () => {
 
   // Expect the scrollTo method to be called with the specified parameters
   expect(window.scrollTo).toHaveBeenCalledWith({
-    top: 0,
-    behavior: "smooth"
+    behavior: "smooth",
+    top: 0
   })
 })

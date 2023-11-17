@@ -1,11 +1,12 @@
+import AOS from "aos"
+import "aos/dist/aos.css"
 import React, { Suspense } from "react"
 import ReactDOM from "react-dom/client"
-import { createBrowserRouter, RouterProvider } from "react-router-dom"
-import AOS from "aos"
+import { RouterProvider, createBrowserRouter } from "react-router-dom"
+
 import ErrorPage from "./ErrorPage"
-import "aos/dist/aos.css"
-import "./styles/Base.scss"
 import "./styles/App.scss"
+import "./styles/Base.scss"
 
 AOS.init()
 
@@ -15,31 +16,31 @@ const Datenschutz = React.lazy(async () => import("./pages/Datenschutz"))
 
 const router = createBrowserRouter([
   {
-    path: "/",
     element: (
       <Suspense fallback={<div>MaTech lädt...</div>}>
         <App />
       </Suspense>
     ),
-    errorElement: <ErrorPage />
+    errorElement: <ErrorPage />,
+    path: "/"
   },
   {
-    path: "/impressum",
     element: (
       <Suspense fallback={<div>MaTech lädt...</div>}>
         <Impressum />
       </Suspense>
     ),
-    errorElement: <ErrorPage />
+    errorElement: <ErrorPage />,
+    path: "/impressum"
   },
   {
-    path: "/datenschutz",
     element: (
       <Suspense fallback={<div>MaTech lädt...</div>}>
         <Datenschutz />
       </Suspense>
     ),
-    errorElement: <ErrorPage />
+    errorElement: <ErrorPage />,
+    path: "/datenschutz"
   }
 ])
 

@@ -7,7 +7,7 @@ const ErrorPage: React.FC = () => {
   if (isRouteErrorResponse(error)) {
     return (
       <div id="error-page">
-        <section id="home" className="s-home page-hero target-section">
+        <section className="s-home page-hero target-section" id="home">
           <div className="overlay" />
           <div className="shadow-overlay" />
 

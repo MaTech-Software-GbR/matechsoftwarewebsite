@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 import { type SubmitHandler, useForm } from "react-hook-form"
 import { v4 as uuidv4 } from "uuid"
+
 import { type ContactFormData } from "../models/ContactFormData.Interface"
 
 /**
@@ -12,8 +13,8 @@ import { type ContactFormData } from "../models/ContactFormData.Interface"
 async function sendMail(formData: FormData): Promise<string> {
   try {
     const response = await fetch("/api/sendEmail.php", {
-      method: "POST",
-      body: formData
+      body: formData,
+      method: "POST"
     })
 
     if (response.status === 200) {
@@ -32,9 +33,9 @@ const Contact: React.FC = () => {
   const [showNotSuccessfulSent, setshowNotSuccessfulSent] =
     useState<boolean>(false)
   const {
-    register,
+    formState: { errors, isSubmitting },
     handleSubmit,
-    formState: { isSubmitting, errors }
+    register
   } = useForm<ContactFormData>()
 
   const onSubmit: SubmitHandler<ContactFormData> = async (
@@ -66,7 +67,7 @@ const Contact: React.FC = () => {
 
   return (
     <div>
-      <section id="contact" className="s-contact target-section">
+      <section className="s-contact target-section" id="contact">
         <div className="overlay" />
 
         <div className="row narrow section-intro">
@@ -87,27 +88,27 @@ const Contact: React.FC = () => {
         <div className="row contact__main">
           <div className="col-eight tab-full contact__form">
             <form
-              // eslint-disable-next-line @typescript-eslint/no-misused-promises
-              onSubmit={handleSubmit(onSubmit)}
-              name="contactForm"
+              action=""
               id="contactForm"
               method="post"
-              action=""
+              name="contactForm"
+              // eslint-disable-next-line @typescript-eslint/no-misused-promises
+              onSubmit={handleSubmit(onSubmit)}
             >
               <fieldset>
                 <div className="form-field">
                   <input
                     {...register("contactName", {
-                      required: true,
+                      maxLength: 100,
                       minLength: 2,
-                      maxLength: 100
+                      required: true
                     })}
-                    name="contactName"
-                    type="text"
-                    id="contactName"
-                    placeholder="Name"
                     aria-required="true"
                     className="full-width"
+                    id="contactName"
+                    name="contactName"
+                    placeholder="Name"
+                    type="text"
                   />
                 </div>
                 {errors.contactName?.type === "required" && (
@@ -119,12 +120,12 @@ const Contact: React.FC = () => {
                 <div className="form-field">
                   <input
                     {...register("contactEmail", { required: true })}
-                    name="contactEmail"
-                    type="email"
-                    id="contactEmail"
-                    placeholder="Ihre Email"
                     aria-required="true"
                     className="full-width"
+                    id="contactEmail"
+                    name="contactEmail"
+                    placeholder="Ihre Email"
+                    type="email"
                   />
                   {errors.contactEmail?.type === "required" && (
                     <p role="alert">
@@ -136,24 +137,24 @@ const Contact: React.FC = () => {
                 <div className="form-field">
                   <input
                     {...register("contactSubject")}
-                    type="text"
+                    className="full-width"
                     id="contactSubject"
                     placeholder="Betreff"
-                    className="full-width"
+                    type="text"
                   />
                 </div>
                 <div className="form-field">
                   <textarea
                     {...register("contactMessage", {
-                      required: true,
                       maxLength: 500,
-                      minLength: 15
+                      minLength: 15,
+                      required: true
                     })}
+                    className="full-width"
+                    cols={50}
                     id="contactMessage"
                     placeholder="Nachricht"
                     rows={10}
-                    cols={50}
-                    className="full-width"
                   />
                   {errors.contactMessage != undefined && (
                     <span>
@@ -180,7 +181,7 @@ const Contact: React.FC = () => {
                 </div>
               </fieldset>
               <div className="form-field">
-                <input type="hidden" name="csrfToken" value={csrfToken} />
+                <input name="csrfToken" type="hidden" value={csrfToken} />
               </div>
             </form>
             {showSuccessfulSent ? (
@@ -203,8 +204,8 @@ const Contact: React.FC = () => {
             <h4 className="h06">Email</h4>
             <a
               href="mailto:kontakt@matech-software.de"
-              target="_blank"
               rel="noopener noreferrer"
+              target="_blank"
             >
               <span>kontakt@matech-software.de</span>
             </a>

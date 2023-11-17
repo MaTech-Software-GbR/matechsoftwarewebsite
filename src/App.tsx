@@ -1,9 +1,10 @@
 import React, { useCallback, useEffect, useRef, useState } from "react"
+
 import Homepage from "./pages/Homepage"
 
 interface MtmEvent {
-  "mtm.startTime": number
   event: string
+  "mtm.startTime": number
 }
 
 declare global {
@@ -27,8 +28,8 @@ const App: React.FC = () => {
     // eslint-disable-next-line @typescript-eslint/strict-boolean-expressions
     const matomoEvents = (window.mtmEvent = window.mtmEvent || [])
     matomoEvents.push({
-      "mtm.startTime": Date.now(),
-      event: "mtm.Start"
+      event: "mtm.Start",
+      "mtm.startTime": Date.now()
     })
 
     const createdScript = document.createElement("script")

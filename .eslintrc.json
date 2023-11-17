@@ -12,12 +12,15 @@
     "plugin:react/recommended",
     "plugin:promise/recommended",
     "plugin:react-hooks/recommended",
+    "plugin:eslint-plugin/recommended",
     "plugin:@typescript-eslint/recommended",
     "prettier",
     "plugin:prettier/recommended",
     "plugin:import/errors",
     "plugin:import/warnings",
-    "plugin:unicorn/all"
+    "plugin:unicorn/all",
+    "plugin:yml/recommended",
+    "plugin:perfectionist/recommended-natural"
   ],
   "parserOptions": {
     "ecmaVersion": "latest",
@@ -38,7 +41,9 @@
     "react",
     "react-hooks",
     "promise",
-    "unicorn"
+    "unicorn",
+    "yml",
+    "perfectionist"
   ],
   "rules": {
     "semi": "off",

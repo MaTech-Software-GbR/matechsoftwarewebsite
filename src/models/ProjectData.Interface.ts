@@ -1,9 +1,9 @@
 export interface ProjectData {
-  href: string
-  title: string
-  dataSize: string
-  imgSrc: string
-  imgAlt: string
-  brickTitle: string
   brickCategory: string
+  brickTitle: string
+  dataSize: string
+  href: string
+  imgAlt: string
+  imgSrc: string
+  title: string
 }
