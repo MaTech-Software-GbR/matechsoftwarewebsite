@@ -4,19 +4,19 @@ interface VisibilityProbs {
   isVisible: boolean
 }
 
-const BackToTopButton: React.FC<VisibilityProbs> = ({ isVisible }) => {
-  const scrollToTop = (): void => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth"
-    })
-  }
+const scrollToTop = (): void => {
+  window.scrollTo({
+    behavior: "smooth",
+    top: 0
+  })
+}
 
+const BackToTopButton: React.FC<VisibilityProbs> = ({ isVisible }) => {
   return (
     <div className="back-to-top">
       {isVisible && (
-        <button title="Back to Top" onClick={scrollToTop}>
-          <i className="im im-arrow-up" aria-hidden="true"></i>
+        <button onClick={scrollToTop} title="Back to Top">
+          <i aria-hidden="true" className="im im-arrow-up" />
         </button>
       )}
     </div>

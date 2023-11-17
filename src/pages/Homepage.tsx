@@ -1,32 +1,32 @@
-import React, { useEffect, useRef, useState } from 'react';
-import AboutUs from '../sections/AboutUs';
-import Contact from '../sections/Contact';
-import Footer from '../sections/Footer';
-import Header from '../sections/Header';
-import Home from '../sections/Home';
-import Services from '../sections/Services';
-import Work from '../sections/Work';
-import BackToTopButton from '../components/BackToTopButton';
+import { debounce } from "lodash"
+import React, { useEffect, useRef, useState } from "react"
+
+import BackToTopButton from "../components/BackToTopButton"
+import AboutUs from "../sections/AboutUs"
+import Contact from "../sections/Contact"
+import Footer from "../sections/Footer"
+import Header from "../sections/Header"
+import Home from "../sections/Home"
+import Services from "../sections/Services"
+import Work from "../sections/Work"
 
 const Homepage: React.FC = () => {
-  const [shouldBeSticky, setShouldBeSticky] = useState<boolean>(false);
-  const windowRef = useRef<Window>(window);
+  const [shouldBeSticky, setShouldBeSticky] = useState<boolean>(false)
+  const windowReference = useRef<Window>(window)
 
   useEffect(() => {
-    const windowVariable = windowRef.current;
-    const handleScroll = (): void => {
-      const homeComponent = document.getElementById('services') as HTMLElement;
-      const homeComponentTop = homeComponent.getBoundingClientRect().top;
-      homeComponentTop <= 0
-        ? setShouldBeSticky(true)
-        : setShouldBeSticky(false);
-    };
+    const windowVariable = windowReference.current
+    const handleScroll = debounce((): void => {
+      const homeComponent = document.querySelector("#services") as HTMLElement
+      const homeComponentTop = homeComponent.getBoundingClientRect().top
+      setShouldBeSticky(homeComponentTop <= 0)
+    }, 100)
 
-    windowVariable.addEventListener('scroll', handleScroll);
+    windowVariable.addEventListener("scroll", handleScroll)
     return () => {
-      windowVariable.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
+      windowVariable.removeEventListener("scroll", handleScroll)
+    }
+  }, [])
 
   return (
     <div>
@@ -41,11 +41,11 @@ const Homepage: React.FC = () => {
       {
         // Here we're rendering the BackToTopButton component.
       }
-      <div className={`go-top ${shouldBeSticky ? 'fadeIn' : 'fadeOut'}`}>
+      <div className={`go-top ${shouldBeSticky ? "fadeIn" : "fadeOut"}`}>
         <BackToTopButton isVisible={shouldBeSticky} />
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Homepage;
+export default Homepage

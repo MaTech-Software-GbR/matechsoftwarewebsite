@@ -1,40 +1,52 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import Impressum from './pages/Impressum';
-import Datenschutz from './pages/Datenschutz';
-import ErrorPage from './error-page';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
-import './styles/Base.scss';
-import './styles/App.scss';
-import App from './App';
+import AOS from "aos"
+import "aos/dist/aos.css"
+import React, { Suspense } from "react"
+import ReactDOM from "react-dom/client"
+import { RouterProvider, createBrowserRouter } from "react-router-dom"
 
-AOS.init();
+import ErrorPage from "./ErrorPage"
+import "./styles/App.scss"
+import "./styles/Base.scss"
+
+AOS.init()
+
+const App = React.lazy(async () => import("./App"))
+const Impressum = React.lazy(async () => import("./pages/Impressum"))
+const Datenschutz = React.lazy(async () => import("./pages/Datenschutz"))
 
 const router = createBrowserRouter([
   {
-    path: '/',
-    element: <App />,
-    errorElement: <ErrorPage />
+    element: (
+      <Suspense fallback={<div>MaTech lädt...</div>}>
+        <App />
+      </Suspense>
+    ),
+    errorElement: <ErrorPage />,
+    path: "/"
   },
   {
-    path: '/impressum',
-    element: <Impressum />,
-    errorElement: <ErrorPage />
+    element: (
+      <Suspense fallback={<div>MaTech lädt...</div>}>
+        <Impressum />
+      </Suspense>
+    ),
+    errorElement: <ErrorPage />,
+    path: "/impressum"
   },
   {
-    path: '/datenschutz',
-    element: <Datenschutz />,
-    errorElement: <ErrorPage />
+    element: (
+      <Suspense fallback={<div>MaTech lädt...</div>}>
+        <Datenschutz />
+      </Suspense>
+    ),
+    errorElement: <ErrorPage />,
+    path: "/datenschutz"
   }
-]);
+])
 
-const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
-);
+const root = ReactDOM.createRoot(document.querySelector("#root") as HTMLElement)
 root.render(
   <React.StrictMode>
     <RouterProvider router={router} />
   </React.StrictMode>
-);
+)

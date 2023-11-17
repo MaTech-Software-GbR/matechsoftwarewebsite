@@ -1,7 +1,31 @@
 import React, { useState } from "react"
 import { type SubmitHandler, useForm } from "react-hook-form"
-import { type ContactFormData } from "../models/contactform.interface"
 import { v4 as uuidv4 } from "uuid"
+
+import { type ContactFormData } from "../models/ContactFormData.Interface"
+
+/**
+ * Fetches a new CSRF Token from the backend
+ * Sends an email with the input from the form to the backend
+ * @param formData Email, Name, Subject and Message
+ * @returns Promise that resolves to "success" or "error"
+ */
+async function sendMail(formData: FormData): Promise<string> {
+  try {
+    const response = await fetch("/api/sendEmail.php", {
+      body: formData,
+      method: "POST"
+    })
+
+    if (response.status === 200) {
+      const data = await response.text()
+      return data === "OK" ? "success" : "error"
+    }
+    return "error"
+  } catch {
+    return "error"
+  }
+}
 
 const Contact: React.FC = () => {
   const [csrfToken, setCsrfToken] = useState("")
@@ -9,28 +33,10 @@ const Contact: React.FC = () => {
   const [showNotSuccessfulSent, setshowNotSuccessfulSent] =
     useState<boolean>(false)
   const {
-    register,
+    formState: { errors, isSubmitting },
     handleSubmit,
-    formState: { isSubmitting, errors }
+    register
   } = useForm<ContactFormData>()
-
-  async function sendMail(formData: FormData): Promise<string> {
-    try {
-      const response = await fetch("/api/sendEmail.php", {
-        method: "POST",
-        body: formData
-      })
-
-      if (response.status === 200) {
-        const data = await response.text()
-        return data === "OK" ? "success" : "error"
-      } else {
-        return "error"
-      }
-    } catch (error) {
-      return "error"
-    }
-  }
 
   const onSubmit: SubmitHandler<ContactFormData> = async (
     data: ContactFormData
@@ -61,8 +67,8 @@ const Contact: React.FC = () => {
 
   return (
     <div>
-      <section id="contact" className="s-contact target-section">
-        <div className="overlay"></div>
+      <section className="s-contact target-section" id="contact">
+        <div className="overlay" />
 
         <div className="row narrow section-intro">
           <div className="col-full">
@@ -82,27 +88,27 @@ const Contact: React.FC = () => {
         <div className="row contact__main">
           <div className="col-eight tab-full contact__form">
             <form
-              // eslint-disable-next-line @typescript-eslint/no-misused-promises
-              onSubmit={handleSubmit(onSubmit)}
-              name="contactForm"
+              action=""
               id="contactForm"
               method="post"
-              action=""
+              name="contactForm"
+              // eslint-disable-next-line @typescript-eslint/no-misused-promises
+              onSubmit={handleSubmit(onSubmit)}
             >
               <fieldset>
                 <div className="form-field">
                   <input
                     {...register("contactName", {
-                      required: true,
+                      maxLength: 100,
                       minLength: 2,
-                      maxLength: 100
+                      required: true
                     })}
-                    name="contactName"
-                    type="text"
-                    id="contactName"
-                    placeholder="Name"
                     aria-required="true"
                     className="full-width"
+                    id="contactName"
+                    name="contactName"
+                    placeholder="Name"
+                    type="text"
                   />
                 </div>
                 {errors.contactName?.type === "required" && (
@@ -114,12 +120,12 @@ const Contact: React.FC = () => {
                 <div className="form-field">
                   <input
                     {...register("contactEmail", { required: true })}
-                    name="contactEmail"
-                    type="email"
-                    id="contactEmail"
-                    placeholder="Ihre Email"
                     aria-required="true"
                     className="full-width"
+                    id="contactEmail"
+                    name="contactEmail"
+                    placeholder="Ihre Email"
+                    type="email"
                   />
                   {errors.contactEmail?.type === "required" && (
                     <p role="alert">
@@ -131,26 +137,26 @@ const Contact: React.FC = () => {
                 <div className="form-field">
                   <input
                     {...register("contactSubject")}
-                    type="text"
+                    className="full-width"
                     id="contactSubject"
                     placeholder="Betreff"
-                    className="full-width"
+                    type="text"
                   />
                 </div>
                 <div className="form-field">
                   <textarea
                     {...register("contactMessage", {
-                      required: true,
                       maxLength: 500,
-                      minLength: 15
+                      minLength: 15,
+                      required: true
                     })}
+                    className="full-width"
+                    cols={50}
                     id="contactMessage"
                     placeholder="Nachricht"
                     rows={10}
-                    cols={50}
-                    className="full-width"
-                  ></textarea>
-                  {errors.contactMessage != null && (
+                  />
+                  {errors.contactMessage != undefined && (
                     <span>
                       Ihre Nachricht ist ein Pflichtfeld und muss zwischen 15
                       und 500 Zeichen haben.
@@ -167,15 +173,15 @@ const Contact: React.FC = () => {
                   <div className="submit-loader">
                     <div className="text-loader">Sending...</div>
                     <div className="s-loader">
-                      <div className="bounce1"></div>
-                      <div className="bounce2"></div>
-                      <div className="bounce3"></div>
+                      <div className="bounce1" />
+                      <div className="bounce2" />
+                      <div className="bounce3" />
                     </div>
                   </div>
                 </div>
               </fieldset>
               <div className="form-field">
-                <input type="hidden" name="csrfToken" value={csrfToken} />
+                <input name="csrfToken" type="hidden" value={csrfToken} />
               </div>
             </form>
             {showSuccessfulSent ? (
@@ -183,7 +189,7 @@ const Contact: React.FC = () => {
                 Ihre Nachricht wurde versendet. Vielen Dank!
               </div>
             ) : (
-              <div></div>
+              <div />
             )}
             {showNotSuccessfulSent ? (
               <div className="message-warning">
@@ -191,12 +197,18 @@ const Contact: React.FC = () => {
                 erneut.
               </div>
             ) : (
-              <div></div>
+              <div />
             )}
           </div>
           <div className="col-four tab-full contact__infos">
             <h4 className="h06">Email</h4>
-            <p>kontakt@matech-software.de</p>
+            <a
+              href="mailto:kontakt@matech-software.de"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              <span>kontakt@matech-software.de</span>
+            </a>
             <h4 className="h06">Adresse</h4>
             <p>
               MaTech Software GbR

@@ -1,24 +1,29 @@
 import React from "react"
-import logo from "../images/logo.png"
 import { Link } from "react-router-dom"
+
 import SocialLink from "../components/SocialLink"
+import logo from "../images/logo.png"
+
+interface Ucentrics {
+  showSecondLayer: () => void
+}
 
 declare global {
   interface Window {
-    UC_UI: any
+    UC_UI: Ucentrics
+  }
+}
+
+const openConsentTool = (): void => {
+  if (
+    window.UC_UI !== undefined &&
+    typeof window.UC_UI.showSecondLayer === "function"
+  ) {
+    window.UC_UI.showSecondLayer()
   }
 }
 
 const Footer: React.FC = () => {
-  const openConsentTool = (): void => {
-    if (
-      typeof window.UC_UI !== "undefined" &&
-      typeof window.UC_UI.showSecondLayer === "function"
-    ) {
-      window.UC_UI.showSecondLayer()
-    }
-  }
-
   return (
     <div>
       <footer>
@@ -28,8 +33,8 @@ const Footer: React.FC = () => {
               <a
                 className="footer-site-logo"
                 href="/"
-                target="_blank"
                 rel="noopener noreferrer"
+                target="_blank"
               >
                 <img alt="MaTech Software Logo Footer" src={logo} />
               </a>
@@ -53,7 +58,9 @@ const Footer: React.FC = () => {
         <div className="row footer-bottom">
           <div className="col-twelve">
             <div className="copyright">
-              <span>© Copyright MaTech Software GbR 2023</span>
+              <span>
+                © Copyright MaTech Software GbR {new Date().getFullYear()}
+              </span>
 
               <span>
                 <Link to="/impressum">Impressum</Link>
@@ -62,9 +69,15 @@ const Footer: React.FC = () => {
                 <Link to="/datenschutz">Datenschutz</Link>
               </span>
               <span>
-                <a className="pointer" onClick={openConsentTool}>
+                <Link
+                  onClick={(event) => {
+                    event.preventDefault()
+                    openConsentTool()
+                  }}
+                  to="/"
+                >
                   Cookie-Einstellungen
-                </a>
+                </Link>
               </span>
             </div>
           </div>

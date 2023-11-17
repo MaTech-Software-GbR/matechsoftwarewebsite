@@ -1,26 +1,27 @@
 import React, { useEffect, useRef, useState } from "react"
-import logo from "../images/logo.png"
-import { type StickyProps } from "../models/sticky.interface"
 
-const Header: React.FC<StickyProps> = ({ shouldBeSticky }) => {
+import logo from "../images/logo.png"
+import { type StickyProperties } from "../models/StickyProperties.Interface"
+
+const Header: React.FC<StickyProperties> = ({ shouldBeSticky }) => {
   const [activeSection, setActiveSection] = useState<string>("home")
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false)
-  const navRef = useRef<HTMLDivElement>(null)
-  const windowRef = useRef<Window>(window)
+  const navReference = useRef<HTMLDivElement>(null)
+  const windowReference = useRef<Window>(window)
 
   useEffect(() => {
-    const windowVariable = windowRef.current
+    const windowVariable = windowReference.current
     const handleScroll = (): void => {
       const sections = document.querySelectorAll("section")
-      sections.forEach((section) => {
+      for (const section of sections) {
         const sectionTop = section.offsetTop - 50
         const sectionHeight = section.offsetHeight
         const sectionBottom = sectionTop + sectionHeight
-        const scrollPosition = windowRef.current.scrollY
+        const scrollPosition = windowReference.current.scrollY
         if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
           setActiveSection(section.id)
         }
-      })
+      }
     }
 
     windowVariable.addEventListener("scroll", handleScroll)
@@ -34,16 +35,16 @@ const Header: React.FC<StickyProps> = ({ shouldBeSticky }) => {
   ): void => {
     event.preventDefault()
     setIsMobileMenuOpen(!isMobileMenuOpen)
-    if (navRef.current != null) {
-      navRef.current.style.display =
-        navRef.current.style.display === "block" ? "none" : "block"
+    if (navReference.current != undefined) {
+      navReference.current.style.display =
+        navReference.current.style.display === "block" ? "none" : "block"
     }
   }
 
   const handleNavClick = (): void => {
-    if (navRef.current != null) {
-      navRef.current.style.display =
-        navRef.current.style.display === "block" ? "none" : "block"
+    if (navReference.current != undefined) {
+      navReference.current.style.display =
+        navReference.current.style.display === "block" ? "none" : "block"
     }
     if (isMobileMenuOpen) {
       setIsMobileMenuOpen(false)
@@ -55,33 +56,33 @@ const Header: React.FC<StickyProps> = ({ shouldBeSticky }) => {
       <header className={`s-header ${shouldBeSticky ? "sticky-navbar" : ""}`}>
         <div className="header-logo">
           <a className="site-logo" href="/" onClick={handleNavClick}>
-            <img src={logo} alt="MaTech Software GbR Logo" />
+            <img alt="MaTech Software GbR Logo" src={logo} />
           </a>
         </div>
-        <nav className="header-nav-wrap" role="navigation" ref={navRef}>
+        <nav className="header-nav-wrap" ref={navReference} role="navigation">
           <ul className="header-nav">
             <li className={activeSection === "home" ? "current" : ""}>
-              <a href="/#home" title="home" onClick={handleNavClick}>
+              <a href="/#home" onClick={handleNavClick} title="home">
                 Start
               </a>
             </li>
             <li className={activeSection === "services" ? "current" : ""}>
-              <a href="/#services" title="services" onClick={handleNavClick}>
+              <a href="/#services" onClick={handleNavClick} title="services">
                 Leistungen
               </a>
             </li>
             <li className={activeSection === "works" ? "current" : ""}>
-              <a href="/#works" title="works" onClick={handleNavClick}>
+              <a href="/#works" onClick={handleNavClick} title="works">
                 Referenzen
               </a>
             </li>
             <li className={activeSection === "about" ? "current" : ""}>
-              <a href="/#about" title="about" onClick={handleNavClick}>
+              <a href="/#about" onClick={handleNavClick} title="about">
                 Über uns
               </a>
             </li>
             <li className={activeSection === "contact" ? "current" : ""}>
-              <a href="/#contact" title="contact" onClick={handleNavClick}>
+              <a href="/#contact" onClick={handleNavClick} title="contact">
                 Kontakt
               </a>
             </li>

@@ -1,5 +1,5 @@
 export interface ServicesLogo {
-  delay: string
   alt: string
+  delay: string
   src: string
 }

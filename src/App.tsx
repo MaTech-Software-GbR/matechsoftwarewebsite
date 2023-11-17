@@ -1,14 +1,15 @@
 import React, { useCallback, useEffect, useRef, useState } from "react"
+
 import Homepage from "./pages/Homepage"
 
 interface MtmEvent {
-  "mtm.startTime": number
   event: string
+  "mtm.startTime": number
 }
 
 declare global {
   interface Window {
-    _mtm: MtmEvent[]
+    mtmEvent: MtmEvent[]
   }
 }
 
@@ -21,21 +22,21 @@ const App: React.FC = () => {
   const ANALYTICS_SCRIPT_URL =
     "https://analytics.matech-software.de/js/container_Dwaw5hA9.js"
 
-  const scrollRef = useRef<HTMLDivElement>(null)
+  const scrollReference = useRef<HTMLDivElement>(null)
 
   const setupAnalyticsScript = (): void => {
     // eslint-disable-next-line @typescript-eslint/strict-boolean-expressions
-    const matomoEvents = (window._mtm = window._mtm || [])
+    const matomoEvents = (window.mtmEvent = window.mtmEvent || [])
     matomoEvents.push({
-      "mtm.startTime": new Date().getTime(),
-      event: "mtm.Start"
+      event: "mtm.Start",
+      "mtm.startTime": Date.now()
     })
 
-    const newScript = document.createElement("script")
-    const firstScript = document.getElementsByTagName("script")[0]
-    newScript.async = true
-    newScript.src = ANALYTICS_SCRIPT_URL
-    firstScript.parentNode?.insertBefore(newScript, firstScript)
+    const createdScript = document.createElement("script")
+    const firstScript = document.querySelectorAll("script")[0]
+    createdScript.async = true
+    createdScript.src = ANALYTICS_SCRIPT_URL
+    firstScript.parentNode?.insertBefore(createdScript, firstScript)
   }
 
   useEffect(() => {
@@ -50,7 +51,7 @@ const App: React.FC = () => {
   }, [onScroll])
 
   return (
-    <div className="App" ref={scrollRef}>
+    <div className="App" ref={scrollReference}>
       <Homepage />
     </div>
   )

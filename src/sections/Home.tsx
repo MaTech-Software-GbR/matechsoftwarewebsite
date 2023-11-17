@@ -1,14 +1,33 @@
-import React from "react"
+import React, { useEffect } from "react"
+
 import SocialLink from "../components/SocialLink"
 
-const Typewriter = React.lazy(async () => await import("typewriter-effect"))
+const Typewriter = React.lazy(async () => import("typewriter-effect"))
 
 const Home: React.FC = () => {
+  useEffect(() => {
+    const handleScroll = (): void => {
+      const parallax = document.querySelector(".s-home") as HTMLElement
+      const scrollPosition = window.scrollY
+      if (parallax !== null) {
+        parallax.style.backgroundPosition = `center calc(50% + ${
+          scrollPosition * 0.5
+        }px)`
+      }
+    }
+
+    window.addEventListener("scroll", handleScroll)
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll)
+    }
+  }, [])
+
   return (
     <div>
-      <section id="home" className="s-home page-hero target-section">
-        <div className="overlay"></div>
-        <div className="shadow-overlay"></div>
+      <section className="s-home page-hero target-section" id="home">
+        <div className="overlay" />
+        <div className="shadow-overlay" />
 
         <div className="home-content">
           <div className="row home-content__main">
@@ -21,6 +40,8 @@ const Home: React.FC = () => {
                 <React.Suspense fallback={<div>Programmierer</div>}>
                   <Typewriter
                     options={{
+                      autoStart: true,
+                      loop: true,
                       strings: [
                         "MaTech Software.",
                         "Programmierer.",
@@ -29,9 +50,7 @@ const Home: React.FC = () => {
                         "Chaosbewältiger.",
                         "Coder.",
                         "Problemlöser."
-                      ],
-                      autoStart: true,
-                      loop: true
+                      ]
                     }}
                   />
                 </React.Suspense>
@@ -39,16 +58,16 @@ const Home: React.FC = () => {
             </h1>
 
             <div className="home-content__buttons">
-              <a href="/#works" className="btn btn--stroke">
+              <a className="btn btn--stroke" href="/#works">
                 Letztes Projekt
               </a>
-              <a href="/#about" className="btn btn--stroke">
+              <a className="btn btn--stroke" href="/#about">
                 Mehr über uns
               </a>
             </div>
 
             <div className="home-content__scroll">
-              <a href="/#services" className="scroll-link">
+              <a className="scroll-link" href="/#services">
                 <span className="hover-effect">Unsere Leistungen</span>
               </a>
             </div>

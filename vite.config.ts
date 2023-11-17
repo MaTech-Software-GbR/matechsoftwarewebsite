@@ -1,6 +1,6 @@
 // vite.config.js
-import react from '@vitejs/plugin-react';
-import { viteStaticCopy } from 'vite-plugin-static-copy';
+import react from "@vitejs/plugin-react"
+import { viteStaticCopy } from "vite-plugin-static-copy"
 
 export default {
   plugins: [
@@ -8,10 +8,13 @@ export default {
     viteStaticCopy({
       targets: [
         {
-          src: 'api',
-          dest: './',
-        },
-      ],
-    }),
+          src: "api",
+          dest: "./"
+        }
+      ]
+    })
   ],
-};
+  server: {
+    port: 3000
+  }
+}
