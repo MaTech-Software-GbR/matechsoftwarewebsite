@@ -69,13 +69,15 @@ const Footer: React.FC = () => {
                 <Link to="/datenschutz">Datenschutz</Link>
               </span>
               <span>
-                <a
-                  className="pointer"
-                  onClick={openConsentTool}
-                  rel="noopener noreferrer"
+                <Link
+                  onClick={(event) => {
+                    event.preventDefault()
+                    openConsentTool()
+                  }}
+                  to="/"
                 >
                   Cookie-Einstellungen
-                </a>
+                </Link>
               </span>
             </div>
           </div>

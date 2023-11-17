@@ -6,8 +6,9 @@
   "parser": "@typescript-eslint/parser",
   "extends": [
     "airbnb-typescript",
+    "eslint:recommended",
     "plugin:jest/recommended",
-    "plugin:jsdoc/recommended",
+    "plugin:jsdoc/recommended-typescript",
     "plugin:sonarjs/recommended",
     "plugin:react/recommended",
     "plugin:promise/recommended",
@@ -20,7 +21,9 @@
     "plugin:import/warnings",
     "plugin:unicorn/all",
     "plugin:yml/recommended",
-    "plugin:perfectionist/recommended-natural"
+    "plugin:perfectionist/recommended-natural",
+    "plugin:markdown/recommended",
+    "plugin:jsx-a11y/recommended"
   ],
   "parserOptions": {
     "ecmaVersion": "latest",
@@ -43,7 +46,10 @@
     "promise",
     "unicorn",
     "yml",
-    "perfectionist"
+    "perfectionist",
+    "html",
+    "markdown",
+    "jsx-a11y"
   ],
   "rules": {
     "semi": "off",
@@ -61,5 +67,11 @@
     "react": {
       "version": "detect"
     }
-  }
+  },
+  "overrides": [
+    {
+      "files": ["*.md"],
+      "processor": "markdown/markdown"
+    }
+  ]
 }

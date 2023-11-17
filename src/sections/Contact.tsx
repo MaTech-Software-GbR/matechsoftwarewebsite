@@ -7,8 +7,8 @@ import { type ContactFormData } from "../models/ContactFormData.Interface"
 /**
  * Fetches a new CSRF Token from the backend
  * Sends an email with the input from the form to the backend
- * @param {FormData} formData Email, Name, Subject and Message
- * @returns {Promise<string>} Promise that resolves to "success" or "error"
+ * @param formData Email, Name, Subject and Message
+ * @returns Promise that resolves to "success" or "error"
  */
 async function sendMail(formData: FormData): Promise<string> {
   try {
