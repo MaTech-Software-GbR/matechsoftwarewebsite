@@ -10,7 +10,8 @@ const ScrollToTop: React.FC = () => {
     window.scrollTo(0, 0)
   }, [pathname])
 
-  return pathname
+  // eslint-disable-next-line unicorn/no-null
+  return null
 }
 
 export default ScrollToTop
