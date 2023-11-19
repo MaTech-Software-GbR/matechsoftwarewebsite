@@ -18,8 +18,10 @@ const Homepage: React.FC = () => {
     const windowVariable = windowReference.current
     const handleScroll = debounce((): void => {
       const homeComponent = document.querySelector("#services") as HTMLElement
-      const homeComponentTop = homeComponent.getBoundingClientRect().top
-      setShouldBeSticky(homeComponentTop <= 0)
+      if (homeComponent) {
+        const homeComponentTop = homeComponent.getBoundingClientRect().top
+        setShouldBeSticky(homeComponentTop <= 0)
+      }
     }, 100)
 
     windowVariable.addEventListener("scroll", handleScroll)
