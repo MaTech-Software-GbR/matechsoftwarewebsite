@@ -2,12 +2,7 @@ import AOS from "aos"
 import "aos/dist/aos.css"
 import React, { Suspense } from "react"
 import ReactDOM from "react-dom/client"
-import {
-  Outlet,
-  Route,
-  BrowserRouter as Router,
-  Routes
-} from "react-router-dom"
+import { Route, BrowserRouter as Router, Routes } from "react-router-dom"
 
 import "./styles/App.scss"
 import "./styles/Base.scss"
@@ -25,10 +20,10 @@ root.render(
     <Router>
       <Suspense fallback={<div>MaTech lädt...</div>}>
         <Routes>
+          <Route element={<ErrorPage />} path="*" />
           <Route element={<App />} path="/" />
           <Route element={<Impressum />} path="/impressum" />
           <Route element={<Datenschutz />} path="/datenschutz" />
-          <Route element={<ErrorPage />} path="/*" />
         </Routes>
       </Suspense>
     </Router>
