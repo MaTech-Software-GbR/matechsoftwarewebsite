@@ -9,7 +9,9 @@ env:
   NODE_VERSION: 18
 
 jobs:
-  build:
+  release:
+    name: Tag and Release
+    permissions: write-all
     runs-on: ubuntu-latest
     env:
       GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
