@@ -3,7 +3,7 @@ name: Create Tag and Release MaTech Software Website on GitHub
 on:
   push:
     branches:
-      - main
+      - dev
 
 env:
   NODE_VERSION: 18
@@ -31,7 +31,6 @@ jobs:
           GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
         with:
           tag_prefix: "v"
-          commit_message_template: "({{sha}} by {{author}}) {{message}}"
 
       - name: Release
         uses: softprops/action-gh-release@v1
