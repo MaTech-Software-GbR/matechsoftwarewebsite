@@ -70,6 +70,7 @@ jobs:
   release:
     name: Tag and Release MaTech Software Website
     if: github.ref == 'refs/heads/main'
+    needs: [build, test, lint]
     permissions: write-all
     runs-on: ubuntu-latest
     env:
