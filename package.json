@@ -1,6 +1,6 @@
 {
   "name": "matechsoftware",
-  "version": "0.1.0",
+  "version": "1.1",
   "homepage": "https://www.matech-software.de",
   "main": "index.tsx",
   "private": true,
