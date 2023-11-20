@@ -1,4 +1,4 @@
-name: Deploy MaTech Software Website
+name: Build, Lint, Test, Release and Deploy MaTech Software Website
 
 on:
   push:
@@ -11,9 +11,11 @@ env:
 
 jobs:
   build:
+    name: Build MaTech Software Website
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout Code
+        uses: actions/checkout@v4
 
       - name: Use Node.js ${{ env.NODE_VERSION }}
         uses: actions/setup-node@v3
@@ -28,6 +30,7 @@ jobs:
         run: npm run build
 
   lint:
+    name: Lint MaTech Software Website
     needs: build
     runs-on: ubuntu-latest
     steps:
@@ -46,6 +49,7 @@ jobs:
         run: npm run lint
         continue-on-error: true
   test:
+    name: Test MaTech Software Website
     needs: build
     runs-on: ubuntu-latest
     steps:
@@ -63,9 +67,27 @@ jobs:
       - name: Test MaTech Software Website
         run: npm run test
 
-  deploy:
+  release:
+    name: Tag and Release MaTech Software Website
     if: github.ref == 'refs/heads/main'
-    needs: [build, test, lint]
+    permissions: write-all
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Get Version from package.json
+        id: version
+        run: echo "VERSION=$(jq -r .version package.json)" >> $GITHUB_ENV
+
+      - name: Create Tag and Release
+        run: gh release create v${{ env.VERSION }} -t "Release v${{ env.VERSION }}"
+
+  deploy:
+    name: Deploy MaTech Software Website
+    if: github.ref == 'refs/heads/main'
+    needs: [build, test, lint, release]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
