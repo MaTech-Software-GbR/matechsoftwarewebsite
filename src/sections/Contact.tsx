@@ -1,6 +1,5 @@
 import React, { useState } from "react"
 import { type SubmitHandler, useForm } from "react-hook-form"
-import { v4 as uuidv4 } from "uuid"
 
 import { type ContactFormData } from "../models/ContactFormData.Interface"
 
@@ -27,7 +26,6 @@ const sendMail = async (formData: FormData): Promise<string> => {
 }
 
 const Contact: React.FC = () => {
-  const [csrfToken, setCsrfToken] = useState("")
   const [showSuccessfulSent, setshowSuccessfulSent] = useState<boolean>(false)
   const [showNotSuccessfulSent, setshowNotSuccessfulSent] =
     useState<boolean>(false)
@@ -45,7 +43,6 @@ const Contact: React.FC = () => {
     formData.append("contactEmail", data.contactEmail)
     formData.append("contactSubject", data.contactSubject)
     formData.append("contactMessage", data.contactMessage)
-    formData.append("csrfToken", csrfToken)
 
     const result = await sendMail(formData)
 
@@ -54,8 +51,6 @@ const Contact: React.FC = () => {
     } else {
       setshowNotSuccessfulSent(true)
     }
-
-    setCsrfToken(uuidv4())
 
     // Clear the error message after 3 seconds
     setTimeout(() => {
@@ -179,9 +174,6 @@ const Contact: React.FC = () => {
                   </div>
                 </div>
               </fieldset>
-              <div className="form-field">
-                <input name="csrfToken" type="hidden" value={csrfToken} />
-              </div>
             </form>
             {showSuccessfulSent ? (
               <div className="message-success">
