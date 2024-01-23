@@ -40,11 +40,11 @@ if ($_POST) {
     $message .= "<br /> ----- <br /> This email was sent from https://matech-software.de contact form. <br />";
 
     // Set From: header
-    $from =  $name . " <" . $email . ">";
+    $from =  $name . " <" . $siteOwnersEmail . ">";
 
     // Email Headers
     $headers = "From: " . $from . "\r\n";
-    $headers .= "Reply-To: " . $email . "\r\n";
+    $headers .= "Reply-To: " . $siteOwnersEmail . "\r\n";
     $headers .= "MIME-Version: 1.0\r\n";
     $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
 
