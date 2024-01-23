@@ -15,6 +15,8 @@ async function sendMail(formData: FormData): Promise<string> {
       method: "POST"
     })
 
+    console.log(response)
+
     if (response.status === 200) {
       return response.statusText === "OK" ? "success" : "error"
     }
