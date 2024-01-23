@@ -18,9 +18,9 @@ if ($_POST) {
         $error['name'] = "Bitte geben Sie hier Ihren Namen ein.";
     }
     // Check Email
-    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        $error['email'] = "Bitte geben Sie eine valide E-Mail Adresse ein.";
-    }
+    // if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    //     $error['email'] = "Bitte geben Sie eine valide E-Mail Adresse ein.";
+    // }
     // Check Message
     if (strlen($contact_message) < 15) {
         $error['message'] = "Bitte geben Sie hier Ihre Nachricht ein. 

@@ -9,18 +9,14 @@ import { type ContactFormData } from "../models/ContactFormData.Interface"
  * @returns Promise that resolves to "success" or "error"
  */
 const sendMail = async (formData: FormData): Promise<string> => {
-  console.log(formData.get("contactName"))
   try {
     const response = await fetch("/api/sendEmail.php", {
       body: formData,
       method: "POST"
     })
 
-    console.log(response)
-
     if (response.status === 200) {
       const data = await response.text()
-      console.log(data)
       return data === "OK" ? "success" : "error"
     }
     return "error"
@@ -42,13 +38,12 @@ const Contact: React.FC = () => {
   const onSubmit: SubmitHandler<ContactFormData> = async (
     data: ContactFormData
   ) => {
-    console.log(data)
     const formData = new FormData()
     formData.append("contactName", data.contactName)
     formData.append("contactEmail", data.contactEmail)
     formData.append("contactSubject", data.contactSubject)
     formData.append("contactMessage", data.contactMessage)
-    console.log(formData.get("contactName"))
+
     const result = await sendMail(formData)
 
     if (result === "success") {
