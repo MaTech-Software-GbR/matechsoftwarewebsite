@@ -13,6 +13,7 @@ jobs:
   build:
     name: Build MaTech Software Website
     runs-on: ubuntu-latest
+    timeout-minutes: 1
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
@@ -33,6 +34,7 @@ jobs:
     name: Lint MaTech Software Website
     needs: build
     runs-on: ubuntu-latest
+    timeout-minutes: 1
     steps:
       - uses: actions/checkout@v4
 
@@ -52,6 +54,7 @@ jobs:
     name: Test MaTech Software Website
     needs: build
     runs-on: ubuntu-latest
+    timeout-minutes: 1
     steps:
       - uses: actions/checkout@v4
 
@@ -75,6 +78,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    timeout-minutes: 1
     steps:
       - uses: actions/checkout@v4
 
@@ -90,6 +94,7 @@ jobs:
     if: github.ref == 'refs/heads/main'
     needs: [build, test, lint, release]
     runs-on: ubuntu-latest
+    timeout-minutes: 1
     steps:
       - uses: actions/checkout@v4
 
