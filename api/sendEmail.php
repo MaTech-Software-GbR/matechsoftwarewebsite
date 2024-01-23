@@ -3,6 +3,8 @@ session_start();
 
 $siteOwnersEmail = 'kontakt@matech-software.de';
 
+echo "test";
+
 if ($_POST) {
     $name = trim(stripslashes(htmlspecialchars($_POST['contactName'])));
     $email = trim(stripslashes(htmlspecialchars($_POST['contactEmail'])));
