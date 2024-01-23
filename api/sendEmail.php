@@ -49,7 +49,7 @@ if ($_POST) {
     $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
 
     if (!$error) {
-        //ini_set("sendmail_from", $siteOwnersEmail); // for windows server
+        ini_set("sendmail_from", $siteOwnersEmail); // for windows server
         $mail = mail($siteOwnersEmail, $subject, $message, $headers);
 
         if ($mail) {
