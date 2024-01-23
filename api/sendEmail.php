@@ -5,8 +5,7 @@ error_reporting(E_ALL);
 session_start();
 
 $siteOwnersEmail = 'kontakt@matech-software.de';
-
-echo "test";
+$error = array();
 
 if ($_POST) {
     $name = trim(stripslashes(htmlspecialchars($_POST['contactName'])));
