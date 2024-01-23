@@ -12,9 +12,6 @@ async function sendMail(formData: FormData): Promise<string> {
   try {
     const response = await fetch("/api/sendEmail.php", {
       body: formData,
-      headers: {
-        "Content-Type": "multipart/form-data"
-      },
       method: "POST"
     })
 

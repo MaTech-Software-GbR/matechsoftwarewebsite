@@ -70,29 +70,28 @@ jobs:
       - name: Test MaTech Software Website
         run: npm run test
 
-  release:
-    name: Tag and Release MaTech Software Website
-    if: github.ref == 'refs/heads/main'
-    needs: [build, test, lint]
-    permissions: write-all
-    runs-on: ubuntu-latest
-    env:
-      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-    timeout-minutes: 1
-    steps:
-      - uses: actions/checkout@v4
+  # release:
+  #   name: Tag and Release MaTech Software Website
+  #   if: github.ref == 'refs/heads/main'
+  #   needs: [build, test, lint]
+  #   permissions: write-all
+  #   runs-on: ubuntu-latest
+  #   env:
+  #     GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  #   timeout-minutes: 1
+  #   steps:
+  #     - uses: actions/checkout@v4
 
-      - name: Get Version from package.json
-        id: version
-        run: echo "VERSION=$(jq -r .version package.json)" >> $GITHUB_ENV
+  #     - name: Get Version from package.json
+  #       id: version
+  #       run: echo "VERSION=$(jq -r .version package.json)" >> $GITHUB_ENV
 
-      - name: Create Tag and Release
-        run: gh release create v${{ env.VERSION }} -t "Release v${{ env.VERSION }}"
+  #     - name: Create Tag and Release
+  #       run: gh release create v${{ env.VERSION }} -t "Release v${{ env.VERSION }}"
 
   deploy:
     name: Deploy MaTech Software Website
-    if: github.ref == 'refs/heads/main'
-    needs: [build, test, lint, release]
+    needs: [build, test, lint]
     runs-on: ubuntu-latest
     timeout-minutes: 1
     steps:
