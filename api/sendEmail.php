@@ -1,7 +1,8 @@
-﻿<?php
+<?php
 session_start();
 
 $siteOwnersEmail = 'kontakt@matech-software.de';
+$error = array();
 
 if ($_POST) {
     $name = trim(stripslashes(htmlspecialchars($_POST['contactName'])));
@@ -29,23 +30,23 @@ if ($_POST) {
 
 
     // Set Message
-    $message .= "Email from: " . $name . "<br />";
+    $message = "Email from: " . $name . "<br />";
     $message .= "Email address: " . $email . "<br />";
     $message .= "Message: <br />";
     $message .= $contact_message;
     $message .= "<br /> ----- <br /> This email was sent from https://matech-software.de contact form. <br />";
 
     // Set From: header
-    $from =  $name . " <" . $email . ">";
+    $from =  $name . " <" . $siteOwnersEmail . ">";
 
     // Email Headers
     $headers = "From: " . $from . "\r\n";
-    $headers .= "Reply-To: " . $email . "\r\n";
+    $headers .= "Reply-To: " . $siteOwnersEmail . "\r\n";
     $headers .= "MIME-Version: 1.0\r\n";
     $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
 
     if (!$error) {
-        ini_set("sendmail_from", $siteOwnersEmail); // for windows server
+        ini_set("sendmail_from", $siteOwnersEmail);
         $mail = mail($siteOwnersEmail, $subject, $message, $headers);
 
         if ($mail) {
