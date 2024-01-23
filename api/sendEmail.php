@@ -34,7 +34,7 @@ if ($_POST) {
 
 
     // Set Message
-    $message .= "Email from: " . $name . "<br />";
+    $message = "Email from: " . $name . "<br />";
     $message .= "Email address: " . $email . "<br />";
     $message .= "Message: <br />";
     $message .= $contact_message;
