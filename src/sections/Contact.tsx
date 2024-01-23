@@ -8,7 +8,8 @@ import { type ContactFormData } from "../models/ContactFormData.Interface"
  * @param formData Email, Name, Subject and Message
  * @returns Promise that resolves to "success" or "error"
  */
-async function sendMail(formData: FormData): Promise<string> {
+const sendMail = async (formData: FormData): Promise<string> => {
+  console.log(formData)
   try {
     const response = await fetch("/api/sendEmail.php", {
       body: formData,
@@ -18,7 +19,9 @@ async function sendMail(formData: FormData): Promise<string> {
     console.log(response)
 
     if (response.status === 200) {
-      return response.statusText === "OK" ? "success" : "error"
+      const data = await response.text()
+      console.log(data)
+      return data === "OK" ? "success" : "error"
     }
     return "error"
   } catch {
