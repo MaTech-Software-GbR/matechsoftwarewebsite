@@ -1,13 +1,23 @@
 <?php
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
 session_start();
 
 $siteOwnersEmail = 'kontakt@matech-software.de';
 $error = array();
 
+// Generate a CSRF token and store it in the session
+if (!isset($_SESSION['csrf_token'])) {
+    $_SESSION['csrf_token'] = base64_encode(openssl_random_pseudo_bytes(32));
+}
+
 if ($_POST) {
+    // Check CSRF token
+    if (!isset($_POST['csrf_token']) || $_POST['csrf_token'] !== $_SESSION['csrf_token']) {
+        die('Invalid CSRF token');
+    }
+
+    // Regenerate CSRF token
+    $_SESSION['csrf_token'] = base64_encode(openssl_random_pseudo_bytes(32));
+
     $name = trim(stripslashes(htmlspecialchars($_POST['contactName'])));
     $email = trim(stripslashes(htmlspecialchars($_POST['contactEmail'])));
     $subject = trim(stripslashes(htmlspecialchars($_POST['contactSubject'])));
@@ -49,7 +59,7 @@ if ($_POST) {
     $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
 
     if (!$error) {
-        ini_set("sendmail_from", $siteOwnersEmail); // for windows server
+        ini_set("sendmail_from", $siteOwnersEmail);
         $mail = mail($siteOwnersEmail, $subject, $message, $headers);
 
         if ($mail) {
