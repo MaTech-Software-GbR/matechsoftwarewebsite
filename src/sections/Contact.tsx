@@ -12,12 +12,14 @@ async function sendMail(formData: FormData): Promise<string> {
   try {
     const response = await fetch("/api/sendEmail.php", {
       body: formData,
+      headers: {
+        "Content-Type": "multipart/form-data"
+      },
       method: "POST"
     })
 
     if (response.status === 200) {
-      const data = await response.text()
-      return data === "OK" ? "success" : "error"
+      return response.statusText === "OK" ? "success" : "error"
     }
     return "error"
   } catch {
