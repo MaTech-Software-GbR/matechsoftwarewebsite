@@ -1,6 +1,6 @@
 import React from "react"
 
-import SocialLink from "../components/SocialLink"
+const SocialLink = React.lazy(() => import("../components/SocialLink"))
 import developerimage2 from "../images/Manu001.webp"
 import developerimage1 from "../images/Maxi001.webp"
 

@@ -1,7 +1,7 @@
 import React from "react"
 import { Link } from "react-router-dom"
 
-import SocialLink from "../components/SocialLink"
+const SocialLink = React.lazy(() => import("../components/SocialLink"))
 import logo from "../images/logo.webp"
 
 interface Ucentrics {

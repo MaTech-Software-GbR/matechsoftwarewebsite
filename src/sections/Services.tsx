@@ -1,6 +1,6 @@
 import React from "react"
 
-import Logo from "../components/Logo"
+const Logo = React.lazy(() => import("../components/Logo"))
 import bootstrapicon from "../images/technologies/bootstrap-4-icon.webp"
 import csharpicon from "../images/technologies/c-sharp-programming-language-icon.webp"
 import cssicon from "../images/technologies/css-icon.webp"

@@ -92,6 +92,7 @@
     "react-router": "^6.21.3",
     "react-test-renderer": "^18.2.0",
     "sass": "^1.70.0",
+    "terser": "^5.27.0",
     "ts-jest": "^29.1.2",
     "ts-node": "^10.9.2",
     "typescript": "^5.3.3",
