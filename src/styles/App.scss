@@ -2063,3 +2063,50 @@ fieldset {
 .pointer {
     cursor: pointer;
 }
+
+.services {
+    padding-top: 5rem;
+}
+
+.service {
+    padding-top: 2rem;
+}
+
+.service h3 {
+    padding-bottom: 1rem;
+}
+
+@keyframes fade-up {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fade-right {
+    0% {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.illustration img {
+    animation-name: fade-right;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+}
+
+.leistungen img {
+    opacity: 0;
+    animation-name: fade-up;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+}

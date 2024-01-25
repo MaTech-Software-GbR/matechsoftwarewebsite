@@ -33,7 +33,7 @@ const Services: React.FC = () => (
 
       <div className="row about-content">
         <div className="col-six tab-full left">
-          <h2>Unsere Leistungen im Überblick:</h2>
+          <h2>Unsere Leistungen im Überblick</h2>
           <div className=" services">
             <div className="service">
               <h3>Unternehmenswebsite</h3>

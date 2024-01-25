@@ -1,4 +1,3 @@
-import { debounce } from "lodash"
 import React, { useEffect, useRef, useState } from "react"
 
 const BackToTopButton = React.lazy(
@@ -15,20 +14,29 @@ const Work = React.lazy(async () => import("../sections/Work"))
 const Homepage: React.FC = () => {
   const [shouldBeSticky, setShouldBeSticky] = useState<boolean>(false)
   const windowReference = useRef<Window>(window)
+  const timeoutIdReference = useRef<null | number>(null)
 
   useEffect(() => {
     const windowVariable = windowReference.current
-    const handleScroll = debounce((): void => {
-      const homeComponent = document.querySelector("#services") as HTMLElement
-      if (homeComponent) {
-        const homeComponentTop = homeComponent.getBoundingClientRect().top
-        setShouldBeSticky(homeComponentTop <= 0)
+    const handleScroll = (): void => {
+      if (timeoutIdReference.current) {
+        clearTimeout(timeoutIdReference.current)
       }
-    }, 100)
+      timeoutIdReference.current = setTimeout(() => {
+        const homeComponent = document.querySelector("#services") as HTMLElement
+        if (homeComponent) {
+          const homeComponentTop = homeComponent.getBoundingClientRect().top
+          setShouldBeSticky(homeComponentTop <= 0)
+        }
+      }, 100)
+    }
 
     windowVariable.addEventListener("scroll", handleScroll)
     return () => {
       windowVariable.removeEventListener("scroll", handleScroll)
+      if (timeoutIdReference.current) {
+        clearTimeout(timeoutIdReference.current)
+      }
     }
   }, [])
 

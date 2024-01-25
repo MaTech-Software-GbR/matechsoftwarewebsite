@@ -1,13 +1,9 @@
-import AOS from "aos"
-import "aos/dist/aos.css"
 import React, { Suspense } from "react"
 import ReactDOM from "react-dom/client"
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom"
 
 import "./styles/App.scss"
 import "./styles/Base.scss"
-
-AOS.init()
 
 const App = React.lazy(async () => import("./App"))
 const Impressum = React.lazy(async () => import("./pages/Impressum"))
