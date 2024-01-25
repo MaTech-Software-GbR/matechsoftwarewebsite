@@ -1,18 +1,18 @@
 import React from "react"
 
-import Logo from "../components/Logo"
-import bootstrapicon from "../images/technologies/bootstrap-4-icon.png"
-import csharpicon from "../images/technologies/c-sharp-programming-language-icon.png"
-import cssicon from "../images/technologies/css-icon.png"
-import htmlicon from "../images/technologies/html-icon.png"
-import javaicon from "../images/technologies/java-programming-language-icon.png"
-import javascripticon from "../images/technologies/javascript-programming-language-icon.png"
-import dotneticon from "../images/technologies/microsoft-dot-net-icon.png"
-import mysqlicon from "../images/technologies/mysql-icon.png"
-import pythonicon from "../images/technologies/python-programming-language-icon.png"
-import sqlservericon from "../images/technologies/sql-server-icon.png"
-import typescripticon from "../images/technologies/typescript-programming-language-icon.png"
-import wordpressicon from "../images/technologies/wordpress-icon.png"
+const Logo = React.lazy(() => import("../components/Logo"))
+import bootstrapicon from "../images/technologies/bootstrap-4-icon.webp"
+import csharpicon from "../images/technologies/c-sharp-programming-language-icon.webp"
+import cssicon from "../images/technologies/css-icon.webp"
+import htmlicon from "../images/technologies/html-icon.webp"
+import javaicon from "../images/technologies/java-programming-language-icon.webp"
+import javascripticon from "../images/technologies/javascript-programming-language-icon.webp"
+import dotneticon from "../images/technologies/microsoft-dot-net-icon.webp"
+import mysqlicon from "../images/technologies/mysql-icon.webp"
+import pythonicon from "../images/technologies/python-programming-language-icon.webp"
+import sqlservericon from "../images/technologies/sql-server-icon.webp"
+import typescripticon from "../images/technologies/typescript-programming-language-icon.webp"
+import wordpressicon from "../images/technologies/wordpress-icon.webp"
 
 const Services: React.FC = () => (
   <div>
@@ -33,7 +33,7 @@ const Services: React.FC = () => (
 
       <div className="row about-content">
         <div className="col-six tab-full left">
-          <h2>Unsere Leistungen im Überblick:</h2>
+          <h2>Unsere Leistungen im Überblick</h2>
           <div className=" services">
             <div className="service">
               <h3>Unternehmenswebsite</h3>

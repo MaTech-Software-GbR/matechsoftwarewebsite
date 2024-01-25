@@ -1,9 +1,9 @@
 import React from "react"
 
-import ScrollToTop from "../components/ScrollToTop"
-import SocialLink from "../components/SocialLink"
-import Footer from "../sections/Footer"
-import Header from "../sections/Header"
+const ScrollToTop = React.lazy(async () => import("../components/ScrollToTop"))
+const SocialLink = React.lazy(async () => import("../components/SocialLink"))
+const Footer = React.lazy(async () => import("../sections/Footer"))
+const Header = React.lazy(async () => import("../sections/Header"))
 
 const Impressum: React.FC = () => (
   <div>

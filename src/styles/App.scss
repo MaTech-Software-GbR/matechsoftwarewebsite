@@ -672,7 +672,7 @@ input::-moz-focus-inner {
     background-color: transparent;
     position: relative;
     display: table;
-    background-image: url("../images/MaxiManu007.webp");
+    background-image: url("../images/HeaderimageBoth.webp");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -1296,12 +1296,6 @@ html.no-csstransitions .home-content__main {
 
 /* bricks/masonry */
 
-.masonry-wrap {
-    margin-top: 4.8rem;
-    max-width: none;
-    width: 1600px;
-}
-
 .masonry:after {
     content: "";
     display: table;
@@ -1445,16 +1439,6 @@ html.no-csstransitions .home-content__main {
 /* responsive:
   * works */
 
-@media only screen and (max-width: 1700px) {
-    .masonry-wrap {
-        width: 1400px;
-    }
-    .masonry .grid-sizer,
-    .masonry__brick {
-        width: 350px;
-    }
-}
-
 @media only screen and (max-width: 1500px) {
     .masonry-wrap {
         width: 1200px;
@@ -1467,11 +1451,11 @@ html.no-csstransitions .home-content__main {
 
 @media only screen and (max-width: 1300px) {
     .masonry-wrap {
-        width: 999px;
+        width: 900px;
     }
     .masonry .grid-sizer,
     .masonry__brick {
-        width: 333px;
+        width: 300px;
     }
 }
 
@@ -1527,7 +1511,7 @@ html.no-csstransitions .home-content__main {
 
 .s-contact {
     background-color: #151515;
-    background-image: url("../images/MaxiManu010.webp");
+    background-image: url("../images/ContactformimageBoth.webp");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center, center;
@@ -2078,4 +2062,51 @@ fieldset {
 
 .pointer {
     cursor: pointer;
+}
+
+.services {
+    padding-top: 5rem;
+}
+
+.service {
+    padding-top: 2rem;
+}
+
+.service h3 {
+    padding-bottom: 1rem;
+}
+
+@keyframes fade-up {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fade-right {
+    0% {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.illustration img {
+    animation-name: fade-right;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+}
+
+.leistungen img {
+    opacity: 0;
+    animation-name: fade-up;
+    animation-duration: 1s;
+    animation-fill-mode: both;
 }

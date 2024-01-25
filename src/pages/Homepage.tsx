@@ -1,32 +1,42 @@
-import { debounce } from "lodash"
 import React, { useEffect, useRef, useState } from "react"
 
-import BackToTopButton from "../components/BackToTopButton"
-import AboutUs from "../sections/AboutUs"
-import Contact from "../sections/Contact"
-import Footer from "../sections/Footer"
-import Header from "../sections/Header"
-import Home from "../sections/Home"
-import Services from "../sections/Services"
-import Work from "../sections/Work"
+const BackToTopButton = React.lazy(
+  async () => import("../components/BackToTopButton")
+)
+const AboutUs = React.lazy(async () => import("../sections/AboutUs"))
+const Contact = React.lazy(async () => import("../sections/Contact"))
+const Footer = React.lazy(async () => import("../sections/Footer"))
+const Header = React.lazy(async () => import("../sections/Header"))
+const Home = React.lazy(async () => import("../sections/Home"))
+const Services = React.lazy(async () => import("../sections/Services"))
+const Work = React.lazy(async () => import("../sections/Work"))
 
 const Homepage: React.FC = () => {
   const [shouldBeSticky, setShouldBeSticky] = useState<boolean>(false)
   const windowReference = useRef<Window>(window)
+  const timeoutIdReference = useRef<null | number>(null)
 
   useEffect(() => {
     const windowVariable = windowReference.current
-    const handleScroll = debounce((): void => {
-      const homeComponent = document.querySelector("#services") as HTMLElement
-      if (homeComponent) {
-        const homeComponentTop = homeComponent.getBoundingClientRect().top
-        setShouldBeSticky(homeComponentTop <= 0)
+    const handleScroll = (): void => {
+      if (timeoutIdReference.current) {
+        clearTimeout(timeoutIdReference.current)
       }
-    }, 100)
+      timeoutIdReference.current = setTimeout(() => {
+        const homeComponent = document.querySelector("#services") as HTMLElement
+        if (homeComponent) {
+          const homeComponentTop = homeComponent.getBoundingClientRect().top
+          setShouldBeSticky(homeComponentTop <= 0)
+        }
+      }, 100)
+    }
 
     windowVariable.addEventListener("scroll", handleScroll)
     return () => {
       windowVariable.removeEventListener("scroll", handleScroll)
+      if (timeoutIdReference.current) {
+        clearTimeout(timeoutIdReference.current)
+      }
     }
   }, [])
 

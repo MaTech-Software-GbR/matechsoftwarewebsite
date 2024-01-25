@@ -1,10 +1,32 @@
-import React from "react"
+import React, { useMemo } from "react"
 
-import SocialLink from "../components/SocialLink"
-
+const SocialLink = React.lazy(async () => import("../components/SocialLink"))
 const Typewriter = React.lazy(async () => import("typewriter-effect"))
 
 const Home: React.FC = () => {
+  const typewriter = useMemo(() => {
+    return (
+      <React.Suspense fallback={<div>Programmierer</div>}>
+        <Typewriter
+          options={{
+            autoStart: true,
+            delay: 100,
+            loop: true,
+            strings: [
+              "MaTech Software.",
+              "Programmierer.",
+              "Lösungsfinder.",
+              "Entwickler.",
+              "Chaosbewältiger.",
+              "Coder.",
+              "Problemlöser."
+            ]
+          }}
+        />
+      </React.Suspense>
+    )
+  }, [])
+
   return (
     <div>
       <section className="s-home page-hero target-section" id="home">
@@ -18,25 +40,7 @@ const Home: React.FC = () => {
             <h1>
               Wir sind Manuel und Maxi. <br />
               <div className="inline-block">Wir sind&nbsp;</div>
-              <div className="inline-block">
-                <React.Suspense fallback={<div>Programmierer</div>}>
-                  <Typewriter
-                    options={{
-                      autoStart: true,
-                      loop: true,
-                      strings: [
-                        "MaTech Software.",
-                        "Programmierer.",
-                        "Lösungsfinder.",
-                        "Entwickler.",
-                        "Chaosbewältiger.",
-                        "Coder.",
-                        "Problemlöser."
-                      ]
-                    }}
-                  />
-                </React.Suspense>
-              </div>
+              <div className="inline-block">{typewriter}</div>
             </h1>
 
             <div className="home-content__buttons">

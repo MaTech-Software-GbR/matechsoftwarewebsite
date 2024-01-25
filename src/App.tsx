@@ -1,7 +1,6 @@
 import React, { useCallback, useEffect, useRef, useState } from "react"
 
-import Homepage from "./pages/Homepage"
-
+const Homepage = React.lazy(async () => import("./pages/Homepage"))
 interface MtmEvent {
   event: string
   "mtm.startTime": number
@@ -13,34 +12,36 @@ declare global {
   }
 }
 
+const loadAnalyticsScript = async (): Promise<void> => {
+  try {
+    // eslint-disable-next-line @typescript-eslint/strict-boolean-expressions
+    window.mtmEvent = window.mtmEvent || []
+    window.mtmEvent.push({
+      event: "mtm.Start",
+      "mtm.startTime": Date.now()
+    })
+
+    const script = document.createElement("script")
+    script.async = true
+    script.src = "https://analytics.matech-software.de/js/container_Dwaw5hA9.js"
+    script.type = "text/javascript"
+
+    document.body.append(script)
+  } catch (error) {
+    console.error("Error loading analytics script:", error)
+  }
+}
+
 const App: React.FC = () => {
   const [, setScrollOffset] = useState(0)
   const onScroll = useCallback(() => {
     setScrollOffset(window.scrollY)
   }, [])
 
-  const ANALYTICS_SCRIPT_URL =
-    "https://analytics.matech-software.de/js/container_Dwaw5hA9.js"
-
   const scrollReference = useRef<HTMLDivElement>(null)
 
-  const setupAnalyticsScript = (): void => {
-    // eslint-disable-next-line @typescript-eslint/strict-boolean-expressions
-    const matomoEvents = (window.mtmEvent = window.mtmEvent || [])
-    matomoEvents.push({
-      event: "mtm.Start",
-      "mtm.startTime": Date.now()
-    })
-
-    const createdScript = document.createElement("script")
-    const firstScript = document.querySelectorAll("script")[0]
-    createdScript.async = true
-    createdScript.src = ANALYTICS_SCRIPT_URL
-    firstScript.parentNode?.insertBefore(createdScript, firstScript)
-  }
-
   useEffect(() => {
-    setupAnalyticsScript()
+    loadAnalyticsScript()
   }, [])
 
   useEffect(() => {

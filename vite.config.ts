@@ -14,6 +14,9 @@ export default {
       ]
     })
   ],
+  build: {
+    minify: "terser"
+  },
   server: {
     port: 3000
   }
