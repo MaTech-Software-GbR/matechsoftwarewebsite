@@ -1,7 +1,6 @@
 import React, { useCallback, useEffect, useRef, useState } from "react"
 
-import Homepage from "./pages/Homepage"
-
+const Homepage = React.lazy(async () => import("./pages/Homepage"))
 interface MtmEvent {
   event: string
   "mtm.startTime": number

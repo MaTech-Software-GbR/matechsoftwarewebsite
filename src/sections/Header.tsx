@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react"
 
-import logo from "../images/logo.png"
+import logo from "../images/logo.webp"
 import { type StickyProperties } from "../models/StickyProperties.Interface"
 
 const Header: React.FC<StickyProperties> = ({ shouldBeSticky }) => {
@@ -56,7 +56,7 @@ const Header: React.FC<StickyProperties> = ({ shouldBeSticky }) => {
       <header className={`s-header ${shouldBeSticky ? "sticky-navbar" : ""}`}>
         <div className="header-logo">
           <a className="site-logo" href="/" onClick={handleNavClick}>
-            <img alt="MaTech Software GbR Logo" src={logo} />
+            <img alt="MaTech Software GbR Logo" loading="lazy" src={logo} />
           </a>
         </div>
         <nav className="header-nav-wrap" ref={navReference} role="navigation">

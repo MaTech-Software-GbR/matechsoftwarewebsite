@@ -21,7 +21,7 @@ const ProjectBlock: React.FC<ProjectData> = ({
           target="_blank"
           title={title}
         >
-          <img alt={imgAlt} src={imgSrc} />
+          <img alt={imgAlt} loading="lazy" src={imgSrc} />
           <span className="shadow-overlay" />
           <div className="item-folio__text">
             <h3 className="item-folio__title">{brickTitle}</h3>

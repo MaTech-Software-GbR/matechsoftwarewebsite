@@ -27,6 +27,7 @@ const AboutUs: React.FC = () => (
             alt="Symbol für Entwickler: Eine Person, die auf einem Hocker sitzt und an einem Computer arbeitet"
             data-aos="fade-right"
             data-aos-delay="200"
+            loading="lazy"
             src={developerimage1}
           />
         </div>
@@ -76,6 +77,7 @@ const AboutUs: React.FC = () => (
             alt="Symbol für Entwickler: Eine Person, die vor einem Fenster am Schreibtisch an einem Computer arbeitet"
             data-aos="fade-right"
             data-aos-delay="200"
+            loading="lazy"
             src={developerimage2}
           />
         </div>

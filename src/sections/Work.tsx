@@ -1,6 +1,9 @@
 import React from "react"
 
-import ProjectBlock from "../components/ProjectBlock"
+const ProjectBlock = React.lazy(
+  async () => import("../components/ProjectBlock")
+)
+
 import gasthausschmidimage from "../images/references/GasthausSchmid.webp"
 import gutriedbichllogo from "../images/references/Logo_Gut_Riedbichl_quadrat.webp"
 import jbmlogo from "../images/references/jbm-logo.webp"

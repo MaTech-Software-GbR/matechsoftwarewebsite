@@ -2,7 +2,7 @@ import React from "react"
 import { Link } from "react-router-dom"
 
 import SocialLink from "../components/SocialLink"
-import logo from "../images/logo.png"
+import logo from "../images/logo.webp"
 
 interface Ucentrics {
   showSecondLayer: () => void
@@ -36,7 +36,11 @@ const Footer: React.FC = () => {
                 rel="noopener noreferrer"
                 target="_blank"
               >
-                <img alt="MaTech Software Logo Footer" src={logo} />
+                <img
+                  alt="MaTech Software Logo Footer"
+                  loading="lazy"
+                  src={logo}
+                />
               </a>
             </div>
 

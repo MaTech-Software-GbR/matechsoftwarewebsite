@@ -1,14 +1,16 @@
 import { debounce } from "lodash"
 import React, { useEffect, useRef, useState } from "react"
 
-import BackToTopButton from "../components/BackToTopButton"
-import AboutUs from "../sections/AboutUs"
-import Contact from "../sections/Contact"
-import Footer from "../sections/Footer"
-import Header from "../sections/Header"
-import Home from "../sections/Home"
-import Services from "../sections/Services"
-import Work from "../sections/Work"
+const BackToTopButton = React.lazy(
+  async () => import("../components/BackToTopButton")
+)
+const AboutUs = React.lazy(async () => import("../sections/AboutUs"))
+const Contact = React.lazy(async () => import("../sections/Contact"))
+const Footer = React.lazy(async () => import("../sections/Footer"))
+const Header = React.lazy(async () => import("../sections/Header"))
+const Home = React.lazy(async () => import("../sections/Home"))
+const Services = React.lazy(async () => import("../sections/Services"))
+const Work = React.lazy(async () => import("../sections/Work"))
 
 const Homepage: React.FC = () => {
   const [shouldBeSticky, setShouldBeSticky] = useState<boolean>(false)
