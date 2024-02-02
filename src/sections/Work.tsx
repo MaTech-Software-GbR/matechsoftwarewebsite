@@ -7,6 +7,7 @@ const ProjectBlock = React.lazy(
 import gasthausschmidimage from "../images/references/GasthausSchmid.webp"
 import gutriedbichllogo from "../images/references/Logo_Gut_Riedbichl_quadrat.webp"
 import jbmlogo from "../images/references/jbm-logo.webp"
+import johannahairandmakeuplogo from "../images/references/johannahairandmakeup.webp"
 import matechlaptoplogo from "../images/references/matechlaptop.webp"
 import rehalogo from "../images/references/reha-logo.webp"
 import thaihauslogo from "../images/references/thaihaus.webp"
@@ -42,17 +43,17 @@ const Work: React.FC = () => (
           />
 
           <ProjectBlock
-            brickCategory="Konzept, Design, Hosting, Logo"
-            brickTitle="Thai Haus Restaurant"
-            dataSize="1050x700"
-            href="https://www.thai-haus-feldkirchen.de"
-            imgAlt="Thaihaus Restaurant Logo"
-            imgSrc={thaihauslogo}
-            title="Thai Haus Restaurant"
+            brickCategory="Konzept, Entwicklung, Hosting, Logo Überarbeitung, Google My Business"
+            brickTitle="Brautstyling Johanna Löw"
+            dataSize="1450x700"
+            href="https://www.johannahairandmakeup.de"
+            imgAlt="Johannahairandmakeup Logo"
+            imgSrc={johannahairandmakeuplogo}
+            title="Brautstyling Johanna Löw"
           />
 
           <ProjectBlock
-            brickCategory="Konzept, Design, Hosting, Logo"
+            brickCategory="Konzept, Entwicklung, Hosting, Logo, Google My Business"
             brickTitle="Reha-Zentrum Riedbichl"
             dataSize="1050x700"
             href="https://www.rehazentrum-riedbichl.de"
@@ -62,7 +63,17 @@ const Work: React.FC = () => (
           />
 
           <ProjectBlock
-            brickCategory="Konzept, Design, Hosting"
+            brickCategory="Konzept, Entwicklung, Hosting, Logo, Google My Business"
+            brickTitle="Thai Haus Restaurant"
+            dataSize="1050x700"
+            href="https://www.thai-haus-feldkirchen.de"
+            imgAlt="Thaihaus Restaurant Logo"
+            imgSrc={thaihauslogo}
+            title="Thai Haus Restaurant"
+          />
+
+          <ProjectBlock
+            brickCategory="Konzept, Entwicklung, Hosting, Google My Business"
             brickTitle="Gasthaus Schmid"
             dataSize="1050x700"
             href="https://www.gasthaus-schmid.de"
@@ -72,7 +83,7 @@ const Work: React.FC = () => (
           />
 
           <ProjectBlock
-            brickCategory="Konzept, Design, Hosting"
+            brickCategory="Konzept, Entwicklung, Hosting"
             brickTitle="Gut Riedbichl"
             dataSize="1450x700"
             href="https://www.gut-riedbichl.de"
