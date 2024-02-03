@@ -4,12 +4,9 @@ const ProjectBlock = React.lazy(
   async () => import("../components/ProjectBlock")
 )
 
-import gasthausschmidimage from "../images/references/GasthausSchmid.webp"
-import gutriedbichllogo from "../images/references/Logo_Gut_Riedbichl_quadrat.webp"
 import jbmlogo from "../images/references/jbm-logo.webp"
-import matechlaptoplogo from "../images/references/matechlaptop.webp"
+import johannahairandmakeuplogo from "../images/references/johannahairandmakeup.webp"
 import rehalogo from "../images/references/reha-logo.webp"
-import thaihauslogo from "../images/references/thaihaus.webp"
 
 const Work: React.FC = () => (
   <div>
@@ -17,14 +14,13 @@ const Work: React.FC = () => (
       <div className="row narrow section-intro has-bottom-sep">
         <div className="col-full">
           <h3>Referenzen</h3>
-          <h1>Unsere Projekte.</h1>
+          <h1>Aktuelle Projekte.</h1>
 
           <p className="lead">
             Lassen Sie uns gemeinsam Ihre Vision verwirklichen. Gewinnen Sie
-            Einblicke in unsere erfolgreichen Projekte und überzeugen Sie sich
-            selbst von unserer Arbeit. Wir setzen Ihre Ideen um und begleiten
-            Sie von der Planung bis zur Umsetzung, um Ihre Vision zu
-            verwirklichen.
+            Einblicke in ausgewählte Projekte und überzeugen Sie sich selbst von
+            unserer Arbeit. Wir setzen Ihre Ideen um und begleiten Sie von der
+            Planung bis zur Umsetzung, um Ihre Vision zu verwirklichen.
           </p>
         </div>
       </div>
@@ -42,53 +38,23 @@ const Work: React.FC = () => (
           />
 
           <ProjectBlock
-            brickCategory="Konzept, Design, Hosting, Logo"
-            brickTitle="Thai Haus Restaurant"
-            dataSize="1050x700"
-            href="https://www.thai-haus-feldkirchen.de"
-            imgAlt="Thaihaus Restaurant Logo"
-            imgSrc={thaihauslogo}
-            title="Thai Haus Restaurant"
+            brickCategory="Konzept, Entwicklung, Hosting, Logo Überarbeitung, Google My Business"
+            brickTitle="Johanna hair and make-up"
+            dataSize="1528x1528"
+            href="https://www.johannahairandmakeup.de"
+            imgAlt="Johannahairandmakeup Logo"
+            imgSrc={johannahairandmakeuplogo}
+            title="Brautstyling Johanna Löw"
           />
 
           <ProjectBlock
-            brickCategory="Konzept, Design, Hosting, Logo"
-            brickTitle="Reha-Zentrum Riedbichl"
+            brickCategory="Konzept, Entwicklung, Hosting, Logo, Google My Business"
+            brickTitle="Reha-Zentrum Gut Riedbichl"
             dataSize="1050x700"
             href="https://www.rehazentrum-riedbichl.de"
             imgAlt="Rehazentrum Riedbichl Logo"
             imgSrc={rehalogo}
             title="Reha-Zentrum Riedbichl"
-          />
-
-          <ProjectBlock
-            brickCategory="Konzept, Design, Hosting"
-            brickTitle="Gasthaus Schmid"
-            dataSize="1050x700"
-            href="https://www.gasthaus-schmid.de"
-            imgAlt="Gasthaus Schmid Logo"
-            imgSrc={gasthausschmidimage}
-            title="Gut Riedbichl"
-          />
-
-          <ProjectBlock
-            brickCategory="Konzept, Design, Hosting"
-            brickTitle="Gut Riedbichl"
-            dataSize="1450x700"
-            href="https://www.gut-riedbichl.de"
-            imgAlt="Gut Riedbichl Logo"
-            imgSrc={gutriedbichllogo}
-            title="Gut Riedbichl"
-          />
-
-          <ProjectBlock
-            brickCategory="..."
-            brickTitle="Ihr Projekt"
-            dataSize="1050x700"
-            href="/#contact"
-            imgAlt="Matech Software Laptop mit Smartphone Logo"
-            imgSrc={matechlaptoplogo}
-            title="Ihr Projekt"
           />
         </div>
       </div>
