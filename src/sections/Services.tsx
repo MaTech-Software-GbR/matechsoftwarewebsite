@@ -22,10 +22,10 @@ const Services: React.FC = () => (
           <h3>Leistungen</h3>
           <h1>In guten Händen.</h1>
           <p className="lead">
-            Willkommen bei uns! Wir sind hier, um Ihnen zu helfen und Ihnen eine
-            maßgeschneiderte Lösung zu bieten, die genau auf Ihre Bedürfnisse
+            Willkommen bei uns! Wir sind hier, um dir zu helfen und dir eine
+            maßgeschneiderte Lösung zu bieten, die genau auf deine Bedürfnisse
             zugeschnitten ist. Wir verstehen, dass jedes Projekt einzigartig ist
-            und wir sind voller Begeisterung, Ihnen zu zeigen, wie wir Ihnen
+            und sind daher voller Begeisterung, dir zu zeigen, wie wir dir
             helfen können.
           </p>
         </div>
@@ -40,26 +40,27 @@ const Services: React.FC = () => (
               <p>
                 Erstellung einer modernen und ansprechenden Website mit Content
                 Management System (z.B. WordPress) oder individueller
-                Programmierung. So stellen wir sicher, dass Ihre Website perfekt
-                zu Ihrem Unternehmen passt.
+                Programmierung. So stellen wir sicher, dass deine Website
+                perfekt zu deinem Unternehmen passt.
               </p>
             </div>
 
             <div className="service">
               <h3>Webhosting</h3>
               <p>
-                Wir übernehmen die sichere und zuverlässige Bereitstellung Ihrer
-                Website auf unseren Servern. Backups und regelmäßige Wartung
-                sorgen dafür, dass Ihre Website immer reibungslos läuft.
+                Wir übernehmen die sichere und zuverlässige Bereitstellung
+                deiner Website auf unseren Servern. Backups und regelmäßige
+                Wartung sorgen dafür, dass deine Website immer reibungslos
+                läuft.
               </p>
             </div>
 
             <div className="service">
               <h3>Suchmaschinenoptimierung (SEO)</h3>
               <p>
-                Wir sorgen dafür, dass Ihre Website in den Suchergebnissen von
+                Wir sorgen dafür, dass deine Website in den Suchergebnissen von
                 Google und anderen Suchmaschinen besser gefunden wird. Damit
-                erhöhen wir die Sichtbarkeit Ihrer Website und steigern die
+                erhöhen wir die Sichtbarkeit deiner Website und steigern die
                 Anzahl der Besucher.
               </p>
             </div>

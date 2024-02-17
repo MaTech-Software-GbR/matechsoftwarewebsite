@@ -15,7 +15,7 @@ Matech Software GbR ist ein kleines, aber leidenschaftliches Softwareentwicklung
 
 ## Übersicht der Website
 
-Hier finden Sie Informationen über unser Unternehmen, die von uns angebotenen Dienstleistungen und die erfolgreich abgeschlossenen Projekte. Ob Sie potenzieller Kunde, Geschäftspartner oder neugieriger Besucher sind, diese Website bietet wertvolle Einblicke in unsere Identität und unsere Aktivitäten.
+Hier findest du Informationen über unser Unternehmen, die von uns angebotenen Dienstleistungen und die erfolgreich abgeschlossenen Projekte. Ob du potenzieller Kunde, Geschäftspartner oder neugieriger Besucher bist, diese Website bietet wertvolle Einblicke in unsere Identität und unsere Aktivitäten.
 
 ## Verwendete Technologien
 

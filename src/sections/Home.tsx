@@ -43,18 +43,9 @@ const Home: React.FC = () => {
               <div className="inline-block">{typewriter}</div>
             </h1>
 
-            <div className="home-content__buttons">
-              <a className="btn btn--stroke" href="/#works">
-                Letztes Projekt
-              </a>
-              <a className="btn btn--stroke" href="/#about">
-                Mehr über uns
-              </a>
-            </div>
-
             <div className="home-content__scroll">
-              <a className="scroll-link" href="/#services">
-                <span className="hover-effect">Unsere Leistungen</span>
+              <a className="scroll-link" href="/#works">
+                <span className="hover-effect">Unsere letzten Projekte</span>
               </a>
             </div>
           </div>

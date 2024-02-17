@@ -17,10 +17,10 @@ const Work: React.FC = () => (
           <h1>Aktuelle Projekte.</h1>
 
           <p className="lead">
-            Lassen Sie uns gemeinsam Ihre Vision verwirklichen. Gewinnen Sie
-            Einblicke in ausgewählte Projekte und überzeugen Sie sich selbst von
-            unserer Arbeit. Wir setzen Ihre Ideen um und begleiten Sie von der
-            Planung bis zur Umsetzung, um Ihre Vision zu verwirklichen.
+            Lass uns gemeinsam deine Vision verwirklichen. Gewinne Einblicke in
+            ausgewählte Projekte und überzeuge dich selbst von unserer Arbeit.
+            Wir setzen deine Ideen um und begleiten dich von der Planung bis zur
+            Umsetzung, um deine Vision zu verwirklichen.
           </p>
         </div>
       </div>
@@ -56,6 +56,23 @@ const Work: React.FC = () => (
             imgSrc={rehalogo}
             title="Reha-Zentrum Riedbichl"
           />
+        </div>
+      </div>
+
+      <div className="row narrow cta">
+        <div className="col-full cta__content">
+          <h2 className="h01">Haben wir dein Interesse geweckt?</h2>
+
+          <p className="lead">
+            Dann sende uns jetzt eine Kontaktanfrage für eine unverbindliche
+            Beratung. Wir freuen uns auf dich.
+          </p>
+
+          <div className="cta__action">
+            <a className="btn btn--primary btn--large" href="#contact">
+              Jetzt kontaktieren
+            </a>
+          </div>
         </div>
       </div>
     </section>
