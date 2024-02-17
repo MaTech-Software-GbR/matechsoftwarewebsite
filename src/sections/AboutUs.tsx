@@ -1,4 +1,5 @@
-import React, { useRef } from "react"
+import gsap from "gsap"
+import React, { useEffect, useRef } from "react"
 
 const SocialLink = React.lazy(() => import("../components/SocialLink"))
 import developerimage2 from "../images/ManuelKuehnle.webp"
@@ -7,6 +8,45 @@ import developerimage1 from "../images/MaximilianGobbel.webp"
 const AboutUs: React.FC = () => {
   const imgReference1 = useRef<HTMLImageElement>(null)
   const imgReference2 = useRef<HTMLImageElement>(null)
+  const dot1Reference = useRef(null)
+  const dot2Reference = useRef(null)
+
+  useEffect(() => {
+    const tl1 = gsap.timeline({ repeat: -1 })
+    const tl2 = gsap.timeline({ repeat: -1 })
+
+    tl1
+      .to(dot1Reference.current, {
+        duration: 0.5,
+        ease: "power1.inOut",
+        scale: 1.2
+      })
+      .to(
+        dot1Reference.current,
+        {
+          scale: 1,
+          duration: 0.5,
+          ease: "power1.inOut"
+        },
+        "+=0.5"
+      )
+
+    tl2
+      .to(dot2Reference.current, {
+        scale: 1.2,
+        duration: 0.5,
+        ease: "power1.inOut"
+      })
+      .to(
+        dot2Reference.current,
+        {
+          scale: 1,
+          duration: 0.5,
+          ease: "power1.inOut"
+        },
+        "+=0.5"
+      )
+  }, [])
 
   return (
     <div>
@@ -26,21 +66,12 @@ const AboutUs: React.FC = () => {
         </div>
 
         <div className="row about-content about-content--timeline">
-          <div className="col-six tab-full illustration">
-            <img
-              alt="Bild von Maximilian Gobbel"
-              loading="lazy"
-              ref={imgReference1}
-              src={developerimage1}
-            />
-          </div>
           <div className="col-six tab-full">
             <div className="timeline">
               <div className="timeline__block">
-                <div className="timeline__bullet" />
+                <div className="timeline__bullet" ref={dot1Reference} />
                 <div className="timeline__header">
                   <h2>Maximilian Gobbel</h2>
-                  <h5>Fachgebiet: Technik</h5>
                 </div>
                 <div className="timeline__desc">
                   <p>
@@ -52,9 +83,9 @@ const AboutUs: React.FC = () => {
                     verfüge ich über die Fähigkeit, komplexe Probleme zu lösen.
                     Ich strebe danach, auf dem neuesten Stand der Technik und
                     aktueller Konzepte zu bleiben, um meine Arbeit auf höchstem
-                    Niveau auszuführen. Besuchen Sie gerne mein LinkedIn-Profil,
-                    um mehr über meine Fähigkeiten und Erfahrungen zu erfahren
-                    und sich zu vernetzen.
+                    Niveau auszuführen. Besuche gerne mein LinkedIn-Profil, um
+                    mehr über meine Fähigkeiten und Erfahrungen zu erfahren und
+                    sich zu vernetzen.
                   </p>
                 </div>
 
@@ -73,6 +104,14 @@ const AboutUs: React.FC = () => {
               </div>
             </div>
           </div>
+          <div className="col-six tab-full illustration">
+            <img
+              alt="Bild von Maximilian Gobbel"
+              loading="lazy"
+              ref={imgReference1}
+              src={developerimage1}
+            />
+          </div>
         </div>
         <div className="row about-content about-content--timeline">
           <div className="col-six tab-full illustration">
@@ -85,10 +124,9 @@ const AboutUs: React.FC = () => {
           <div className="col-six tab-full">
             <div className="timeline">
               <div className="timeline__block">
-                <div className="timeline__bullet" />
+                <div className="timeline__bullet" ref={dot2Reference} />
                 <div className="timeline__header">
                   <h2>Manuel Kühnle</h2>
-                  <h5>Fachgebiet: Wirtschaft und Technik</h5>
                 </div>
                 <div className="timeline__desc">
                   <p>
@@ -119,24 +157,6 @@ const AboutUs: React.FC = () => {
                   />
                 </ul>
               </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section className="s-cta">
-        <div className="row narrow cta">
-          <div className="col-full cta__content">
-            <h2 className="h01">Haben wir Ihr Interesse geweckt?</h2>
-
-            <p className="lead">
-              Dann senden Sie uns jetzt eine Kontaktanfrage für eine
-              unverbindliche Beratung. Wir freuen uns auf Sie.
-            </p>
-
-            <div className="cta__action">
-              <a className="btn btn--primary btn--large" href="#contact">
-                Jetzt kontaktieren
-              </a>
             </div>
           </div>
         </div>

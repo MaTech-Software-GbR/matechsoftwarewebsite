@@ -67,14 +67,13 @@ const Contact: React.FC = () => {
         <div className="row narrow section-intro">
           <div className="col-full">
             <h3>Kontakt</h3>
-            <h1>Wir sind für Sie da!</h1>
+            <h1>Wir sind für dich da!</h1>
 
             <p className="lead">
-              Ob Sie eine kurze Beratung oder einen aufwendigen Projektauftrag
-              benötigen, zögern Sie nicht uns zu kontaktieren. Wir stehen Ihnen
-              mit unserem Fachwissen und unserer Expertise zur Verfügung. Melden
-              Sie sich bei uns und lassen Sie uns gemeinsam Ihre Ziele
-              erreichen.
+              Ob du eine kurze Beratung oder einen aufwendigen Projektauftrag
+              benötigst, zögere nicht uns zu kontaktieren. Wir stehen dir mit
+              unserem Fachwissen und unserer Expertise zur Verfügung. Melde dich
+              bei uns und lass uns gemeinsam deine Ziele erreichen.
             </p>
           </div>
         </div>
@@ -107,7 +106,7 @@ const Contact: React.FC = () => {
                 </div>
                 {errors.contactName?.type === "required" && (
                   <p role="alert">
-                    Ihr Name ist ein Pflichtfeld und muss mindestens 2 Zeichen
+                    Dein Name ist ein Pflichtfeld und muss mindestens 2 Zeichen
                     haben.
                   </p>
                 )}
@@ -118,12 +117,12 @@ const Contact: React.FC = () => {
                     className="full-width"
                     id="contactEmail"
                     name="contactEmail"
-                    placeholder="Ihre Email"
+                    placeholder="Deine Email"
                     type="email"
                   />
                   {errors.contactEmail?.type === "required" && (
                     <p role="alert">
-                      Ihre Email ist ein Pflichtfeld und muss einem E-Mail
+                      Deine Email ist ein Pflichtfeld und muss einem E-Mail
                       Format entsprechen.
                     </p>
                   )}
@@ -152,7 +151,7 @@ const Contact: React.FC = () => {
                   />
                   {errors.contactMessage != undefined && (
                     <span>
-                      Ihre Nachricht ist ein Pflichtfeld und muss zwischen 15
+                      Deine Nachricht ist ein Pflichtfeld und muss zwischen 15
                       und 500 Zeichen haben.
                     </span>
                   )}
@@ -177,36 +176,18 @@ const Contact: React.FC = () => {
             </form>
             {showSuccessfulSent ? (
               <div className="message-success">
-                Ihre Nachricht wurde versendet. Vielen Dank!
+                Deine Nachricht wurde versendet. Vielen Dank!
               </div>
             ) : (
               <div />
             )}
             {showNotSuccessfulSent ? (
               <div className="message-warning">
-                Das hat leider nicht funktioniert. Versuchen Sie es bitte
-                erneut.
+                Das hat leider nicht funktioniert. Versuche es bitte erneut.
               </div>
             ) : (
               <div />
             )}
-          </div>
-          <div className="col-four tab-full contact__infos">
-            <h4 className="h06">Email</h4>
-            <a
-              href="mailto:kontakt@matech-software.de"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              <span>kontakt@matech-software.de</span>
-            </a>
-            <h4 className="h06">Adresse</h4>
-            <p>
-              MaTech Software GbR
-              <br />
-              Enzianweg 8<br />
-              83052 Bruckmühl
-            </p>
           </div>
         </div>
       </section>
