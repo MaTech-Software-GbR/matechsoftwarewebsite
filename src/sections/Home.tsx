@@ -37,11 +37,9 @@ const Home: React.FC = () => {
           <div className="row home-content__main">
             <h3>Willkommen bei MaTech Software GbR</h3>
 
-            <h1>
-              Wir sind Manuel und Maxi. <br />
-              <div className="inline-block">Wir sind&nbsp;</div>
-              <div className="inline-block">{typewriter}</div>
-            </h1>
+            <h1>Wir sind Manuel und Maxi.</h1>
+            <h1 className="inline-block">Wir sind&nbsp;</h1>
+            <h1 className="inline-block">{typewriter}</h1>
 
             <div className="home-content__scroll">
               <a className="scroll-link" href="/#works">
