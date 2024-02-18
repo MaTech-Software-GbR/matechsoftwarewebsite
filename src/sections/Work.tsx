@@ -14,13 +14,11 @@ const Work: React.FC = () => (
       <div className="row narrow section-intro has-bottom-sep">
         <div className="col-full">
           <h3>Referenzen</h3>
-          <h1>Aktuelle Projekte.</h1>
+          <h1>Lasse dich inspirieren.</h1>
 
           <p className="lead">
-            Lass uns gemeinsam deine Vision verwirklichen. Gewinne Einblicke in
-            ausgewählte Projekte und überzeuge dich selbst von unserer Arbeit.
-            Wir setzen deine Ideen um und begleiten dich von der Planung bis zur
-            Umsetzung, um deine Vision zu verwirklichen.
+            Individuell gestaltete Websites für Kunden aus diversen Branchen.
+            Sieh dir unsere aktuellen Projekte an und entdecke neue Ideen.
           </p>
         </div>
       </div>
@@ -61,11 +59,12 @@ const Work: React.FC = () => (
 
       <div className="row narrow cta">
         <div className="col-full cta__content">
-          <h2 className="h01">Haben wir dein Interesse geweckt?</h2>
+          <h2 className="h01">Komplexität verständlich gemacht.</h2>
 
           <p className="lead">
-            Dann sende uns jetzt eine Kontaktanfrage für eine unverbindliche
-            Beratung. Wir freuen uns auf dich.
+            Webentwicklung, Hosting und SEO? Keine Sorge - in einem
+            unverbindlichen Erstgespräch erklären wir dir, wie wir deine Ideen
+            Wirklichkeit werden lassen.
           </p>
 
           <div className="cta__action">

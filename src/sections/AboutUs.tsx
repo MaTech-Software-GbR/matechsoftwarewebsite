@@ -56,13 +56,13 @@ const AboutUs: React.FC = () => {
         <div className="row narrow section-intro has-bottom-sep">
           <div className="col-full">
             <h3>Über uns</h3>
-            <h1>Das macht uns aus.</h1>
+            <h1>Umkompliziert. Persönlich. Professionell.</h1>
             <p className="lead">
-              Unsere GbR wurde anfänglich gegründet, um Unternehmen während der
-              Corona-Pandemie dabei zu helfen, online aktuelle Informationen zu
-              teilen. Seitdem haben wir uns darauf fokussiert auch weiterhin
-              passgenaue Lösungen für unsere Kunden zu entwickeln. Dabei streben
-              wir stets höchste Passgenauigkeit und Qualität an.
+              Wir sind dein zuverlässiger Begleiter auf dem Weg zur digitalen
+              Präsenz. Unsere Herangehensweise ist persönlich und individuell:
+              Gemeinsam mit dir entwickeln wir maßgeschneiderte Lösungen. Dabei
+              setzen wir auf modernste Technologien, um höchste Qualität zu
+              gewährleisten.
             </p>
           </div>
         </div>
