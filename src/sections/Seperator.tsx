@@ -3,11 +3,12 @@ const Seperator = () => {
     <section className="s-cta">
       <div className="row narrow cta">
         <div className="col-full cta__content">
-          <h2 className="h01">Haben wir dein Interesse geweckt?</h2>
+          <h2 className="h01">Komplexität verständlich gemacht.</h2>
 
           <p className="lead">
-            Dann sende uns jetzt eine Kontaktanfrage für eine unverbindliche
-            Beratung. Wir freuen uns auf dich.
+            Webentwicklung, Hosting und SEO? Keine Sorge - in einem
+            unverbindlichen Erstgespräch erklären wir dir, wie wir deine Ideen
+            Wirklichkeit werden lassen.
           </p>
 
           <div className="cta__action">

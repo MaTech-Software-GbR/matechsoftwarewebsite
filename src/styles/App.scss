@@ -1120,10 +1120,6 @@ html.no-csstransitions .home-content__main {
     width: 85%;
     margin-top: 370px;
   }
-
-  .home-content__scroll {
-    display: none;
-  }
 }
 
 @media only screen and (max-width: 400px) {
@@ -1131,19 +1127,24 @@ html.no-csstransitions .home-content__main {
     vertical-align: middle;
   }
   .home-content h1 {
-    font-size: 3.5rem;
+    font-size: 2.6rem;
   }
+
+  .home-content .row {
+    margin-top: 370px;
+  }
+
   .home-content__main {
     width: auto;
-    margin-left: 25px;
-    margin-right: 25px;
+    margin-left: 5px;
+    margin-right: 5px;
   }
   .home-content__buttons .btn {
     width: 70%;
     font-size: 1rem;
   }
 
-  .home-social {
+  .home-content__scroll {
     display: none;
   }
 }

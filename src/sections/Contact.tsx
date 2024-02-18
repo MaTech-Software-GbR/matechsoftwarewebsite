@@ -67,13 +67,12 @@ const Contact: React.FC = () => {
         <div className="row narrow section-intro">
           <div className="col-full">
             <h3>Kontakt</h3>
-            <h1>Wir sind für dich da!</h1>
+            <h1>Erzähl uns von deiner Idee.</h1>
 
             <p className="lead">
-              Ob du eine kurze Beratung oder einen aufwendigen Projektauftrag
-              benötigst, zögere nicht uns zu kontaktieren. Wir stehen dir mit
-              unserem Fachwissen und unserer Expertise zur Verfügung. Melde dich
-              bei uns und lass uns gemeinsam deine Ziele erreichen.
+              Sende uns eine Kontaktanfrage für eine unverbindliche Beratung -
+              direkt per Kontaktformular oder Email. Wir sind gespannt auf dein
+              Projekt.
             </p>
           </div>
         </div>
