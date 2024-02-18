@@ -36,7 +36,7 @@ const Logo: React.FC<ServicesLogo> = ({ alt, delay, src }: ServicesLogo) => {
         observer.unobserve(imgReference.current)
       }
     }
-  }, [imgReference.current])
+  })
 
   return (
     <div className="leistungen">

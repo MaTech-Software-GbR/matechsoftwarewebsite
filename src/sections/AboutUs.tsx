@@ -1,4 +1,4 @@
-import gsap from "gsap"
+import { gsap } from "gsap"
 import React, { useEffect, useRef } from "react"
 
 const SocialLink = React.lazy(() => import("../components/SocialLink"))
@@ -10,6 +10,8 @@ const AboutUs: React.FC = () => {
   const imgReference2 = useRef<HTMLImageElement>(null)
   const dot1Reference = useRef(null)
   const dot2Reference = useRef(null)
+  const defaultEase = "power1.inOut"
+  const defaultDuration = 0.5
 
   useEffect(() => {
     const tl1 = gsap.timeline({ repeat: -1 })
@@ -17,32 +19,32 @@ const AboutUs: React.FC = () => {
 
     tl1
       .to(dot1Reference.current, {
-        duration: 0.5,
-        ease: "power1.inOut",
+        duration: defaultDuration,
+        ease: defaultEase,
         scale: 1.2
       })
       .to(
         dot1Reference.current,
         {
-          scale: 1,
-          duration: 0.5,
-          ease: "power1.inOut"
+          duration: defaultDuration,
+          ease: defaultEase,
+          scale: 1
         },
         "+=0.5"
       )
 
     tl2
       .to(dot2Reference.current, {
-        scale: 1.2,
-        duration: 0.5,
-        ease: "power1.inOut"
+        duration: defaultDuration,
+        ease: defaultEase,
+        scale: 1.2
       })
       .to(
         dot2Reference.current,
         {
-          scale: 1,
-          duration: 0.5,
-          ease: "power1.inOut"
+          duration: defaultDuration,
+          ease: defaultEase,
+          scale: 1
         },
         "+=0.5"
       )
