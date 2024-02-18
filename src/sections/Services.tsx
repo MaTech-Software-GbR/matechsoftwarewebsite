@@ -23,7 +23,7 @@ const Services: React.FC = () => {
      * @returns The amount of pixels the boxes should be scrolled.
      */
     function getScrollAmount() {
-      const container = document.querySelector(".boxes-window")
+      const container = document.querySelector(".boxes-window") as HTMLElement
       if (!container) {
         return 0
       }
@@ -80,7 +80,6 @@ const Services: React.FC = () => {
             <div className="boxes-window col-twelve">
               <div className="boxes" ref={boxesReference}>
                 <ServiceBox
-                  className="first-box"
                   imgAlt="HTML"
                   imgSrc={iconwebdesign}
                   name="Webdesign"
@@ -100,7 +99,6 @@ const Services: React.FC = () => {
                   name="Logo-, Icon- und Visitenkartendesign"
                 />
                 <ServiceBox
-                  className="last-box"
                   imgAlt="HTML"
                   imgSrc={iconrechtstexte}
                   name="Rechtstexte"
