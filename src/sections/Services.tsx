@@ -1,5 +1,7 @@
-import React from "react"
-
+import React, { useEffect, useRef } from "react"
+import gsap from "gsap"
+import ScrollTrigger from "gsap/ScrollTrigger"
+const ServiceBox = React.lazy(() => import("../components/ServiceBox"))
 const Logo = React.lazy(() => import("../components/Logo"))
 import bootstrapicon from "../images/technologies/bootstrap-4-icon.webp"
 import csharpicon from "../images/technologies/c-sharp-programming-language-icon.webp"
@@ -13,85 +15,125 @@ import pythonicon from "../images/technologies/python-programming-language-icon.
 import sqlservericon from "../images/technologies/sql-server-icon.webp"
 import typescripticon from "../images/technologies/typescript-programming-language-icon.webp"
 import wordpressicon from "../images/technologies/wordpress-icon.webp"
+import mobileview from "../images/Untitled.png"
+import iconwebentwicklung from "../images/services/undraw_static_assets_rpm6.svg"
+import iconwebdesign from "../images/services/undraw_complete_design_re_h75h.svg"
+import iconrechtstexte from "../images/services/undraw_gdpr_-3-xfb.svg"
+import iconseo from "../images/services/undraw_web_search_re_efla.svg"
+import iconanalytics from "../images/services/undraw_heatmap_uyye.svg"
+import iconserver from "../images/services/undraw_server_cluster_jwwq.svg"
 
-const Services: React.FC = () => (
-  <div>
-    <section className="s-about target-section" id="services">
-      <div className="row narrow section-intro has-bottom-sep">
-        <div className="col-full">
-          <h3>Leistungen</h3>
-          <h1>In guten Händen.</h1>
-          <p className="lead">
-            Willkommen bei uns! Wir sind hier, um dir zu helfen und dir eine
-            maßgeschneiderte Lösung zu bieten, die genau auf deine Bedürfnisse
-            zugeschnitten ist. Wir verstehen, dass jedes Projekt einzigartig ist
-            und sind daher voller Begeisterung, dir zu zeigen, wie wir dir
-            helfen können.
-          </p>
-        </div>
-      </div>
+const Services: React.FC = () => {
+  const boxesReference = useRef<HTMLDivElement>(null)
 
-      <div className="row about-content">
-        <div className="col-six tab-full left">
-          <h2>Unsere Leistungen im Überblick</h2>
-          <div className=" services">
-            <div className="service">
-              <h3>Unternehmenswebsite</h3>
-              <p>
-                Erstellung einer modernen und ansprechenden Website mit Content
-                Management System (z.B. WordPress) oder individueller
-                Programmierung. So stellen wir sicher, dass deine Website
-                perfekt zu deinem Unternehmen passt.
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger)
+
+    const races = boxesReference.current
+
+    function getScrollAmount() {
+      return -(races!.scrollWidth - window.innerWidth)
+    }
+
+    const tween = gsap.to(races, {
+      duration: 3,
+      ease: "none",
+      x: getScrollAmount
+    })
+
+    ScrollTrigger.create({
+      animation: tween,
+      end: () => `+=${getScrollAmount() * -1}`,
+      invalidateOnRefresh: true,
+      markers: false,
+      pin: true,
+      scrub: 1,
+      start: "top 14%",
+      trigger: ".boxesWrapper"
+    })
+    return () => {
+      tween.kill()
+      for (const trigger of ScrollTrigger.getAll()) trigger.kill()
+    }
+  }, [])
+
+  return (
+    <div>
+      <section className="s-about target-section" id="services">
+        <div className="boxesWrapper">
+          <div className="row narrow section-intro has-bottom-sep">
+            {/* <div className="col-four tab-full technologies">
+              <div className="flex flex-wrap justify-center">
+                <Logo alt="HTML 5 Logo" delay="100" src={htmlicon} />
+                <Logo alt="Bootstrap 4 Logo" delay="200" src={bootstrapicon} />
+                <Logo alt="C# Logo" delay="300" src={csharpicon} />
+                <Logo alt="Typescript Logo" delay="400" src={typescripticon} />
+                <Logo alt=".NET Logo" delay="500" src={dotneticon} />
+                <Logo alt="Python Logo" delay="600" src={pythonicon} />
+              </div>
+            </div> */}
+            <div className="col-twelve">
+              <h3>Leistungen</h3>
+              <h1>Von der Idee zur fertigen Website.</h1>
+              <p className="lead">
+                Bei uns findest du alles, was du für einen herausragenden
+                Webauftritt brauchst – von maßgeschneiderten Eigenentwicklungen
+                bis hin zu einem Content Management System. Alles aus einer
+                Hand, persönlich und unkompliziert.
               </p>
             </div>
-
-            <div className="service">
-              <h3>Webhosting</h3>
-              <p>
-                Wir übernehmen die sichere und zuverlässige Bereitstellung
-                deiner Website auf unseren Servern. Backups und regelmäßige
-                Wartung sorgen dafür, dass deine Website immer reibungslos
-                läuft.
-              </p>
+            {/* <div className="col-four">
+              <img className="mobileimage" src={mobileview} />
+            </div> */}
+          </div>
+          {/* <div className="row">
+            <div className="col-four">
+              <img className="mobileimage" src={mobileview} />
             </div>
-
-            <div className="service">
-              <h3>Suchmaschinenoptimierung (SEO)</h3>
-              <p>
-                Wir sorgen dafür, dass deine Website in den Suchergebnissen von
-                Google und anderen Suchmaschinen besser gefunden wird. Damit
-                erhöhen wir die Sichtbarkeit deiner Website und steigern die
-                Anzahl der Besucher.
-              </p>
+          </div> */}
+          <div className="row">
+            <div className="boxes-window col-twelve">
+              <div className="boxes" ref={boxesReference}>
+                <ServiceBox
+                  imgAlt="HTML"
+                  imgSrc={iconwebdesign}
+                  name="Webdesign"
+                />
+                <ServiceBox
+                  imgAlt="HTML"
+                  imgSrc={iconwebentwicklung}
+                  name="Webentwicklung"
+                />
+                <ServiceBox imgAlt="HTML" imgSrc={iconserver} name="Hosting" />
+                <ServiceBox imgAlt="HTML" imgSrc={iconserver} name="Domain" />
+                <ServiceBox imgAlt="HTML" imgSrc={iconserver} name="Email" />
+                <ServiceBox imgAlt="HTML" imgSrc={iconseo} name="SEO" />
+                <ServiceBox
+                  imgAlt="HTML"
+                  imgSrc={iconserver}
+                  name="Website-Wartung"
+                />
+                <ServiceBox
+                  imgAlt="HTML"
+                  imgSrc={iconanalytics}
+                  name="Analytics"
+                />
+                <ServiceBox
+                  imgAlt="HTML"
+                  imgSrc={iconserver}
+                  name="Logo-, Icon- und Visitenkartendesign"
+                />
+                <ServiceBox
+                  imgAlt="HTML"
+                  imgSrc={iconrechtstexte}
+                  name="Rechtstexte"
+                />
+              </div>
             </div>
           </div>
         </div>
-
-        <div className="col-six tab-full right technologies">
-          <h2>
-            Wissen.
-            <br />
-            Erfahrung.
-            <br />
-            Perfekt vereint.
-          </h2>
-          <div className="flex flex-wrap justify-center">
-            <Logo alt="HTML 5 Logo" delay="100" src={htmlicon} />
-            <Logo alt="Bootstrap 4 Logo" delay="200" src={bootstrapicon} />
-            <Logo alt="C# Logo" delay="300" src={csharpicon} />
-            <Logo alt="Typescript Logo" delay="400" src={typescripticon} />
-            <Logo alt=".NET Logo" delay="500" src={dotneticon} />
-            <Logo alt="Python Logo" delay="600" src={pythonicon} />
-            <Logo alt="Java Logo" delay="700" src={javaicon} />
-            <Logo alt="JavaScript Logo" delay="800" src={javascripticon} />
-            <Logo alt="CSS Logo" delay="900" src={cssicon} />
-            <Logo alt="Wordpress Logo" delay="1000" src={wordpressicon} />
-            <Logo alt="MySQL Logo" delay="1100" src={mysqlicon} />
-            <Logo alt="SQL Server Logo" delay="1200" src={sqlservericon} />
-          </div>
-        </div>
-      </div>
-    </section>
-  </div>
-)
+      </section>
+    </div>
+  )
+}
 export default Services
