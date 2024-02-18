@@ -10,6 +10,7 @@ const Header = React.lazy(async () => import("../sections/Header"))
 const Home = React.lazy(async () => import("../sections/Home"))
 const Services = React.lazy(async () => import("../sections/Services"))
 const Work = React.lazy(async () => import("../sections/Work"))
+const Seperator = React.lazy(async () => import("../sections/Seperator"))
 
 const Homepage: React.FC = () => {
   const [shouldBeSticky, setShouldBeSticky] = useState<boolean>(false)
@@ -46,6 +47,7 @@ const Homepage: React.FC = () => {
       <Home />
       <Services />
       <Work />
+      <Seperator />
       <AboutUs />
       <Contact />
       <Footer />
