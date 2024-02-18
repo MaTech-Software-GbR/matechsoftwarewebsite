@@ -1,27 +1,15 @@
+import { gsap } from "gsap"
+import { ScrollTrigger } from "gsap/ScrollTrigger"
 import React, { useEffect, useRef } from "react"
-import gsap from "gsap"
-import ScrollTrigger from "gsap/ScrollTrigger"
 const ServiceBox = React.lazy(() => import("../components/ServiceBox"))
-const Logo = React.lazy(() => import("../components/Logo"))
-import bootstrapicon from "../images/technologies/bootstrap-4-icon.webp"
-import csharpicon from "../images/technologies/c-sharp-programming-language-icon.webp"
-import cssicon from "../images/technologies/css-icon.webp"
-import htmlicon from "../images/technologies/html-icon.webp"
-import javaicon from "../images/technologies/java-programming-language-icon.webp"
-import javascripticon from "../images/technologies/javascript-programming-language-icon.webp"
-import dotneticon from "../images/technologies/microsoft-dot-net-icon.webp"
-import mysqlicon from "../images/technologies/mysql-icon.webp"
-import pythonicon from "../images/technologies/python-programming-language-icon.webp"
-import sqlservericon from "../images/technologies/sql-server-icon.webp"
-import typescripticon from "../images/technologies/typescript-programming-language-icon.webp"
-import wordpressicon from "../images/technologies/wordpress-icon.webp"
-import mobileview from "../images/Untitled.png"
-import iconwebentwicklung from "../images/services/undraw_static_assets_rpm6.svg"
 import iconwebdesign from "../images/services/undraw_complete_design_re_h75h.svg"
+import icondomain from "../images/services/undraw_domain_names_re_0uun.svg"
 import iconrechtstexte from "../images/services/undraw_gdpr_-3-xfb.svg"
-import iconseo from "../images/services/undraw_web_search_re_efla.svg"
-import iconanalytics from "../images/services/undraw_heatmap_uyye.svg"
+import iconicon from "../images/services/undraw_hiring_re_yk5n.svg"
+import iconemail from "../images/services/undraw_personal_email_re_4lx7.svg"
 import iconserver from "../images/services/undraw_server_cluster_jwwq.svg"
+import iconwebentwicklung from "../images/services/undraw_static_assets_rpm6.svg"
+import iconseo from "../images/services/undraw_web_search_re_efla.svg"
 
 const Services: React.FC = () => {
   const boxesReference = useRef<HTMLDivElement>(null)
@@ -29,21 +17,36 @@ const Services: React.FC = () => {
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger)
 
-    const races = boxesReference.current
+    const boxes = boxesReference.current
 
+    /**
+     * @returns The amount of pixels the boxes should be scrolled.
+     */
     function getScrollAmount() {
-      return -(races!.scrollWidth - window.innerWidth)
+      const container = document.querySelector(".boxes-window")
+      if (!container) {
+        return 0
+      }
+      const style = window.getComputedStyle(container)
+      const marginLeft = Number.parseFloat(style.marginLeft) || 0
+      const marginRight = Number.parseFloat(style.marginRight) || 0
+      const containerWidth = container
+        ? container.offsetWidth + marginLeft + marginRight
+        : 0
+      return -(boxes!.scrollWidth - containerWidth)
     }
 
-    const tween = gsap.to(races, {
+    const tween = gsap.to(boxes, {
       duration: 3,
       ease: "none",
       x: getScrollAmount
     })
 
+    const end = () => `+=${getScrollAmount() * -1}`
+
     ScrollTrigger.create({
       animation: tween,
-      end: () => `+=${getScrollAmount() * -1}`,
+      end: end,
       invalidateOnRefresh: true,
       markers: false,
       pin: true,
@@ -62,39 +65,22 @@ const Services: React.FC = () => {
       <section className="s-about target-section" id="services">
         <div className="boxesWrapper">
           <div className="row narrow section-intro has-bottom-sep">
-            {/* <div className="col-four tab-full technologies">
-              <div className="flex flex-wrap justify-center">
-                <Logo alt="HTML 5 Logo" delay="100" src={htmlicon} />
-                <Logo alt="Bootstrap 4 Logo" delay="200" src={bootstrapicon} />
-                <Logo alt="C# Logo" delay="300" src={csharpicon} />
-                <Logo alt="Typescript Logo" delay="400" src={typescripticon} />
-                <Logo alt=".NET Logo" delay="500" src={dotneticon} />
-                <Logo alt="Python Logo" delay="600" src={pythonicon} />
-              </div>
-            </div> */}
             <div className="col-twelve">
               <h3>Leistungen</h3>
               <h1>Von der Idee zur fertigen Website.</h1>
               <p className="lead">
                 Bei uns findest du alles, was du für einen herausragenden
                 Webauftritt brauchst – von maßgeschneiderten Eigenentwicklungen
-                bis hin zu einem Content Management System. Alles aus einer
-                Hand, persönlich und unkompliziert.
+                bis hin zu einem CMS. Alles aus einer Hand, persönlich und
+                unkompliziert.
               </p>
             </div>
-            {/* <div className="col-four">
-              <img className="mobileimage" src={mobileview} />
-            </div> */}
           </div>
-          {/* <div className="row">
-            <div className="col-four">
-              <img className="mobileimage" src={mobileview} />
-            </div>
-          </div> */}
           <div className="row">
             <div className="boxes-window col-twelve">
               <div className="boxes" ref={boxesReference}>
                 <ServiceBox
+                  className="first-box"
                   imgAlt="HTML"
                   imgSrc={iconwebdesign}
                   name="Webdesign"
@@ -105,10 +91,21 @@ const Services: React.FC = () => {
                   name="Webentwicklung"
                 />
                 <ServiceBox imgAlt="HTML" imgSrc={iconserver} name="Hosting" />
-                <ServiceBox imgAlt="HTML" imgSrc={iconserver} name="Domain" />
-                <ServiceBox imgAlt="HTML" imgSrc={iconserver} name="Email" />
+                <ServiceBox imgAlt="HTML" imgSrc={icondomain} name="Domain" />
+                <ServiceBox imgAlt="HTML" imgSrc={iconemail} name="Email" />
                 <ServiceBox imgAlt="HTML" imgSrc={iconseo} name="SEO" />
                 <ServiceBox
+                  imgAlt="HTML"
+                  imgSrc={iconicon}
+                  name="Logo-, Icon- und Visitenkartendesign"
+                />
+                <ServiceBox
+                  className="last-box"
+                  imgAlt="HTML"
+                  imgSrc={iconrechtstexte}
+                  name="Rechtstexte"
+                />
+                {/* <ServiceBox
                   imgAlt="HTML"
                   imgSrc={iconserver}
                   name="Website-Wartung"
@@ -117,17 +114,7 @@ const Services: React.FC = () => {
                   imgAlt="HTML"
                   imgSrc={iconanalytics}
                   name="Analytics"
-                />
-                <ServiceBox
-                  imgAlt="HTML"
-                  imgSrc={iconserver}
-                  name="Logo-, Icon- und Visitenkartendesign"
-                />
-                <ServiceBox
-                  imgAlt="HTML"
-                  imgSrc={iconrechtstexte}
-                  name="Rechtstexte"
-                />
+                /> */}
               </div>
             </div>
           </div>

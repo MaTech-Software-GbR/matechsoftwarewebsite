@@ -24,25 +24,25 @@ const AboutUs: React.FC = () => {
       .to(
         dot1Reference.current,
         {
-          scale: 1,
           duration: 0.5,
-          ease: "power1.inOut"
+          ease: "power1.inOut",
+          scale: 1
         },
         "+=0.5"
       )
 
     tl2
       .to(dot2Reference.current, {
-        scale: 1.2,
         duration: 0.5,
-        ease: "power1.inOut"
+        ease: "power1.inOut",
+        scale: 1.2
       })
       .to(
         dot2Reference.current,
         {
-          scale: 1,
           duration: 0.5,
-          ease: "power1.inOut"
+          ease: "power1.inOut",
+          scale: 1
         },
         "+=0.5"
       )

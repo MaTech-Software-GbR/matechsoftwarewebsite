@@ -1,6 +1,4 @@
-import React, { useEffect } from "react"
-import gsap from "gsap"
-import ScrollTrigger from "gsap/ScrollTrigger"
+import React from "react"
 
 import { type ServiceBoxData } from "../models/ServiceBoxData.Interface"
 
@@ -8,7 +6,9 @@ const ServiceBox: React.FC<ServiceBoxData> = ({ imgAlt, imgSrc, name }) => {
   return (
     <div className="box">
       <h3>{name}</h3>
-      <img alt={imgAlt} loading="lazy" src={imgSrc} />
+      <div className="image-container">
+        <img alt={imgAlt} loading="lazy" src={imgSrc} />
+      </div>
     </div>
   )
 }
