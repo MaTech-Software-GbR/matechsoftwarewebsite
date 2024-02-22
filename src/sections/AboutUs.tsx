@@ -68,6 +68,14 @@ const AboutUs: React.FC = () => {
         </div>
 
         <div className="row about-content about-content--timeline">
+          <div className="col-six tab-full illustration mobile">
+            <img
+              alt="Bild von Maximilian Gobbel"
+              loading="lazy"
+              ref={imgReference1}
+              src={developerimage1}
+            />
+          </div>
           <div className="col-six tab-full">
             <div className="timeline">
               <div className="timeline__block">
@@ -98,7 +106,7 @@ const AboutUs: React.FC = () => {
                     linkText="Linkedin"
                   />
                   <SocialLink
-                    href="mailto:kontakt@matech-software.de"
+                    href="mailto:maxi@matech-software.de"
                     iconClass="im im-mail"
                     linkText="Email"
                   />
@@ -106,7 +114,7 @@ const AboutUs: React.FC = () => {
               </div>
             </div>
           </div>
-          <div className="col-six tab-full illustration">
+          <div className="col-six tab-full illustration desktop">
             <img
               alt="Bild von Maximilian Gobbel"
               loading="lazy"
@@ -153,7 +161,7 @@ const AboutUs: React.FC = () => {
                     linkText="Linkedin"
                   />
                   <SocialLink
-                    href="mailto:kontakt@matech-software.de"
+                    href="mailto:manuel@matech-software.de"
                     iconClass="im im-mail"
                     linkText="Email"
                   />
