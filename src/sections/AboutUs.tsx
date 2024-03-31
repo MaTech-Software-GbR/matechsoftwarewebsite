@@ -56,7 +56,7 @@ const AboutUs: React.FC = () => {
         <div className="row narrow section-intro has-bottom-sep">
           <div className="col-full">
             <h3>Über uns</h3>
-            <h1>Umkompliziert. Persönlich. Professionell.</h1>
+            <h1>Unkompliziert. Persönlich. Professionell.</h1>
             <p className="lead">
               Wir sind dein zuverlässiger Begleiter auf dem Weg zur digitalen
               Präsenz. Unsere Herangehensweise ist persönlich und individuell:
