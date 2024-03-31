@@ -181,6 +181,12 @@ p.lead {
   }
 }
 
+@media only screen and (max-width: 400px) {
+  p.lead {
+    margin-bottom: 0.5rem !important;
+  }
+}
+
 i,
 strong {
   font-size: inherit;
@@ -446,10 +452,14 @@ input::-moz-focus-inner {
 
 @media only screen and (max-width: 400px) {
   .section-intro h1 {
-    font-size: 3.3rem;
+    font-size: 3rem;
   }
   .section-intro h3 {
-    font-size: 1.6rem;
+    font-size: 1.3rem;
+  }
+
+  .section-intro.has-bottom-sep {
+    padding-bottom: 0.5rem;
   }
 }
 
@@ -2198,4 +2208,22 @@ fieldset {
   justify-content: center;
   align-items: center;
   flex-grow: 1; /* Allow this div to take up the remaining space in the .box */
+}
+
+.desktop {
+  display: flex;
+}
+
+.mobile {
+  display: none;
+}
+
+@media only screen and (max-width: 400px) {
+  .desktop {
+    display: none;
+  }
+
+  .mobile {
+    display: flex;
+  }
 }
