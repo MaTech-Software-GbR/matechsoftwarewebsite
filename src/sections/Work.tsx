@@ -6,6 +6,7 @@ const ProjectBlock = React.lazy(
 
 import jbmlogo from "../images/references/jbm-logo.webp"
 import johannahairandmakeuplogo from "../images/references/johannahairandmakeup.webp"
+import mariasfrisurenwerkstattlogo from "../images/references/mariasfrisurenwerkstatt.webp"
 import rehalogo from "../images/references/reha-logo.webp"
 
 const Work: React.FC = () => (
@@ -53,6 +54,16 @@ const Work: React.FC = () => (
             imgAlt="Rehazentrum Riedbichl Logo"
             imgSrc={rehalogo}
             title="Reha-Zentrum Riedbichl"
+          />
+
+          <ProjectBlock
+            brickCategory="Konzept, Entwicklung"
+            brickTitle="Marias Frisurenwerkstatt"
+            dataSize="1376x1256"
+            href="https://www.mariasfrisurenwerkstatt.de/"
+            imgAlt="Marias Frisurenwerkstatt Logo"
+            imgSrc={mariasfrisurenwerkstattlogo}
+            title="Maria's Frisurenwerkstatt"
           />
         </div>
       </div>
