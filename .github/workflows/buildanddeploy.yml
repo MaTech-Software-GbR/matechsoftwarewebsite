@@ -69,3 +69,25 @@ jobs:
 
       - name: Test MaTech Software Website
         run: npm run test
+
+  sonarcloud:
+    name: Unittests + SonarCloud
+    needs: build
+    timeout-minutes: 4
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Install dependencies
+        run: npm install
+      # - name: Test and coverage
+      #   working-directory: next
+      #   run: npm run test:unit:coverage
+      # - name: Check coverage output
+      #   working-directory: next
+      #   run: cat coverage/lcov.info
+      - name: SonarQube Scan
+        uses: sonarsource/sonarqube-scan-action@master
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
