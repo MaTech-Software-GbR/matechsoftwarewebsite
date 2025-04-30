@@ -1,6 +1,6 @@
 # Matech Software GbR - Website
 
-![Build and Deploy Status](https://github.com/MaTech-Software-GbR/matechsoftwarewebsite/actions/workflows/buildanddeploy.yml/badge.svg)
+[![Build, Lint and Test MaTech Software Website](https://github.com/MaTech-Software-GbR/matechsoftwarewebsite/actions/workflows/buildanddeploy.yml/badge.svg)](https://github.com/MaTech-Software-GbR/matechsoftwarewebsite/actions/workflows/buildanddeploy.yml)
 
 Willkommen im GitHub-Repository der offiziellen Website von Matech Software GbR. Dieses Repository enthält den Quellcode und die Ressourcen für die Website unseres Unternehmens.
 

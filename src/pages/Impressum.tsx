@@ -42,7 +42,7 @@ const Impressum: React.FC = () => (
         <p>
           MaTech Software GbR
           <br />
-          Enzianweg 8<br />
+          Am Bruckfeld 22<br />
           83052 Bruckm&uuml;hl
         </p>
 
