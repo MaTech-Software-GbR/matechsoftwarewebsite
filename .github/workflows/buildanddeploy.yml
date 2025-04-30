@@ -45,7 +45,7 @@ jobs:
           cache: "npm"
 
       - name: Install Dependencies Clean
-        run: npm ci
+        run: npm install
 
       - name: Lint MaTech Software Website
         run: npm run lint
@@ -65,7 +65,7 @@ jobs:
           cache: "npm"
 
       - name: Install Dependencies Clean
-        run: npm ci
+        run: npm install
 
       - name: Test MaTech Software Website
         run: npm run test
