@@ -1,7 +1,6 @@
 import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import React, { useEffect, useRef } from "react"
-const ServiceBox = React.lazy(() => import("../components/ServiceBox"))
 import iconwebdesign from "../images/services/undraw_complete_design_re_h75h.svg"
 import icondomain from "../images/services/undraw_domain_names_re_0uun.svg"
 import iconrechtstexte from "../images/services/undraw_gdpr_-3-xfb.svg"
@@ -10,6 +9,7 @@ import iconemail from "../images/services/undraw_personal_email_re_4lx7.svg"
 import iconserver from "../images/services/undraw_server_cluster_jwwq.svg"
 import iconwebentwicklung from "../images/services/undraw_static_assets_rpm6.svg"
 import iconseo from "../images/services/undraw_web_search_re_efla.svg"
+const ServiceBox = React.lazy(() => import("../components/ServiceBox"))
 
 const Services: React.FC = () => {
   const boxesReference = useRef<HTMLDivElement>(null)
@@ -82,12 +82,12 @@ const Services: React.FC = () => {
                 <ServiceBox
                   imgAlt="HTML"
                   imgSrc={iconwebdesign}
-                  name="Webdesign"
+                  name="Software- & App-Entwicklung"
                 />
                 <ServiceBox
                   imgAlt="HTML"
                   imgSrc={iconwebentwicklung}
-                  name="Webentwicklung"
+                  name="Webentwicklung & Webdesign"
                 />
                 <ServiceBox imgAlt="HTML" imgSrc={iconserver} name="Hosting" />
                 <ServiceBox imgAlt="HTML" imgSrc={icondomain} name="Domain" />

@@ -21,7 +21,6 @@
     "plugin:import/warnings",
     "plugin:unicorn/all",
     "plugin:yml/recommended",
-    "plugin:perfectionist/recommended-natural",
     "plugin:markdown/recommended",
     "plugin:jsx-a11y/recommended"
   ],
@@ -46,7 +45,6 @@
     "promise",
     "unicorn",
     "yml",
-    "perfectionist",
     "html",
     "markdown",
     "jsx-a11y"
