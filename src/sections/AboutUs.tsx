@@ -1,9 +1,9 @@
 import { gsap } from "gsap"
 import React, { useEffect, useRef } from "react"
-
-const SocialLink = React.lazy(() => import("../components/SocialLink"))
 import developerimage2 from "../images/ManuelKuehnle.webp"
 import developerimage1 from "../images/MaximilianGobbel.webp"
+
+const SocialLink = React.lazy(() => import("../components/SocialLink"))
 
 const AboutUs: React.FC = () => {
   const imgReference1 = useRef<HTMLImageElement>(null)
@@ -87,7 +87,7 @@ const AboutUs: React.FC = () => {
                   <p>
                     Ich bin ein ausgebildeter Fachinformatiker mit Erfahrung in
                     Datenbanken, Programmierung, Kundensupport und
-                    Netzwerktechnik. Ich habe auch ein duales Informatik-Studium
+                    Netzwerktechnik. Ich habe ein duales Informatik-Studium
                     abgeschlossen und meinen Bachelor of Science erworben. Mit
                     mehr als drei Jahren Berufserfahrung als Softwareentwickler
                     verfüge ich über die Fähigkeit, komplexe Probleme zu lösen.
